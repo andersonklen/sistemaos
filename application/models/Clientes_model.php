@@ -83,4 +83,20 @@ class Clientes_model extends CI_Model
         $this->db->limit(10);
         return $this->db->get('os')->result();
     }
+
+
+    public function autoCompleteCidade($q)
+    // public function autoCompleteCidade($q)
+    {
+        $this->db->select('*');
+        $this->db->limit(5);
+        $this->db->like('cidade_nome', '$q');
+        $query = $this->db->get('tb_cidade');
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $row_set[] = array('label'=>$row['cidade_nome'].' - '.$row['cidade_estado_codigo'],'id'=>$row['cidade_codigo']);
+            }    
+            echo json_encode($row_set);
+        }
+    }
 }

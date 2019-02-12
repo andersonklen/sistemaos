@@ -20,6 +20,8 @@ class Os extends CI_Controller
         $this->load->helper(array('form','codegen_helper'));
         $this->load->model('os_model', '', true);
         $this->data['menuOs'] = 'OS';
+         // Debug
+        //$this->output->enable_profiler(TRUE);
     }
     
     function index()

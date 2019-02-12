@@ -9,6 +9,8 @@ class Clientes extends CI_Controller
      *
      */
     
+
+    
     function __construct()
     {
         parent::__construct();
@@ -18,6 +20,8 @@ class Clientes extends CI_Controller
             $this->load->helper(array('codegen_helper'));
             $this->load->model('clientes_model', '', true);
             $this->data['menuClientes'] = 'clientes';
+             // Debug
+            // $this->output->enable_profiler(TRUE);
     }
     
     function index()
@@ -91,7 +95,10 @@ class Clientes extends CI_Controller
                 'rua' => set_value('rua'),
                 'numero' => set_value('numero'),
                 'bairro' => set_value('bairro'),
-                'cidade' => set_value('cidade'),
+                //'cidade' => set_value('cidade'),
+                'cidade' => $this->input->post('cidade'),//set_value('idCliente'),
+                // 'usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
+
                 'estado' => set_value('estado'),
                 'cep' => set_value('cep'),
                 'dataCadastro' => date('Y-m-d')
@@ -244,4 +251,15 @@ class Clientes extends CI_Controller
             $this->session->set_flashdata('success', 'Cliente excluido com sucesso!');
             redirect(base_url().'index.php/clientes/gerenciar/');
     }
+
+
+
+    public function autoCompleteCidade()
+    {
+        if (isset($_GET['term'])) {
+            $q = strtolower($_GET['term']);
+            $this->clientes_model->autoCompleteCidade($q);
+        }
+
+    }  
 }

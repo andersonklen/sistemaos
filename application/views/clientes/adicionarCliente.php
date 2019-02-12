@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.validate.js"></script>
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
@@ -74,9 +77,10 @@
                     </div>
 
                     <div class="control-group" class="control-label">
-                        <label for="cidade" class="control-label">Cidade<span class="required">*</span></label>
-                        <div class="controls">
-                            <input id="cidade" type="text" name="cidade" value="<?php echo set_value('cidade'); ?>"  />
+                        <div class="span6">
+                        <label for="cidade">Cliente<span class="required">*</span></label>
+                          <input id="cidade" class="span12" type="text" name="cidade" value=""  />
+                           <input id="cidade_id" class="span12" type="hidden" name="cidade_id" value=""  />
                         </div>
                     </div>
 
@@ -104,9 +108,22 @@
 </div>
 
 
-<script src="<?php echo base_url()?>assets/js/jquery.validate.js"></script>
 <script type="text/javascript">
       $(document).ready(function(){
+
+
+            $("#cidade").autocomplete({
+            source: "<?php echo base_url(); ?>index.php/clientes/autoCompleteCidade",
+            minLength: 1,
+                select: function( event, ui ) {
+
+                     $("#cidade_id").val(ui.item.id);
+                    
+
+                }
+            });
+
+
            $('#formCliente').validate({
             rules :{
                   nomeCliente:{ required: true},
@@ -149,6 +166,7 @@
 <script type="text/javascript" >
 
         $(document).ready(function() {
+
 
             function limpa_formulario_cep() {
                 // Limpa valores do formulário de cep.
