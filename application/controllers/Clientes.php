@@ -256,10 +256,10 @@ class Clientes extends CI_Controller
 
     public function autoCompleteCidade()
     {
-        if (isset($_GET['term'])) {
+        //if (isset($_GET['term'])) {
             $q = strtolower($_GET['term']);
             $this->clientes_model->autoCompleteCidade($q);
-        }
+        //}
 
     }  
 }

@@ -77,10 +77,9 @@
                     </div>
 
                     <div class="control-group" class="control-label">
-                        <div class="span6">
-                        <label for="cidade">Cliente<span class="required">*</span></label>
-                          <input id="cidade" class="span12" type="text" name="cidade" value=""  />
-                           <input id="cidade_id" class="span12" type="hidden" name="cidade_id" value=""  />
+                        <label for="cidade" class="control-label">Cidade<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="cidade" type="text" name="cidade" value="<?php echo set_value('cidade'); ?>"  />
                         </div>
                     </div>
 
