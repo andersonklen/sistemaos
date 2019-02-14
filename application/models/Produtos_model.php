@@ -19,7 +19,7 @@ class Produtos_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->order_by('idProdutos', 'desc');
+        $this->db->order_by('produto_codigo', 'desc');
         $this->db->limit($perpage, $start);
         if ($where) {
             $this->db->where($where);
@@ -33,9 +33,9 @@ class Produtos_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->where('idProdutos', $id);
+        $this->db->where('produto_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('produtos')->row();
+        return $this->db->get('tb_produto')->row();
     }
     
     function add($table, $data)

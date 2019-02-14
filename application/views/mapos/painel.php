@@ -82,15 +82,15 @@
                         <?php if($produtos != null):?>
                             <?php foreach ($produtos as $p): ?>
                                 <tr>
-                                    <td><?=$p->idProdutos?></td>
-                                    <td><?=$p->descricao?></td>
-                                    <td>R$ <?=$p->precoVenda?></td>
-                                    <td><?=$p->estoque?></td>
-                                    <td><?=$p->estoqueMinimo?></td>
+                                    <td><?=$p->produto_codigo?></td>
+                                    <td><?=$p->produto_descricao?></td>
+                                    <td>R$ <?=$p->produto_preco_venda?></td>
+                                    <td><?=$p->produto_estoque_atual?></td>
+                                    <td><?=$p->produto_estoque_minimo?></td>
                                     <td>
                                     <?php if($this->permission->checkPermission($this->session->userdata('permissao'), 'eProduto')):?>
                                         <a
-                                            href="<?=base_url()?>index.php/produtos/editar/<?=$p->idProdutos?>"
+                                            href="<?=base_url()?>index.php/produtos/editar/<?=$p->produto_codigo?>"
                                             class="btn btn-info">
                                             <i class="icon-pencil" ></i>
                                         </a>  
@@ -242,7 +242,7 @@
                     <div class="span12">
                         <ul class="site-stats">
                             <li class="bg_lh"><i class="icon-group"></i> <strong><?=$this->db->count_all('clientes');?></strong> <small>Clientes</small></li>
-                            <li class="bg_lh"><i class="icon-barcode"></i> <strong><?=$this->db->count_all('produtos');?></strong> <small>Produtos </small></li>
+                            <li class="bg_lh"><i class="icon-barcode"></i> <strong><?=$this->db->count_all('tb_produto');?></strong> <small>Produtos </small></li>
                             <li class="bg_lh"><i class="icon-tags"></i> <strong><?=$this->db->count_all('os');?></strong> <small>Ordens de Serviço</small></li>
                             <li class="bg_lh"><i class="icon-wrench"></i> <strong><?=$this->db->count_all('servicos');?></strong> <small>Serviços</small></li>
                             

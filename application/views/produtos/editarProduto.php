@@ -42,10 +42,10 @@
                 <?php echo $custom_error; ?>
                 <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal" >
                      <div class="control-group">
-                        <?php echo form_hidden('idProdutos', $result->idProdutos) ?>
+                        <?php echo form_hidden('vw_produto_codigo', $result->produto_codigo) ?>
                         <label for="descricao" class="control-label">Descrição<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="descricao" type="text" name="descricao" value="<?php echo $result->descricao; ?>"  />
+                            <input id="vw_produto_descricao" type="text" name="vw_produto_descricao" value="<?php echo $result->produto_descricao; ?>"  />
                         </div>
                     </div>
 
@@ -53,13 +53,13 @@
                         <label class="control-label">Tipo de Movimento</label>
                         <div class="controls">
                             <label for="entrada" class="btn btn-default" style="margin-top: 5px;">Entrada 
-                                <input type="checkbox" id="entrada" name="entrada" class="badgebox" value="1" 
-                                    <?=($result->entrada == 1)?'checked':''?>>
+                                <input type="checkbox" id="vw_produto_movimenta_entrada" name="vw_produto_movimenta_entrada" class="badgebox" value="1" 
+                                    <?=($result->produto_movimenta_entrada == 1)?'checked':''?>>
                                 <span class="badge" >&check;</span>
                             </label>
                             <label for="saida" class="btn btn-default" style="margin-top: 5px;">Saída 
-                                <input type="checkbox" id="saida" name="saida" class="badgebox" value="1"
-                                    <?=($result->saida == 1)?'checked':''?>>
+                                <input type="checkbox" id="vw_produto_movimenta_saida" name="vw_produto_movimenta_saida" class="badgebox" value="1"
+                                    <?=($result->produto_movimenta_saida == 1)?'checked':''?>>
                                 <span class="badge" >&check;</span>
                             </label>
                         </div>
@@ -68,25 +68,25 @@
                     <div class="control-group">
                         <label for="precoCompra" class="control-label">Preço de Compra<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="precoCompra" class="money" type="text" name="precoCompra" value="<?php echo $result->precoCompra; ?>"  />
+                            <input id="vw_produto_preco_compra" class="money" type="text" name="vw_produto_preco_compra" value="<?php echo $result->produto_preco_compra; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="precoVenda" class="control-label">Preço de Venda<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="precoVenda" class="money" type="text" name="precoVenda" value="<?php echo $result->precoVenda; ?>"  />
+                            <input id="vw_produto_preco_venda" class="money" type="text" name="vw_produto_preco_venda" value="<?php echo $result->produto_preco_venda; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                     <label for="unidade" class="control-label">Unidade<span class="required">*</span></label>
                     <div class="controls">
-                        <select id="unidade" name="unidade">
-                            <option value="UN" <?=($result->unidade == 'UN')?'selected':''?>>Unidade</option>
-                            <option value="KG" <?=($result->unidade == 'KG')?'selected':''?>>Kilograma</option>
-                            <option value="LT" <?=($result->unidade == 'LT')?'selected':''?>>Litro</option>
-                            <option value="CX" <?=($result->unidade == 'CX')?'selected':''?>>Caixa</option>
+                        <select id="vw_produto_unid_medida" name="vw_produto_unid_medida">
+                            <option value="UN" <?=($result->produto_unid_medida == 'UN')?'selected':''?>>Unidade</option>
+                            <option value="KG" <?=($result->produto_unid_medida == 'KG')?'selected':''?>>Kilograma</option>
+                            <option value="LT" <?=($result->produto_unid_medida == 'LT')?'selected':''?>>Litro</option>
+                            <option value="CX" <?=($result->produto_unid_medida == 'CX')?'selected':''?>>Caixa</option>
                         </select>                        
                     </div>
                     </div>                    
@@ -94,14 +94,14 @@
                     <div class="control-group">
                         <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="estoque" type="text" name="estoque" value="<?php echo $result->estoque; ?>"  />
+                            <input id="vw_produto_estoque_atual" type="text" name="vw_produto_estoque_atual" value="<?php echo $result->produto_estoque_atual; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                         <div class="controls">
-                            <input id="estoqueMinimo" type="text" name="estoqueMinimo" value="<?php echo $result->estoqueMinimo; ?>"  />
+                            <input id="vw_produto_estoque_minimo" type="text" name="vw_produto_estoque_minimo" value="<?php echo $result->produto_estoque_minimo; ?>"  />
                         </div>
                     </div>
 
@@ -131,18 +131,18 @@
 
         $('#formProduto').validate({
             rules :{
-                  descricao: { required: true},
-                  unidade: { required: true},
-                  precoCompra: { required: true},
-                  precoVenda: { required: true},
-                  estoque: { required: true}
+                  produto_descricao: { required: true},
+                  produto_unid_medida: { required: true},
+                  produto_preco_compra: { required: true},
+                  produto_preco_venda: { required: true},
+                  produto_estoque_atual: { required: true}
             },
             messages:{
-                  descricao: { required: 'Campo Requerido.'},
-                  unidade: {required: 'Campo Requerido.'},
-                  precoCompra: { required: 'Campo Requerido.'},
-                  precoVenda: { required: 'Campo Requerido.'},
-                  estoque: { required: 'Campo Requerido.'}
+                  produto_descricao: { required: 'Campo Requerido.'},
+                  produto_unid_medida: {required: 'Campo Requerido.'},
+                  produto_preco_compra: { required: 'Campo Requerido.'},
+                  produto_preco_venda: { required: 'Campo Requerido.'},
+                  produto_estoque_atual: { required: 'Campo Requerido.'}
             },
 
             errorClass: "help-inline",

@@ -39,7 +39,7 @@ class Produtos extends CI_Controller
         
         
         $config['base_url'] = base_url().'index.php/produtos/gerenciar/';
-        $config['total_rows'] = $this->produtos_model->count('produtos');
+        $config['total_rows'] = $this->produtos_model->count('tb_produto');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -62,7 +62,8 @@ class Produtos extends CI_Controller
         
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->produtos_model->get('produtos', 'idProdutos,descricao,unidade,precoCompra,precoVenda,estoque,estoqueMinimo', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->produtos_model->get('tb_produto', 'produto_codigo,produto_descricao,produto_unid_medida,produto_preco_compra,produto_preco_venda,produto_estoque_atual,produto_estoque_minimo,produto_deletado', 'produto_deletado',SIM, $config['per_page'], $this->uri->segment(3));
+       
        
         $this->data['view'] = 'produtos/produtos';
         $this->load->view('tema/topo', $this->data);
@@ -84,23 +85,23 @@ class Produtos extends CI_Controller
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
-            $precoCompra = $this->input->post('precoCompra');
-            $precoCompra = str_replace(",", "", $precoCompra);
-            $precoVenda = $this->input->post('precoVenda');
-            $precoVenda = str_replace(",", "", $precoVenda);
+            $produto_preco_compra = $this->input->post('produto_preco_compra');
+            $produto_preco_compra = str_replace(",", "", $produto_preco_compra);
+            $produto_preco_venda = $this->input->post('produto_preco_venda');
+            $produto_preco_venda = str_replace(",", "", $produto_preco_venda);
             $data = array(
-                'marca' => set_value('marca'),
-                'descricao' => set_value('descricao'),
-                'unidade' => set_value('unidade'),
-                'precoCompra' => $precoCompra,
-                'precoVenda' => $precoVenda,
-                'estoque' => set_value('estoque'),
-                'estoqueMinimo' => set_value('estoqueMinimo'),
-                'saida' => set_value('saida'),
-                'entrada' => set_value('entrada'),
+                'produto_marca_codigo' => set_value('vw_produto_marca_codigo'),
+                'produto_descricao' => set_value('vw_produto_descricao'),
+                'produto_unid_medida' => set_value('vw_produto_unid_medida'),
+                'produto_preco_compra' => $produto_preco_compra,
+                'produto_preco_venda' => $produto_preco_venda,
+                'produto_estoque_atual' => set_value('vw_produto_estoque_atual'),
+                'produto_estoque_minimo' => set_value('vw_produto_estoque_minimo'),
+                'produto_movimenta_saida' => set_value('vw_produto_movimenta_saida'),
+                'produto_movimenta_entrada' => set_value('produto_movimenta_entrada'),
             );
 
-            if ($this->produtos_model->add('produtos', $data) == true) {
+            if ($this->produtos_model->add('tb_produto', $data) == true) {
                 $this->session->set_flashdata('success', 'Produto adicionado com sucesso!');
                 redirect(base_url() . 'index.php/produtos/adicionar/');
             } else {
@@ -130,24 +131,24 @@ class Produtos extends CI_Controller
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
-            $precoCompra = $this->input->post('precoCompra');
-            $precoCompra = str_replace(",", "", $precoCompra);
-            $precoVenda = $this->input->post('precoVenda');
-            $precoVenda = str_replace(",", "", $precoVenda);
+            $produto_preco_compra = $this->input->post('produto_preco_compra');
+            $produto_preco_compra = str_replace(",", "", $produto_preco_compra);
+            $produto_preco_venda = $this->input->post('produto_preco_venda');
+            $produto_preco_venda = str_replace(",", "", $produto_preco_venda);
             $data = array(
-                'descricao' => $this->input->post('descricao'),
-                'unidade' => $this->input->post('unidade'),
-                'precoCompra' => $precoCompra,
-                'precoVenda' => $precoVenda,
-                'estoque' => $this->input->post('estoque'),
-                'estoqueMinimo' => $this->input->post('estoqueMinimo'),
-                'saida' => set_value('saida'),
-                'entrada' => set_value('entrada'),
+                'produto_descricao' => $this->input->post('vw_produto_descricao'),
+                'produto_unid_medida' => $this->input->post('vw_produto_unid_medida'),
+                'produto_preco_compra' => $produto_preco_compra,
+                'produto_preco_venda' => $produto_preco_venda,
+                'produto_estoque_atual' => $this->input->post('vw_produto_estoque_atual'),
+                'produto_estoque_minimo' => $this->input->post('vw_produto_estoque_minimo'),
+                'produto_movimenta_saida' => set_value('vw_produto_movimenta_saida'),
+                'produto_movimenta_entrada' => set_value('vw_produto_movimenta_entrada'),
             );
 
-            if ($this->produtos_model->edit('produtos', $data, 'idProdutos', $this->input->post('idProdutos')) == true) {
+            if ($this->produtos_model->edit('tb_produto', $data, 'produto_codigo', $this->input->post('vw_produto_codigo')) == true) {
                 $this->session->set_flashdata('success', 'Produto editado com sucesso!');
-                redirect(base_url() . 'index.php/produtos/editar/'.$this->input->post('idProdutos'));
+                redirect(base_url() . 'index.php/produtos/editar/'.$this->input->post('vw_produto_codigo'));
             } else {
                 $this->data['custom_error'] = '<div class="form_error"><p>An Error Occured</p></div>';
             }
@@ -178,7 +179,7 @@ class Produtos extends CI_Controller
 
         if ($this->data['result'] == null) {
             $this->session->set_flashdata('error', 'Produto não encontrado.');
-            redirect(base_url() . 'index.php/produtos/editar/'.$this->input->post('idProdutos'));
+            redirect(base_url() . 'index.php/produtos/editar/'.$this->input->post('produto_codigo'));
         }
 
         $this->data['view'] = 'produtos/visualizarProduto';
@@ -202,14 +203,21 @@ class Produtos extends CI_Controller
             redirect(base_url().'index.php/produtos/gerenciar/');
         }
 
-        $this->db->where('produtos_id', $id);
-        $this->db->delete('produtos_os');
+        // $this->db->where('produto_codigo', $id);
+        // $this->db->delete('produtos_os');
 
 
-        $this->db->where('produtos_id', $id);
-        $this->db->delete('itens_de_vendas');
+        // $this->db->where('produto_codigo', $id);
+        // $this->db->delete('itens_de_vendas');
         
-        $this->produtos_model->delete('produtos', 'idProdutos', $id);
+        // $this->produtos_model->delete('tb_produto', 'produto_codigo', $id);
+        
+        $data = array( 
+                    'produto_deletado'  => 'SIM', 
+                    );
+                    $this->db->where('produto_codigo', $id);
+                    $this->db->update('tb_produto', $data); 
+        
         
 
         $this->session->set_flashdata('success', 'Produto excluido com sucesso!');

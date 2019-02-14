@@ -206,17 +206,18 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `produtos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `produtos` (
-  `idProdutos` INT(11) NOT NULL AUTO_INCREMENT,
-  `descricao` VARCHAR(80) NOT NULL,
-  `unidade` VARCHAR(10) NULL DEFAULT NULL,
-  `precoCompra` DECIMAL(10,2) NULL DEFAULT NULL,
-  `precoVenda` DECIMAL(10,2) NOT NULL,
-  `estoque` INT(11) NOT NULL,
-  `estoqueMinimo` INT(11) NULL DEFAULT NULL,
-  `saida`	TINYINT(1) NULL DEFAULT NULL,
-  `entrada`	TINYINT(1) NULL DEFAULT NULL,
-  PRIMARY KEY (`idProdutos`))
+CREATE TABLE IF NOT EXISTS `tb_produto` (
+  `produto_codigo` INT(11) NOT NULL AUTO_INCREMENT,
+  `produto_descricao` VARCHAR(80) NOT NULL,
+  `produto_unid_medida` VARCHAR(10) NULL DEFAULT NULL,
+  `produto_preco_compra` DECIMAL(10,2) NULL DEFAULT NULL,
+  `produto_preco_venda` DECIMAL(10,2) NOT NULL,
+  `produto_estoque_atual` INT(11) NOT NULL,
+  `produto_estoque_minimo` INT(11) NULL DEFAULT NULL,
+  `produto_movimenta_saida`	TINYINT(1) NULL DEFAULT NULL,
+  `produto_movimenta_entrada`	TINYINT(1) NULL DEFAULT NULL,
+  `produto_deletado` VARCHAR(3) NULL DEFAULT NULL, 
+  PRIMARY KEY (`produto_codigo`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
@@ -6126,7 +6127,23 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 
 
 INSERT INTO `permissoes` (`idPermissao`, `nome`, `permissoes`, `situacao`, `data`) VALUES
-(1, 'Administrador', 'a:38:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";s:7:"cBackup";s:1:"1";s:8:"rCliente";s:1:"1";s:8:"rProduto";s:1:"1";s:8:"rServico";s:1:"1";s:3:"rOs";s:1:"1";s:6:"rVenda";s:1:"1";s:11:"rFinanceiro";s:1:"1";}', 1, '2014-09-03');
+(1, 'Administrador', 'a:38:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";
+                            s:8:"aMarca";s:1:"1";s:8:"eMarca";s:1:"1";s:8:"dMarca";s:1:"1";s:8:"vMarca";s:1:"1";
+                            s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";
+                            s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";
+                            s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";
+                            s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";
+                            s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";
+                            s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";
+                            s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";
+                            s:7:"cBackup";s:1:"1";
+                            s:8:"rCliente";s:1:"1";
+                            s:8:"rProduto";s:1:"1";
+                            s:8:"rServico";s:1:"1";
+                            s:3:"rOs";s:1:"1";
+                            s:6:"rVenda";s:1:"1";
+                            s:11:"rFinanceiro";s:1:"1";
+                            }', 1, '2014-09-03');
 
 
 

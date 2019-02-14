@@ -48,7 +48,7 @@
                         </div>
                         <label for="descricao" class="control-label">Descrição<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="descricao" type="text" name="descricao" value="<?php echo set_value('descricao'); ?>"  />
+                            <input id="vw_produto_descricao" type="text" name="vw_produto_descricao" value="<?php echo set_value('produto_descricao'); ?>"  />
                         </div>                        
                     </div>
 
@@ -70,14 +70,14 @@
                     <div class="control-group">
                         <label for="precoCompra" class="control-label">Preço de Compra<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="precoCompra" class="money" type="text" name="precoCompra" value="<?php echo set_value('precoCompra'); ?>"  />
+                            <input id="vw_produto_preco_compra" class="money" type="text" name="vw_produto_preco_compra" value="<?php echo set_value('produto_preco_compra'); ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="precoVenda" class="control-label">Preço de Venda<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="precoVenda" class="money" type="text" name="precoVenda" value="<?php echo set_value('precoVenda'); ?>"  />
+                            <input id="vw_produto_preco_venda" class="money" type="text" name="vw_produto_preco_venda" value="<?php echo set_value('precoVenda'); ?>"  />
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@
                     <label for="unidade" class="control-label">Unidade<span class="required">*</span></label>
                     <div class="controls">
                         <!--<input id="unidade" type="text" name="unidade" value="<?php echo set_value('unidade'); ?>"  />-->
-                        <select id="unidade" name="unidade">
+                        <select id="vw_produto_unid_medida" name="vw_produto_unid_medida">
                             <option value="UN">Unidade</option>
                             <option value="KG">Kilograma</option>
                             <option value="LT">Litro</option>
@@ -97,14 +97,14 @@
                     <div class="control-group">
                         <label for="estoque" class="control-label">Estoque<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="estoque" type="text" name="estoque" value="<?php echo set_value('estoque'); ?>"  />
+                            <input id="vw_produto_estoque_atual" type="text" name="vw_produto_estoque_atual" value="<?php echo set_value('estoque'); ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="estoqueMinimo" class="control-label">Estoque Mínimo</label>
                         <div class="controls">
-                            <input id="estoqueMinimo" type="text" name="estoqueMinimo" value="<?php echo set_value('estoqueMinimo'); ?>"  />
+                            <input id="vw_produto_estoque_minimo" type="text" name="vw_produto_estoque_minimo" value="<?php echo set_value('estoqueMinimo'); ?>"  />
                         </div>
                     </div>
 
@@ -133,18 +133,18 @@
 
         $('#formProduto').validate({
             rules :{
-                  descricao: { required: true},
-                  unidade: { required: true},
-                  precoCompra: { required: true},
-                  precoVenda: { required: true},
-                  estoque: { required: true}
+                  vw_produto_descricao: { required: true},
+                  vw_produto_unid_medida: { required: true},
+                  vw_produto_preco_compra: { required: true},
+                  vw_produto_preco_venda: { required: true},
+                  vw_produto_estoque_atual: { required: true}
             },
             messages:{
-                  descricao: { required: 'Campo Requerido.'},
-                  unidade: {required: 'Campo Requerido.'},
-                  precoCompra: { required: 'Campo Requerido.'},
-                  precoVenda: { required: 'Campo Requerido.'},
-                  estoque: { required: 'Campo Requerido.'}
+                  vw_produto_descricao: { required: 'Campo Requerido.'},
+                  vw_produto_unid_medida: {required: 'Campo Requerido.'},
+                  vw_produto_preco_compra: { required: 'Campo Requerido.'},
+                  vw_produto_preco_venda: { required: 'Campo Requerido.'},
+                  vw_produto_estoque_atual: { required: 'Campo Requerido.'}
             },
 
             errorClass: "help-inline",

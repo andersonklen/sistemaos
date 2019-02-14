@@ -67,32 +67,32 @@ $config = array('clientes' => array(array(
                                 ))
                 ,
                 'produtos' => array(array(
-                                    'field'=>'descricao',
+                                    'field'=>'vw_produto_descricao',
                                     'label'=>'',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'unidade',
+                                    'field'=>'vw_produto_unid_medida',
                                     'label'=>'Unidade',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'precoCompra',
+                                    'field'=>'vw_produto_preco_compra',
                                     'label'=>'Preo de Compra',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'precoVenda',
+                                    'field'=>'vw_produto_preco_venda',
                                     'label'=>'Preo de Venda',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'estoque',
+                                    'field'=>'vw_produto_estoque_atual',
                                     'label'=>'Estoque',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'estoqueMinimo',
+                                    'field'=>'vw_produto_estoque_minimo',
                                     'label'=>'Estoque Mnimo',
                                     'rules'=>'trim'
                                 ))
