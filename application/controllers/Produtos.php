@@ -62,7 +62,7 @@ class Produtos extends CI_Controller
         
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->produtos_model->get('tb_produto', 'produto_codigo,produto_descricao,produto_unid_medida,produto_preco_compra,produto_preco_venda,produto_estoque_atual,produto_estoque_minimo,produto_deletado', 'produto_deletado',SIM, $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->produtos_model->get('tb_produto', 'produto_codigo,produto_descricao,produto_unid_medida,produto_preco_compra,produto_preco_venda,produto_estoque_atual,produto_estoque_minimo,produto_deletado', 'produto_deletado=\'NAO\'', $config['per_page'], $this->uri->segment(3));
        
        
         $this->data['view'] = 'produtos/produtos';
@@ -213,7 +213,8 @@ class Produtos extends CI_Controller
         // $this->produtos_model->delete('tb_produto', 'produto_codigo', $id);
         
         $data = array( 
-                    'produto_deletado'  => 'SIM', 
+                    'produto_deletado'      => 'SIM', 
+                    'produto_data_ultima_alteracao' =>  date('Y-m-d H:i:s'),
                     );
                     $this->db->where('produto_codigo', $id);
                     $this->db->update('tb_produto', $data); 

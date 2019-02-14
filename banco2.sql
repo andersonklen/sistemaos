@@ -217,6 +217,9 @@ CREATE TABLE IF NOT EXISTS `tb_produto` (
   `produto_movimenta_saida`	TINYINT(1) NULL DEFAULT NULL,
   `produto_movimenta_entrada`	TINYINT(1) NULL DEFAULT NULL,
   `produto_deletado` VARCHAR(3) NULL DEFAULT NULL, 
+  `produto_situacao` TINYINT(1) NULL DEFAULT NULL,
+  `produto_data_ultima_alteracao` DATETIME() NULL DEFAULT NULL, 
+  `produto_usuario_cod_ult_alteracao` VARCHAR(50) NULL DEFAULT NULL, 
   PRIMARY KEY (`produto_codigo`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2
@@ -400,30 +403,20 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `equipamentos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `equipamentos` (
-  `idEquipamentos` INT NOT NULL AUTO_INCREMENT,
-  `equipamento` VARCHAR(150) NOT NULL,
-  `num_serie` VARCHAR(80) NULL,
-  `modelo` VARCHAR(80) NULL,
-  `cor` VARCHAR(45) NULL,
-  `descricao` VARCHAR(150) NULL,
-  `tensao` VARCHAR(45) NULL,
-  `potencia` VARCHAR(45) NULL,
-  `voltagem` VARCHAR(45) NULL,
-  `data_fabricacao` DATE NULL,
-  `marcas_id` INT NULL,
-  `clientes_id` INT(11) NULL,
-  PRIMARY KEY (`idEquipamentos`),
-  INDEX `fk_equipanentos_marcas1_idx` (`marcas_id` ASC),
-  INDEX `fk_equipanentos_clientes1_idx` (`clientes_id` ASC),
-  CONSTRAINT `fk_equipanentos_marcas1`
-    FOREIGN KEY (`marcas_id`)
-    REFERENCES `marcas` (`idMarcas`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_equipanentos_clientes1`
-    FOREIGN KEY (`clientes_id`)
-    REFERENCES `clientes` (`idClientes`)
+CREATE TABLE IF NOT EXISTS `tb_equipamento` (
+  `equipamento_codigo` INT NOT NULL AUTO_INCREMENT,
+  `equipamento_nome` VARCHAR(150) NOT NULL,
+  `equipamento_modelo` VARCHAR(150) NOT NULL,
+  `equipamento_observacao` VARCHAR(150) NULL,
+  `equipamento_situacao` TINYINT(1) NULL,
+  `equipamento_data_ultima_alteracao` DATETIME NULL DEFAULT NULL ,
+  `equipamento_usuario_cod_ult_alteracao` INT(11) NULL,
+  `equipamento_marca_codigo` INT(11) NULL,
+   PRIMARY KEY (`equipamento_codigo`), 
+  INDEX `fk_equipanento_marca_codigo_idx` (`equipamento_marca_codigo` ASC), 
+  CONSTRAINT `fk_equipanento_marca_codigo`
+    FOREIGN KEY (`equipamento_marca_codigo`)
+    REFERENCES `tb_marca` (`marca_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -6127,23 +6120,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 
 
 INSERT INTO `permissoes` (`idPermissao`, `nome`, `permissoes`, `situacao`, `data`) VALUES
-(1, 'Administrador', 'a:38:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";
-                            s:8:"aMarca";s:1:"1";s:8:"eMarca";s:1:"1";s:8:"dMarca";s:1:"1";s:8:"vMarca";s:1:"1";
-                            s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";
-                            s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";
-                            s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";
-                            s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";
-                            s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";
-                            s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";
-                            s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";
-                            s:7:"cBackup";s:1:"1";
-                            s:8:"rCliente";s:1:"1";
-                            s:8:"rProduto";s:1:"1";
-                            s:8:"rServico";s:1:"1";
-                            s:3:"rOs";s:1:"1";
-                            s:6:"rVenda";s:1:"1";
-                            s:11:"rFinanceiro";s:1:"1";
-                            }', 1, '2014-09-03');
+(1, 'Administrador', 'a:38:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";s:7:"cBackup";s:1:"1";s:8:"rCliente";s:1:"1";s:8:"rProduto";s:1:"1";s:8:"rServico";s:1:"1";s:3:"rOs";s:1:"1";s:6:"rVenda";s:1:"1";s:11:"rFinanceiro";s:1:"1";}', 1, '2014-09-03');
 
 
 

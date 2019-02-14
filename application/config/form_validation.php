@@ -97,6 +97,17 @@ $config = array('clientes' => array(array(
                                     'rules'=>'trim'
                                 ))
                 ,
+                 'equipamentos' => array(array(
+                                    'field'=>'vw_equipamento_nome',
+                                    'label'=>'',
+                                    'rules'=>'required|trim'
+                                ),                                
+                                array(
+                                    'field'=>'vw_equipamento_modelo',
+                                    'label'=>'',
+                                    'rules'=>'trim'
+                                ))
+                ,
                 'usuarios' => array(array(
                                     'field'=>'nome',
                                     'label'=>'Nome',

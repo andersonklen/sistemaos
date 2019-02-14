@@ -78,6 +78,13 @@
 
 };?>"><a href="<?php echo base_url()?>index.php/marcas"><i class="icon icon-barcode"></i> <span>Marcas</span></a></li>
     <?php } ?>
+
+    <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vEquipamento')) { ?>
+        <li class="<?php if (isset($menuEquipamento)) {
+            echo 'active';
+
+};?>"><a href="<?php echo base_url()?>index.php/equipamentos"><i class="icon icon-barcode"></i> <span>Equipamentos Manut.</span></a></li>
+    <?php } ?>
     
     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vMarca')) { ?>
         <li class="<?php if (isset($menuServicos)) {

@@ -148,14 +148,14 @@
                                     </td>
                                  
                                 </tr>
-                                <tr><td colspan="4"></td></tr>
-                                
+                               
+                                <tr><td colspan="4"></td></tr>                        
                                 <tr>
 
                                     <td>
                                         <label>
-                                            <input <?php if (isset($permissoes['vServico'])) {
-                                                if ($permissoes['vServico'] == '1') {
+                                            <input <?php if (isset($permissoes['vMarca'])) {
+                                                if ($permissoes['vMarca'] == '1') {
                                                     echo 'checked';
                                                 }
 }?> name="vMarca" class="marcar" type="checkbox" value="1" />
@@ -197,6 +197,58 @@
                                     </td>
                                  
                                 </tr>
+
+                                <tr><td colspan="4"></td></tr>
+                                <tr>
+
+                                    <td>
+                                        <label>
+                                            <input <?php if (isset($permissoes['vEquipamento'])) {
+                                                if ($permissoes['vEquipamento'] == '1') {
+                                                    echo 'checked';
+                                                }
+}?> name="vw_vEquipamento" class="marcar" type="checkbox" value="1" />
+                                            <span class="lbl"> Visualizar Equipamento</span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <label>
+                                            <input <?php if (isset($permissoes['aEquipamento'])) {
+                                                if ($permissoes['aEquipamento'] == '1') {
+                                                    echo 'checked';
+                                                }
+}?> name="vw_aEquipamento" class="marcar" type="checkbox" value="1" />
+                                            <span class="lbl"> Adicionar Equipamento</span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <label>
+                                            <input <?php if (isset($permissoes['eEquipamento'])) {
+                                                if ($permissoes['eEquipamento'] == '1') {
+                                                    echo 'checked';
+                                                }
+}?> name="vw_eEquipamento" class="marcar" type="checkbox" value="1" />
+                                            <span class="lbl"> Editar Equipamento</span>
+                                        </label>
+                                    </td>
+
+                                    <td>
+                                        <label>
+                                            <input <?php if (isset($permissoes['dEquipamento'])) {
+                                                if ($permissoes['dEquipamento'] == '1') {
+                                                    echo 'checked';
+                                                }
+}?> name="vw_dEquipamento" class="marcar" type="checkbox" value="1" />
+                                            <span class="lbl"> Excluir Equipamento</span>
+                                        </label>
+                                    </td>
+                                 
+                                </tr>
+
+
+
                                 <tr><td colspan="4"></td></tr>
                                 
                                 <tr>

@@ -98,6 +98,16 @@ class Permissoes extends CI_Controller
                   'dProduto' => $this->input->post('dProduto'),
                   'vProduto' => $this->input->post('vProduto'),
 
+                  'aMarca' => $this->input->post('aMarca'),
+                  'eMarca' => $this->input->post('eMarca'),
+                  'dMarca' => $this->input->post('dMarca'),
+                  'vMarca' => $this->input->post('vMarca'),
+
+                  'aEquipamento' => $this->input->post('vw_aEquipamento'),
+                  'eEquipamento' => $this->input->post('vw_eEquipamento'),
+                  'dEquipamento' => $this->input->post('vw_dEquipamento'),
+                  'vEquipamento' => $this->input->post('vw_vEquipamento'),
+
                   'aServico' => $this->input->post('aServico'),
                   'eServico' => $this->input->post('eServico'),
                   'dServico' => $this->input->post('dServico'),
@@ -189,6 +199,11 @@ class Permissoes extends CI_Controller
                   'eMarca' => $this->input->post('eMarca'),
                   'dMarca' => $this->input->post('dMarca'),
                   'vMarca' => $this->input->post('vMarca'),
+                
+                  'aEquipamento' => $this->input->post('vw_aEquipamento'),
+                  'eEquipamento' => $this->input->post('vw_eEquipamento'),
+                  'dEquipamento' => $this->input->post('vw_dEquipamento'),
+                  'vEquipamento' => $this->input->post('vw_vEquipamento'),
 
                   'aServico' => $this->input->post('aServico'),
                   'eServico' => $this->input->post('eServico'),
