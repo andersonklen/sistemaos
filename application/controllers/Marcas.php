@@ -46,7 +46,7 @@ class Marcas extends CI_Controller
         
         
         $config['base_url'] = base_url().'index.php/marcas/gerenciar/';
-        $config['total_rows'] = $this->marcas_model->count('marcas');
+        $config['total_rows'] = $this->marcas_model->count('tb_marca');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -69,7 +69,7 @@ class Marcas extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->marcas_model->get('marcas', 'idMarcas,marca,cadastro,situacao', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->marcas_model->get('tb_marca', 'marca_codigo,marca_nome,marca_situacao', '', $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'marcas/marcas';
         $this->load->view('tema/topo', $this->data);

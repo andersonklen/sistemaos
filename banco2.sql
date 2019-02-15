@@ -216,11 +216,15 @@ CREATE TABLE IF NOT EXISTS `tb_produto` (
   `produto_estoque_minimo` INT(11) NULL DEFAULT NULL,
   `produto_movimenta_saida`	TINYINT(1) NULL DEFAULT NULL,
   `produto_movimenta_entrada`	TINYINT(1) NULL DEFAULT NULL,
-  `produto_deletado` VARCHAR(3) NULL DEFAULT NULL, 
   `produto_situacao` TINYINT(1) NULL DEFAULT NULL,
-  `produto_data_ultima_alteracao` DATETIME() NULL DEFAULT NULL, 
-  `produto_usuario_cod_ult_alteracao` VARCHAR(50) NULL DEFAULT NULL, 
-  PRIMARY KEY (`produto_codigo`))
+  -- Chaves estrangeiras
+  `produto_marca_codigo` INT(11) NULL,
+  -- Logs
+  `produto_data_cadastro` DATETIME NULL DEFAULT NULL ,
+  `produto_data_ultima_alteracao` DATETIME NULL DEFAULT NULL, 
+  `produto_usuario_cod_ult_alteracao` INT(11) NULL,
+  `produto_deletado` VARCHAR(3) NULL DEFAULT NULL, 
+   PRIMARY KEY (`produto_codigo`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
@@ -391,12 +395,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `marcas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `marcas` (
-  `idMarcas` INT NOT NULL AUTO_INCREMENT,
-  `marca` VARCHAR(100) NULL,
-  `cadastro` DATE NULL,
-  `situacao` TINYINT(1) NULL,
-  PRIMARY KEY (`idMarcas`))
+CREATE TABLE IF NOT EXISTS `tb_marca` (
+  `marca_codigo` INT NOT NULL AUTO_INCREMENT,
+  `marca_nome` VARCHAR(100) NULL,
+  `marca_situacao` TINYINT(1) NULL,
+  -- Logs
+  `marca_data_cadastro` DATETIME NULL DEFAULT NULL ,
+  `marca_data_ultima_alteracao` DATETIME NULL DEFAULT NULL ,
+  `marca_usuario_cod_ult_alteracao` INT(11) NULL,
+  `marca_deletado` VARCHAR(3) NULL DEFAULT NULL, 
+  PRIMARY KEY (`marca_codigo`))
 ENGINE = InnoDB;
 
 
@@ -409,9 +417,13 @@ CREATE TABLE IF NOT EXISTS `tb_equipamento` (
   `equipamento_modelo` VARCHAR(150) NOT NULL,
   `equipamento_observacao` VARCHAR(150) NULL,
   `equipamento_situacao` TINYINT(1) NULL,
+  -- Chaves estrangeiras
+  `equipamento_marca_codigo` INT(11) NULL,
+  -- Logs
+  `equipamento_data_cadastro` DATETIME NULL DEFAULT NULL ,
   `equipamento_data_ultima_alteracao` DATETIME NULL DEFAULT NULL ,
   `equipamento_usuario_cod_ult_alteracao` INT(11) NULL,
-  `equipamento_marca_codigo` INT(11) NULL,
+  `equipamento_deletado` VARCHAR(3) NULL DEFAULT NULL,  
    PRIMARY KEY (`equipamento_codigo`), 
   INDEX `fk_equipanento_marca_codigo_idx` (`equipamento_marca_codigo` ASC), 
   CONSTRAINT `fk_equipanento_marca_codigo`
@@ -6120,7 +6132,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 
 
 INSERT INTO `permissoes` (`idPermissao`, `nome`, `permissoes`, `situacao`, `data`) VALUES
-(1, 'Administrador', 'a:38:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";s:7:"cBackup";s:1:"1";s:8:"rCliente";s:1:"1";s:8:"rProduto";s:1:"1";s:8:"rServico";s:1:"1";s:3:"rOs";s:1:"1";s:6:"rVenda";s:1:"1";s:11:"rFinanceiro";s:1:"1";}', 1, '2014-09-03');
+(1, 'Administrador', 'a:46:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";s:6:"aMarca";s:1:"1";s:6:"eMarca";s:1:"1";s:6:"dMarca";s:1:"1";s:6:"vMarca";s:1:"1";s:12:"aEquipamento";s:1:"1";s:12:"eEquipamento";s:1:"1";s:12:"dEquipamento";s:1:"1";s:12:"vEquipamento";s:1:"1";s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";s:7:"cBackup";s:1:"1";s:8:"rCliente";s:1:"1";s:8:"rProduto";s:1:"1";s:8:"rServico";s:1:"1";s:3:"rOs";s:1:"1";s:6:"rVenda";s:1:"1";s:11:"rFinanceiro";s:1:"1";}', 1, '2014-09-03');
 
 
 

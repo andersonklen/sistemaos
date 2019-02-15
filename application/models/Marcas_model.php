@@ -1,4 +1,4 @@
-<?php
+ <?php
 class Marcas_model extends CI_Model
 {
 
@@ -20,7 +20,7 @@ class Marcas_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->order_by('idMarcas', 'desc');
+        $this->db->order_by('marca_codigo', 'desc');
         $this->db->limit($perpage, $start);
         if ($where) {
             $this->db->where($where);
@@ -34,9 +34,9 @@ class Marcas_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->where('idMarcas', $id);
+        $this->db->where('marca_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('marcas')->row();
+        return $this->db->get('tb_marca')->row();
     }
     
     function add($table, $data)
