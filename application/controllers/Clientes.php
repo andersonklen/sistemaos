@@ -41,7 +41,7 @@ class Clientes extends CI_Controller
         
    
         $config['base_url'] = base_url().'index.php/clientes/gerenciar/';
-        $config['total_rows'] = $this->clientes_model->count('clientes');
+        $config['total_rows'] = $this->clientes_model->count('tb_cliente');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -64,7 +64,7 @@ class Clientes extends CI_Controller
         
         $this->pagination->initialize($config);
         
-        $this->data['results'] = $this->clientes_model->get('clientes', 'idClientes,nomeCliente,documento,telefone,celular,email,rua,numero,bairro,cidade,estado,cep', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->clientes_model->get('tb_cliente', 'cliente_codigo,cliente_nome_razao,cliente_cpf_cnpj,cliente_tel01,cliente_tel02,cliente_email,cliente_logradouro,cliente_numero,cliente_bairro,cliente_cidade,cliente_estado,cliente_cep', '', $config['per_page'], $this->uri->segment(3));
         
         $this->data['view'] = 'clientes/clientes';
         $this->load->view('tema/topo', $this->data);
@@ -87,24 +87,24 @@ class Clientes extends CI_Controller
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
             $data = array(
-                'nomeCliente' => set_value('nomeCliente'),
-                'documento' => set_value('documento'),
-                'telefone' => set_value('telefone'),
-                'celular' => $this->input->post('celular'),
-                'email' => set_value('email'),
-                'rua' => set_value('rua'),
-                'numero' => set_value('numero'),
-                'bairro' => set_value('bairro'),
+                'cliente_nome_razao' => set_value('nomeCliente'),
+                'cliente_cpf_cnpj' => set_value('documento'),
+                'cliente_tel01' => set_value('telefone'),
+                'cliente_tel02' => $this->input->post('celular'),
+                'cliente_email' => set_value('email'),
+                'cliente_logradouro' => set_value('rua'),
+                'cliente_numero' => set_value('numero'),
+                'cliente_bairro' => set_value('bairro'),
                 //'cidade' => set_value('cidade'),
-                'cidade' => $this->input->post('cidade'),//set_value('idCliente'),
+                'cliente_cidade' => $this->input->post('cidade'),//set_value('idCliente'),
                 // 'usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
 
-                'estado' => set_value('estado'),
-                'cep' => set_value('cep'),
-                'dataCadastro' => date('Y-m-d')
+                'cliente_estado' => set_value('estado'),
+                'cliente_cep' => set_value('cep'),
+                'cliente_data_cadastro' => date('Y-m-d')
             );
 
-            if ($this->clientes_model->add('clientes', $data) == true) {
+            if ($this->clientes_model->add('tb_cliente', $data) == true) {
                 $this->session->set_flashdata('success', 'Cliente adicionado com sucesso!');
                 redirect(base_url() . 'index.php/clientes/adicionar/');
             } else {
@@ -137,20 +137,20 @@ class Clientes extends CI_Controller
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
             $data = array(
-                'nomeCliente' => $this->input->post('nomeCliente'),
-                'documento' => $this->input->post('documento'),
-                'telefone' => $this->input->post('telefone'),
-                'celular' => $this->input->post('celular'),
-                'email' => $this->input->post('email'),
-                'rua' => $this->input->post('rua'),
-                'numero' => $this->input->post('numero'),
-                'bairro' => $this->input->post('bairro'),
-                'cidade' => $this->input->post('cidade'),
-                'estado' => $this->input->post('estado'),
-                'cep' => $this->input->post('cep')
+                'cliente_nome_razao' => $this->input->post('nomeCliente'),
+                'cliente_cpf_cnpj' => $this->input->post('documento'),
+                'cliente_tel01' => $this->input->post('telefone'),
+                'cliente_tel02' => $this->input->post('celular'),
+                'cliente_email' => $this->input->post('email'),
+                'cliente_logradouro' => $this->input->post('rua'),
+                'cliente_numero' => $this->input->post('numero'),
+                'cliente_bairro' => $this->input->post('bairro'),
+                'cliente_cidade' => $this->input->post('cidade'),
+                'cliente_estado' => $this->input->post('estado'),
+                'cliente_cep' => $this->input->post('cep')
             );
 
-            if ($this->clientes_model->edit('clientes', $data, 'idClientes', $this->input->post('idClientes')) == true) {
+            if ($this->clientes_model->edit('tb_cliente', $data, 'cliente_codigo', $this->input->post('idClientes')) == true) {
                 $this->session->set_flashdata('success', 'Cliente editado com sucesso!');
                 redirect(base_url() . 'index.php/clientes/editar/'.$this->input->post('idClientes'));
             } else {
@@ -206,7 +206,7 @@ class Clientes extends CI_Controller
 
             //$id = 2;
             // excluindo OSs vinculadas ao cliente
-            $this->db->where('clientes_id', $id);
+            $this->db->where('cliente_codigo', $id);
             $os = $this->db->get('os')->result();
 
         if ($os != null) {
@@ -225,7 +225,7 @@ class Clientes extends CI_Controller
         }
 
             // excluindo Vendas vinculadas ao cliente
-            $this->db->where('clientes_id', $id);
+            $this->db->where('cliente_codigo', $id);
             $vendas = $this->db->get('vendas')->result();
 
         if ($vendas != null) {
@@ -241,12 +241,12 @@ class Clientes extends CI_Controller
         }
 
             //excluindo receitas vinculadas ao cliente
-            $this->db->where('clientes_id', $id);
+            $this->db->where('cliente_codigo', $id);
             $this->db->delete('lancamentos');
 
 
 
-            $this->clientes_model->delete('clientes', 'idClientes', $id);
+            $this->clientes_model->delete('tb_cliente', 'cliente_codigo', $id);
 
             $this->session->set_flashdata('success', 'Cliente excluido com sucesso!');
             redirect(base_url().'index.php/clientes/gerenciar/');

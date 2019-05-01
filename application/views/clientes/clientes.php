@@ -63,19 +63,19 @@ if (!$results) {?>
     <tbody>
         <?php foreach ($results as $r) {
             echo '<tr>';
-            echo '<td>'.$r->idClientes.'</td>';
-            echo '<td>'.$r->nomeCliente.'</td>';
-            echo '<td>'.$r->documento.'</td>';
-            echo '<td>'.$r->telefone.'</td>';
+            echo '<td>'.$r->cliente_codigo.'</td>';
+            echo '<td>'.$r->cliente_nome_razao.'</td>';
+            echo '<td>'.$r->cliente_tel01.'</td>';
+            echo '<td>'.$r->cliente_tel02.'</td>';
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) {
-                echo '<a href="'.base_url().'index.php/clientes/visualizar/'.$r->idClientes.'" style="margin-right: 1%" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
+                echo '<a href="'.base_url().'index.php/clientes/visualizar/'.$r->cliente_codigo.'" style="margin-right: 1%" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eCliente')) {
-                echo '<a href="'.base_url().'index.php/clientes/editar/'.$r->idClientes.'" style="margin-right: 1%" class="btn btn-info tip-top" title="Editar Cliente"><i class="icon-pencil icon-white"></i></a>';
+                echo '<a href="'.base_url().'index.php/clientes/editar/'.$r->cliente_codigo.'" style="margin-right: 1%" class="btn btn-info tip-top" title="Editar Cliente"><i class="icon-pencil icon-white"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dCliente')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" cliente="'.$r->idClientes.'" style="margin-right: 1%" class="btn btn-danger tip-top" title="Excluir Cliente"><i class="icon-remove icon-white"></i></a>';
+                echo '<a href="#modal-excluir" role="button" data-toggle="modal" cliente="'.$r->cliente_codigo.'" style="margin-right: 1%" class="btn btn-danger tip-top" title="Excluir Cliente"><i class="icon-remove icon-white"></i></a>';
             }
 
               

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Map OS</title>
+<title>KLEN</title>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css" />
@@ -20,7 +20,7 @@
 
 <!--Header-part-->
 <div id="header">
-  <h1><a href="">Map OS</a></h1>
+  <h1><a href="">KLEN</a></h1>
 </div>
 <!--close-Header-part--> 
 
@@ -222,7 +222,7 @@
 </div>
 <!--Footer-part-->
 <div class="row-fluid">
-  <div id="footer" class="span12"> <a href="https://github.com/RamonSilva20/mapos" target="_blank"><?php echo date('Y'); ?> &copy; MAP OS - Ramon Silva </a></div>
+  <div id="footer" class="span12"> <a href="https://www.xklen.com.br" target="_blank"><?php echo date('Y'); ?> &copy; KLEN </a></div>
 </div>
 <!--end-Footer-part-->
 

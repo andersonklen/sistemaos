@@ -22,16 +22,15 @@ if (!$results) {?>
     <thead>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Descrição</th>
+            <th>Marca/Fabricante</th>
+            <th>Web Site</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 
         <tr>
-            <td colspan="5">Nenhum Marca Cadastrado</td>
+            <td colspan="5">Nenhum Marca Cadastrada</td>
         </tr>
     </tbody>
 </table>
@@ -47,7 +46,7 @@ if (!$results) {?>
         <span class="icon">
             <i class="icon-wrench"></i>
          </span>
-        <h5>Serviços</h5>
+        <h5>Marcas</h5>
 
      </div>
 
@@ -59,24 +58,20 @@ if (!$results) {?>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
             <th>Nome</th>
-            <th>Preço</th>
-            <th>Descrição</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($results as $r) {
             echo '<tr>';
-            echo '<td>'.$r->idServicos.'</td>';
-            echo '<td>'.$r->nome.'</td>';
-            echo '<td>'.number_format($r->preco, 2, ',', '.').'</td>';
-            echo '<td>'.$r->descricao.'</td>';
+            echo '<td>'.$r->marca_codigo.'</td>';
+            echo '<td>'.$r->marca_nome.'</td>';
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eMarca')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/servicos/editar/'.$r->idMarcas.'" class="btn btn-info tip-top" title="Editar Serviço"><i class="icon-pencil icon-white"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/marcas/editar/'.$r->marca_codigo.'" class="btn btn-info tip-top" title="Editar Marca"><i class="icon-pencil icon-white"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dMarca')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" servico="'.$r->idMarcas.'" class="btn btn-danger tip-top" title="Excluir Serviço"><i class="icon-remove icon-white"></i></a>  ';
+                echo '<a href="#modal-excluir" role="button" data-toggle="modal" servico="'.$r->marca_codigo.'" class="btn btn-danger tip-top" title="Excluir Marca"><i class="icon-remove icon-white"></i></a>  ';
             }
                       
                       
@@ -104,11 +99,11 @@ if (!$results) {?>
   <form action="<?php echo base_url() ?>index.php/marcas/excluir" method="post" >
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h5 id="myModalLabel">Excluir Serviço</h5>
+    <h5 id="myModalLabel">Excluir Marca</h5>
   </div>
   <div class="modal-body">
     <input type="hidden" id="idServico" name="id" value="" />
-    <h5 style="text-align: center">Deseja realmente excluir este serviço?</h5>
+    <h5 style="text-align: center">Deseja realmente excluir esta marca/fabricante?</h5>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>

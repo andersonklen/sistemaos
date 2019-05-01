@@ -62,7 +62,7 @@ class Os extends CI_Controller
         }
         
         $config['base_url'] = base_url().'index.php/os/gerenciar/';
-        $config['total_rows'] = $this->os_model->count('os');
+        $config['total_rows'] = $this->os_model->count('tb_os');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -85,7 +85,7 @@ class Os extends CI_Controller
             
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->os_model->getOs('os', 'idOs,dataInicial,dataFinal,garantia,descricaoProduto,defeito,status,observacoes,laudoTecnico', $where_array, $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->os_model->getOs('tb_os', 'os_codigo,os_data_inicial,os_data_final,os_garantia,os_descricao_produto,os_defeito,os_status,os_observacoes,os_laudo_tecnico', $where_array, $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'os/os';
         $this->load->view('tema/topo', $this->data);
@@ -130,20 +130,20 @@ class Os extends CI_Controller
             }
 
             $data = array(
-                'dataInicial' => $dataInicial,
-                'clientes_id' => $this->input->post('clientes_id'),//set_value('idCliente'),
-                'usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
-                'dataFinal' => $dataFinal,
-                'garantia' => set_value('garantia'),
-                'descricaoProduto' => set_value('descricaoProduto'),
-                'defeito' => set_value('defeito'),
-                'status' => set_value('status'),
-                'observacoes' => set_value('observacoes'),
-                'laudoTecnico' => set_value('laudoTecnico'),
-                'faturado' => 0
+                'os_data_inicial' => $dataInicial,
+                'os_cliente_codigo' => $this->input->post('clientes_id'),//set_value('idCliente'),
+                'os_usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
+                'os_data_final' => $dataFinal,
+                'os_garantia' => set_value('garantia'),
+                'os_descricao_produto' => set_value('descricaoProduto'),
+                'os_defeito' => set_value('defeito'),
+                'os_status' => set_value('status'),
+                'os_observacoes' => set_value('observacoes'),
+                'os_laudo_tecnico' => set_value('laudoTecnico'),
+                'os_faturado' => 0
             );
 
-            if (is_numeric($id = $this->os_model->add('os', $data, true))) {
+            if (is_numeric($id = $this->os_model->add('tb_os', $data, true))) {
                 $this->session->set_flashdata('success', 'OS adicionada com sucesso, você pode adicionar produtos ou serviços a essa OS nas abas de "Produtos" e "Serviços"!');
                 redirect('os/editar/'.$id);
 
@@ -167,19 +167,19 @@ class Os extends CI_Controller
             echo json_encode($json);
         } else {
             $data = array(
-                'dataInicial' => set_value('dataInicial'),
-                'clientes_id' => $this->input->post('clientes_id'),//set_value('idCliente'),
-                'usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
-                'dataFinal' => set_value('dataFinal'),
-                'garantia' => set_value('garantia'),
-                'descricaoProduto' => set_value('descricaoProduto'),
-                'defeito' => set_value('defeito'),
-                'status' => set_value('status'),
-                'observacoes' => set_value('observacoes'),
-                'laudoTecnico' => set_value('laudoTecnico')
+                'os_data_inicial' => set_value('dataInicial'),
+                'os_cliente_codigo' => $this->input->post('clientes_id'),//set_value('idCliente'),
+                'os_usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
+                'os_data_final' => set_value('dataFinal'),
+                'os_garantia' => set_value('garantia'),
+                'os_descricao_produto' => set_value('descricaoProduto'),
+                'os_defeito' => set_value('defeito'),
+                'os_status' => set_value('status'),
+                'os_observacoes' => set_value('observacoes'),
+                'os_laudo_tecnico' => set_value('laudoTecnico')
             );
 
-            if (is_numeric($id = $this->os_model->add('os', $data, true))) {
+            if (is_numeric($id = $this->os_model->add('tb_os', $data, true))) {
                 $json = array("result"=> true, "id"=> $id);
                 echo json_encode($json);
 
@@ -228,19 +228,19 @@ class Os extends CI_Controller
             }
 
             $data = array(
-                'dataInicial' => $dataInicial,
-                'dataFinal' => $dataFinal,
-                'garantia' => $this->input->post('garantia'),
-                'descricaoProduto' => $this->input->post('descricaoProduto'),
-                'defeito' => $this->input->post('defeito'),
-                'status' => $this->input->post('status'),
-                'observacoes' => $this->input->post('observacoes'),
-                'laudoTecnico' => $this->input->post('laudoTecnico'),
-                'usuarios_id' => $this->input->post('usuarios_id'),
-                'clientes_id' => $this->input->post('clientes_id')
+                'os_data_inicial' => $dataInicial,
+                'os_data_final' => $dataFinal,
+                'os_garantia' => $this->input->post('garantia'),
+                'os_descricao_produto' => $this->input->post('descricaoProduto'),
+                'os_defeito' => $this->input->post('defeito'),
+                'os_status' => $this->input->post('status'),
+                'os_observacoes' => $this->input->post('observacoes'),
+                'os_laudo_tecnico' => $this->input->post('laudoTecnico'),
+                'os_usuarios_id' => $this->input->post('usuarios_id'),
+                'os_cliente_codigo' => $this->input->post('clientes_id')
             );
 
-            if ($this->os_model->edit('os', $data, 'idOs', $this->input->post('idOs')) == true) {
+            if ($this->os_model->edit('tb_os', $data, 'os_codigo', $this->input->post('idOs')) == true) {
                 $this->session->set_flashdata('success', 'Os editada com sucesso!');
                 redirect(base_url() . 'index.php/os/editar/'.$this->input->post('idOs'));
             } else {
@@ -249,7 +249,7 @@ class Os extends CI_Controller
         }
 
         $this->data['result'] = $this->os_model->getById($this->uri->segment(3));
-        $this->data['produtos'] = $this->os_model->getProdutos($this->uri->segment(3));
+        $this->data['tb_produto'] = $this->os_model->getProdutos($this->uri->segment(3));
         $this->data['servicos'] = $this->os_model->getServicos($this->uri->segment(3));
         $this->data['anexos'] = $this->os_model->getAnexos($this->uri->segment(3));
         $this->data['view'] = 'os/editarOs';
@@ -406,7 +406,7 @@ class Os extends CI_Controller
         );
 
         if ($this->os_model->add('produtos_os', $data) == true) {
-            $sql = "UPDATE produtos set estoque = estoque - ? WHERE idProdutos = ?";
+            $sql = "UPDATE tb_produto set estoque = estoque - ? WHERE produto_codigo = ?";
             $this->db->query($sql, array($quantidade, $produto));
             
             echo json_encode(array('result'=> true));

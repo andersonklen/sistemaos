@@ -108,6 +108,18 @@ $config = array('clientes' => array(array(
                                     'rules'=>'trim'
                                 ))
                 ,
+
+                'marcas' => array(array(
+                                    'field'=>'vw_marca_nome',
+                                    'label'=>'',
+                                    'rules'=>'required|trim'
+                                ),                                
+                                array(
+                                    'field'=>'vw_marca_website',
+                                    'label'=>'',
+                                    'rules'=>'trim'
+                                ))
+                ,
                 'usuarios' => array(array(
                                     'field'=>'nome',
                                     'label'=>'Nome',

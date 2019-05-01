@@ -56,9 +56,9 @@ class Mapos_model extends CI_Model
     {
          $data = array();
          // buscando clientes
-         $this->db->like('nomeCliente', $termo);
+         $this->db->like('cliente_nome_razao', $termo);
          $this->db->limit(5);
-         $data['clientes'] = $this->db->get('clientes')->result();
+         $data['clientes'] = $this->db->get('tb_cliente')->result();
 
          // buscando os
          $this->db->like('idOs', $termo);
@@ -121,9 +121,9 @@ class Mapos_model extends CI_Model
 
     function getOsAbertas()
     {
-        $this->db->select('os.*, clientes.nomeCliente');
+        $this->db->select('os.*, tb_cliente.cliente_nome_razao');
         $this->db->from('os');
-        $this->db->join('clientes', 'clientes.idClientes = os.clientes_id');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = os.cliente_codigo');
         $this->db->where('os.status', 'Aberto');
         $this->db->limit(10);
         return $this->db->get()->result();

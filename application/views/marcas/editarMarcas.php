@@ -9,32 +9,25 @@
                                           </div>
                                           <div class="widget-content nopadding">
                                                 <?php echo $custom_error; ?>
-                                                <form action="<?php echo current_url(); ?>" id="formServico" method="post" class="form-horizontal" >
-                                                    <?php echo form_hidden('idServicos', $result->idServicos) ?>
+                                                <form action="<?php echo current_url(); ?>" id="formMarca" method="post" class="form-horizontal" >
+                                                    <?php echo form_hidden('vw_hi_Marcas', $result->marca_codigo) ?>
                                                     <div class="control-group">
-                                                            <label for="nome" class="control-label">Nome<span class="required">*</span></label>
+                                                            <label for="nome" class="control-label">Marca/Fabricante<span class="required">*</span></label>
                                                             <div class="controls">
-                                                                  <input id="nome" type="text" name="nome" value="<?php echo $result->nome ?>"  />
+                                                                  <input id="vw_marca_nome" type="text" name="vw_marca_nome" value="<?php echo $result->marca_nome ?>"  />
                                                             </div>
                                                       </div>
                                                       <div class="control-group">
-                                                            <label for="preco" class="control-label"><span class="required">Preço*</span></label>
+                                                            <label for="website" class="control-label"><span class="required">Web Site</span></label>
                                                             <div class="controls">
-                                                                <input id="preco" class="money" type="text" name="preco" value="<?php echo $result->preco ?>"  />
+                                                                <input id="vw_marca_website" class="money" type="text" name="vw_marca_website" value="<?php echo $result->marca_website ?>"  />
                                                             </div>
                                                       </div>
-                                                      <div class="control-group">
-                                                            <label for="descricao" class="control-label">Descrição</label>
-                                                            <div class="controls">
-                                                                  <input id="descricao" type="text" name="descricao" value="<?php echo $result->descricao ?>"  />
-                                                            </div>
-                                                      </div>
-
-                                                      <div class="form-actions">
+                                                                     <div class="form-actions">
                                                       <div class="span12">
                                                             <div class="span6 offset3">
                                                             <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> Alterar</button>
-                                                            <a href="<?php echo base_url()?>index.php/servicos" id="btnAdicionar" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
+                                                            <a href="<?php echo base_url()?>index.php/marcas" id="btnAdicionar" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
                                                             </div>
                                                       </div>
                                                       </div>
@@ -51,12 +44,10 @@
           $(".money").maskMoney();
            $('#formServico').validate({
             rules :{
-                  nome:{ required: true},
-                  preco:{ required: true}
+                  vw_marca_nome:{ required: true},
             },
             messages:{
-                  nome :{ required: 'Campo Requerido.'},
-                  preco :{ required: 'Campo Requerido.'}
+                  vw_marca_nome :{ required: 'Campo Requerido.'},
             },
 
             errorClass: "help-inline",

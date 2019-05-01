@@ -1,3 +1,17 @@
+SELECT ``.*, `cliente`.`cliente_nome_razao` FROM `os` JOIN `tb_cliente` ON `cliente`.`cliente_codigo` = `os`.`clientes_codigo` WHERE `os`.`status` = 'Aberto' LIMIT 10
+
+SELECT `idOs`, `dataInicial`, `dataFinal`, `garantia`, `descricaoProduto`, `defeito`, `status`, `observacoes`, `laudoTecnico`, `tb_cliente`.`cliente_nome_razao`, `usuarios`.`nome` FROM `os` JOIN `tb_cliente` 
+ON `tb_cliente`.`cliente_codigo` = `os`.`cliente_codigo` LEFT JOIN `usuarios` ON `usuarios`.`idUsuarios` = `os`.`usuarios_id` ORDER BY `os`.`idOs` DESC LIMIT 10
+
+        $this->db->select('os.*, cliente.cliente_nome_razao');
+        $this->db->from('os');
+        $this->db->join('tb_cliente', 'cliente.cliente_codigo = os.clientes_codigo');
+        $this->db->where('os.status', 'Aberto');
+        $this->db->limit(10);
+        return $this->db->get()->result();
+        
+        
+
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
@@ -23,23 +37,25 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 -- -----------------------------------------------------
 -- Table `clientes`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `clientes` (
-  `idClientes` INT(11) NOT NULL AUTO_INCREMENT,
-  `nomeCliente` VARCHAR(255) NOT NULL,
-  `sexo` VARCHAR(20) NULL,
-  `pessoa_fisica` BOOLEAN NOT NULL DEFAULT 1,
-  `documento` VARCHAR(20) NOT NULL,
-  `telefone` VARCHAR(20) NOT NULL,
-  `celular` VARCHAR(20) NULL DEFAULT NULL,
-  `email` VARCHAR(100) NOT NULL,
-  `dataCadastro` DATE NULL DEFAULT NULL,
-  `rua` VARCHAR(70) NULL DEFAULT NULL,
-  `numero` VARCHAR(15) NULL DEFAULT NULL,
-  `bairro` VARCHAR(45) NULL DEFAULT NULL,
-  `cidade` VARCHAR(45) NULL DEFAULT NULL,
-  `estado` VARCHAR(20) NULL DEFAULT NULL,
-  `cep` VARCHAR(20) NULL DEFAULT NULL,
-  PRIMARY KEY (`idClientes`))
+CREATE TABLE IF NOT EXISTS `tb_cliente` (
+  `cliente_codigo` INT(11) NOT NULL AUTO_INCREMENT,
+  `cliente_nome_razao` VARCHAR(255) NOT NULL,
+  `cliente_sexo` VARCHAR(20) NULL,
+  `cliente_tipo` BOOLEAN NOT NULL DEFAULT 1,
+  `cliente_cpf_cnpj` VARCHAR(20) NOT NULL,
+  `cliente_rg_inscricao` VARCHAR(20) NOT NULL,
+  `cliente_tel01` VARCHAR(20) NOT NULL,
+  `cliente_tel02` VARCHAR(20) NULL DEFAULT NULL,
+  `cliente_email` VARCHAR(100) NOT NULL,
+  `cliente_data_cadastro` DATE NULL DEFAULT NULL,
+  `cliente_data_nascimento` DATE NULL DEFAULT NULL,
+  `cliente_logradouro` VARCHAR(70) NULL DEFAULT NULL,
+  `cliente_numero` VARCHAR(15) NULL DEFAULT NULL,
+  `cliente_bairro` VARCHAR(45) NULL DEFAULT NULL,
+  `cliente_cidade` VARCHAR(45) NULL DEFAULT NULL,
+  `cliente_estado` VARCHAR(20) NULL DEFAULT NULL,
+  `cliente_cep` VARCHAR(20) NULL DEFAULT NULL,
+  PRIMARY KEY (`cliente_codigo`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2
 DEFAULT CHARACTER SET = latin1;
@@ -89,17 +105,17 @@ CREATE TABLE IF NOT EXISTS `lancamentos` (
   `forma_pgto` VARCHAR(100) NULL DEFAULT NULL,
   `tipo` VARCHAR(45) NULL DEFAULT NULL,
   `anexo` VARCHAR(250) NULL,
-  `clientes_id` INT(11) NULL DEFAULT NULL,
+  `cliente_codigo` INT(11) NULL DEFAULT NULL,
   `categorias_id` INT NULL,
   `contas_id` INT NULL,
   `vendas_id` INT NULL,
   PRIMARY KEY (`idLancamentos`),
-  INDEX `fk_lancamentos_clientes1` (`clientes_id` ASC),
+  INDEX `fk_lancamentos_clientes1` (`cliente_codigo` ASC),
   INDEX `fk_lancamentos_categorias1_idx` (`categorias_id` ASC),
   INDEX `fk_lancamentos_contas1_idx` (`contas_id` ASC),
   CONSTRAINT `fk_lancamentos_clientes1`
-    FOREIGN KEY (`clientes_id`)
-    REFERENCES `clientes` (`idClientes`)
+    FOREIGN KEY (`cliente_codigo`)
+    REFERENCES `tb_cliente` (`cliente_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_lancamentos_categorias1`
@@ -164,37 +180,37 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `os`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `os` (
-  `idOs` INT(11) NOT NULL AUTO_INCREMENT,
-  `dataInicial` DATE NULL DEFAULT NULL,
-  `dataFinal` DATE NULL DEFAULT NULL,
-  `garantia` VARCHAR(45) NULL DEFAULT NULL,
-  `descricaoProduto` TEXT NULL DEFAULT NULL,
-  `defeito` TEXT NULL DEFAULT NULL,
-  `status` VARCHAR(45) NULL DEFAULT NULL,
-  `observacoes` TEXT NULL DEFAULT NULL,
-  `laudoTecnico` TEXT NULL DEFAULT NULL,
-  `valorTotal` VARCHAR(15) NULL DEFAULT NULL,
-  `clientes_id` INT(11) NOT NULL,
-  `usuarios_id` INT(11) NOT NULL,
-  `lancamento` INT(11) NULL DEFAULT NULL,
-  `faturado` TINYINT(1) NOT NULL,
-  PRIMARY KEY (`idOs`),
-  INDEX `fk_os_clientes1` (`clientes_id` ASC),
-  INDEX `fk_os_usuarios1` (`usuarios_id` ASC),
-  INDEX `fk_os_lancamentos1` (`lancamento` ASC),
+CREATE TABLE IF NOT EXISTS `tb_os` (
+  `os_codigo` INT(11) NOT NULL AUTO_INCREMENT,
+  `os_data_inicial` DATE NULL DEFAULT NULL,
+  `os_data_final` DATE NULL DEFAULT NULL,
+  `os_garantia` VARCHAR(45) NULL DEFAULT NULL,
+  `os_descricao_produto` TEXT NULL DEFAULT NULL,
+  `os_defeito` TEXT NULL DEFAULT NULL,
+  `os_status` VARCHAR(45) NULL DEFAULT NULL,
+  `os_observacoes` TEXT NULL DEFAULT NULL,
+  `os_laudo_tecnico` TEXT NULL DEFAULT NULL,
+  `os_valor_total` VARCHAR(15) NULL DEFAULT NULL,
+  `os_cliente_codigo` INT(11) NOT NULL,
+  `os_usuarios_id` INT(11) NOT NULL,
+  `os_lancamento` INT(11) NULL DEFAULT NULL,
+  `os_faturado` TINYINT(1) NOT NULL,
+  PRIMARY KEY (`os_codigo`),
+  INDEX `fk_os_clientes1` (`os_cliente_codigo` ASC),
+  INDEX `fk_os_usuarios1` (`os_usuarios_id` ASC),
+  INDEX `fk_os_lancamentos1` (`os_lancamento` ASC),
   CONSTRAINT `fk_os_clientes1`
-    FOREIGN KEY (`clientes_id`)
-    REFERENCES `clientes` (`idClientes`)
+    FOREIGN KEY (`os_cliente_codigo`)
+    REFERENCES `tb_cliente` (`cliente_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_os_lancamentos1`
-    FOREIGN KEY (`lancamento`)
+    FOREIGN KEY (`os_lancamento`)
     REFERENCES `lancamentos` (`idLancamentos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_os_usuarios1`
-    FOREIGN KEY (`usuarios_id`)
+    FOREIGN KEY (`os_usuarios_id`)
     REFERENCES `usuarios` (`idUsuarios`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
@@ -304,16 +320,16 @@ CREATE TABLE IF NOT EXISTS `vendas` (
   `valorTotal` VARCHAR(45) NULL,
   `desconto` VARCHAR(45) NULL,
   `faturado` TINYINT(1) NULL,
-  `clientes_id` INT(11) NOT NULL,
+  `cliente_codigo` INT(11) NOT NULL,
   `usuarios_id` INT(11) NULL,
   `lancamentos_id` INT(11) NULL,
   PRIMARY KEY (`idVendas`),
-  INDEX `fk_vendas_clientes1` (`clientes_id` ASC),
+  INDEX `fk_vendas_clientes1` (`cliente_codigo` ASC),
   INDEX `fk_vendas_usuarios1` (`usuarios_id` ASC),
   INDEX `fk_vendas_lancamentos1` (`lancamentos_id` ASC),
   CONSTRAINT `fk_vendas_clientes1`
-    FOREIGN KEY (`clientes_id`)
-    REFERENCES `clientes` (`idClientes`)
+    FOREIGN KEY (`cliente_codigo`)
+    REFERENCES `tb_cliente` (`cliente_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_vendas_usuarios1`
@@ -393,11 +409,12 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `marcas`
+-- Table `marca`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tb_marca` (
   `marca_codigo` INT NOT NULL AUTO_INCREMENT,
   `marca_nome` VARCHAR(100) NULL,
+  `marca_website` VARCHAR(100) NULL,
   `marca_situacao` TINYINT(1) NULL,
   -- Logs
   `marca_data_cadastro` DATETIME NULL DEFAULT NULL ,
@@ -3196,7 +3213,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (2630, 'Curral de Cima', 15),
 (2631, 'Curral Velho', 15),
 (2632, 'Damião', 15),
-(2633, 'Desterro', 15),
+(2n33, 'Desterro', 15),
 (2634, 'Diamante', 15),
 (2635, 'Dona Inês', 15),
 (2636, 'Duas Estradas', 15),
@@ -3431,7 +3448,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (2865, 'Congonhinhas', 18),
 (2866, 'Conselheiro Mairinck', 18),
 (2867, 'Contenda', 18),
-(2868, 'Corbélia', 18),
+(2868, 'Corbélia',¨18),
 (2869, 'Cornélio Procópio', 18),
 (2870, 'Coronel Domingos Soares', 18),
 (2871, 'Coronel Vivida', 18),
@@ -3520,7 +3537,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (2954, 'Jaguariaíva', 18),
 (2955, 'Jandaia do Sul', 18),
 (2956, 'Janiópolis', 18),
-(2957, 'Japira', 18),
+(2957, 'Ja0ira', 18),
 (2958, 'Japurá', 18),
 (2959, 'Jardim Alegre', 18),
 (2960, 'Jardim Olinda', 18),

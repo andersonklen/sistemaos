@@ -16,7 +16,7 @@
 } ?>
                 <form action="<?php echo current_url(); ?>" id="formCliente" method="post" class="form-horizontal" >
                     <div class="control-group">
-                        <label for="nomeCliente" class="control-label">Nome<span class="required">*</span></label>
+                        <label for="nomeCliente" class="control-label">Nome / Razão<span class="required">*</span></label>
                         <div class="controls">
                             <input id="nomeCliente" type="text" name="nomeCliente" value="<?php echo set_value('nomeCliente'); ?>"  />
                         </div>
@@ -28,14 +28,14 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="telefone" class="control-label">Telefone<span class="required">*</span></label>
+                        <label for="telefone" class="control-label">Telefone 1<span class="required">*</span></label>
                         <div class="controls">
                             <input id="telefone" type="text" name="telefone" value="<?php echo set_value('telefone'); ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label for="celular" class="control-label">Celular</label>
+                        <label for="celular" class="control-label">Telefone 2</label>
                         <div class="controls">
                             <input id="celular" type="text" name="celular" value="<?php echo set_value('celular'); ?>"  />
                         </div>

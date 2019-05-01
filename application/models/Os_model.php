@@ -17,11 +17,11 @@ class Os_model extends CI_Model
     function get($table, $fields, $where = '', $perpage = 0, $start = 0, $one = false, $array = 'array')
     {
         
-        $this->db->select($fields.',clientes.nomeCliente');
+        $this->db->select($fields.',tb_cliente.cliente_nome_razao');
         $this->db->from($table);
-        $this->db->join('clientes', 'clientes.idClientes = os.clientes_id');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_clientes_codigo');
         $this->db->limit($perpage, $start);
-        $this->db->order_by('idOs', 'desc');
+        $this->db->order_by('os_codigo', 'desc');
         if ($where) {
             $this->db->where($where);
         }
@@ -40,10 +40,10 @@ class Os_model extends CI_Model
         if ($where) {
 
             if (array_key_exists('pesquisa', $where)) {
-                $this->db->select('idClientes');
-                $this->db->like('nomeCliente', $where['pesquisa']);
+                $this->db->select('cliente_codigo');
+                $this->db->like('cliente_nome_razao', $where['pesquisa']);
                 $this->db->limit(5);
-                $clientes = $this->db->get('clientes')->result();
+                $clientes = $this->db->get('tb_cliente')->result();
 
                 foreach ($clientes as $c) {
                     array_push($lista_clientes, $c->idClientes);
@@ -52,10 +52,10 @@ class Os_model extends CI_Model
             }
         }
 
-        $this->db->select($fields.',clientes.nomeCliente, usuarios.nome');
+        $this->db->select($fields.',tb_cliente.cliente_nome_razao, usuarios.nome');
         $this->db->from($table);
-        $this->db->join('clientes', 'clientes.idClientes = os.clientes_id');
-        $this->db->join('usuarios', 'usuarios.idUsuarios = os.usuarios_id', 'left');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
+        $this->db->join('usuarios', 'usuarios.idUsuarios = tb_os.os_usuarios_id', 'left');
 
         // condicionais da pesquisa
 
@@ -67,7 +67,7 @@ class Os_model extends CI_Model
         // condicional de clientes
         if (array_key_exists('pesquisa', $where)) {
             if ($lista_clientes != null) {
-                $this->db->where_in('os.clientes_id', $lista_clientes);
+                $this->db->where_in('tb_os.os_cliente_codigo', $lista_clientes);
             }
         }
 
@@ -84,7 +84,7 @@ class Os_model extends CI_Model
         $this->db->limit($perpage, $start);
 
 
-        $this->db->order_by('os.idOs', 'desc');
+        $this->db->order_by('tb_os.os_codigo', 'desc');
         $query = $this->db->get();
 
         $result =  !$one  ? $query->result() : $query->row();
@@ -93,11 +93,11 @@ class Os_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->select('os.*, clientes.*, usuarios.telefone, usuarios.email as email_responsavel,usuarios.nome');
-        $this->db->from('os');
-        $this->db->join('clientes', 'clientes.idClientes = os.clientes_id');
-        $this->db->join('usuarios', 'usuarios.idUsuarios = os.usuarios_id');
-        $this->db->where('os.idOs', $id);
+        $this->db->select('tb_os.*, tb_cliente.*, usuarios.telefone, usuarios.email as email_responsavel,usuarios.nome');
+        $this->db->from('tb_os');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
+        $this->db->join('usuarios', 'usuarios.idUsuarios = tb_os.os_usuarios_id');
+        $this->db->where('tb_os.os_codigo', $id);
         $this->db->limit(1);
         return $this->db->get()->row();
     }
@@ -200,11 +200,11 @@ class Os_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('nomeCliente', $q);
-        $query = $this->db->get('clientes');
+        $this->db->like('cliente_nome_razao', $q);
+        $query = $this->db->get('tb_cliente');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['nomeCliente'].' | Telefone: '.$row['telefone'],'id'=>$row['idClientes']);
+                $row_set[] = array('label'=>$row['cliente_nome_razao'].' | cliente_tel01: '.$row['cliente_tel01'],'id'=>$row['cliente_codigo']);
             }
             echo json_encode($row_set);
         }

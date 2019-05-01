@@ -98,10 +98,10 @@ if (!$results) {?>
     </thead>  
     <tbody>
         <?php foreach ($results as $r) {
-            $dataInicial = date(('d/m/Y'), strtotime($r->dataInicial));
-            $dataFinal = date(('d/m/Y'), strtotime($r->dataFinal));
+            $dataInicial = date(('d/m/Y'), strtotime($r->os_data_inicial));
+            $dataFinal = date(('d/m/Y'), strtotime($r->os_data_final));
 
-            switch ($r->status) {
+            switch ($r->os_status) {
                 case 'Aberto':
                     $cor = '#8A9B0F';
                     break;
@@ -126,23 +126,23 @@ if (!$results) {?>
             }
 
             echo '<tr>';
-            echo '<td>'.$r->idOs.'</td>';
-            echo '<td>'.$r->nomeCliente.'</td>';
+            echo '<td>'.$r->os_codigo.'</td>';
+            echo '<td>'.$r->cliente_nome_razao.'</td>';
             echo '<td>'.$r->nome.'</td>';
             echo '<td>'.$dataInicial.'</td>';
             echo '<td>'.$dataFinal.'</td>';
-            echo '<td><span class="badge" style="background-color: '.$cor.'; border-color: '.$cor.'">'.$r->status.'</span> </td>';
+            echo '<td><span class="badge" style="background-color: '.$cor.'; border-color: '.$cor.'">'.$r->os_status.'</span> </td>';
             
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/visualizar/'.$r->idOs.'" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/imprimir/'.$r->idOs.'" target="_blank" class="btn btn-inverse tip-top" title="Imprimir"><i class="icon-print"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/visualizar/'.$r->os_codigo.'" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/imprimir/'.$r->os_codigo.'" target="_blank" class="btn btn-inverse tip-top" title="Imprimir"><i class="icon-print"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eOs')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/editar/'.$r->idOs.'" class="btn btn-info tip-top" title="Editar OS"><i class="icon-pencil icon-white"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/editar/'.$r->os_codigo.'" class="btn btn-info tip-top" title="Editar OS"><i class="icon-pencil icon-white"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dOs')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" os="'.$r->idOs.'" class="btn btn-danger tip-top" title="Excluir OS"><i class="icon-remove icon-white"></i></a>  ';
+                echo '<a href="#modal-excluir" role="button" data-toggle="modal" os="'.$r->os_codigo.'" class="btn btn-danger tip-top" title="Excluir OS"><i class="icon-remove icon-white"></i></a>  ';
             }
                                
                       

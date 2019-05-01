@@ -5,7 +5,7 @@
             <li><a data-toggle="tab" href="#tab2">Ordens de Serviço</a></li>
             <div class="buttons">
                     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eCliente')) {
-                        echo '<a title="Icon Title" class="btn btn-mini btn-info" href="'.base_url().'index.php/clientes/editar/'.$result->idClientes.'"><i class="icon-pencil icon-white"></i> Editar</a>';
+                        echo '<a title="Icon Title" class="btn btn-mini btn-info" href="'.base_url().'index.php/clientes/editar/'.$result->cliente_codigo.'"><i class="icon-pencil icon-white"></i> Editar</a>';
 } ?>
                     
             </div>
@@ -19,7 +19,7 @@
                                 <div class="accordion-heading">
                                     <div class="widget-title">
                                         <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse">
-                                            <span class="icon"><i class="icon-list"></i></span><h5>Dados Pessoais</h5>
+                                            <span class="icon"><i class="icon-list"></i></span><h5>Dados do Cliente</h5>
                                         </a>
                                     </div>
                                 </div>
@@ -29,15 +29,15 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="text-align: right; width: 30%"><strong>Nome</strong></td>
-                                                    <td><?php echo $result->nomeCliente ?></td>
+                                                    <td><?php echo $result->cliente_nome_razao ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: right"><strong>Documento</strong></td>
-                                                    <td><?php echo $result->documento ?></td>
+                                                    <td style="text-align: right"><strong>CPF/CNPJ</strong></td>
+                                                    <td><?php echo $result->cliente_cpf_cnpj ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>Data de Cadastro</strong></td>
-                                                    <td><?php echo date('d/m/Y', strtotime($result->dataCadastro)) ?></td>
+                                                    <td><?php echo date('d/m/Y', strtotime($result->cliente_data_cadastro)) ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -57,16 +57,16 @@
                                         <table class="table table-bordered">
                                             <tbody>
                                                 <tr>
-                                                    <td style="text-align: right; width: 30%"><strong>Telefone</strong></td>
-                                                    <td><?php echo $result->telefone ?></td>
+                                                    <td style="text-align: right; width: 30%"><strong>Telefone 1</strong></td>
+                                                    <td><?php echo $result->cliente_tel01 ?></td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="text-align: right"><strong>Celular</strong></td>
-                                                    <td><?php echo $result->celular ?></td>
+                                                    <td style="text-align: right"><strong>Telefone 2</strong></td>
+                                                    <td><?php echo $result->cliente_tel01 ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>Email</strong></td>
-                                                    <td><?php echo $result->email ?></td>
+                                                    <td><?php echo $result->cliente_email ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -87,23 +87,23 @@
                                             <tbody>
                                                 <tr>
                                                     <td style="text-align: right; width: 30%"><strong>Rua</strong></td>
-                                                    <td><?php echo $result->rua ?></td>
+                                                    <td><?php echo $result->cliente_logradouro ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>Número</strong></td>
-                                                    <td><?php echo $result->numero ?></td>
+                                                    <td><?php echo $result->cliente_numero ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>Bairro</strong></td>
-                                                    <td><?php echo $result->bairro ?></td>
+                                                    <td><?php echo $result->cliente_bairro ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>Cidade</strong></td>
-                                                    <td><?php echo $result->cidade ?> - <?php echo $result->estado ?></td>
+                                                    <td><?php echo $result->cliente_cidade ?> - <?php echo $result->cliente_estado ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="text-align: right"><strong>CEP</strong></td>
-                                                    <td><?php echo $result->cep ?></td>
+                                                    <td><?php echo $result->cliente_cep ?></td>
                                                 </tr>
                                             </tbody>
                                         </table>

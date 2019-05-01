@@ -15,14 +15,15 @@ class Mapos extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mapos_model', '', true);
-
+        $this->output->enable_profiler(TRUE);
     }
 
     public function index()
     {
-        if ((!session_id()) || (!$this->session->userdata('logado'))) {
-            redirect('mapos/login');
-        }
+
+        //if ((!session_id()) || (!$this->session->userdata('logado'))) {
+        //    redirect('mapos/login');
+        //}
 
         $this->data['ordens'] = $this->mapos_model->getOsAbertas();
         $this->data['produtos'] = $this->mapos_model->getProdutosMinimo();

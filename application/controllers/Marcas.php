@@ -20,6 +20,9 @@ class Marcas extends CI_Controller
         $this->load->helper(array('form', 'codegen_helper'));
         $this->load->model('marcas_model', '', true);
         $this->data['menuMarcas'] = 'Marcas';
+
+        // Habilitar o debug
+        $this->output->enable_profiler(TRUE);
     
 }
     
@@ -80,7 +83,7 @@ class Marcas extends CI_Controller
     
     function adicionar()
     {
-        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'aMarcas')) {
+        if (!$this->permission->checkPermission($this->session->userdata('permissao'), 'aMarca')) {
             $this->session->set_flashdata('error', 'Você não tem permissão para adicionar marcas.');
             redirect(base_url());
         }
@@ -91,23 +94,20 @@ class Marcas extends CI_Controller
         if ($this->form_validation->run('marcas') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
-            $preco = $this->input->post('preco');
-            $preco = str_replace(",", "", $preco);
-
+            end;
             $data = array(
-                'nome' => set_value('nome'),
-                'descricao' => set_value('descricao'),
-                'preco' => $preco
+                'marca_nome' => set_value('vw_marca_nome'),
+                'marca_website' => set_value('vw_marca_website'),
             );
 
-            if ($this->marcas_model->add('marcas', $data) == true) {
-                $this->session->set_flashdata('success', 'Serviço adicionado com sucesso!');
+            if ($this->marcas_model->add('tb_marca', $data) == true) {
+                $this->session->set_flashdata('success', 'Marca adicionada com sucesso!');
                 redirect(base_url() . 'index.php/marcas/adicionar/');
             } else {
                 $this->data['custom_error'] = '<div class="form_error"><p>Ocorreu um erro.</p></div>';
             }
         }
-        $this->data['view'] = 'marcas/adicionarMarca';
+        $this->data['view'] = 'marcas/adicionarMarcas';
         $this->load->view('tema/topo', $this->data);
 
     }
@@ -124,17 +124,15 @@ class Marcas extends CI_Controller
         if ($this->form_validation->run('marcas') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
-            $preco = $this->input->post('preco');
-            $preco = str_replace(",", "", $preco);
             $data = array(
-                'nome' => $this->input->post('nome'),
-                'descricao' => $this->input->post('descricao'),
-                'preco' => $preco
+                'marca_nome' => $this->input->post('vw_marca_nome'),
+                'marca_website' => $this->input->post('vw_marca_website'),
             );
 
-            if ($this->marcas_model->edit('marcas', $data, 'idMarcas', $this->input->post('idMarcas')) == true) {
-                $this->session->set_flashdata('success', 'Serviço editado com sucesso!');
-                redirect(base_url() . 'index.php/marcas/editar/'.$this->input->post('idMarcas'));
+            if ($this->marcas_model->edit('tb_marca', $data, 'marca_codigo', $this->input->post('vw_hi_Marcas')) == true) {
+                $this->session->set_flashdata('success', 'Marca/Fabrincante editado com sucesso!');
+                //redirect(base_url() . 'index.php/marcas/editar/'.$this->input->post('marca_codigo'));
+                redirect(base_url() . 'index.php/marcas/');
             } else {
                 $this->data['custom_error'] = '<div class="form_error"><p>Ocorreu um errro.</p></div>';
             }
@@ -142,7 +140,7 @@ class Marcas extends CI_Controller
 
         $this->data['result'] = $this->marcas_model->getById($this->uri->segment(3));
 
-        $this->data['view'] = 'marcas/editarMarca';
+        $this->data['view'] = 'marcas/editarMarcas';
         $this->load->view('tema/topo', $this->data);
 
     }
@@ -163,10 +161,10 @@ class Marcas extends CI_Controller
             redirect(base_url().'index.php/marcas/gerenciar/');
         }
 
-        $this->db->where('marcas_id', $id);
-        $this->db->delete('marcas_os');
+        $this->db->where('marca_codigo', $id);
+        $this->db->delete('tb_marca');
 
-        $this->marcas_model->delete('marcas', 'idMarcas', $id);
+        $this->marcas_model->delete('tb_marca', 'marca_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'Serviço excluido com sucesso!');
