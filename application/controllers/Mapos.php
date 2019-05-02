@@ -15,15 +15,16 @@ class Mapos extends CI_Controller
     {
         parent::__construct();
         $this->load->model('mapos_model', '', true);
+        // Debug
         $this->output->enable_profiler(TRUE);
     }
 
     public function index()
     {
 
-        //if ((!session_id()) || (!$this->session->userdata('logado'))) {
-        //    redirect('mapos/login');
-        //}
+        if ((!session_id()) || (!$this->session->userdata('logado'))) {
+            redirect('mapos/login');
+        }
 
         $this->data['ordens'] = $this->mapos_model->getOsAbertas();
         $this->data['produtos'] = $this->mapos_model->getProdutosMinimo();
@@ -89,10 +90,10 @@ class Mapos extends CI_Controller
         $termo = $this->input->get('termo');
 
         $data['results'] = $this->mapos_model->pesquisar($termo);
-        $this->data['produtos'] = $data['results']['produtos'];
+        $this->data['tb_produto'] = $data['results']['produtos'];
         $this->data['servicos'] = $data['results']['servicos'];
-        $this->data['os'] = $data['results']['os'];
-        $this->data['clientes'] = $data['results']['clientes'];
+        $this->data['tb_os'] = $data['results']['os'];
+        $this->data['tb_cliente'] = $data['results']['clientes'];
         $this->data['view'] = 'mapos/pesquisa';
         $this->load->view('tema/topo', $this->data);
 
@@ -117,7 +118,6 @@ class Mapos extends CI_Controller
         header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
         header('Access-Control-Max-Age: 1000');
         header('Access-Control-Allow-Headers: Content-Type');
-
         $this->load->library('form_validation');
         $this->form_validation->set_rules('email', 'E-mail', 'valid_email|required|trim');
         $this->form_validation->set_rules('senha', 'Senha', 'required|trim');
@@ -147,6 +147,8 @@ class Mapos extends CI_Controller
         }
         die();
     }
+
+
 
     public function backup()
     {

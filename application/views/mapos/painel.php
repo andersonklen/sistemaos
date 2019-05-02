@@ -128,14 +128,14 @@
                         <?php if ($ordens != null):?>
                             <?php foreach ($ordens as $o): ?>
                                 <tr>
-                                    <td><?=$o->idOs?></td>
-                                    <td><?=date('d/m/Y', strtotime($o->dataInicial))?></td>
-                                    <td><?=date('d/m/Y', strtotime($o->dataFinal))?></td>
+                                    <td><?=$o->os_codigo?></td>
+                                    <td><?=date('d/m/Y', strtotime($o->os_data_inicial))?></td>
+                                    <td><?=date('d/m/Y', strtotime($o->os_data_final))?></td>
                                     <td><?=$o->cliente_nome_razao?></td>
                                     <td>
                                     <?php if($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')):?>
                                         <a
-                                            href="<?=base_url()?>index.php/os/visualizar/<?=$o->idOs?>"
+                                            href="<?=base_url()?>index.php/os/visualizar/<?=$o->os_codigo?>"
                                             class="btn">
                                             <i class="icon-eye-open" ></i> </a>
                                     <?php endif ?>
@@ -243,7 +243,7 @@
                         <ul class="site-stats">
                             <li class="bg_lh"><i class="icon-group"></i> <strong><?=$this->db->count_all('tb_cliente');?></strong> <small>Clientes</small></li>
                             <li class="bg_lh"><i class="icon-barcode"></i> <strong><?=$this->db->count_all('tb_produto');?></strong> <small>Produtos </small></li>
-                            <li class="bg_lh"><i class="icon-tags"></i> <strong><?=$this->db->count_all('os');?></strong> <small>Ordens de Serviço</small></li>
+                            <li class="bg_lh"><i class="icon-tags"></i> <strong><?=$this->db->count_all('tb_os');?></strong> <small>Ordens de Serviço</small></li>
                             <li class="bg_lh"><i class="icon-wrench"></i> <strong><?=$this->db->count_all('servicos');?></strong> <small>Serviços</small></li>
                             
                         </ul>

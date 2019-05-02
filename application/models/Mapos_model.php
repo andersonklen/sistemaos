@@ -58,17 +58,17 @@ class Mapos_model extends CI_Model
          // buscando clientes
          $this->db->like('cliente_nome_razao', $termo);
          $this->db->limit(5);
-         $data['clientes'] = $this->db->get('tb_cliente')->result();
+         $data['tb_cliente'] = $this->db->get('tb_cliente')->result();
 
          // buscando os
-         $this->db->like('idOs', $termo);
+         $this->db->like('os_codigo', $termo);
          $this->db->limit(5);
-         $data['os'] = $this->db->get('os')->result();
+         $data['tb_os'] = $this->db->get('os')->result();
 
          // buscando produtos
          $this->db->like('descricao', $termo);
          $this->db->limit(5);
-         $data['produtos'] = $this->db->get('tb_produto')->result();
+         $data['tb_produto'] = $this->db->get('tb_produto')->result();
 
          //buscando serviços
          $this->db->like('nome', $termo);
@@ -121,10 +121,10 @@ class Mapos_model extends CI_Model
 
     function getOsAbertas()
     {
-        $this->db->select('os.*, tb_cliente.cliente_nome_razao');
-        $this->db->from('os');
-        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = os.cliente_codigo');
-        $this->db->where('os.status', 'Aberto');
+        $this->db->select('tb_os.*, tb_cliente.cliente_nome_razao');
+        $this->db->from('tb_os');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
+        $this->db->where('tb_os.os_status', 'Aberto');
         $this->db->limit(10);
         return $this->db->get()->result();
     }
@@ -139,7 +139,7 @@ class Mapos_model extends CI_Model
 
     function getOsEstatisticas()
     {
-        $sql = "SELECT status, COUNT(status) as total FROM os GROUP BY status ORDER BY status";
+        $sql = "SELECT os_status, COUNT(os_status) as total FROM tb_os GROUP BY os_status ORDER BY os_status";
         return $this->db->query($sql)->result();
     }
 
