@@ -20,7 +20,7 @@ class Permissoes_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->order_by('idPermissao', 'desc');
+        $this->db->order_by('permissao_codigo', 'desc');
         $this->db->limit($perpage, $start);
         if ($where) {
             $this->db->where($where);
@@ -45,9 +45,9 @@ class Permissoes_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->where('idPermissao', $id);
+        $this->db->where('permissoes_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('permissoes')->row();
+        return $this->db->get('tb_permissoes')->row();
     }
     
     function add($table, $data)

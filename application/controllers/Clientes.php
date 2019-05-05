@@ -206,27 +206,29 @@ class Clientes extends CI_Controller
 
             //$id = 2;
             // excluindo OSs vinculadas ao cliente
-            $this->db->where('cliente_codigo', $id);
-            $os = $this->db->get('os')->result();
+            $this->db->where('os_cliente_codigo', $id);
+            $os = $this->db->get('tb_os')->result();
 
         if ($os != null) {
 
             foreach ($os as $o) {
-                $this->db->where('os_id', $o->idOs);
-                $this->db->delete('servicos_os');
+                // Exclui os serviços da OS.
+                $this->db->where('servico_os_codigo', $o->idOs);
+                $this->db->delete('tb_servicos_os');
 
-                $this->db->where('os_id', $o->idOs);
-                $this->db->delete('produtos_os');
+                // Exclui os produtos da OS.
+                $this->db->where('produto_os_codigo', $o->idOs);
+                $this->db->delete('tb_produtos_os');
 
-
-                $this->db->where('idOs', $o->idOs);
-                $this->db->delete('os');
+                // Exclui a OS.
+                $this->db->where('os_codigo', $o->idOs);
+                $this->db->delete('tb_os');
             }
         }
 
             // excluindo Vendas vinculadas ao cliente
-            $this->db->where('cliente_codigo', $id);
-            $vendas = $this->db->get('vendas')->result();
+            $this->db->where('venda_cliente_codigo', $id);
+            $vendas = $this->db->get('tb_venda')->result();
 
         if ($vendas != null) {
 
@@ -241,8 +243,8 @@ class Clientes extends CI_Controller
         }
 
             //excluindo receitas vinculadas ao cliente
-            $this->db->where('cliente_codigo', $id);
-            $this->db->delete('lancamentos');
+            $this->db->where('lancamento_cliente_codigo', $id);
+            $this->db->delete('tb_lancamento');
 
 
 

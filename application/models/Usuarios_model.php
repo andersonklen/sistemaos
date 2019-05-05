@@ -19,10 +19,10 @@ class Usuarios_model extends CI_Model
     function get($perpage = 0, $start = 0, $one = false)
     {
         
-        $this->db->from('usuarios');
-        $this->db->select('usuarios.*, permissoes.nome as permissao');
+        $this->db->from('tb_usuario');
+        $this->db->select('tb_usuario.*, tb_permissoes.nome as permissao');
         $this->db->limit($perpage, $start);
-        $this->db->join('permissoes', 'usuarios.permissoes_id = permissoes.idPermissao', 'left');
+        $this->db->join('tb_permissoes', 'tb_usuarios.permissoes_codigo = tb_permissoes.permissoes_codigo', 'left');
   
         $query = $this->db->get();
         
@@ -38,9 +38,9 @@ class Usuarios_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->where('idUsuarios', $id);
+        $this->db->where('usuario_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('usuarios')->row();
+        return $this->db->get('tb_usuario')->row();
     }
     
     function add($table, $data)

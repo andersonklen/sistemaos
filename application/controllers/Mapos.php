@@ -131,8 +131,8 @@ class Mapos extends CI_Controller
             $user = $this->Mapos_model->check_credentials($email);
 
             if ($user) {
-                if (password_verify($password, $user->senha)) {
-                    $session_data = array('nome' => $user->nome, 'email' => $user->email, 'id' => $user->idUsuarios, 'permissao' => $user->permissoes_id, 'logado' => true);
+                if (password_verify($password, $user->usuario_senha)) {
+                    $session_data = array('nome' => $user->usuario_nome, 'email' => $user->usuario_email, 'id' => $user->usuario_codigo, 'permissao' => $user->usuario_permissoes_codigo, 'logado' => true);
                     $this->session->set_userdata($session_data);
                     $json = array('result' => true);
                     echo json_encode($json);

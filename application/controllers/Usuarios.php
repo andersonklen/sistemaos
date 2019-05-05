@@ -111,7 +111,7 @@ class Usuarios extends CI_Controller
         }
         
         $this->load->model('permissoes_model');
-        $this->data['permissoes'] = $this->permissoes_model->getActive('permissoes', 'permissoes.idPermissao,permissoes.nome');
+        $this->data['permissoes'] = $this->permissoes_model->getActive('tb_permissoes', 'tb_permissoes.permissoes_codigo,tb_permissoes.permissoes_nome');
         $this->data['view'] = 'usuarios/adicionarUsuario';
         $this->load->view('tema/topo', $this->data);
    
@@ -204,7 +204,7 @@ class Usuarios extends CI_Controller
 
         $this->data['result'] = $this->usuarios_model->getById($this->uri->segment(3));
         $this->load->model('permissoes_model');
-        $this->data['permissoes'] = $this->permissoes_model->getActive('permissoes', 'permissoes.idPermissao,permissoes.nome');
+        $this->data['permissoes'] = $this->permissoes_model->getActive('tb_permissoes', 'tb_permissoes.permissoes_codigo,tb_permissoes.permissoes_nome');
 
         $this->data['view'] = 'usuarios/editarUsuario';
         $this->load->view('tema/topo', $this->data);

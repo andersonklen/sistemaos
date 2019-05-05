@@ -22,9 +22,9 @@ class Permission
 {
 
     var $Permission = array();
-    var $table = 'permissoes';//Nome tabela onde ficam armazenadas as permissões
-    var $pk = 'idPermissao';// Nome da chave primaria da tabela
-    var $select = 'permissoes';// Campo onde fica o array de permissoes.
+    var $table = 'tb_permissoes';//Nome tabela onde ficam armazenadas as permissões
+    var $pk = 'permissoes_codigo';// Nome da chave primaria da tabela
+    var $select = 'permissoes_permissoes';// Campo onde fica o array de permissoes.
 
     public function __construct()
     {

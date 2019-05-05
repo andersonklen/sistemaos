@@ -39,7 +39,7 @@ class Permissoes extends CI_Controller
         
         
         $config['base_url'] = base_url().'index.php/permissoes/gerenciar/';
-        $config['total_rows'] = $this->permissoes_model->count('permissoes');
+        $config['total_rows'] = $this->permissoes_model->count('tb_permissoes');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -62,7 +62,7 @@ class Permissoes extends CI_Controller
 
         $this->pagination->initialize($config);
 
-          $this->data['results'] = $this->permissoes_model->get('permissoes', 'idPermissao,nome,data,situacao', '', $config['per_page'], $this->uri->segment(3));
+          $this->data['results'] = $this->permissoes_model->get('tb_permissoes', 'permissoes_codigo,permissoes_nome,permissoes_data,permissoes_situacao', '', $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'permissoes/permissoes';
         $this->load->view('tema/topo', $this->data);
@@ -149,10 +149,10 @@ class Permissoes extends CI_Controller
             $permissoes = serialize($permissoes);
 
             $data = array(
-                'nome' => $nomePermissao,
-                'data' => $cadastro,
-                'permissoes' => $permissoes,
-                'situacao' => $situacao
+                'permissoes_nome' => $nomePermissao,
+                'permissoes_data' => $cadastro,
+                'permissoes_permissoes' => $permissoes,
+                'permissoes_situacao' => $situacao
             );
 
             if ($this->permissoes_model->add('permissoes', $data) == true) {
@@ -246,9 +246,9 @@ class Permissoes extends CI_Controller
             $permissoes = serialize($permissoes);
 
             $data = array(
-                'nome' => $nomePermissao,
-                'permissoes' => $permissoes,
-                'situacao' => $situacao
+                'permissoes_nome' => $nomePermissao,
+                'permissoes_permissoes' => $permissoes,
+                'permissoes_situacao' => $situacao
             );
 
             if ($this->permissoes_model->edit('permissoes', $data, 'idPermissao', $this->input->post('idPermissao')) == true) {

@@ -32,19 +32,19 @@ class Mapos_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->from('usuarios');
-        $this->db->select('usuarios.*, permissoes.nome as permissao');
-        $this->db->join('permissoes', 'permissoes.idPermissao = usuarios.permissoes_id', 'left');
-        $this->db->where('idUsuarios', $id);
+        $this->db->from('tb_usuario');
+        $this->db->select('usuario.*, tb_permissoes.nome as tb_permissao');
+        $this->db->join('tb_permissoes', 'tb_permissoes.permissoes_codigo = tb_usuario.permissoes_codigo', 'left');
+        $this->db->where('usuario_codigo', $id);
         $this->db->limit(1);
         return $this->db->get()->row();
     }
 
     public function alterarSenha($senha)
     {
-        $this->db->set('senha', password_hash($senha, PASSWORD_DEFAULT));
-        $this->db->where('idUsuarios',  $this->session->userdata('id'));
-        $this->db->update('usuarios');
+        $this->db->set('usuario_senha', password_hash($senha, PASSWORD_DEFAULT));
+        $this->db->where('usuario_codigo',  $this->session->userdata('id'));
+        $this->db->update('tb_usuario');
 
         if ($this->db->affected_rows() >= 0) {
             return true;
@@ -66,14 +66,14 @@ class Mapos_model extends CI_Model
          $data['tb_os'] = $this->db->get('os')->result();
 
          // buscando produtos
-         $this->db->like('descricao', $termo);
+         $this->db->like('produto_descricao', $termo);
          $this->db->limit(5);
          $data['tb_produto'] = $this->db->get('tb_produto')->result();
 
          //buscando serviços
-         $this->db->like('nome', $termo);
+         $this->db->like('servico_nome', $termo);
          $this->db->limit(5);
-         $data['servicos'] = $this->db->get('servicos')->result();
+         $data['servicos'] = $this->db->get('tb_servico')->result();
 
          return $data;
 
@@ -145,69 +145,69 @@ class Mapos_model extends CI_Model
 
     public function getEstatisticasFinanceiro()
     {
-        $sql = "SELECT SUM(CASE WHEN baixado = 1 AND tipo = 'receita' THEN valor END) as total_receita, 
-                       SUM(CASE WHEN baixado = 1 AND tipo = 'despesa' THEN valor END) as total_despesa,
-                       SUM(CASE WHEN baixado = 0 AND tipo = 'receita' THEN valor END) as total_receita_pendente,
-                       SUM(CASE WHEN baixado = 0 AND tipo = 'despesa' THEN valor END) as total_despesa_pendente FROM lancamentos";
+        $sql = "SELECT SUM(CASE WHEN lancamento_baixado = 1 AND lancamento_tipo = 'receita' THEN lancamento_valor END) as total_receita, 
+                       SUM(CASE WHEN lancamento_baixado = 1 AND lancamento_tipo = 'despesa' THEN lancamento_valor END) as total_despesa,
+                       SUM(CASE WHEN lancamento_baixado = 0 AND lancamento_tipo = 'receita' THEN lancamento_valor END) as total_receita_pendente,
+                       SUM(CASE WHEN lancamento_baixado = 0 AND lancamento_tipo = 'despesa' THEN lancamento_valor END) as total_despesa_pendente FROM tb_lancamento";
         return $this->db->query($sql)->row();
     }
 
 
     public function getEmitente()
     {
-        return $this->db->get('emitente')->result();
+        return $this->db->get('tb_emitente')->result();
     }
 
     public function addEmitente($nome, $cnpj, $ie, $logradouro, $numero, $bairro, $cidade, $uf, $telefone, $email, $logo)
     {
        
-        $this->db->set('nome', $nome);
-        $this->db->set('cnpj', $cnpj);
-        $this->db->set('ie', $ie);
-        $this->db->set('rua', $logradouro);
-        $this->db->set('numero', $numero);
-        $this->db->set('bairro', $bairro);
-        $this->db->set('cidade', $cidade);
-        $this->db->set('uf', $uf);
-        $this->db->set('telefone', $telefone);
-        $this->db->set('email', $email);
-        $this->db->set('url_logo', $logo);
-        return $this->db->insert('emitente');
+        $this->db->set('emitente_nome', $nome);
+        $this->db->set('emitente_cnpj', $cnpj);
+        $this->db->set('emitente_ie', $ie);
+        $this->db->set('emitente_logradouro', $logradouro);
+        $this->db->set('emitente_numero', $numero);
+        $this->db->set('emitente_bairro', $bairro);
+        $this->db->set('emitente_cidade', $cidade);
+        $this->db->set('emitente_uf', $uf);
+        $this->db->set('emitente_tel01', $telefone);
+        $this->db->set('emitente_email', $email);
+        $this->db->set('emitente_url_logo', $logo);
+        return $this->db->insert('tb_emitente');
     }
 
 
     public function editEmitente($id, $nome, $cnpj, $ie, $logradouro, $numero, $bairro, $cidade, $uf, $telefone, $email)
     {
         
-        $this->db->set('nome', $nome);
-        $this->db->set('cnpj', $cnpj);
-        $this->db->set('ie', $ie);
-        $this->db->set('rua', $logradouro);
-        $this->db->set('numero', $numero);
-        $this->db->set('bairro', $bairro);
-        $this->db->set('cidade', $cidade);
-        $this->db->set('uf', $uf);
-        $this->db->set('telefone', $telefone);
-        $this->db->set('email', $email);
-        $this->db->where('id', $id);
-        return $this->db->update('emitente');
+        $this->db->set('emitente_nome', $nome);
+        $this->db->set('emitente_cnpj', $cnpj);
+        $this->db->set('emitente_ie', $ie);
+        $this->db->set('emitente_logradouro', $logradouro);
+        $this->db->set('emitente_numero', $numero);
+        $this->db->set('emitente_bairro', $bairro);
+        $this->db->set('emitente_cidade', $cidade);
+        $this->db->set('emitente_uf', $uf);
+        $this->db->set('emitente_tel01', $telefone);
+        $this->db->set('emitente_email', $email);
+        $this->db->where('emitente_codigo', $id);
+        return $this->db->update('tb_emitente');
     }
 
 
     public function editLogo($id, $logo)
     {
         
-        $this->db->set('url_logo', $logo);
-        $this->db->where('id', $id);
-        return $this->db->update('emitente');
+        $this->db->set('emitente_url_logo', $logo);
+        $this->db->where('emitente_codigo', $id);
+        return $this->db->update('tb_emitente');
          
     }
 
     public function check_credentials($email)
     {
-        $this->db->where('email', $email);
-        $this->db->where('situacao', 1);
+        $this->db->where('usuario_email', $email);
+        $this->db->where('usuario_situacao', 1);
         $this->db->limit(1);
-        return $this->db->get('usuarios')->row();
+        return $this->db->get('tb_usuario')->row();
     }
 }

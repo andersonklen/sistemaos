@@ -11,12 +11,12 @@ USE erp;
 -- -----------------------------------------------------
 -- Table `ci_sessions`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `tb_ci_sessions` (
-        `ci_sessions_codigo` varchar(128) NOT NULL,
-        `ci_sessions_ip_address` varchar(45) NOT NULL,
-        `ci_sessions_timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
-        `ci_sessions_data` blob NOT NULL,
-        KEY `ci_sessions_timestamp` (`ci_sessions_timestamp`)
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+        `id` varchar(128) NOT NULL,
+        `ip_address` varchar(45) NOT NULL,
+        `timestamp` int(10) unsigned DEFAULT 0 NOT NULL,
+        `data` blob NOT NULL,
+        KEY `ci_sessions_timestamp` (`timestamp`)
 );
 
 
@@ -528,13 +528,13 @@ ALTER TABLE `tb_cidade` ADD CONSTRAINT `fk_cidade_estado` FOREIGN KEY ( `cidade_
 
 
 
-INSERT INTO `permissoes` (`idPermissao`, `nome`, `permissoes`, `situacao`, `data`) VALUES
+INSERT INTO `tb_permissoes` (`permissoes_codigo`, `permissoes_nome`, `permissoes_permissoes`, `permissoes_situacao`, `permissoes_data`) VALUES
 (1, 'Administrador', 'a:46:{s:8:"aCliente";s:1:"1";s:8:"eCliente";s:1:"1";s:8:"dCliente";s:1:"1";s:8:"vCliente";s:1:"1";s:8:"aProduto";s:1:"1";s:8:"eProduto";s:1:"1";s:8:"dProduto";s:1:"1";s:8:"vProduto";s:1:"1";s:6:"aMarca";s:1:"1";s:6:"eMarca";s:1:"1";s:6:"dMarca";s:1:"1";s:6:"vMarca";s:1:"1";s:12:"aEquipamento";s:1:"1";s:12:"eEquipamento";s:1:"1";s:12:"dEquipamento";s:1:"1";s:12:"vEquipamento";s:1:"1";s:8:"aServico";s:1:"1";s:8:"eServico";s:1:"1";s:8:"dServico";s:1:"1";s:8:"vServico";s:1:"1";s:3:"aOs";s:1:"1";s:3:"eOs";s:1:"1";s:3:"dOs";s:1:"1";s:3:"vOs";s:1:"1";s:6:"aVenda";s:1:"1";s:6:"eVenda";s:1:"1";s:6:"dVenda";s:1:"1";s:6:"vVenda";s:1:"1";s:8:"aArquivo";s:1:"1";s:8:"eArquivo";s:1:"1";s:8:"dArquivo";s:1:"1";s:8:"vArquivo";s:1:"1";s:11:"aLancamento";s:1:"1";s:11:"eLancamento";s:1:"1";s:11:"dLancamento";s:1:"1";s:11:"vLancamento";s:1:"1";s:8:"cUsuario";s:1:"1";s:9:"cEmitente";s:1:"1";s:10:"cPermissao";s:1:"1";s:7:"cBackup";s:1:"1";s:8:"rCliente";s:1:"1";s:8:"rProduto";s:1:"1";s:8:"rServico";s:1:"1";s:3:"rOs";s:1:"1";s:6:"rVenda";s:1:"1";s:11:"rFinanceiro";s:1:"1";}', 1, '2014-09-03');
 
 
 
-INSERT INTO `usuarios` (`idUsuarios`, `nome`, `rg`, `cpf`, `rua`, `numero`, `bairro`, `cidade`, `estado`, `email`, `senha`, `telefone`, `celular`, `situacao`, `dataCadastro`, `permissoes_id`) VALUES
-            (1, 'Admin', 'MG-25.502.560', '600.021.520-87', 'Rua Acima', '12', 'Alvorada', 'Teste', 'MG', 'admin@admin.com', '$2y$10$lAW0AXb0JLZxR0yDdfcBcu3BN9c2AXKKjKTdug7Or0pr6cSGtgyGO', '0000-0000', '', 1, '2018-09-09', 1);
+INSERT INTO `tb_usuario` (`usuario_codigo`, `usuario_nome`, `usuario_rg`, `usuario_cpf`, `usuario_logradouro`, `usuario_numero`, `usuario_bairro`, `usuario_cidade`, `usuario_estado`, `usuario_email`, `usuario_senha`, `usuario_tel01`, `usuario_tel02`, `usuario_situacao`, `usuario_data_cadastro`, `usuario_permissoes_codigo`) VALUES
+            (1, 'Admin', 'MG-25.502.560', '600.021.520-87', 'Rua Acima', '12', 'Alvorada', 'Teste', 'MG', 'admin@admin.com', '$2y$10$lAW0AXb0JLZxR0yDdfcBcu3BN9c2AXKKjKTdug7Or0pr6cSGtgyGO', '0000-0000', '', 1, '20-09-09', 1);
 
 
 
@@ -2605,6 +2605,8 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (2024, 'Mariana', 11),
 (2025, 'Marilac', 11),
 (2026, 'Mário Campos', 11);
+
+
 INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`) VALUES
 (2027, 'Maripá de Minas', 11),
 (2028, 'Marliéria', 11),
@@ -3212,7 +3214,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (2630, 'Curral de Cima', 15),
 (2631, 'Curral Velho', 15),
 (2632, 'Damião', 15),
-(2n33, 'Desterro', 15),
+(2633, 'Desterro', 15),
 (2634, 'Diamante', 15),
 (2635, 'Dona Inês', 15),
 (2636, 'Duas Estradas', 15),
@@ -3447,7 +3449,7 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (2865, 'Congonhinhas', 18),
 (2866, 'Conselheiro Mairinck', 18),
 (2867, 'Contenda', 18),
-(2868, 'Corbélia',¨18),
+(2868, 'Corbélia', 18),
 (2869, 'Cornélio Procópio', 18),
 (2870, 'Coronel Domingos Soares', 18),
 (2871, 'Coronel Vivida', 18),
@@ -4473,6 +4475,9 @@ INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`)
 (3891, 'Benjamin Constant do Sul', 23),
 (3892, 'Bento Gonçalves', 23),
 (3893, 'Boa Vista das Missões', 23);
+
+
+
 INSERT INTO `tb_cidade` (`cidade_codigo`, `cidade_nome`, `cidade_estado_codigo`) VALUES
 (3894, 'Boa Vista do Buricá', 23),
 (3895, 'Boa Vista do Cadeado', 23),
