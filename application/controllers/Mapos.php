@@ -16,7 +16,7 @@ class Mapos extends CI_Controller
         parent::__construct();
         $this->load->model('mapos_model', '', true);
         // Debug
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
     }
 
     public function index()
