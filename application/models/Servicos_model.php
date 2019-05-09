@@ -20,7 +20,7 @@ class Servicos_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->order_by('idServicos', 'desc');
+        $this->db->order_by('servico_codigo', 'desc');
         $this->db->limit($perpage, $start);
         if ($where) {
             $this->db->where($where);
@@ -34,9 +34,9 @@ class Servicos_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->where('idServicos', $id);
+        $this->db->where('servico_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('servicos')->row();
+        return $this->db->get('tb_servico')->row();
     }
     
     function add($table, $data)

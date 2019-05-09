@@ -132,7 +132,7 @@ class Os extends CI_Controller
             $data = array(
                 'os_data_inicial' => $dataInicial,
                 'os_cliente_codigo' => $this->input->post('clientes_id'),//set_value('idCliente'),
-                'os_usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
+                'os_usuario_codigo' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
                 'os_data_final' => $dataFinal,
                 'os_garantia' => set_value('garantia'),
                 'os_descricao_produto' => set_value('descricaoProduto'),
@@ -236,7 +236,7 @@ class Os extends CI_Controller
                 'os_status' => $this->input->post('status'),
                 'os_observacoes' => $this->input->post('observacoes'),
                 'os_laudo_tecnico' => $this->input->post('laudoTecnico'),
-                'os_usuarios_id' => $this->input->post('usuarios_id'),
+                'os_usuario_codigo' => $this->input->post('usuarios_id'),
                 'os_cliente_codigo' => $this->input->post('clientes_id')
             );
 
@@ -249,7 +249,7 @@ class Os extends CI_Controller
         }
 
         $this->data['result'] = $this->os_model->getById($this->uri->segment(3));
-        $this->data['tb_produto'] = $this->os_model->getProdutos($this->uri->segment(3));
+        $this->data['produtos'] = $this->os_model->getProdutos($this->uri->segment(3));
         $this->data['servicos'] = $this->os_model->getServicos($this->uri->segment(3));
         $this->data['anexos'] = $this->os_model->getAnexos($this->uri->segment(3));
         $this->data['view'] = 'os/editarOs';
@@ -321,16 +321,16 @@ class Os extends CI_Controller
             redirect(base_url().'index.php/os/gerenciar/');
         }
 
-        $this->db->where('os_id', $id);
-        $this->db->delete('servicos_os');
+        $this->db->where('servico_os_codigo', $id);
+        $this->db->delete('tb_servico_os');
 
-        $this->db->where('os_id', $id);
-        $this->db->delete('produtos_os');
+        $this->db->where('produto_os_codigo', $id);
+        $this->db->delete('tb_produto_os');
 
-        $this->db->where('os_id', $id);
-        $this->db->delete('anexos');
+        $this->db->where('anexo_os_codigo', $id);
+        $this->db->delete('tb_anexo');
 
-        $this->os_model->delete('os', 'idOs', $id);
+        $this->os_model->delete('tb_os', 'os_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'OS excluída com sucesso!');

@@ -67,16 +67,16 @@ if (!$results) {?>
     <tbody>
         <?php foreach ($results as $r) {
             echo '<tr>';
-            echo '<td>'.$r->idServicos.'</td>';
-            echo '<td>'.$r->nome.'</td>';
-            echo '<td>'.number_format($r->preco, 2, ',', '.').'</td>';
-            echo '<td>'.$r->descricao.'</td>';
+            echo '<td>'.$r->servico_codigo.'</td>';
+            echo '<td>'.$r->servico_nome.'</td>';
+            echo '<td>'.number_format($r->servico_preco, 2, ',', '.').'</td>';
+            echo '<td>'.$r->servico_descricao.'</td>';
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eServico')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/servicos/editar/'.$r->idServicos.'" class="btn btn-info tip-top" title="Editar Serviço"><i class="icon-pencil icon-white"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/servicos/editar/'.$r->servico_codigo.'" class="btn btn-info tip-top" title="Editar Serviço"><i class="icon-pencil icon-white"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dServico')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" servico="'.$r->idServicos.'" class="btn btn-danger tip-top" title="Excluir Serviço"><i class="icon-remove icon-white"></i></a>  ';
+                echo '<a href="#modal-excluir" role="button" data-toggle="modal" servico="'.$r->servico_codigo.'" class="btn btn-danger tip-top" title="Excluir Serviço"><i class="icon-remove icon-white"></i></a>  ';
             }
                       
                       

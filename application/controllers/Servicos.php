@@ -39,7 +39,7 @@ class Servicos extends CI_Controller
         
         
         $config['base_url'] = base_url().'index.php/servicos/gerenciar/';
-        $config['total_rows'] = $this->servicos_model->count('servicos');
+        $config['total_rows'] = $this->servicos_model->count('tb_servico');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -62,7 +62,7 @@ class Servicos extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->servicos_model->get('servicos', 'idServicos,nome,descricao,preco', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->servicos_model->get('tb_servico', 'servico_codigo,servico_nome,servico_descricao,servico_preco', '', $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'servicos/servicos';
         $this->load->view('tema/topo', $this->data);
@@ -88,12 +88,12 @@ class Servicos extends CI_Controller
             $preco = str_replace(",", "", $preco);
 
             $data = array(
-                'nome' => set_value('nome'),
-                'descricao' => set_value('descricao'),
-                'preco' => $preco
+                'servico_nome' => set_value('nome'),
+                'servico_descricao' => set_value('descricao'),
+                'servico_preco' => $preco
             );
 
-            if ($this->servicos_model->add('servicos', $data) == true) {
+            if ($this->servicos_model->add('tb_servico', $data) == true) {
                 $this->session->set_flashdata('success', 'Serviço adicionado com sucesso!');
                 redirect(base_url() . 'index.php/servicos/adicionar/');
             } else {
@@ -120,12 +120,12 @@ class Servicos extends CI_Controller
             $preco = $this->input->post('preco');
             $preco = str_replace(",", "", $preco);
             $data = array(
-                'nome' => $this->input->post('nome'),
-                'descricao' => $this->input->post('descricao'),
-                'preco' => $preco
+                'servico_nome' => $this->input->post('nome'),
+                'servico_descricao' => $this->input->post('descricao'),
+                'servico_preco' => $preco
             );
 
-            if ($this->servicos_model->edit('servicos', $data, 'idServicos', $this->input->post('idServicos')) == true) {
+            if ($this->servicos_model->edit('tb_servico', $data, 'servico_codigo', $this->input->post('idServicos')) == true) {
                 $this->session->set_flashdata('success', 'Serviço editado com sucesso!');
                 redirect(base_url() . 'index.php/servicos/editar/'.$this->input->post('idServicos'));
             } else {
@@ -156,10 +156,10 @@ class Servicos extends CI_Controller
             redirect(base_url().'index.php/servicos/gerenciar/');
         }
 
-        $this->db->where('servicos_id', $id);
-        $this->db->delete('servicos_os');
+        $this->db->where('servico_os_servico_codigo', $id);
+        $this->db->delete('tb_servico_os');
 
-        $this->servicos_model->delete('servicos', 'idServicos', $id);
+        $this->servicos_model->delete('tb_servico', 'servico_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'Serviço excluido com sucesso!');

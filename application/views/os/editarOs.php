@@ -27,47 +27,47 @@
                             <div class="span12" id="divCadastrarOs">
                                 
                                 <form action="<?php echo current_url(); ?>" method="post" id="formOs">
-                                    <?php echo form_hidden('idOs', $result->idOs) ?>
+                                    <?php echo form_hidden('idOs', $result->os_codigo) ?>
                                     
                                     <div class="span12" style="padding: 1%; margin-left: 0">
-                                        <h3>#Protocolo: <?php echo $result->idOs ?></h3>
+                                        <h3>#Protocolo: <?php echo $result->os_codigo ?></h3>
                                         
                                         <div class="span6" style="margin-left: 0">
                                             <label for="cliente">Cliente<span class="required">*</span></label>
-                                            <input id="cliente" class="span12" type="text" name="cliente" value="<?php echo $result->nomeCliente ?>"  />
-                                            <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="<?php echo $result->clientes_id ?>"  />
+                                            <input id="cliente" class="span12" type="text" name="cliente" value="<?php echo $result->cliente_nome_razao ?>"  />
+                                            <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="<?php echo $result->os_cliente_codigo ?>"  />
                                             <input id="valorTotal" type="hidden" name="valorTotal" value=""  />
                                         </div>
                                         <div class="span6">
                                             <label for="tecnico">Técnico / Responsável<span class="required">*</span></label>
-                                            <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->nome ?>"  />
-                                            <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?php echo $result->usuarios_id ?>"  />
+                                            <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->usuario_nome ?>"  />
+                                            <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?php echo $result->os_usuario_codigo ?>"  />
                                         </div>
                                     </div>
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span3">
                                             <label for="status">Status<span class="required">*</span></label>
                                             <select class="span12" name="status" id="status" value="">
-                                                <option <?php if ($result->status == 'Orçamento') {  echo 'selected'; } ?> value="Orçamento">Orçamento</option>
-                                                <option <?php if ($result->status == 'Aberto') { echo 'selected'; } ?> value="Aberto">Aberto</option>
-                                                <option <?php if ($result->status == 'Faturado') { echo 'selected'; } ?> value="Faturado">Faturado</option>
-                                                <option <?php if ($result->status == 'Em Andamento') { echo 'selected'; } ?> value="Em Andamento">Em Andamento</option>
-                                                <option <?php if ($result->status == 'Finalizado') { echo 'selected'; } ?> value="Finalizado">Finalizado</option>
-                                                <option <?php if ($result->status == 'Cancelado') { echo 'selected'; } ?> value="Cancelado">Cancelado</option>
+                                                <option <?php if ($result->os_status == 'Orçamento') {  echo 'selected'; } ?> value="Orçamento">Orçamento</option>
+                                                <option <?php if ($result->os_status == 'Aberto') { echo 'selected'; } ?> value="Aberto">Aberto</option>
+                                                <option <?php if ($result->os_status == 'Faturado') { echo 'selected'; } ?> value="Faturado">Faturado</option>
+                                                <option <?php if ($result->os_status == 'Em Andamento') { echo 'selected'; } ?> value="Em Andamento">Em Andamento</option>
+                                                <option <?php if ($result->os_status == 'Finalizado') { echo 'selected'; } ?> value="Finalizado">Finalizado</option>
+                                                <option <?php if ($result->os_status == 'Cancelado') { echo 'selected'; } ?> value="Cancelado">Cancelado</option>
                                             </select>
                                         </div>
                                         <div class="span3">
                                             <label for="dataInicial">Data Inicial<span class="required">*</span></label>
-                                            <input id="dataInicial" class="span12 datepicker" type="text" name="dataInicial" value="<?php echo date('d/m/Y', strtotime($result->dataInicial)); ?>"  />
+                                            <input id="dataInicial" class="span12 datepicker" type="text" name="dataInicial" value="<?php echo date('d/m/Y', strtotime($result->os_data_inicial)); ?>"  />
                                         </div>
                                         <div class="span3">
                                             <label for="dataFinal">Data Final</label>
-                                            <input id="dataFinal" class="span12 datepicker" type="text" name="dataFinal" value="<?php echo date('d/m/Y', strtotime($result->dataFinal)); ?>"  />
+                                            <input id="dataFinal" class="span12 datepicker" type="text" name="dataFinal" value="<?php echo date('d/m/Y', strtotime($result->os_data_final)); ?>"  />
                                         </div>
 
                                         <div class="span3">
                                             <label for="garantia">Garantia</label>
-                                            <input id="garantia" type="text" class="span12" name="garantia" value="<?php echo $result->garantia ?>"  />
+                                            <input id="garantia" type="text" class="span12" name="garantia" value="<?php echo $result->os_garantia ?>"  />
                                         </div>
 
                                     </div>
@@ -76,31 +76,31 @@
 
                                         <div class="span6">
                                             <label for="descricaoProduto">Descrição Produto/Serviço</label>
-                                            <textarea class="span12" name="descricaoProduto" id="descricaoProduto" cols="30" rows="5"><?php echo $result->descricaoProduto?></textarea>
+                                            <textarea class="span12" name="descricaoProduto" id="descricaoProduto" cols="30" rows="5"><?php echo $result->os_descricao_produto?></textarea>
                                         </div>
                                         <div class="span6">
                                             <label for="defeito">Defeito</label>
-                                            <textarea class="span12" name="defeito" id="defeito" cols="30" rows="5"><?php echo $result->defeito?></textarea>
+                                            <textarea class="span12" name="defeito" id="defeito" cols="30" rows="5"><?php echo $result->os_defeito?></textarea>
                                         </div>
 
                                     </div>
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span6">
                                             <label for="observacoes">Observações</label>
-                                            <textarea class="span12" name="observacoes" id="observacoes" cols="30" rows="5"><?php echo $result->observacoes ?></textarea>
+                                            <textarea class="span12" name="observacoes" id="observacoes" cols="30" rows="5"><?php echo $result->os_observacoes ?></textarea>
                                         </div>
                                         <div class="span6">
                                             <label for="laudoTecnico">Laudo Técnico</label>
-                                            <textarea class="span12" name="laudoTecnico" id="laudoTecnico" cols="30" rows="5"><?php echo $result->laudoTecnico ?></textarea>
+                                            <textarea class="span12" name="laudoTecnico" id="laudoTecnico" cols="30" rows="5"><?php echo $result->os_laudo_tecnico ?></textarea>
                                         </div>
                                     </div>
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span6 offset3" style="text-align: center">
-                                            <?php if ($result->faturado == 0) { ?>
+                                            <?php if ($result->os_faturado == 0) { ?>
                                                 <a href="#modal-faturar" id="btn-faturar" role="button" data-toggle="modal" class="btn btn-success"><i class="icon-file"></i> Faturar</a>
                                             <?php } ?>
                                             <button class="btn btn-primary" id="btnContinuar"><i class="icon-white icon-ok"></i> Alterar</button>
-                                            <a href="<?php echo base_url() ?>index.php/os/visualizar/<?php echo $result->idOs; ?>" class="btn btn-inverse"><i class="icon-eye-open"></i> Visualizar OS</a>
+                                            <a href="<?php echo base_url() ?>index.php/os/visualizar/<?php echo $result->os_codigo; ?>" class="btn btn-inverse"><i class="icon-eye-open"></i> Visualizar OS</a>
                                             <a href="<?php echo base_url() ?>index.php/os" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
                                         </div>
                                     </div>
@@ -116,7 +116,7 @@
                                 <form id="formProdutos" action="<?php echo base_url() ?>index.php/os/adicionarProduto" method="post">
                                     <div class="span8">
                                         <input type="hidden" name="idProduto" id="idProduto" />
-                                        <input type="hidden" name="idOsProduto" id="idOsProduto" value="<?php echo $result->idOs?>" />
+                                        <input type="hidden" name="idOsProduto" id="idOsProduto" value="<?php echo $result->os_codigo?>" />
                                         <input type="hidden" name="estoque" id="estoque" value=""/>
                                         <input type="hidden" name="preco" id="preco" value=""/>
                                         <label for="">Produto</label>
@@ -149,9 +149,9 @@
                                             
                                             $total = $total + $p->subTotal;
                                             echo '<tr>';
-                                            echo '<td>'.$p->descricao.'</td>';
+                                            echo '<td>'.$p->produto_descricao.'</td>';
                                             echo '<td>'.$p->quantidade.'</td>';
-                                            echo '<td><a href="" idAcao="'.$p->idProdutos_os.'" prodAcao="'.$p->idProdutos.'" quantAcao="'.$p->quantidade.'" title="Excluir Produto" class="btn btn-danger"><i class="icon-remove icon-white"></i></a></td>';
+                                            echo '<td><a href="" idAcao="'.$p->produtos_os_codigo.'" prodAcao="'.$p->idProdutos.'" quantAcao="'.$p->quantidade.'" title="Excluir Produto" class="btn btn-danger"><i class="icon-remove icon-white"></i></a></td>';
                                             echo '<td>R$ '.number_format($p->subTotal, 2, ',', '.').'</td>';
                                             echo '</tr>';
                                         }?>
@@ -173,7 +173,7 @@
                                     <form id="formServicos" action="<?php echo base_url() ?>index.php/os/adicionarServico" method="post">
                                     <div class="span10">
                                         <input type="hidden" name="idServico" id="idServico" />
-                                        <input type="hidden" name="idOsServico" id="idOsServico" value="<?php echo $result->idOs?>" />
+                                        <input type="hidden" name="idOsServico" id="idOsServico" value="<?php echo $result->os_codigo?>" />
                                         <input type="hidden" name="precoServico" id="precoServico" value=""/>
                                         <label for="">Serviço</label>
                                         <input type="text" class="span12" name="servico" id="servico" placeholder="Digite o nome do serviço" />
@@ -225,7 +225,7 @@
                                     <form id="formAnexos" enctype="multipart/form-data" action="javascript:;" accept-charset="utf-8"s method="post">
                                     <div class="span10">
                                 
-                                        <input type="hidden" name="idOsServico" id="idOsServico" value="<?php echo $result->idOs?>" />
+                                        <input type="hidden" name="idOsServico" id="idOsServico" value="<?php echo $result->os_codigo?>" />
                                         <label for="">Anexo</label>
                                         <input type="file" class="span12" name="userfile[]" multiple="multiple" size="20" />
                                     </div>
@@ -316,7 +316,7 @@
     <div class="span12 alert alert-info" style="margin-left: 0"> Obrigatório o preenchimento dos campos com asterisco.</div>
     <div class="span12" style="margin-left: 0"> 
       <label for="descricao">Descrição</label>
-      <input class="span12" id="descricao" type="text" name="descricao" value="Fatura de Venda - #<?php echo $result->idOs; ?> "  />
+      <input class="span12" id="descricao" type="text" name="descricao" value="Fatura de Venda - #<?php echo $result->os_codigo; ?> "  />
       
     </div>  
     <div class="span12" style="margin-left: 0"> 

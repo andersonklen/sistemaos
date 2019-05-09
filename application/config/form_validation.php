@@ -133,7 +133,7 @@ $config = array('clientes' => array(array(
                                 array(
                                     'field'=>'cpf',
                                     'label'=>'CPF',
-                                    'rules'=>'required|trim|is_unique[usuarios.cpf]'
+                                    'rules'=>'required|trim|is_unique[tb_usuario.usuario_cpf]'
                                 ),
                                 array(
                                     'field'=>'rua',
@@ -163,7 +163,7 @@ $config = array('clientes' => array(array(
                                 array(
                                     'field'=>'email',
                                     'label'=>'Email',
-                                    'rules'=>'required|trim|valid_email|is_unique[usuarios.email]'
+                                    'rules'=>'required|trim|valid_email|is_unique[tb_usuario.usuario_email]'
                                 ),
                                 array(
                                     'field'=>'senha',

@@ -10,10 +10,10 @@ $totalProdutos = 0;?>
                 <h5>Ordem de Serviço</h5>
                 <div class="buttons">
                     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eOs')) {
-                        echo '<a title="Icon Title" class="btn btn-mini btn-info" href="'.base_url().'index.php/os/editar/'.$result->idOs.'"><i class="icon-pencil icon-white"></i> Editar</a>';
+                        echo '<a title="Icon Title" class="btn btn-mini btn-info" href="'.base_url().'index.php/os/editar/'.$result->os_codigo.'"><i class="icon-pencil icon-white"></i> Editar</a>';
 } ?>
                     
-                    <a target="_blank" title="Imprimir" class="btn btn-mini btn-inverse" href="<?php echo site_url()?>/os/imprimir/<?php echo $result->idOs; ?>"><i class="icon-print icon-white"></i> Imprimir</a>
+                    <a target="_blank" title="Imprimir" class="btn btn-mini btn-inverse" href="<?php echo site_url()?>/os/imprimir/<?php echo $result->os_codigo; ?>"><i class="icon-print icon-white"></i> Imprimir</a>
                 </div>
             </div>
             <div class="widget-content" id="printOs">
@@ -29,9 +29,9 @@ $totalProdutos = 0;?>
                             </tr>
                             <?php } else {?>
                             <tr>
-                                <td style="width: 25%"><img src=" <?php echo $emitente[0]->url_logo; ?> " style="max-height: 100px"></td>
-                                <td> <span style="font-size: 20px; "> <?php echo $emitente[0]->nome; ?></span> </br><span><?php echo $emitente[0]->cnpj; ?> </br> <?php echo $emitente[0]->rua.', '.$emitente[0]->numero.' - '.$emitente[0]->bairro.' - '.$emitente[0]->cidade.' - '.$emitente[0]->uf; ?> </span> </br> <span> E-mail: <?php echo $emitente[0]->email.' - Fone: '.$emitente[0]->telefone; ?></span></td>
-                                <td style="width: 18%; text-align: center"><b>#PROTOCOLO:</b> <span ><?php echo $result->idOs?></span></br> </br> <span>Emissão: <?php echo date('d/m/Y')?></span></td>
+                                <td style="width: 25%"><img src=" <?php echo $emitente[0]->emitente_url_logo; ?> " style="max-height: 100px"></td>
+                                <td> <span style="font-size: 20px; "> <?php echo $emitente[0]->emitente_nome; ?></span> </br><span><?php echo $emitente[0]->emitente_cnpj; ?> </br> <?php echo $emitente[0]->emitente_logradouro.', '.$emitente[0]->emitente_numero.' - '.$emitente[0]->emitente_bairro.' - '.$emitente[0]->emitente_cidade.' - '.$emitente[0]->emitente_uf; ?> </span> </br> <span> E-mail: <?php echo $emitente[0]->emitente_email.' - Fone: '.$emitente[0]->emitente_tel01; ?></span></td>
+                                <td style="width: 18%; text-align: center"><b>#PROTOCOLO:</b> <span ><?php echo $result->os_codigo?></span></br> </br> <span>Emissão: <?php echo date('d/m/Y')?></span></td>
                             </tr>
 
                             <?php } ?>
@@ -46,11 +46,11 @@ $totalProdutos = 0;?>
                                     <ul>
                                         <li>
                                             <span><h5><b>CLIENTE</b></h5>
-                                            <span><?php echo $result->nomeCliente?></span><br/>
-                                            <span><?php echo $result->rua?>, <?php echo $result->numero?>, <?php echo $result->bairro?></span>, 
-                                            <span><?php echo $result->cidade?> - <?php echo $result->estado?></span><br>
-                                            <span>E-mail: <?php echo $result->email?></span><br>
-                                            <span>Celular: <?php echo $result->celular?></span>
+                                            <span><?php echo $result->cliente_nome_razao?></span><br/>
+                                            <span><?php echo $result->cliente_logradouro?>, <?php echo $result->cliente_numero?>, <?php echo $result->cliente_bairro?></span>, 
+                                            <span><?php echo $result->cliente_cidade?> - <?php echo $result->cliente_estado?></span><br>
+                                            <span>E-mail: <?php echo $result->cliente_email?></span><br>
+                                            <span>Celular: <?php echo $result->cliente_tel01?></span>
                                         </li>
                                     </ul>
                                 </td>
@@ -58,8 +58,8 @@ $totalProdutos = 0;?>
                                     <ul>
                                         <li>
                                             <span><h5><b>RESPONSÁVEL</b></h5></span>
-                                            <span><?php echo $result->nome?></span> <br/>
-                                            <span>Telefone: <?php echo $result->telefone?></span><br/>
+                                            <span><?php echo $result->usuario_nome?></span> <br/>
+                                            <span>Telefone: <?php echo $result->usuario_tel01?></span><br/>
                                             <span>Email: <?php echo $result->email_responsavel ?></span>
                                         </li>
                                     </ul>
@@ -76,59 +76,59 @@ $totalProdutos = 0;?>
                     <table class="table table-condensed">
                         <tbody>
                             
-                            <?php if($result->dataInicial != null){?>
+                            <?php if($result->os_data_inicial != null){?>
                             <tr>
                                 <td>
                                 <b>DATA INICIAL: </b>
-                                <?php echo date('d/m/Y', strtotime($result->dataInicial)); ?>
+                                <?php echo date('d/m/Y', strtotime($result->os_data_inicial)); ?>
                                 </td>
 
                                 <td>
                                 <b>DATA FINAL: </b>
-                                <?php echo $result->dataFinal ? date('d/m/Y', strtotime($result->dataFinal)) : ''; ?>
+                                <?php echo $result->os_data_final ? date('d/m/Y', strtotime($result->os_data_final)) : ''; ?>
                                 </td>
 
                                 <td>
                                 <b>GARANTIA: </b>
-                                <?php echo $result->garantia; ?>
+                                <?php echo $result->os_garantia; ?>
                                 </td>
 
                             </tr>
                             <?php }?>
 
-                            <?php if($result->descricaoProduto != null){?>
+                            <?php if($result->os_descricao_produto != null){?>
                             <tr>
                                 <td colspan="3">
                                 <b>DESCRIÇÃO: </b>
-                                <?php echo $result->descricaoProduto ?>
+                                <?php echo $result->os_descricao_produto ?>
                                 </td>
                             </tr>
                             <?php }?>
                             
 
-                            <?php if($result->defeito != null){?>
+                            <?php if($result->os_defeito != null){?>
                             <tr>
                                 <td colspan="3">
                                 <b>DEFEITO APRESENTADO: </b>
-                                <?php echo $result->defeito?>
+                                <?php echo $result->os_defeito?>
                                 </td>
                             </tr>
                             <?php }?>
                             
-                            <?php if($result->observacoes != null){?>
+                            <?php if($result->os_observacoes != null){?>
                             <tr>
                                 <td colspan="3">
                                 <b>OBSERVAÇÕES: </b>
-                                <?php echo $result->observacoes?>
+                                <?php echo $result->os_observacoes?>
                                 </td>
                             </tr>
                             <?php }?>
 
-                            <?php if($result->laudoTecnico != null){?>
+                            <?php if($result->os_laudo_tecnico != null){?>
                             <tr>
                                 <td colspan="3">
                                 <b>LAUDO TÉCNICO: </b>
-                                <?php echo $result->laudoTecnico?>
+                                <?php echo $result->os_laudo_tecnico?>
                                 </td>
                             </tr>
                             <?php }?>

@@ -26,6 +26,9 @@ class Usuarios extends CI_Controller
         $this->load->model('usuarios_model', '', true);
         $this->data['menuUsuarios'] = 'Usuários';
         $this->data['menuConfiguracoes'] = 'Configurações';
+
+               // Debug
+        // $this->output->enable_profiler(TRUE);
     }
 
     function index()
@@ -40,7 +43,7 @@ class Usuarios extends CI_Controller
         
 
         $config['base_url'] = base_url().'index.php/usuarios/gerenciar/';
-        $config['total_rows'] = $this->usuarios_model->count('usuarios');
+        $config['total_rows'] = $this->usuarios_model->count('tb_usuario');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -84,24 +87,24 @@ class Usuarios extends CI_Controller
         } else {
 
             $data = array(
-                    'nome' => set_value('nome'),
-                    'rg' => set_value('rg'),
-                    'cpf' => set_value('cpf'),
-                    'rua' => set_value('rua'),
-                    'numero' => set_value('numero'),
-                    'bairro' => set_value('bairro'),
-                    'cidade' => set_value('cidade'),
-                    'estado' => set_value('estado'),
-                    'email' => set_value('email'),
-                    'senha' => password_hash($this->input->post('senha'), PASSWORD_DEFAULT),
-                    'telefone' => set_value('telefone'),
-                    'celular' => set_value('celular'),
-                    'situacao' => set_value('situacao'),
-                    'permissoes_id' => $this->input->post('permissoes_id'),
-                    'dataCadastro' => date('Y-m-d')
+                    'usuario_nome' => set_value('nome'),
+                    'usuario_rg' => set_value('rg'),
+                    'usuario_cpf' => set_value('cpf'),
+                    'usuario_logradouro' => set_value('rua'),
+                    'usuario_numero' => set_value('numero'),
+                    'usuario_bairro' => set_value('bairro'),
+                    'usuario_cidade' => set_value('cidade'),
+                    'usuario_estado' => set_value('estado'),
+                    'usuario_email' => set_value('email'),
+                    'usuario_senha' => password_hash($this->input->post('senha'), PASSWORD_DEFAULT),
+                    'usuario_tel01' => set_value('telefone'),
+                    'usuario_tel02' => set_value('celular'),
+                    'usuario_situacao' => set_value('situacao'),
+                    'usuario_permissoes_codigo' => $this->input->post('permissoes_id'),
+                    'usuario_data_cadastro' => date('Y-m-d')
             );
            
-            if ($this->usuarios_model->add('usuarios', $data) == true) {
+            if ($this->usuarios_model->add('tb_usuario', $data) == true) {
                 $this->session->set_flashdata('success', 'Usuário cadastrado com sucesso!');
                 redirect(base_url().'index.php/usuarios/adicionar/');
             } else {
@@ -157,43 +160,43 @@ class Usuarios extends CI_Controller
                 $senha = password_hash($senha, PASSWORD_DEFAULT);
 
                 $data = array(
-                        'nome' => $this->input->post('nome'),
-                        'rg' => $this->input->post('rg'),
-                        'cpf' => $this->input->post('cpf'),
-                        'rua' => $this->input->post('rua'),
-                        'numero' => $this->input->post('numero'),
-                        'bairro' => $this->input->post('bairro'),
-                        'cidade' => $this->input->post('cidade'),
-                        'estado' => $this->input->post('estado'),
-                        'email' => $this->input->post('email'),
-                        'senha' => $senha,
-                        'telefone' => $this->input->post('telefone'),
-                        'celular' => $this->input->post('celular'),
-                        'situacao' => $this->input->post('situacao'),
-                        'permissoes_id' => $this->input->post('permissoes_id')
+                        'usuario_nome' => $this->input->post('nome'),
+                        'usuario_rg' => $this->input->post('rg'),
+                        'usuario_cpf' => $this->input->post('cpf'),
+                        'usuario_logradouro' => $this->input->post('rua'),
+                        'usuario_numero' => $this->input->post('numero'),
+                        'usuario_bairro' => $this->input->post('bairro'),
+                        'usuario_cidade' => $this->input->post('cidade'),
+                        'usuario_estado' => $this->input->post('estado'),
+                        'usuario_email' => $this->input->post('email'),
+                        'usuario_senha' => $senha,
+                        'usuario_tel01' => $this->input->post('telefone'),
+                        'usuario_tel01' => $this->input->post('celular'),
+                        'usuario_situacao' => $this->input->post('situacao'),
+                        'usuario_permissoes_codigo' => $this->input->post('permissoes_id')
                 );
             } else {
 
                 $data = array(
-                        'nome' => $this->input->post('nome'),
-                        'rg' => $this->input->post('rg'),
-                        'cpf' => $this->input->post('cpf'),
-                        'rua' => $this->input->post('rua'),
-                        'numero' => $this->input->post('numero'),
-                        'bairro' => $this->input->post('bairro'),
-                        'cidade' => $this->input->post('cidade'),
-                        'estado' => $this->input->post('estado'),
-                        'email' => $this->input->post('email'),
-                        'telefone' => $this->input->post('telefone'),
-                        'celular' => $this->input->post('celular'),
-                        'situacao' => $this->input->post('situacao'),
-                        'permissoes_id' => $this->input->post('permissoes_id')
+                        'usuario_nome' => $this->input->post('nome'),
+                        'usuario_rg' => $this->input->post('rg'),
+                        'usuario_cpf' => $this->input->post('cpf'),
+                        'usuario_logradouro' => $this->input->post('rua'),
+                        'usuario_numero' => $this->input->post('numero'),
+                        'usuario_bairro' => $this->input->post('bairro'),
+                        'usuario_cidade' => $this->input->post('cidade'),
+                        'usuario_estado' => $this->input->post('estado'),
+                        'usuario_email' => $this->input->post('email'),
+                        'usuario_tel01' => $this->input->post('telefone'),
+                        'usuario_tel02' => $this->input->post('celular'),
+                        'usuario_situacao' => $this->input->post('situacao'),
+                        'usuario_permissoes_codigo' => $this->input->post('permissoes_id')
                 );
 
             }
 
            
-            if ($this->usuarios_model->edit('usuarios', $data, 'idUsuarios', $this->input->post('idUsuarios')) == true) {
+            if ($this->usuarios_model->edit('tb_usuario', $data, 'usuario_codigo', $this->input->post('idUsuarios')) == true) {
                 $this->session->set_flashdata('success', 'Usuário editado com sucesso!');
                 redirect(base_url().'index.php/usuarios/editar/'.$this->input->post('idUsuarios'));
             } else {
@@ -216,7 +219,7 @@ class Usuarios extends CI_Controller
     {
 
             $ID =  $this->uri->segment(3);
-            $this->usuarios_model->delete('usuarios', 'idUsuarios', $ID);
+            $this->usuarios_model->delete('tb_usuario', 'usuario_codigo', $ID);
             redirect(base_url().'index.php/usuarios/gerenciar/');
     }
 }

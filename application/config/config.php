@@ -28,7 +28,7 @@ $config['app_version'] = '3.1.16';
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://erp.klentech.com.br/';
+$config['base_url'] = 'http://localhost/erp02';
 
 /*
 |--------------------------------------------------------------------------

@@ -20,8 +20,8 @@ if (!$results) {?>
                     <tr>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>CPF/CNPJ</th>
-                        <th>Telefone</th>
+                        <th>Telefone 1</th>
+                        <th>Telefone 2</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -55,8 +55,8 @@ if (!$results) {?>
         <tr>
             <th>#</th>
             <th>Nome</th>
-            <th>CPF/CNPJ</th>
-            <th>Telefone</th>
+            <th>Telefone 1</th>
+            <th>Telefone 2</th>
             <th></th>
         </tr>
     </thead>

@@ -37,7 +37,7 @@ class Permissoes_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->where('situacao', 1);
+        $this->db->where('permissoes_situacao', 1);
         $query = $this->db->get();
         return $query->result();
         ;

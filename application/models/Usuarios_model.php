@@ -20,9 +20,9 @@ class Usuarios_model extends CI_Model
     {
         
         $this->db->from('tb_usuario');
-        $this->db->select('tb_usuario.*, tb_permissoes.nome as permissao');
+        $this->db->select('tb_usuario.*, tb_permissoes.permissoes_nome as permissao');
         $this->db->limit($perpage, $start);
-        $this->db->join('tb_permissoes', 'tb_usuarios.permissoes_codigo = tb_permissoes.permissoes_codigo', 'left');
+        $this->db->join('tb_permissoes', 'tb_usuario.usuario_permissoes_codigo = tb_permissoes.permissoes_codigo', 'left');
   
         $query = $this->db->get();
         
@@ -32,7 +32,7 @@ class Usuarios_model extends CI_Model
 
     function getAllTipos()
     {
-        $this->db->where('situacao', 1);
+        $this->db->where('usuario_situacao', 1);
         return $this->db->get('tiposUsuario')->result();
     }
 

@@ -10,23 +10,23 @@
                                           <div class="widget-content nopadding">
                                                 <?php echo $custom_error; ?>
                                                 <form action="<?php echo current_url(); ?>" id="formServico" method="post" class="form-horizontal" >
-                                                    <?php echo form_hidden('idServicos', $result->idServicos) ?>
+                                                    <?php echo form_hidden('idServicos', $result->servico_codigo) ?>
                                                     <div class="control-group">
                                                             <label for="nome" class="control-label">Nome<span class="required">*</span></label>
                                                             <div class="controls">
-                                                                  <input id="nome" type="text" name="nome" value="<?php echo $result->nome ?>"  />
+                                                                  <input id="nome" type="text" name="nome" value="<?php echo $result->servico_nome ?>"  />
                                                             </div>
                                                       </div>
                                                       <div class="control-group">
                                                             <label for="preco" class="control-label"><span class="required">Preço*</span></label>
                                                             <div class="controls">
-                                                                <input id="preco" class="money" type="text" name="preco" value="<?php echo $result->preco ?>"  />
+                                                                <input id="preco" class="money" type="text" name="preco" value="<?php echo $result->servico_preco ?>"  />
                                                             </div>
                                                       </div>
                                                       <div class="control-group">
                                                             <label for="descricao" class="control-label">Descrição</label>
                                                             <div class="controls">
-                                                                  <input id="descricao" type="text" name="descricao" value="<?php echo $result->descricao ?>"  />
+                                                                  <input id="descricao" type="text" name="descricao" value="<?php echo $result->servico_descricao ?>"  />
                                                             </div>
                                                       </div>
 

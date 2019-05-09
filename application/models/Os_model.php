@@ -52,16 +52,16 @@ class Os_model extends CI_Model
             }
         }
 
-        $this->db->select($fields.',tb_cliente.cliente_nome_razao, usuarios.nome');
+        $this->db->select($fields.',tb_cliente.cliente_nome_razao, tb_usuario.usuario_nome');
         $this->db->from($table);
         $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
-        $this->db->join('usuarios', 'usuarios.idUsuarios = tb_os.os_usuarios_id', 'left');
+        $this->db->join('tb_usuario', 'tb_usuario.usuario_codigo = tb_os.os_usuario_codigo', 'left');
 
         // condicionais da pesquisa
 
         // condicional de status
-        if (array_key_exists('status', $where)) {
-            $this->db->where('status', $where['status']);
+        if (array_key_exists('os_status', $where)) {
+            $this->db->where('os_status', $where['os_status']);
         }
 
         // condicional de clientes
@@ -73,12 +73,12 @@ class Os_model extends CI_Model
 
         // condicional data inicial
         if (array_key_exists('de', $where)) {
-            $this->db->where('dataInicial >=', $where['de']);
+            $this->db->where('os_data_inicial >=', $where['de']);
         }
         // condicional data final
         if (array_key_exists('ate', $where)) {
 
-            $this->db->where('dataFinal <=', $where['ate']);
+            $this->db->where('os_data_final <=', $where['ate']);
         }
         
         $this->db->limit($perpage, $start);
@@ -93,10 +93,10 @@ class Os_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->select('tb_os.*, tb_cliente.*, usuarios.telefone, usuarios.email as email_responsavel,usuarios.nome');
+        $this->db->select('tb_os.*, tb_cliente.*, tb_usuario.usuario_tel01, tb_usuario.usuario_email as email_responsavel,tb_usuario.usuario_nome');
         $this->db->from('tb_os');
         $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
-        $this->db->join('usuarios', 'usuarios.idUsuarios = tb_os.os_usuarios_id');
+        $this->db->join('tb_usuario', 'tb_usuario.usuario_codigo = tb_os.os_usuario_codigo');
         $this->db->where('tb_os.os_codigo', $id);
         $this->db->limit(1);
         return $this->db->get()->row();
@@ -105,19 +105,19 @@ class Os_model extends CI_Model
     public function getProdutos($id = null)
     {
         
-        $this->db->select('produtos_os.*, produtos.*');
-        $this->db->from('produtos_os');
-        $this->db->join('produtos', 'produtos.idProdutos = produtos_os.produtos_id');
-        $this->db->where('os_id', $id);
+        $this->db->select('tb_produto_os.*, tb_produto.*');
+        $this->db->from('tb_produto_os');
+        $this->db->join('tb_produto', 'tb_produto.produto_codigo = tb_produto_os.produto_os_produto_codigo');
+        $this->db->where('produto_os_os_codigo', $id);
         return $this->db->get()->result();
     }
 
     public function getServicos($id = null)
     {
-        $this->db->select('servicos_os.*, servicos.*');
-        $this->db->from('servicos_os');
-        $this->db->join('servicos', 'servicos.idServicos = servicos_os.servicos_id');
-        $this->db->where('os_id', $id);
+        $this->db->select('tb_servico_os.*, tb_servico.*');
+        $this->db->from('tb_servico_os');
+        $this->db->join('tb_servico', 'tb_servico.servico_codigo = tb_servico_os.servico_os_servico_codigo');
+        $this->db->where('servico_os_os_codigo', $id);
         return $this->db->get()->result();
     }
     
@@ -168,11 +168,11 @@ class Os_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('descricao', $q);
-        $query = $this->db->get('produtos');
+        $this->db->like('produto_descricao', $q);
+        $query = $this->db->get('tb_produto');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['descricao'].' | Preço: R$ '.$row['precoVenda'].' | Estoque: '.$row['estoque'],'estoque'=>$row['estoque'],'id'=>$row['idProdutos'],'preco'=>$row['precoVenda']);
+                $row_set[] = array('label'=>$row['produto_descricao'].' | Preço: R$ '.$row['produto_preco_venda'].' | Estoque: '.$row['produto_estoque'],'estoque'=>$row['produto_estoque'],'id'=>$row['produto_codigo'],'preco'=>$row['produto_preco_venda']);
             }
             echo json_encode($row_set);
         }
@@ -183,12 +183,12 @@ class Os_model extends CI_Model
         
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('descricao', $q);
-        $this->db->where('saida', 1);
-        $query = $this->db->get('produtos');
+        $this->db->like('produto_descricao', $q);
+        $this->db->where('produto_saida', 1);
+        $query = $this->db->get('tb_produto');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['descricao'].' | Preço: R$ '.$row['precoVenda'].' | Estoque: '.$row['estoque'],'estoque'=>$row['estoque'],'id'=>$row['idProdutos'],'preco'=>$row['precoVenda']);
+                $row_set[] = array('label'=>$row['produto_descricao'].' | Preço: R$ '.$row['produto_preco_venda'].' | Estoque: '.$row['produto_estoque'],'estoque'=>$row['estoque'],'id'=>$row['produto_codigo'],'preco'=>$row['produto_preco_venda']);
             }
             echo json_encode($row_set);
         }
@@ -204,7 +204,7 @@ class Os_model extends CI_Model
         $query = $this->db->get('tb_cliente');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['cliente_nome_razao'].' | cliente_tel01: '.$row['cliente_tel01'],'id'=>$row['cliente_codigo']);
+                $row_set[] = array('label'=>$row['cliente_nome_razao'].' | Tel. 1: '.$row['cliente_tel01'],'id'=>$row['cliente_codigo']);
             }
             echo json_encode($row_set);
         }
@@ -215,12 +215,12 @@ class Os_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('nome', $q);
-        $this->db->where('situacao', 1);
-        $query = $this->db->get('usuarios');
+        $this->db->like('usuario_nome', $q);
+        $this->db->where('usuario_situacao', 1);
+        $query = $this->db->get('tb_usuario');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['nome'].' | Telefone: '.$row['telefone'],'id'=>$row['idUsuarios']);
+                $row_set[] = array('label'=>$row['usuario_nome'].' | Tel 01: '.$row['usuario_tel01'],'id'=>$row['usuario_codigo']);
             }
             echo json_encode($row_set);
         }
@@ -231,11 +231,11 @@ class Os_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('nome', $q);
-        $query = $this->db->get('servicos');
+        $this->db->like('servico_nome', $q);
+        $query = $this->db->get('tb_servico');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['nome'].' | Preço: R$ '.$row['preco'],'id'=>$row['idServicos'],'preco'=>$row['preco']);
+                $row_set[] = array('label'=>$row['servico_nome'].' | Preço: R$ '.$row['servico_preco'],'id'=>$row['servico_codigo'],'preco'=>$row['servico_preco']);
             }
             echo json_encode($row_set);
         }
@@ -245,19 +245,19 @@ class Os_model extends CI_Model
     public function anexar($os, $anexo, $url, $thumb, $path)
     {
         
-        $this->db->set('anexo', $anexo);
-        $this->db->set('url', $url);
-        $this->db->set('thumb', $thumb);
-        $this->db->set('path', $path);
-        $this->db->set('os_id', $os);
+        $this->db->set('anexo_nome', $anexo);
+        $this->db->set('anexo_url', $url);
+        $this->db->set('anexo_thumb', $thumb);
+        $this->db->set('anexo_path', $path);
+        $this->db->set('anexo_os_codigo', $os);
 
-        return $this->db->insert('anexos');
+        return $this->db->insert('tb_anexo');
     }
 
     public function getAnexos($os)
     {
         
-        $this->db->where('os_id', $os);
-        return $this->db->get('anexos')->result();
+        $this->db->where('anexo_os_codigo', $os);
+        return $this->db->get('tb_anexo')->result();
     }
 }

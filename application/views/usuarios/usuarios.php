@@ -63,13 +63,13 @@ if (!$results) {?>
         <?php foreach ($results as $r) {
            
             echo '<tr>';
-            echo '<td>'.$r->idUsuarios.'</td>';
-            echo '<td>'.$r->nome.'</td>';
-            echo '<td>'.$r->cpf.'</td>';
-            echo '<td>'.$r->telefone.'</td>';
-            echo '<td>'.$r->permissao.'</td>';
+            echo '<td>'.$r->usuario_codigo.'</td>';
+            echo '<td>'.$r->usuario_nome.'</td>';
+            echo '<td>'.$r->usuario_cpf.'</td>';
+            echo '<td>'.$r->usuario_tel01.'</td>';
+            echo '<td>'.$r->usuario_permissoes_codigo.'</td>';
             echo '<td>
-                      <a href="'.base_url().'index.php/usuarios/editar/'.$r->idUsuarios.'" class="btn btn-info tip-top" title="Editar Usuário"><i class="icon-pencil icon-white"></i></a>
+                      <a href="'.base_url().'index.php/usuarios/editar/'.$r->usuario_codigo.'" class="btn btn-info tip-top" title="Editar Usuário"><i class="icon-pencil icon-white"></i></a>
                   </td>';
             echo '</tr>';
 }?>
