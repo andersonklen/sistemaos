@@ -25,24 +25,24 @@
                             <div class="span12" id="divEditarVenda">
                                 
                                 <form action="<?php echo current_url(); ?>" method="post" id="formVendas">
-                                    <?php echo form_hidden('idVendas', $result->idVendas) ?>
+                                    <?php echo form_hidden('venda_codigo', $result->venda_codigo) ?>
                                     
                                     <div class="span12" style="padding: 1%; margin-left: 0">
-                                        <h3>#Venda: <?php echo $result->idVendas ?></h3>
+                                        <h3>#Venda: <?php echo $result->venda_codigo ?></h3>
                                         <div class="span2" style="margin-left: 0">
                                             <label for="dataFinal">Data Final</label>
-                                            <input id="dataVenda" class="span12 datepicker" type="text" name="dataVenda" value="<?php echo date('d/m/Y', strtotime($result->dataVenda)); ?>"  />
+                                            <input id="dataVenda" class="span12 datepicker" type="text" name="dataVenda" value="<?php echo date('d/m/Y', strtotime($result->venda_data_venda)); ?>"  />
                                         </div>
                                         <div class="span5" >
                                             <label for="cliente">Cliente<span class="required">*</span></label>
-                                            <input id="cliente" class="span12" type="text" name="cliente" value="<?php echo $result->nomeCliente ?>"  />
-                                            <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="<?php echo $result->clientes_id ?>"  />
+                                            <input id="cliente" class="span12" type="text" name="cliente" value="<?php echo $result->cliente_nome_razao ?>"  />
+                                            <input id="clientes_id" class="span12" type="hidden" name="clientes_id" value="<?php echo $result->cliente_codigo ?>"  />
                                             <input id="valorTotal" type="hidden" name="valorTotal" value=""  />
                                         </div>
                                         <div class="span5">
                                             <label for="tecnico">Vendedor<span class="required">*</span></label>
-                                            <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->nome ?>"  />
-                                            <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?php echo $result->usuarios_id ?>"  />
+                                            <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->usuario_nome ?>"  />
+                                            <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value="<?php echo $result->usuario_codigo ?>"  />
                                         </div>
                                         
                                     </div>
@@ -53,11 +53,11 @@
                                     <div class="span12" style="padding: 1%; margin-left: 0">
             
                                         <div class="span8 offset2" style="text-align: center">
-                                            <?php if ($result->faturado == 0) { ?>
+                                            <?php if ($result->venda_faturado == 0) { ?>
                                             <a href="#modal-faturar" id="btn-faturar" role="button" data-toggle="modal" class="btn btn-success"><i class="icon-file"></i> Faturar</a>
                                             <?php } ?>
                                             <button class="btn btn-primary" id="btnContinuar"><i class="icon-white icon-ok"></i> Alterar</button>
-                                            <a href="<?php echo base_url() ?>index.php/vendas/visualizar/<?php echo $result->idVendas; ?>" class="btn btn-inverse"><i class="icon-eye-open"></i> Visualizar Venda</a>
+                                            <a href="<?php echo base_url() ?>index.php/vendas/visualizar/<?php echo $result->venda_codigo; ?>" class="btn btn-inverse"><i class="icon-eye-open"></i> Visualizar Venda</a>
                                             <a href="<?php echo base_url() ?>index.php/vendas" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
                                         </div>
 
@@ -70,7 +70,7 @@
                                         <form id="formProdutos" action="<?php echo base_url(); ?>index.php/vendas/adicionarProduto" method="post">
                                             <div class="span8">
                                                 <input type="hidden" name="idProduto" id="idProduto" />
-                                                <input type="hidden" name="idVendasProduto" id="idVendasProduto" value="<?php echo $result->idVendas?>" />
+                                                <input type="hidden" name="idVendasProduto" id="idVendasProduto" value="<?php echo $result->venda_codigo?>" />
                                                 <input type="hidden" name="estoque" id="estoque" value=""/>
                                                 <input type="hidden" name="preco" id="preco" value=""/>
                                                 <label for="">Produto</label>
@@ -101,12 +101,12 @@
                                                 $total = 0;
                                                 foreach ($produtos as $p) {
                                                     
-                                                    $total = $total + $p->subTotal;
+                                                    $total = $total + $p->item_de_venda_subtotal;
                                                     echo '<tr>';
-                                                    echo '<td>'.$p->descricao.'</td>';
-                                                    echo '<td>'.$p->quantidade.'</td>';
-                                                    echo '<td><a href="" idAcao="'.$p->idItens.'" prodAcao="'.$p->idProdutos.'" quantAcao="'.$p->quantidade.'" title="Excluir Produto" class="btn btn-danger"><i class="icon-remove icon-white"></i></a></td>';
-                                                    echo '<td>R$ '.number_format($p->subTotal, 2, ',', '.').'</td>';
+                                                    echo '<td>'.$p->produto_descricao.'</td>';
+                                                    echo '<td>'.$p->item_de_venda_quantidade.'</td>';
+                                                    echo '<td><a href="" idAcao="'.$p->item_de_venda_codigo.'" prodAcao="'.$p->item_de_venda_produto_codigo.'" quantAcao="'.$p->item_de_venda_quantidade.'" title="Excluir Produto" class="btn btn-danger"><i class="icon-remove icon-white"></i></a></td>';
+                                                    echo '<td>R$ '.number_format($p->item_de_venda_subtotal, 2, ',', '.').'</td>';
                                                     echo '</tr>';
                                                 }?>
                                                
@@ -153,15 +153,15 @@
     <div class="span12 alert alert-info" style="margin-left: 0"> Obrigatório o preenchimento dos campos com asterisco.</div>
     <div class="span12" style="margin-left: 0"> 
       <label for="descricao">Descrição</label>
-      <input class="span12" id="descricao" type="text" name="descricao" value="Fatura de Venda - #<?php echo $result->idVendas; ?> "  />
+      <input class="span12" id="descricao" type="text" name="descricao" value="Fatura de Venda - #<?php echo $result->venda_codigo; ?> "  />
       
     </div>  
     <div class="span12" style="margin-left: 0"> 
       <div class="span12" style="margin-left: 0"> 
         <label for="cliente">Cliente*</label>
-        <input class="span12" id="cliente" type="text" name="cliente" value="<?php echo $result->nomeCliente ?>" />
-        <input type="hidden" name="clientes_id" id="clientes_id" value="<?php echo $result->clientes_id ?>">
-        <input type="hidden" name="vendas_id" id="vendas_id" value="<?php echo $result->idVendas; ?>">
+        <input class="span12" id="cliente" type="text" name="cliente" value="<?php echo $result->cliente_nome_razao ?>" />
+        <input type="hidden" name="clientes_id" id="clientes_id" value="<?php echo $result->cliente_codigo ?>">
+        <input type="hidden" name="vendas_id" id="vendas_id" value="<?php echo $result->venda_codigo; ?>">
       </div>
       
       

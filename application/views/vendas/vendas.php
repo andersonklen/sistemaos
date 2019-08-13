@@ -63,29 +63,29 @@ if (!$results) {?>
     </thead>
     <tbody>
         <?php foreach ($results as $r) {
-            $dataVenda = date(('d/m/Y'), strtotime($r->dataVenda));
-            if ($r->faturado == 1) {
+            $dataVenda = date(('d/m/Y'), strtotime($r->venda_data_venda));
+            if ($r->venda_faturado == 1) {
                 $faturado = 'Sim';
 
             } else {
                 $faturado = 'Não';
             }
             echo '<tr>';
-            echo '<td>'.$r->idVendas.'</td>';
+            echo '<td>'.$r->venda_codigo.'</td>';
             echo '<td>'.$dataVenda.'</td>';
-            echo '<td><a href="'.base_url().'index.php/clientes/visualizar/'.$r->idClientes.'">'.$r->nomeCliente.'</a></td>';
+            echo '<td><a href="'.base_url().'index.php/clientes/visualizar/'.$r->venda_cliente_codigo.'">'.$r->cliente_nome_razao.'</a></td>';
             echo '<td>'.$faturado.'</td>';
             
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vVenda')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/vendas/visualizar/'.$r->idVendas.'" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/vendas/imprimir/'.$r->idVendas.'" target="_blank" class="btn btn-inverse tip-top" title="Imprimir"><i class="icon-print"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/vendas/visualizar/'.$r->venda_codigo.'" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/vendas/imprimir/'.$r->venda_codigo.'" target="_blank" class="btn btn-inverse tip-top" title="Imprimir"><i class="icon-print"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eVenda')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/vendas/editar/'.$r->idVendas.'" class="btn btn-info tip-top" title="Editar venda"><i class="icon-pencil icon-white"></i></a>';
+                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/vendas/editar/'.$r->venda_codigo.'" class="btn btn-info tip-top" title="Editar venda"><i class="icon-pencil icon-white"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dVenda')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" venda="'.$r->idVendas.'" class="btn btn-danger tip-top" title="Excluir Venda"><i class="icon-remove icon-white"></i></a>';
+                echo '<a href="#modal-excluir" role="button" data-toggle="modal" venda="'.$r->venda_codigo.'" class="btn btn-danger tip-top" title="Excluir Venda"><i class="icon-remove icon-white"></i></a>';
             }
 
             echo '</td>';

@@ -1,4 +1,4 @@
-<?php $permissoes = unserialize($result->permissoes);?>
+<?php $permissoes = unserialize($result->permissoes_permissoes);?>
 <div class="span12" style="margin-left: 0">
     <form action="<?php echo base_url();?>index.php/permissoes/editar" id="formPermissao" method="post">
 
@@ -15,8 +15,8 @@
                 
                 <div class="span4">
                     <label>Nome da Permissão</label>
-                    <input name="nome" type="text" id="nome" class="span12" value="<?php echo $result->nome; ?>" />
-                    <input type="hidden" name="idPermissao" value="<?php echo $result->idPermissao; ?>">
+                    <input name="nome" type="text" id="nome" class="span12" value="<?php echo $result->permissoes_nome; ?>" />
+                    <input type="hidden" name="idPermissao" value="<?php echo $result->permissoes_codigo; ?>">
 
                 </div>
 
@@ -24,7 +24,7 @@
                     <label>Situação</label>
                     
                     <select name="situacao" id="situacao" class="span12">
-                        <?php if ($result->situacao == 1) {
+                        <?php if ($result->permissoes_situacao == 1) {
                             $sim = 'selected';
                             $nao ='';
 

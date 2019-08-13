@@ -99,6 +99,7 @@ class Produtos extends CI_Controller
                 'produto_estoque_minimo' => set_value('vw_produto_estoque_minimo'),
                 'produto_movimenta_saida' => set_value('vw_produto_movimenta_saida'),
                 'produto_movimenta_entrada' => set_value('produto_movimenta_entrada'),
+                'produto_deletado' => 'NAO',
             );
 
             if ($this->produtos_model->add('tb_produto', $data) == true) {
@@ -131,9 +132,9 @@ class Produtos extends CI_Controller
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
-            $produto_preco_compra = $this->input->post('produto_preco_compra');
+            $produto_preco_compra = $this->input->post('vw_produto_preco_compra');
             $produto_preco_compra = str_replace(",", "", $produto_preco_compra);
-            $produto_preco_venda = $this->input->post('produto_preco_venda');
+            $produto_preco_venda = $this->input->post('vw_produto_preco_venda');
             $produto_preco_venda = str_replace(",", "", $produto_preco_venda);
             $data = array(
                 'produto_descricao' => $this->input->post('vw_produto_descricao'),

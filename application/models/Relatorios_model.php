@@ -74,27 +74,27 @@ class Relatorios_model extends CI_Model
             $dataInicial = date('Y-m-d');
             $dataFinal = date('Y-m-d');
         }
-        $query = "SELECT * FROM clientes WHERE dataCadastro BETWEEN ? AND ?";
+        $query = "SELECT * FROM tb_cliente WHERE cliente_data_cadastro BETWEEN ? AND ?";
         return $this->db->query($query, array($dataInicial, $dataFinal))->result();
     }
 
     public function clientesRapid()
     {
-        $this->db->order_by('nomeCliente', 'asc');
-        return $this->db->get('clientes')->result();
+        $this->db->order_by('cliente_nome_razao', 'asc');
+        return $this->db->get('tb_cliente')->result();
     }
 
     public function produtosRapid()
     {
-        $this->db->order_by('descricao', 'asc');
-        return $this->db->get('produtos')->result();
+        $this->db->order_by('produto_descricao', 'asc');
+        return $this->db->get('tb_produto')->result();
     }
 
     public function produtosRapidMin()
     {
-        $this->db->order_by('descricao', 'asc');
-        $this->db->where('estoque < estoqueMinimo');
-        return $this->db->get('produtos')->result();
+        $this->db->order_by('produto_descricao', 'asc');
+        $this->db->where('produto_estoque_atual < produto_estoque_minimo');
+        return $this->db->get('tb_produto')->result();
     }
 
     public function produtosCustom($precoInicial = null, $precoFinal = null, $estoqueInicial = null, $estoqueFinal = null)

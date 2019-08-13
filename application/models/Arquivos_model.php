@@ -30,9 +30,9 @@ class Arquivos_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->where('idDocumentos', $id);
+        $this->db->where('documento_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('documentos')->row();
+        return $this->db->get('tb_documento')->row();
     }
     
     function add($table, $data)
@@ -77,15 +77,15 @@ class Arquivos_model extends CI_Model
     {
         
         if ($pesquisa != null) {
-            $this->db->like('documento', $pesquisa);
+            $this->db->like('documento_nome', $pesquisa);
         }
 
         if ($de != null) {
-            $this->db->where('cadastro >=', $de);
-            $this->db->where('cadastro <=', $ate);
+            $this->db->where('documento_cadastro >=', $de);
+            $this->db->where('documento_cadastro <=', $ate);
         }
         $this->db->limit(10);
-        return $this->db->get('documentos')->result();
+        return $this->db->get('tb_documento')->result();
     }
 }
 

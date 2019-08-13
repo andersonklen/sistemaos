@@ -20,11 +20,11 @@ class Vendas_model extends CI_Model
     function get($table, $fields, $where = '', $perpage = 0, $start = 0, $one = false, $array = 'array')
     {
         
-        $this->db->select($fields.', clientes.nomeCliente, clientes.idClientes');
+        $this->db->select($fields.', tb_cliente.cliente_nome_razao, tb_cliente.cliente_codigo');
         $this->db->from($table);
         $this->db->limit($perpage, $start);
-        $this->db->join('clientes', 'clientes.idClientes = '.$table.'.clientes_id');
-        $this->db->order_by('idVendas', 'desc');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = '.$table.'.venda_cliente_codigo');
+        $this->db->order_by('venda_codigo', 'desc');
         if ($where) {
             $this->db->where($where);
         }
@@ -37,22 +37,22 @@ class Vendas_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->select('vendas.*, clientes.*, lancamentos.data_vencimento, usuarios.telefone, usuarios.email,usuarios.nome');
-        $this->db->from('vendas');
-        $this->db->join('clientes', 'clientes.idClientes = vendas.clientes_id');
-        $this->db->join('usuarios', 'usuarios.idUsuarios = vendas.usuarios_id');
-        $this->db->join('lancamentos', 'vendas.idVendas = lancamentos.vendas_id', 'LEFT');
-        $this->db->where('vendas.idVendas', $id);
+        $this->db->select('tb_venda.*, tb_cliente.*, tb_lancamento.lancamento_data_vencimento, tb_usuario.usuario_tel01, tb_usuario.usuario_codigo,tb_usuario.usuario_nome');
+        $this->db->from('tb_venda');
+        $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_venda.venda_cliente_codigo');
+        $this->db->join('tb_usuario', 'tb_usuario.usuario_codigo = tb_venda.venda_usuario_codigo');
+        $this->db->join('tb_lancamento', 'tb_venda.venda_codigo = tb_lancamento.lancamento_venda_codigo', 'LEFT');
+        $this->db->where('tb_venda.venda_codigo', $id);
         $this->db->limit(1);
         return $this->db->get()->row();
     }
 
     public function getProdutos($id = null)
     {
-        $this->db->select('itens_de_vendas.*, produtos.*');
-        $this->db->from('itens_de_vendas');
-        $this->db->join('produtos', 'produtos.idProdutos = itens_de_vendas.produtos_id');
-        $this->db->where('vendas_id', $id);
+        $this->db->select('tb_item_de_venda.*, tb_produto.*');
+        $this->db->from('tb_item_de_venda');
+        $this->db->join('tb_produto', 'tb_produto.produto_codigo = tb_item_de_venda.item_de_venda_produto_codigo');
+        $this->db->where('item_de_venda_venda_codigo', $id);
         return $this->db->get()->result();
     }
 
@@ -103,11 +103,11 @@ class Vendas_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('descricao', $q);
-        $query = $this->db->get('produtos');
+        $this->db->like('produto_descricao', $q);
+        $query = $this->db->get('tb_produto');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['descricao'].' | Preço: R$ '.$row['precoVenda'].' | Estoque: '.$row['estoque'],'estoque'=>$row['estoque'],'id'=>$row['idProdutos'],'preco'=>$row['precoVenda']);
+                $row_set[] = array('label'=>$row['produto_descricao'].' | Preço: R$ '.$row['produto_preco_venda'].' | Estoque: '.$row['produto_estoque_atual'],'estoque'=>$row['produto_estoque_atual'],'id'=>$row['produto_codigo'],'preco'=>$row['produto_preco_venda']);
             }
             echo json_encode($row_set);
         }
@@ -118,11 +118,11 @@ class Vendas_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('nomeCliente', $q);
-        $query = $this->db->get('clientes');
+        $this->db->like('cliente_nome_razao', $q);
+        $query = $this->db->get('tb_cliente');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['nomeCliente'].' | Telefone: '.$row['telefone'],'id'=>$row['idClientes']);
+                $row_set[] = array('label'=>$row['cliente_nome_razao'].' | Telefone: '.$row['cliente_tel01'],'id'=>$row['cliente_codigo']);
             }
             echo json_encode($row_set);
         }
@@ -133,12 +133,12 @@ class Vendas_model extends CI_Model
 
         $this->db->select('*');
         $this->db->limit(5);
-        $this->db->like('nome', $q);
-        $this->db->where('situacao', 1);
-        $query = $this->db->get('usuarios');
+        $this->db->like('usuario_nome', $q);
+        $this->db->where('usuario_situacao', 1);
+        $query = $this->db->get('tb_usuario');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['nome'].' | Telefone: '.$row['telefone'],'id'=>$row['idUsuarios']);
+                $row_set[] = array('label'=>$row['usuario_nome'].' | Telefone: '.$row['usuario_tel01'],'id'=>$row['usuario_codigo']);
             }
             echo json_encode($row_set);
         }

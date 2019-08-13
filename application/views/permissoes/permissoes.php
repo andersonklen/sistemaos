@@ -59,20 +59,20 @@ if (!$results) {?>
     </thead>
     <tbody>
         <?php foreach ($results as $r) {
-            if ($r->situacao == 1) {
+            if ($r->permissoes_situacao == 1) {
                 $situacao = 'Ativo';
 
             } else {
                 $situacao = 'Inativo';
             }
             echo '<tr>';
-            echo '<td>'.$r->idPermissao.'</td>';
-            echo '<td>'.$r->nome.'</td>';
-            echo '<td>'.date('d/m/Y', strtotime($r->data)).'</td>';
+            echo '<td>'.$r->permissoes_codigo.'</td>';
+            echo '<td>'.$r->permissoes_nome.'</td>';
+            echo '<td>'.date('d/m/Y', strtotime($r->permissoes_data)).'</td>';
             echo '<td>'.$situacao.'</td>';
             echo '<td>
-                      <a href="'.base_url().'index.php/permissoes/editar/'.$r->idPermissao.'" class="btn btn-info tip-top" title="Editar Permissão"><i class="icon-pencil icon-white"></i></a>
-                      <a href="#modal-excluir" role="button" data-toggle="modal" permissao="'.$r->idPermissao.'" class="btn btn-danger tip-top" title="Desativar Permissão"><i class="icon-remove icon-white"></i></a>
+                      <a href="'.base_url().'index.php/permissoes/editar/'.$r->permissoes_codigo.'" class="btn btn-info tip-top" title="Editar Permissão"><i class="icon-pencil icon-white"></i></a>
+                      <a href="#modal-excluir" role="button" data-toggle="modal" permissao="'.$r->permissoes_codigo.'" class="btn btn-danger tip-top" title="Desativar Permissão"><i class="icon-remove icon-white"></i></a>
                   </td>';
             echo '</tr>';
 }?>

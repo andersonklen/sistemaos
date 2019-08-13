@@ -47,7 +47,7 @@ class Arquivos extends CI_Controller
             
                    
             $config['base_url'] = base_url().'index.php/arquivos/gerenciar';
-            $config['total_rows'] = $this->arquivos_model->count('documentos');
+            $config['total_rows'] = $this->arquivos_model->count('tb_documento');
             $config['per_page'] = 10;
             $config['next_link'] = 'Próxima';
             $config['prev_link'] = 'Anterior';
@@ -70,7 +70,7 @@ class Arquivos extends CI_Controller
             
             $this->pagination->initialize($config);
             
-            $this->data['results'] = $this->arquivos_model->get('documentos', 'idDocumentos,documento,descricao,file,path,url,cadastro,categoria,tamanho,tipo', '', $config['per_page'], $this->uri->segment(3));
+            $this->data['results'] = $this->arquivos_model->get('tb_documento', 'documento_codigo,documento_nome,documento_descricao,documento_file,documento_path,documento_url,documento_cadastro,documento_categoria,documento_tamanho,documento_tipo', '', $config['per_page'], $this->uri->segment(3));
         
         } else {
 
@@ -131,17 +131,17 @@ class Arquivos extends CI_Controller
             }
 
             $data = array(
-                'documento' => $this->input->post('nome'),
-                'descricao' => $this->input->post('descricao'),
-                'file' => $file,
-                'path' => $path,
-                'url' => $url,
-                'cadastro' => $data,
-                'tamanho' => $tamanho,
-                'tipo' => $tipo
+                'documento_nome' => $this->input->post('nome'),
+                'documento_descricao' => $this->input->post('descricao'),
+                'documento_file' => $file,
+                'documento_path' => $path,
+                'documento_url' => $url,
+                'documento_cadastro' => $data,
+                'documento_tamanho' => $tamanho,
+                'documento_tipo' => $tipo
             );
 
-            if ($this->arquivos_model->add('documentos', $data) == true) {
+            if ($this->arquivos_model->add('tb_documento', $data) == true) {
                 $this->session->set_flashdata('success', 'Arquivo adicionado com sucesso!');
                 redirect(base_url() . 'index.php/arquivos/adicionar/');
             } else {
@@ -184,12 +184,12 @@ class Arquivos extends CI_Controller
             }
 
             $data = array(
-                'documento' => $this->input->post('nome'),
-                'descricao' => $this->input->post('descricao'),
-                'cadastro' => $data,
+                'documento_nome' => $this->input->post('nome'),
+                'documento_descricao' => $this->input->post('descricao'),
+                'documento_cadastro' => $data,
             );
 
-            if ($this->arquivos_model->edit('documentos', $data, 'idDocumentos', $this->input->post('idDocumentos')) == true) {
+            if ($this->arquivos_model->edit('tb_documento', $data, 'documento_codigo', $this->input->post('idDocumentos')) == true) {
                 $this->session->set_flashdata('success', 'Alterações efetuadas com sucesso!');
                 redirect(base_url() . 'index.php/arquivos/editar/'.$this->input->post('idDocumentos'));
             } else {
@@ -245,9 +245,9 @@ class Arquivos extends CI_Controller
 
         $file = $this->arquivos_model->getById($id);
 
-        $this->db->where('idDocumentos', $id);
+        $this->db->where('documento_codigo', $id);
         
-        if ($this->db->delete('documentos')) {
+        if ($this->db->delete('tb_documento')) {
 
             $path = $file->path;
             unlink($path);

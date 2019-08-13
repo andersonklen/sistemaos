@@ -22,7 +22,7 @@ class Financeiro_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->order_by('data_vencimento', 'asc');
+        $this->db->order_by('lancamento_data_vencimento', 'asc');
         $this->db->limit($perpage, $start);
         if ($where) {
             $this->db->where($where);
@@ -31,15 +31,16 @@ class Financeiro_model extends CI_Model
         $query = $this->db->get();
         
         $result =  !$one  ? $query->result() : $query->row();
+
         return $result;
     }
 
 
     function getById($id)
     {
-        $this->db->where('idClientes', $id);
+        $this->db->where('cliente_codigo', $id);
         $this->db->limit(1);
-        return $this->db->get('clientes')->row();
+        return $this->db->get('tb_cliente')->row();
     }
     
     function add($table, $data)

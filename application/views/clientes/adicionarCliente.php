@@ -15,7 +15,20 @@
                     echo '<div class="alert alert-danger">' . $custom_error . '</div>';
 } ?>
                 <form action="<?php echo current_url(); ?>" id="formCliente" method="post" class="form-horizontal" >
-                    <div class="control-group">
+
+
+                     <div class="control-group">
+                        <label  class="control-label">Tipo de Cliente</label>
+                        <div class="controls">
+                            <select name="vw_tipo_cliente" id="vw_tipo_cliente" onchange="js_check_tipo_cliente()">
+                                <option value="fisica">Pessoa Física</option>
+                                <option value="juridica">Pessoa Jurídica</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div id="hiddenDiv"class="control-group">
                         <label for="nomeCliente" class="control-label">Nome / Razão<span class="required">*</span></label>
                         <div class="controls">
                             <input id="nomeCliente" type="text" name="nomeCliente" value="<?php echo set_value('nomeCliente'); ?>"  />
@@ -25,6 +38,19 @@
                         <label for="documento" class="control-label">CPF/CNPJ<span class="required">*</span></label>
                         <div class="controls">
                             <input id="documento" type="text" name="documento" value="<?php echo set_value('documento'); ?>"  />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="vw_data_nasc" class="control-label">Data de Nascimento<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="vw_data_nasc" type="text" name="vw_data_nasc" value="<?php echo set_value('Data de Nascimento'); ?>"  />
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="vw_data_nasc" class="control-label">Genero<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="vw_data_nasc" type="text" name="vw_data_nasc" value="<?php echo set_value('Data de Nascimento'); ?>"  />
                         </div>
                     </div>
                     <div class="control-group">
@@ -55,17 +81,19 @@
                         </div>
                     </div>
                     
+
+                    
+                    <div class="control-group" class="control-label">
+                        <label for="rua" class="control-label">Logradouro<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="rua" type="text" name="rua" value="<?php echo set_value('rua'); ?>"  />
+                        </div>
+                    </div>
+
                     <div class="control-group">
                         <label for="numero" class="control-label">Número<span class="required">*</span></label>
                         <div class="controls">
                             <input id="numero" type="text" name="numero" value="<?php echo set_value('numero'); ?>"  />
-                        </div>
-                    </div>
-                    
-                    <div class="control-group" class="control-label">
-                        <label for="rua" class="control-label">Rua<span class="required">*</span></label>
-                        <div class="controls">
-                            <input id="rua" type="text" name="rua" value="<?php echo set_value('rua'); ?>"  />
                         </div>
                     </div>
 
@@ -105,6 +133,19 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    function js_check_tipo_cliente(){
+        var option = document.getElementById("vw_tipo_cliente").value;
+        if(option == "fisica"){
+            document.getElementById("hiddenDiv").style.visibility ="visible";
+        }
+        if(option == "juridica"){
+           document.getElementById("hiddenDiv").style.visibility ="hidden";
+        }
+    }
+</script>
 
 
 <script type="text/javascript">

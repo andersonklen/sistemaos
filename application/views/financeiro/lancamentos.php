@@ -146,37 +146,37 @@ if (!$results) {?>
         $totalDespesa = 0;
         $saldo = 0;
         foreach ($results as $r) {
-            $vencimento = date(('d/m/Y'), strtotime($r->data_vencimento));
-            if ($r->baixado == 0) {
+            $vencimento = date(('d/m/Y'), strtotime($r->lancamento_data_vencimento));
+            if ($r->lancamento_baixado == 0) {
                 $status = 'Pendente';
 
             } else {
                 $status = 'Pago';
 
             };
-            if ($r->tipo == 'receita') {
+            if ($r->lancamento_tipo == 'receita') {
                 $label = 'success';
-                $totalReceita += $r->valor;
+                $totalReceita += $r->lancamento_valor;
 
             } else {
                 $label = 'important';
-                $totalDespesa += $r->valor;
+                $totalDespesa += $r->lancamento_valor;
             }
             echo '<tr>';
-            echo '<td>'.$r->idLancamentos.'</td>';
-            echo '<td><span class="label label-'.$label.'">'.ucfirst($r->tipo).'</span></td>';
-            echo '<td>'.$r->cliente_fornecedor.'</td>';
-            echo '<td>'.$r->descricao.'</td>';
-            echo '<td>'.$vencimento.'</td>';
+            echo '<td>'.$r->lancamento_codigo.'</td>';
+            echo '<td><span class="label label-'.$label.'">'.ucfirst($r->lancamento_tipo).'</span></td>';
+            echo '<td>'.$r->lancamento_cliente_fornecedor.'</td>';
+            echo '<td>'.$r->lancamento_descricao.'</td>';
+            echo '<td>'.$r->lancamento_data_vencimento.'</td>';
             echo '<td>'.$status.'</td>';
-            echo '<td> R$ '.number_format($r->valor, 2, ',', '.').'</td>';
+            echo '<td> R$ '.number_format($r->lancamento_valor, 2, ',', '.').'</td>';
             
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eLancamento')) {
-                echo '<a href="#modalEditar" style="margin-right: 1%" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" descricao="'.$r->descricao.'" valor="'.$r->valor.'" vencimento="'.date('d/m/Y', strtotime($r->data_vencimento)).'" pagamento="'.date('d/m/Y', strtotime($r->data_pagamento)).'" baixado="'.$r->baixado.'" cliente="'.$r->cliente_fornecedor.'" formaPgto="'.$r->forma_pgto.'" tipo="'.$r->tipo.'" class="btn btn-info tip-top editar" title="Editar Lançamento"><i class="icon-pencil icon-white"></i></a>';
+                echo '<a href="#modalEditar" style="margin-right: 1%" data-toggle="modal" role="button" idLancamento="'.$r->lancamento_codigo.'" descricao="'.$r->lancamento_descricao.'" valor="'.$r->lancamento_valor.'" vencimento="'.date('d/m/Y', strtotime($r->lancamento_data_vencimento)).'" pagamento="'.date('d/m/Y', strtotime($r->lancamento_data_pagamento)).'" baixado="'.$r->lancamento_baixado.'" cliente="'.$r->lancamento_cliente_fornecedor.'" formaPgto="'.$r->lancamento_forma_pgto.'" tipo="'.$r->lancamento_tipo.'" class="btn btn-info tip-top editar" title="Editar Lançamento"><i class="icon-pencil icon-white"></i></a>';
             }
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dLancamento')) {
-                echo '<a href="#modalExcluir" data-toggle="modal" role="button" idLancamento="'.$r->idLancamentos.'" class="btn btn-danger tip-top excluir" title="Excluir Lançamento"><i class="icon-remove icon-white"></i></a>';
+                echo '<a href="#modalExcluir" data-toggle="modal" role="button" idLancamento="'.$r->lancamento_codigo.'" class="btn btn-danger tip-top excluir" title="Excluir Lançamento"><i class="icon-remove icon-white"></i></a>';
             }
                      
             echo '</td>';

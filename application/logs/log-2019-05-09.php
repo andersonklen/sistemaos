@@ -1055,3 +1055,43 @@ INFO - 2019-05-09 00:05:18 --> File loaded: C:\wamp64\www\erp02\application\view
 INFO - 2019-05-09 00:05:18 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
 INFO - 2019-05-09 00:05:18 --> Final output sent to browser
 DEBUG - 2019-05-09 00:05:18 --> Total execution time: 0.0305
+INFO - 2019-05-09 21:20:39 --> Config Class Initialized
+INFO - 2019-05-09 21:20:39 --> Hooks Class Initialized
+DEBUG - 2019-05-09 21:20:39 --> UTF-8 Support Enabled
+INFO - 2019-05-09 21:20:39 --> Utf8 Class Initialized
+INFO - 2019-05-09 21:20:39 --> URI Class Initialized
+DEBUG - 2019-05-09 21:20:39 --> No URI present. Default controller set.
+INFO - 2019-05-09 21:20:39 --> Router Class Initialized
+INFO - 2019-05-09 21:20:39 --> Output Class Initialized
+INFO - 2019-05-09 21:20:39 --> Security Class Initialized
+DEBUG - 2019-05-09 21:20:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-05-09 21:20:39 --> Input Class Initialized
+INFO - 2019-05-09 21:20:39 --> Language Class Initialized
+INFO - 2019-05-09 21:20:39 --> Loader Class Initialized
+INFO - 2019-05-09 21:20:39 --> Helper loaded: url_helper
+INFO - 2019-05-09 21:20:39 --> Database Driver Class Initialized
+INFO - 2019-05-09 21:20:39 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-05-09 21:20:39 --> Permission Class Initialized
+INFO - 2019-05-09 21:20:39 --> Controller Class Initialized
+INFO - 2019-05-09 21:20:39 --> Model Class Initialized
+INFO - 2019-05-09 21:20:39 --> Config Class Initialized
+INFO - 2019-05-09 21:20:39 --> Hooks Class Initialized
+DEBUG - 2019-05-09 21:20:39 --> UTF-8 Support Enabled
+INFO - 2019-05-09 21:20:39 --> Utf8 Class Initialized
+INFO - 2019-05-09 21:20:39 --> URI Class Initialized
+INFO - 2019-05-09 21:20:39 --> Router Class Initialized
+INFO - 2019-05-09 21:20:39 --> Output Class Initialized
+INFO - 2019-05-09 21:20:39 --> Security Class Initialized
+DEBUG - 2019-05-09 21:20:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-05-09 21:20:39 --> Input Class Initialized
+INFO - 2019-05-09 21:20:39 --> Language Class Initialized
+INFO - 2019-05-09 21:20:39 --> Loader Class Initialized
+INFO - 2019-05-09 21:20:39 --> Helper loaded: url_helper
+INFO - 2019-05-09 21:20:39 --> Database Driver Class Initialized
+INFO - 2019-05-09 21:20:39 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-05-09 21:20:39 --> Permission Class Initialized
+INFO - 2019-05-09 21:20:39 --> Controller Class Initialized
+INFO - 2019-05-09 21:20:39 --> Model Class Initialized
+INFO - 2019-05-09 21:20:39 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/login.php
+INFO - 2019-05-09 21:20:39 --> Final output sent to browser
+DEBUG - 2019-05-09 21:20:39 --> Total execution time: 0.0228

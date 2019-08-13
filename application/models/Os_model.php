@@ -184,11 +184,11 @@ class Os_model extends CI_Model
         $this->db->select('*');
         $this->db->limit(5);
         $this->db->like('produto_descricao', $q);
-        $this->db->where('produto_saida', 1);
+        $this->db->where('produto_movimenta_saida', 1);
         $query = $this->db->get('tb_produto');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['produto_descricao'].' | Preço: R$ '.$row['produto_preco_venda'].' | Estoque: '.$row['produto_estoque'],'estoque'=>$row['estoque'],'id'=>$row['produto_codigo'],'preco'=>$row['produto_preco_venda']);
+                $row_set[] = array('label'=>$row['produto_descricao'].' | Preço: R$ '.$row['produto_preco_venda'].' | Estoque: '.$row['produto_estoque_atual'],'estoque'=>$row['produto_estoque_atual'],'id'=>$row['produto_codigo'],'preco'=>$row['produto_preco_venda']);
             }
             echo json_encode($row_set);
         }

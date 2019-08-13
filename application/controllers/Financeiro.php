@@ -41,17 +41,17 @@ class Financeiro extends CI_Controller
         if ($periodo == 'todos') {
 
             if ($situacao == 'previsto') {
-                $where = 'data_vencimento > "'.date('Y-m-d').'" AND baixado = "0"';
+                $where = 'lancamento_data_vencimento > "'.date('Y-m-d').'" AND lancamento_baixado = "0"';
             } else {
                 if ($situacao == 'atrasado') {
-                    $where = 'data_vencimento < "'.date('Y-m-d').'" AND baixado = "0"';
+                    $where = 'lancamento_data_vencimento < "'.date('Y-m-d').'" AND lancamento_baixado = "0"';
                 } else {
                     if ($situacao == 'realizado') {
-                        $where = 'baixado = "1"';
+                        $where = 'lancamento_baixado = "1"';
                     }
 
                     if ($situacao == 'pendente') {
-                        $where = 'baixado = "0"';
+                        $where = 'lancamento_baixado = "0"';
                     }
                 }
             }
@@ -59,7 +59,7 @@ class Financeiro extends CI_Controller
 
             // busca lançamentos do dia
             if ($periodo == null || $periodo == 'dia') {
-                $where = 'data_vencimento = "'.date('Y-m-d'.'"');
+                $where = 'lancamento_data_vencimento = "'.date('Y-m-d'.'"');
             
 
             } // fim lançamentos dia
@@ -73,19 +73,19 @@ class Financeiro extends CI_Controller
 
                     if (! isset($situacao) || $situacao == 'todos') {
                     
-                        $where = 'data_vencimento BETWEEN "'.$semana[0].'" AND "'.$semana[1].'"';
+                        $where = 'lancamento_data_vencimento BETWEEN "'.$semana[0].'" AND "'.$semana[1].'"';
 
                     } else {
                         if ($situacao == 'previsto') {
-                            $where = 'data_vencimento BETWEEN "'.date('Y-m-d').'" AND "'.$semana[1].'" AND baixado = "0"';
+                            $where = 'lancamento_data_vencimento BETWEEN "'.date('Y-m-d').'" AND "'.$semana[1].'" AND lancamento_baixado = "0"';
                         } else {
                             if ($situacao == 'atrasado') {
-                                $where = 'data_vencimento BETWEEN "'.$semana[0].'" AND "'.date('Y-m-d').'" AND baixado = "0"';
+                                $where = 'lancamento_data_vencimento BETWEEN "'.$semana[0].'" AND "'.date('Y-m-d').'" AND lancamento_baixado = "0"';
                             } else {
                                 if ($situacao == 'realizado') {
-                                    $where = 'data_vencimento BETWEEN "'.$semana[0].'" AND "'.$semana[1].'" AND baixado = "1"';
+                                    $where = 'lancamento_data_vencimento BETWEEN "'.$semana[0].'" AND "'.$semana[1].'" AND lancamento_baixado = "1"';
                                 } else {
-                                    $where = 'data_vencimento BETWEEN "'.$semana[0].'" AND "'.$semana[1].'" AND baixado = "0"';
+                                    $where = 'lancamento_data_vencimento BETWEEN "'.$semana[0].'" AND "'.$semana[1].'" AND lancamento_baixado = "0"';
                                 }
                             }
                         }
@@ -103,19 +103,19 @@ class Financeiro extends CI_Controller
                         
                         if (! isset($situacao) || $situacao == 'todos') {
                     
-                            $where = 'data_vencimento BETWEEN "'.$mes[0].'" AND "'.$mes[1].'"';
+                            $where = 'lancamento_data_vencimento BETWEEN "'.$mes[0].'" AND "'.$mes[1].'"';
 
                         } else {
                             if ($situacao == 'previsto') {
-                                $where = 'data_vencimento BETWEEN "'.date('Y-m-d').'" AND "'.$mes[1].'" AND baixado = "0"';
+                                $where = 'lancamento_data_vencimento BETWEEN "'.date('Y-m-d').'" AND "'.$mes[1].'" AND lancamento_baixado = "0"';
                             } else {
                                 if ($situacao == 'atrasado') {
-                                    $where = 'data_vencimento BETWEEN "'.$mes[0].'" AND "'.date('Y-m-d').'" AND baixado = "0"';
+                                    $where = 'lancamento_data_vencimento BETWEEN "'.$mes[0].'" AND "'.date('Y-m-d').'" AND lancamento_baixado = "0"';
                                 } else {
                                     if ($situacao == 'realizado') {
-                                        $where = 'data_vencimento BETWEEN "'.$mes[0].'" AND "'.$mes[1].'" AND baixado = "1"';
+                                        $where = 'lancamento_data_vencimento BETWEEN "'.$mes[0].'" AND "'.$mes[1].'" AND lancamento_baixado = "1"';
                                     } else {
-                                        $where = 'data_vencimento BETWEEN "'.$mes[0].'" AND "'.$mes[1].'" AND baixado = "0"';
+                                        $where = 'lancamento_data_vencimento BETWEEN "'.$mes[0].'" AND "'.$mes[1].'" AND lancamento_baixado = "0"';
                                     }
                                     
                                 }
@@ -127,19 +127,19 @@ class Financeiro extends CI_Controller
                         
                         if (! isset($situacao) || $situacao == 'todos') {
                     
-                            $where = 'data_vencimento BETWEEN "'.$ano[0].'" AND "'.$ano[1].'"';
+                            $where = 'lancamento_data_vencimento BETWEEN "'.$ano[0].'" AND "'.$ano[1].'"';
 
                         } else {
                             if ($situacao == 'previsto') {
-                                $where = 'data_vencimento BETWEEN "'.date('Y-m-d').'" AND "'.$ano[1].'" AND baixado = "0"';
+                                $where = 'lancamento_data_vencimento BETWEEN "'.date('Y-m-d').'" AND "'.$ano[1].'" AND lancamento_baixado = "0"';
                             } else {
                                 if ($situacao == 'atrasado') {
-                                    $where = 'data_vencimento BETWEEN "'.$ano[0].'" AND "'.date('Y-m-d').'" AND baixado = "0"';
+                                    $where = 'lancamento_data_vencimento BETWEEN "'.$ano[0].'" AND "'.date('Y-m-d').'" AND lancamento_baixado = "0"';
                                 } else {
                                     if ($situacao == 'realizado') {
-                                        $where = 'data_vencimento BETWEEN "'.$ano[0].'" AND "'.$ano[1].'" AND baixado = "1"';
+                                        $where = 'lancamento_data_vencimento BETWEEN "'.$ano[0].'" AND "'.$ano[1].'" AND lancamento_baixado = "1"';
                                     } else {
-                                        $where = 'data_vencimento BETWEEN "'.$ano[0].'" AND "'.$ano[1].'" AND baixado = "0"';
+                                        $where = 'lancamento_data_vencimento BETWEEN "'.$ano[0].'" AND "'.$ano[1].'" AND lancamento_baixado = "0"';
                                     }
                                     
                                 }
@@ -155,7 +155,7 @@ class Financeiro extends CI_Controller
         $this->load->library('pagination');
         
         $config['base_url'] = site_url().'/financeiro/lancamentos/?periodo='.$periodo.'&situacao='.$situacao;
-        $config['total_rows'] = $this->financeiro_model->count('lancamentos', $where);
+        $config['total_rows'] = $this->financeiro_model->count('tb_lancamento', $where);
         $config['per_page'] = 20;
         $config['page_query_string'] = true;
         $config['next_link'] = 'Próxima';
@@ -179,7 +179,7 @@ class Financeiro extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->financeiro_model->get('lancamentos', 'idLancamentos,descricao,valor,data_vencimento,data_pagamento,baixado,cliente_fornecedor,tipo,forma_pgto', $where, $config['per_page'], $this->input->get('per_page'));
+        $this->data['results'] = $this->financeiro_model->get('tb_lancamento', 'lancamento_codigo,lancamento_descricao,lancamento_valor,lancamento_data_vencimento,lancamento_data_pagamento,lancamento_baixado,lancamento_cliente_fornecedor,lancamento_tipo,lancamento_forma_pgto', $where, $config['per_page'], $this->input->get('per_page'));
        
         $this->data['view'] = 'financeiro/lancamentos';
         $this->load->view('tema/topo', $this->data);
@@ -231,17 +231,17 @@ class Financeiro extends CI_Controller
             }
 
             $data = array(
-                'descricao' => set_value('descricao'),
-                'valor' => $valor,
-                'data_vencimento' => $vencimento,
-                'data_pagamento' => $recebimento != null ? $recebimento : date('Y-m-d'),
-                'baixado' => $this->input->post('recebido') ? : 0,
-                'cliente_fornecedor' => set_value('cliente'),
-                'forma_pgto' => $this->input->post('formaPgto'),
-                'tipo' => set_value('tipo')
+                'lancamento_descricao' => set_value('descricao'),
+                'lancamento_valor' => $valor,
+                'lancamento_data_vencimento' => $vencimento,
+                'lancamento_data_pagamento' => $recebimento != null ? $recebimento : date('Y-m-d'),
+                'lancamento_baixado' => $this->input->post('recebido') ? : 0,
+                'lancamento_cliente_fornecedor' => set_value('cliente'),
+                'lancamento_forma_pgto' => $this->input->post('formaPgto'),
+                'lancamento_tipo' => set_value('tipo')
             );
 
-            if ($this->financeiro_model->add('lancamentos', $data) == true) {
+            if ($this->financeiro_model->add('tb_lancamento', $data) == true) {
                 $this->session->set_flashdata('success', 'Receita adicionada com sucesso!');
                 redirect($urlAtual);
             } else {
@@ -298,17 +298,17 @@ class Financeiro extends CI_Controller
             }
 
             $data = array(
-                'descricao' => set_value('descricao'),
-                'valor' => $valor,
-                'data_vencimento' => $vencimento,
-                'data_pagamento' => $pagamento != null ? $pagamento : date('Y-m-d'),
-                'baixado' => $this->input->post('pago') ? : 0,
-                'cliente_fornecedor' => set_value('fornecedor'),
-                'forma_pgto' => $this->input->post('formaPgto'),
-                'tipo' => set_value('tipo')
+                'lancamento_descricao' => set_value('descricao'),
+                'lancamento_valor' => $valor,
+                'lancamento_data_vencimento' => $vencimento,
+                'lancamento_data_pagamento' => $pagamento != null ? $pagamento : date('Y-m-d'),
+                'lancamento_baixado' => $this->input->post('pago') ? : 0,
+                'lancamento_cliente_fornecedor' => set_value('fornecedor'),
+                'lancamento_forma_pgto' => $this->input->post('formaPgto'),
+                'lancamento_tipo' => set_value('tipo')
             );
 
-            if ($this->financeiro_model->add('lancamentos', $data) == true) {
+            if ($this->financeiro_model->add('tb_lancamento', $data) == true) {
                 $this->session->set_flashdata('success', 'Despesa adicionada com sucesso!');
                 redirect($urlAtual);
             } else {
@@ -361,17 +361,17 @@ class Financeiro extends CI_Controller
             }
 
             $data = array(
-                'descricao' => $this->input->post('descricao'),
-                'valor' => $this->input->post('valor'),
-                'data_vencimento' => $vencimento,
-                'data_pagamento' => $pagamento,
-                'baixado' => $this->input->post('pago') ? : 0,
-                'cliente_fornecedor' => $this->input->post('fornecedor'),
-                'forma_pgto' => $this->input->post('formaPgto'),
-                'tipo' => $this->input->post('tipo')
+                'lancamento_descricao' => $this->input->post('descricao'),
+                'lancamento_valor' => $this->input->post('valor'),
+                'lancamento_data_vencimento' => $vencimento,
+                'lancamento_data_pagamento' => $pagamento,
+                'lancamento_baixado' => $this->input->post('pago') ? : 0,
+                'lancamento_cliente_fornecedor' => $this->input->post('fornecedor'),
+                'lancamento_forma_pgto' => $this->input->post('formaPgto'),
+                'lancamento_tipo' => $this->input->post('tipo')
             );
 
-            if ($this->financeiro_model->edit('lancamentos', $data, 'idLancamentos', $this->input->post('id')) == true) {
+            if ($this->financeiro_model->edit('tb_lancamento', $data, 'idLancamentos', $this->input->post('id')) == true) {
                 $this->session->set_flashdata('success', 'lançamento editado com sucesso!');
                 redirect($urlAtual);
             } else {
@@ -384,14 +384,14 @@ class Financeiro extends CI_Controller
         redirect($urlAtual);
 
         $data = array(
-                'descricao' => $this->input->post('descricao'),
-                'valor' => $this->input->post('valor'),
-                'data_vencimento' => $this->input->post('vencimento'),
-                'data_pagamento' => $this->input->post('pagamento'),
-                'baixado' => $this->input->post('pago'),
-                'cliente_fornecedor' => set_value('fornecedor'),
-                'forma_pgto' => $this->input->post('formaPgto'),
-                'tipo' => $this->input->post('tipo')
+                'lancamento_descricao' => $this->input->post('descricao'),
+                'lancamento_valor' => $this->input->post('valor'),
+                'lancamento_data_vencimento' => $this->input->post('vencimento'),
+                'lancamento_data_pagamento' => $this->input->post('pagamento'),
+                'lancamento_baixado' => $this->input->post('pago'),
+                'lancamento_cliente_fornecedor' => set_value('fornecedor'),
+                'lancamento_forma_pgto' => $this->input->post('formaPgto'),
+                'lancamento_tipo' => $this->input->post('tipo')
             );
         print_r($data);
 
@@ -412,7 +412,7 @@ class Financeiro extends CI_Controller
             echo json_encode($json);
         } else {
 
-            $result = $this->financeiro_model->delete('lancamentos', 'idLancamentos', $id);
+            $result = $this->financeiro_model->delete('tb_lancamento', 'lancamento_codigo', $id);
             if ($result) {
                 $json = array('result'=>  true);
                 echo json_encode($json);

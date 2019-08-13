@@ -103,16 +103,16 @@
                 <tbody>
                     <?php foreach ($results as $r): ?>
                         <tr>
-                            <td><?=$r->idDocumentos?></td>
-                            <td><?=$r->documento?></td>
-                            <td><?=date('d/m/Y', strtotime($r->cadastro))?></td>
-                            <td><?=$r->tamanho?> KB</td>
-                            <td><?=$r->tipo?></td>
+                            <td><?=$r->documento_codigo?></td>
+                            <td><?=$r->documento_nome?></td>
+                            <td><?=date('d/m/Y', strtotime($r->documento_cadastro))?></td>
+                            <td><?=$r->documento_tamanho?> KB</td>
+                            <td><?=$r->documento_tipo?></td>
                             <td>
                                 <?php if($this->permission->checkPermission($this->session->userdata('permissao'), 'vArquivo')):?>
                                     <a  class="btn btn-inverse tip-top"
                                         style="margin-right: 1%"
-                                        target="_blank" href="<?=$r->url?>"
+                                        target="_blank" href="<?=$r->documento_url?>"
                                         class="btn tip-top"
                                         title="Imprimir">
                                         <i class="icon-print"></i>
@@ -120,7 +120,7 @@
                                 <?php endif ?>
 
                                 <?php if($this->permission->checkPermission($this->session->userdata('permissao'), 'vArquivo')): ?>
-                                    <a  href="<?=base_url()?>index.php/arquivos/download/<?=$r->idDocumentos?>"
+                                    <a  href="<?=base_url()?>index.php/arquivos/download/<?=$r->documento_codigo?>"
                                         class="btn tip-top"
                                         style="margin-right: 1%"
                                         title="Download">
@@ -129,7 +129,7 @@
                                 <?php endif ?>
 
                                 <?php if($this->permission->checkPermission($this->session->userdata('permissao'), 'eArquivo')) : ?>
-                                    <a  href="<?=base_url()?>index.php/arquivos/editar/<?=$r->idDocumentos?>"
+                                    <a  href="<?=base_url()?>index.php/arquivos/editar/<?=$r->documento_codigo?>"
                                         class="btn btn-info tip-top"
                                         style="margin-right: 1%"
                                         title="Editar">
@@ -142,7 +142,7 @@
                                         style="margin-right: 1%"
                                         role="button"
                                         data-toggle="modal"
-                                        arquivo="<?=$r->idDocumentos?>"
+                                        arquivo="<?=$r->documento_codigo?>"
                                         class="btn btn-danger tip-top"
                                         title="Excluir Arquivo">
                                         <i class="icon-remove icon-white"></i>

@@ -35,12 +35,12 @@
                       </thead>
                       <tbody>
                         <?php foreach($clientes as $c) :?>
-                            <?php $dataCadastro = date('d/m/Y', strtotime($c->dataCadastro))?>
+                            <?php $dataCadastro = date('d/m/Y', strtotime($c->cliente_data_cadastro))?>
                             <tr>
-                                <td><?=$c->nomeCliente?></td>
-                                <td><?=$c->documento?></td>
-                                <td><?=$c->telefone?></td>
-                                <td><?=$c->email?></td>
+                                <td><?=$c->cliente_nome_razao?></td>
+                                <td><?=$c->cliente_cpf_cnpj?></td>
+                                <td><?=$c->cliente_tel01?></td>
+                                <td><?=$c->cliente_email?></td>
                                 <td><?=$dataCadastro?></td>
                             </tr>
                         <?php endforeach ?>

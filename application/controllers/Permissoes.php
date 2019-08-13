@@ -155,7 +155,7 @@ class Permissoes extends CI_Controller
                 'permissoes_situacao' => $situacao
             );
 
-            if ($this->permissoes_model->add('permissoes', $data) == true) {
+            if ($this->permissoes_model->add('tb_permissoes', $data) == true) {
 
                 $this->session->set_flashdata('success', 'Permissão adicionada com sucesso!');
                 redirect(base_url() . 'index.php/permissoes/adicionar/');
@@ -251,7 +251,7 @@ class Permissoes extends CI_Controller
                 'permissoes_situacao' => $situacao
             );
 
-            if ($this->permissoes_model->edit('permissoes', $data, 'idPermissao', $this->input->post('idPermissao')) == true) {
+            if ($this->permissoes_model->edit('tb_permissoes', $data, 'permissoes_codigo', $this->input->post('idPermissao')) == true) {
                 $this->session->set_flashdata('success', 'Permissão editada com sucesso!');
                 redirect(base_url() . 'index.php/permissoes/editar/'.$this->input->post('idPermissao'));
             } else {
@@ -275,9 +275,9 @@ class Permissoes extends CI_Controller
             redirect(base_url().'index.php/permissoes/gerenciar/');
         }
         $data = array(
-          'situacao' => false
+          'permissoes_situacao' => false
         );
-        if ($this->permissoes_model->edit('permissoes', $data, 'idPermissao', $id)) {
+        if ($this->permissoes_model->edit('tb_permissoes', $data, 'permissoes_codigo', $id)) {
             $this->session->set_flashdata('success', 'Permissão desativada com sucesso!');
         } else {
             $this->session->set_flashdata('error', 'Erro ao desativar permissão!');

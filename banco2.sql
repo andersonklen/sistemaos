@@ -92,25 +92,25 @@ CREATE TABLE IF NOT EXISTS `tb_lancamento` (
   `lancamento_tipo` VARCHAR(45) NULL DEFAULT NULL,
   `lancamento_anexo` VARCHAR(250) NULL,
   `lancamento_cliente_codigo` INT(11) NULL DEFAULT NULL,
-  `lancamento_categorias_id` INT NULL,
-  `lancamento_dadosbancario_id` INT NULL,
-  `lancamento_vendas_id` INT NULL,
+  `lancamento_categoria_codigo` INT NULL,
+  `lancamento_dadosbancario_codigo` INT NULL,
+  `lancamento_venda_codigo` INT NULL,
   PRIMARY KEY (`lancamento_codigo`),
-  INDEX `fk_lancamentos_clientes1` (`lancamento_cliente_codigo` ASC),
-  INDEX `fk_lancamentos_categorias1_idx` (`lancamento_categorias_id` ASC),
-  INDEX `fk_lancamentos_dadosbancario1_idx` (`lancamento_dadosbancario_id` ASC),
-  CONSTRAINT `fk_lancamentos_clientes1`
+  INDEX `fk_lancamento_clientes1` (`lancamento_cliente_codigo` ASC),
+  INDEX `fk_lancamento_categorias1_idx` (`lancamento_categoria_codigo` ASC),
+  INDEX `fk_lancamento_dadosbancario1_idx` (`lancamento_dadosbancario_codigo` ASC),
+  CONSTRAINT `fk_lancamento_clientes1`
     FOREIGN KEY (`lancamento_cliente_codigo`)
     REFERENCES `tb_cliente` (`cliente_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_lancamentos_categorias1`
-    FOREIGN KEY (`lancamento_categorias_id`)
+  CONSTRAINT `fk_lancamento_categorias1`
+    FOREIGN KEY (`lancamento_categoria_codigo`)
     REFERENCES `tb_categoria` (`categoria_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_lancamentos_dadosbancario1`
-    FOREIGN KEY (`lancamento_dadosbancario_id`)
+  CONSTRAINT `fk_lancamento_dadosbancario1`
+    FOREIGN KEY (`lancamento_dadosbancario_codigo`)
     REFERENCES `tb_dadosbancario` (`dadosbancario_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)

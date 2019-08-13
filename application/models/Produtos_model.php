@@ -24,10 +24,10 @@ class Produtos_model extends CI_Model
         if ($where) {
             $this->db->where($where);
         }
-        
         $query = $this->db->get();
         
         $result =  !$one  ? $query->result() : $query->row();
+        
         return $result;
     }
 

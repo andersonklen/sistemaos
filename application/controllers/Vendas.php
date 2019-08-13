@@ -40,7 +40,7 @@ class Vendas extends CI_Controller
         
         
         $config['base_url'] = base_url().'index.php/vendas/gerenciar/';
-        $config['total_rows'] = $this->vendas_model->count('vendas');
+        $config['total_rows'] = $this->vendas_model->count('tb_venda');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
         $config['prev_link'] = 'Anterior';
@@ -63,7 +63,7 @@ class Vendas extends CI_Controller
             
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->vendas_model->get('vendas', '*', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->vendas_model->get('tb_venda', '*', '', $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'vendas/vendas';
         $this->load->view('tema/topo', $this->data);
@@ -99,13 +99,13 @@ class Vendas extends CI_Controller
             }
 
             $data = array(
-                'dataVenda' => $dataVenda,
-                'clientes_id' => $this->input->post('clientes_id'),
-                'usuarios_id' => $this->input->post('usuarios_id'),
-                'faturado' => 0
+                'venda_data_venda' => $dataVenda,
+                'venda_cliente_codigo' => $this->input->post('clientes_id'),
+                'venda_usuario_codigo' => $this->input->post('usuarios_id'),
+                'venda_faturado' => 0
             );
 
-            if (is_numeric($id = $this->vendas_model->add('vendas', $data, true))) {
+            if (is_numeric($id = $this->vendas_model->add('tb_venda', $data, true))) {
                 $this->session->set_flashdata('success', 'Venda iniciada com sucesso, adicione os produtos.');
                 redirect('vendas/editar/'.$id);
 
@@ -137,7 +137,7 @@ class Vendas extends CI_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-        if ($this->form_validation->run('vendas') == false) {
+        if ($this->form_validation->run('tb_venda') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
 
@@ -154,12 +154,12 @@ class Vendas extends CI_Controller
             }
 
             $data = array(
-                'dataVenda' => $dataVenda,
-                'usuarios_id' => $this->input->post('usuarios_id'),
-                'clientes_id' => $this->input->post('clientes_id')
+                'venda_data_venda' => $dataVenda,
+                'venda_usuario_codigo' => $this->input->post('usuarios_id'),
+                'venda_cliente_codigo' => $this->input->post('clientes_id')
             );
 
-            if ($this->vendas_model->edit('vendas', $data, 'idVendas', $this->input->post('idVendas')) == true) {
+            if ($this->vendas_model->edit('tb_venda', $data, 'venda_codigo', $this->input->post('idVendas')) == true) {
                 $this->session->set_flashdata('success', 'Venda editada com sucesso!');
                 redirect(base_url() . 'index.php/vendas/editar/'.$this->input->post('idVendas'));
             } else {
@@ -236,11 +236,11 @@ class Vendas extends CI_Controller
             redirect(base_url().'index.php/vendas/gerenciar/');
         }
 
-        $this->db->where('vendas_id', $id);
-        $this->db->delete('itens_de_vendas');
+        $this->db->where('item_de_venda_codigo', $id);
+        $this->db->delete('tb_item_de_venda');
 
-        $this->db->where('idVendas', $id);
-        $this->db->delete('vendas');
+        $this->db->where('venda_codigo', $id);
+        $this->db->delete('tb_venda');
 
         $this->session->set_flashdata('success', 'Venda excluída com sucesso!');
         redirect(base_url().'index.php/vendas/gerenciar/');
@@ -301,15 +301,15 @@ class Vendas extends CI_Controller
             $subtotal = $preco * $quantidade;
             $produto = $this->input->post('idProduto');
             $data = array(
-                'quantidade'=> $quantidade,
-                'subTotal'=> $subtotal,
-                'produtos_id'=> $produto,
-                'vendas_id'=> $this->input->post('idVendasProduto'),
+                'item_de_venda_quantidade'=> $quantidade,
+                'item_de_venda_subtotal'=> $subtotal,
+                'item_de_venda_produto_codigo'=> $produto,
+                'item_de_venda_venda_codigo'=> $this->input->post('idVendasProduto'),
             );
 
-            if ($this->vendas_model->add('itens_de_vendas', $data) == true) {
-                $sql = "UPDATE produtos set estoque = estoque - ? WHERE idProdutos = ?";
-                $this->db->query($sql, array($quantidade, $produto));
+            if ($this->vendas_model->add('tb_item_de_venda', $data) == true) {
+               $sql = "UPDATE tb_produto set produto_estoque_atual = produto_estoque_atual - ? WHERE produto_codigo = ?";
+               $this->db->query($sql, array($quantidade, $produto));
                 
                 echo json_encode(array('result'=> true));
             } else {
@@ -330,13 +330,13 @@ class Vendas extends CI_Controller
         }
 
             $ID = $this->input->post('idProduto');
-        if ($this->vendas_model->delete('itens_de_vendas', 'idItens', $ID) == true) {
+        if ($this->vendas_model->delete('tb_item_de_venda', 'item_de_venda_codigo', $ID) == true) {
                 
             $quantidade = $this->input->post('quantidade');
             $produto = $this->input->post('produto');
 
 
-            $sql = "UPDATE produtos set estoque = estoque + ? WHERE idProdutos = ?";
+            $sql = "UPDATE tb_produto set produto_estoque_atual = produto_estoque_atual + ? WHERE produto_codigo = ?";
 
             $this->db->query($sql, array($quantidade, $produto));
                 
@@ -383,26 +383,26 @@ class Vendas extends CI_Controller
             }
 
             $data = array(
-                'vendas_id' => $venda_id,
-                'descricao' => set_value('descricao'),
-                'valor' => $this->input->post('valor'),
-                'clientes_id' => $this->input->post('clientes_id'),
-                'data_vencimento' => $vencimento,
-                'data_pagamento' => $recebimento,
-                'baixado' => $this->input->post('recebido'),
-                'cliente_fornecedor' => set_value('cliente'),
-                'forma_pgto' => $this->input->post('formaPgto'),
-                'tipo' => $this->input->post('tipo')
+                'lancamento_venda_codigo' => $venda_id,
+                'lancamento_descricao' => set_value('descricao'),
+                'lancamento_valor' => $this->input->post('valor'),
+                'lancamento_cliente_codigo' => $this->input->post('clientes_id'),
+                'lancamento_data_vencimento' => $vencimento,
+                'lancamento_data_pagamento' => $recebimento,
+                'lancamento_baixado' => $this->input->post('recebido'),
+                'lancamento_cliente_fornecedor' => set_value('cliente'),
+                'lancamento_forma_pgto' => $this->input->post('formaPgto'),
+                'lancamento_tipo' => $this->input->post('tipo')
             );
 
-            if ($this->vendas_model->add('lancamentos', $data) == true) {
+            if ($this->vendas_model->add('tb_lancamento', $data) == true) {
                 
                 $venda = $this->input->post('vendas_id');
 
-                $this->db->set('faturado', 1);
-                $this->db->set('valorTotal', $this->input->post('valor'));
-                $this->db->where('idVendas', $venda);
-                $this->db->update('vendas');
+                $this->db->set('venda_faturado', 1);
+                $this->db->set('venda_valor_total', $this->input->post('valor'));
+                $this->db->where('venda_codigo', $venda);
+                $this->db->update('tb_venda');
 
                 $this->session->set_flashdata('success', 'Venda faturada com sucesso!');
                 $json = array('result'=>  true);

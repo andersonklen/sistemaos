@@ -34,10 +34,10 @@
                         <?php } else {?>
 
                         <tr>
-                            <td style="width: 25%"><img src=" <?php echo $emitente[0]->url_logo; ?> "></td>
-                            <td> <span style="font-size: 20px; "> <?php echo $emitente[0]->nome; ?></span> </br><span><?php echo $emitente[0]->cnpj; ?> </br> <?php echo $emitente[0]->rua.', nº:'.$emitente[0]->numero.', '.$emitente[0]->bairro.' - '.$emitente[0]->cidade.' - '.$emitente[0]->uf; ?> </span> </br> <span> E-mail: <?php echo $emitente[0]->email.' - Fone: '.$emitente[0]->telefone; ?></span></td>
-                            <td style="width: 18%; text-align: center">#Venda: <span ><?php echo $result->idVendas?></span></br> </br> <span>Emissão: <?php echo date('d/m/Y');?></span>
-	                            <?php if ($result->faturado) : ?>
+                            <td style="width: 25%"><img src=" <?php echo $emitente[0]->emitente_url_logo; ?> "></td>
+                            <td> <span style="font-size: 20px; "> <?php echo $emitente[0]->emitente_nome; ?></span> </br><span><?php echo $emitente[0]->emitente_cnpj; ?> </br> <?php echo $emitente[0]->emitente_logradouro.', nº:'.$emitente[0]->emitente_numero.', '.$emitente[0]->emitente_bairro.' - '.$emitente[0]->emitente_cidade.' - '.$emitente[0]->emitente_uf; ?> </span> </br> <span> E-mail: <?php echo $emitente[0]->emitente_email.' - Fone: '.$emitente[0]->emitente_tel01; ?></span></td>
+                            <td style="width: 18%; text-align: center">#Venda: <span ><?php echo $result->venda_codigo?></span></br> </br> <span>Emissão: <?php echo date('d/m/Y');?></span>
+	                            <?php if ($result->venda_faturado) : ?>
                                     <br>
                                     Vencimento: <?php echo date('d/m/Y', strtotime($result->data_vencimento)); ?>
 	                            <?php endif; ?>
@@ -55,9 +55,9 @@
                                 <ul>
                                     <li>
                                         <span><h5>Cliente</h5>
-                                        <span><?php echo $result->nomeCliente?></span><br/>
-                                        <span><?php echo $result->rua?>, <?php echo $result->numero?>, <?php echo $result->bairro?></span><br/>
-                                        <span><?php echo $result->cidade?> - <?php echo $result->estado?></span>
+                                        <span><?php echo $result->cliente_nome_razao?></span><br/>
+                                        <span><?php echo $result->cliente_logradouro?>, <?php echo $result->cliente_numero?>, <?php echo $result->cliente_bairro?></span><br/>
+                                        <span><?php echo $result->cliente_cidade?> - <?php echo $result->cliente_estado?></span>
                                     </li>
                                 </ul>
                             </td>
@@ -65,9 +65,9 @@
                                 <ul>
                                     <li>
                                         <span><h5>Vendedor</h5></span>
-                                        <span><?php echo $result->nome?></span> <br/>
-                                        <span>Telefone: <?php echo $result->telefone?></span><br/>
-                                        <span>Email: <?php echo $result->email?></span>
+                                        <span><?php echo $result->usuario_nome?></span> <br/>
+                                        <span>Telefone: <?php echo $result->usuario_tel01?></span><br/>
+                                        
                                     </li>
                                 </ul>
                             </td>
@@ -95,12 +95,12 @@
                                 
                                 foreach ($produtos as $p) {
 
-                                    $totalProdutos = $totalProdutos + $p->subTotal;
+                                    $totalProdutos = $totalProdutos + $p->item_de_venda_subtotal;
                                     echo '<tr>';
-                                    echo '<td>'.$p->descricao.'</td>';
-                                    echo '<td>'.$p->quantidade.'</td>';
+                                    echo '<td>'.$p->produto_descricao.'</td>';
+                                    echo '<td>'.$p->item_de_venda_quantidade.'</td>';
                                     
-                                    echo '<td>R$ '.number_format($p->subTotal, 2, ',', '.').'</td>';
+                                    echo '<td>R$ '.number_format($p->item_de_venda_subtotal, 2, ',', '.').'</td>';
                                     echo '</tr>';
                                 }?>
 

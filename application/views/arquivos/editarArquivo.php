@@ -18,23 +18,23 @@
                     <div class="control-group">
                         <label for="nome" class="control-label">Nome do Arquivo*</label>
                         <div class="controls">
-                            <input id="nome" type="text" name="nome" value="<?php echo $result->documento; ?> " />
+                            <input id="nome" type="text" name="nome" value="<?php echo $result->documento_nome; ?> " />
 
-                            <input id="idDocumentos" type="hidden" name="idDocumentos" value="<?php echo $result->idDocumentos; ?> " />
+                            <input id="idDocumentos" type="hidden" name="idDocumentos" value="<?php echo $result->documento_codigo; ?> " />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="descricao" class="control-label">Descrição</label>
                         <div class="controls">
-                            <textarea rows="3" cols="30" name="descricao" id="descricao"><?php echo $result->descricao; ?></textarea>
+                            <textarea rows="3" cols="30" name="descricao" id="descricao"><?php echo $result->documento_descricao; ?></textarea>
                         </div>
                     </div>
                     
                     <div class="control-group">
                         <label for="descricao" class="control-label">Data</label>
                         <div class="controls">
-                            <input id="data" type="text" class="datepicker" name="data" value="<?php echo date('d/m/Y', strtotime($result->cadastro));?>" />
+                            <input id="data" type="text" class="datepicker" name="data" value="<?php echo date('d/m/Y', strtotime($result->documento_cadastro));?>" />
                         </div>
                     </div>
 
