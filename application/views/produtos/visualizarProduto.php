@@ -13,27 +13,27 @@
                     <tbody>
                         <tr>
                             <td style="text-align: right; width: 30%"><strong>Descrição</strong></td>
-                            <td><?php echo $result->descricao ?></td>
+                            <td><?php echo $result->produto_descricao ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: right"><strong>Unidade</strong></td>
-                            <td><?php echo $result->unidade ?></td>
+                            <td><?php echo $result->produto_unid_medida ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: right"><strong>Preço de Compra</strong></td>
-                            <td>R$ <?php echo $result->precoCompra; ?></td>
+                            <td>R$ <?php echo $result->produto_preco_compra; ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: right"><strong>Preço de Venda</strong></td>
-                            <td>R$ <?php echo $result->precoVenda; ?></td>
+                            <td>R$ <?php echo $result->produto_preco_venda; ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: right"><strong>Estoque</strong></td>
-                            <td><?php echo $result->estoque; ?></td>
+                            <td><?php echo $result->produto_estoque_atual; ?></td>
                         </tr>
                         <tr>
                             <td style="text-align: right"><strong>Estoque Mínimo</strong></td>
-                            <td><?php echo $result->estoqueMinimo; ?></td>
+                            <td><?php echo $result->produto_estoque_minimo; ?></td>
                         </tr>
                   
                     </tbody>

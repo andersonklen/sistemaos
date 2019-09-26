@@ -122,27 +122,28 @@ class Equipamentos extends CI_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
-        if ($this->form_validation->run('marcas') == false) {
+        if ($this->form_validation->run('equipamentos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
             $preco = $this->input->post('preco');
             $preco = str_replace(",", "", $preco);
             $data = array(
-                'equipamento_nome' => $this->input->post('nome'),
-                'equipamento_observacao' => $this->input->post('descricao'),
+                'equipamento_nome' => $this->input->post('vw_equipamento_nome'),
+                'equipamento_observacao' => $this->input->post('vw_equipamento_modelo'),
             );
 
-            if ($this->marcas_model->edit('tb_equipamento', $data, 'idMarcas', $this->input->post('idMarcas')) == true) {
+            if ($this->equipamentos_model->edit('tb_equipamento', $data, 'equipamento_codigo', $this->input->post('vw_hi_equipamento_codigo')) == true) {
                 $this->session->set_flashdata('success', 'Serviço editado com sucesso!');
-                redirect(base_url() . 'index.php/marcas/editar/'.$this->input->post('idMarcas'));
+                //redirect(base_url() . 'index.php/equipamentos/editar/'.$this->input->post('vw_hi_equipamento_codigo'));
+                redirect(base_url() . 'index.php/equipamentos/');
             } else {
                 $this->data['custom_error'] = '<div class="form_error"><p>Ocorreu um errro.</p></div>';
             }
         }
 
-        $this->data['result'] = $this->marcas_model->getById($this->uri->segment(3));
+        $this->data['result'] = $this->equipamentos_model->getById($this->uri->segment(3));
 
-        $this->data['view'] = 'marcas/editarMarca';
+        $this->data['view'] = 'equipamentos/editarEquipamento';
         $this->load->view('tema/topo', $this->data);
 
     }
@@ -160,13 +161,13 @@ class Equipamentos extends CI_Controller
         if ($id == null) {
 
             $this->session->set_flashdata('error', 'Erro ao tentar excluir equipamentos.');
-            redirect(base_url().'index.php/marcas/gerenciar/');
+            redirect(base_url().'index.php/equipamentos/gerenciar/');
         }
 
         // $this->db->where('marcas_id', $id);
         // $this->db->delete('marcas_os');
 
-        $this->marcas_model->delete('tb_equipamento', 'equipamento_codigo', $id);
+        $this->equipamentos_model->delete('tb_equipamento', 'equipamento_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'Item excluido com sucesso!');

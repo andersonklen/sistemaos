@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
@@ -29,13 +30,13 @@
 
 
                     <div id="hiddenDiv"class="control-group">
-                        <label for="nomeCliente" class="control-label">Nome / Razão<span class="required">*</span></label>
+                        <label for="nomeCliente" id="label_nome_razao"class="control-label">Nome<span class="required">*</span></label>
                         <div class="controls">
                             <input id="nomeCliente" type="text" name="nomeCliente" value="<?php echo set_value('nomeCliente'); ?>"  />
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="documento" class="control-label">CPF/CNPJ<span class="required">*</span></label>
+                        <label for="documento" id="label_cpf_cnpj" class="control-label">CPF<span class="required">*</span></label>
                         <div class="controls">
                             <input id="documento" type="text" name="documento" value="<?php echo set_value('documento'); ?>"  />
                         </div>
@@ -43,7 +44,7 @@
                     <div class="control-group">
                         <label for="vw_data_nasc" class="control-label">Data de Nascimento<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="vw_data_nasc" type="text" name="vw_data_nasc" value="<?php echo set_value('Data de Nascimento'); ?>"  />
+                            <input id="vw_data_nasc" type="text" name="vw_data_nasc"  class="form-control" onkeypress="$(this).mask('00/00/0000')" value="<?php echo set_value('Data de Nascimento'); ?>"  />
                         </div>
                     </div>
 
@@ -56,14 +57,14 @@
                     <div class="control-group">
                         <label for="telefone" class="control-label">Telefone 1<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="telefone" type="text" name="telefone" value="<?php echo set_value('telefone'); ?>"  />
+                            <input id="telefone" type="text" name="telefone" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')" value="<?php echo set_value('telefone'); ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="celular" class="control-label">Telefone 2</label>
                         <div class="controls">
-                            <input id="celular" type="text" name="celular" value="<?php echo set_value('celular'); ?>"  />
+                            <input id="celular" type="text" name="celular" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')" value="<?php echo set_value('celular'); ?>"  />
                         </div>
                     </div>
 
@@ -77,7 +78,7 @@
                     <div class="control-group" class="control-label">
                         <label for="cep" class="control-label">CEP<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="cep" type="text" name="cep" value="<?php echo set_value('cep'); ?>"  />
+                            <input id="cep" type="text" name="cep" class="form-control" onkeypress="$(this).mask('00.000-000')" value="<?php echo set_value('cep'); ?>"  value="<?php echo set_value('cep'); ?>"  />
                         </div>
                     </div>
                     
@@ -139,12 +140,41 @@
     function js_check_tipo_cliente(){
         var option = document.getElementById("vw_tipo_cliente").value;
         if(option == "fisica"){
-            document.getElementById("hiddenDiv").style.visibility ="visible";
+            document.getElementById("label_nome_razao").innerHTML ="Nome*";
+            document.getElementById("label_cpf_cnpj").innerHTML ="CPF*";
         }
         if(option == "juridica"){
-           document.getElementById("hiddenDiv").style.visibility ="hidden";
+           document.getElementById("label_nome_razao").innerHTML ="Razão Social*";
+           document.getElementById("label_cpf_cnpj").innerHTML ="CNPJ*";
         }
     }
+
+
+     $("#documento").keydown(function(){
+    try {
+        $("#documento").unmask();
+    } catch (e) {}
+    
+    var tamanho = $("#documento").val().length;
+    
+    if(tamanho < 11){
+        $("#documento").mask("999.999.999-99");
+    } else if(tamanho >= 11){
+        $("#documento").mask("99.999.999/9999-99");
+    }
+    
+    // ajustando foco
+    var elem = this;
+    setTimeout(function(){
+        // mudo a posição do seletor
+        elem.selectionStart = elem.selectionEnd = 10000;
+    }, 0);
+    // reaplico o valor para mudar o foco
+    var currentValue = $(this).val();
+    $(this).val('');
+    $(this).val(currentValue);
+});
+
 </script>
 
 

@@ -88,8 +88,8 @@ if (!$results) {?>
     <thead>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
+            <th>Equipamento</th>
             <th>Cliente</th>
-            <th>Responsável</th>
             <th>Data Inicial</th>
             <th>Data Final</th>
             <th>Status</th>
@@ -127,8 +127,8 @@ if (!$results) {?>
 
             echo '<tr>';
             echo '<td>'.$r->os_codigo.'</td>';
+            echo '<td>'.$r->os_descricao_produto.'</td>';
             echo '<td>'.$r->cliente_nome_razao.'</td>';
-            echo '<td>'.$r->usuario_nome.'</td>';
             echo '<td>'.$dataInicial.'</td>';
             echo '<td>'.$dataFinal.'</td>';
             echo '<td><span class="badge" style="background-color: '.$cor.'; border-color: '.$cor.'">'.$r->os_status.'</span> </td>';

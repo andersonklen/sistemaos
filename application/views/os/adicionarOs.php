@@ -25,22 +25,7 @@
                                 <div class="span12 alert alert-danger" id="divInfo" style="padding: 1%;">Dados incompletos, verifique os campos com asterisco ou se selecionou corretamente cliente e responsável.</div>
                                 <?php } ?>
                                 <form action="<?php echo current_url(); ?>" method="post" id="formOs">
-
-                                    <div class="span12" style="padding: 1%">
-                                        <div class="span6">
-                                            <label for="equipamento">Equipamento<span class="required">*</span></label>
-                                            <input id="equipamento" class="span12" type="text" name="cliente" value=""  />
-                                            <input id="equipamento_id" class="span12" type="hidden" name="equipamento_id" value=""  />
-                                        </div>
-                                        <div class="span6">
-                                            <label for="modelo">Modelo<span class="required">*</span></label>
-                                            <input id="modelo" class="span12" type="text" name="modelo" value=""  />
-                                            <input id="modelo_id" class="span12" type="hidden" name="modelo_id" value=""  />
-                                        </div>
-                                    </div>
-                                    
-
-                                    <div class="span12" style="padding: 1% margin-left: 0">
+                                    <div class="span12" style="padding: 1% ; margin-left: 0 ">
                                         <div class="span6">
                                             <label for="cliente">Cliente<span class="required">*</span></label>
                                             <input id="cliente" class="span12" type="text" name="cliente" value=""  />
@@ -52,6 +37,21 @@
                                             <input id="usuarios_id" class="span12" type="hidden" name="usuarios_id" value=""  />
                                         </div>
                                     </div>
+
+                                    <div class="span12" style="padding: 1% ; margin-left: 0">
+                                        <div class="span6">
+                                            <label for="equipamento">Equipamento<span class="required">*</span></label>
+                                            <input id="equipamento" class="span12" type="text" name="cliente" value=""  />
+                                            <input id="equipamento_id" class="span12" type="hidden" name="equipamento_id" value=""  />
+                                        </div>
+                                        <div class="span6">
+                                            <label for="modelo">Num. de Série  </label>
+                                            <input id="modelo" class="span12" type="text" name="modelo" value=""  />
+                                            <input id="modelo_id" class="span12" type="hidden" name="modelo_id" value=""  />
+                                        </div>
+                                    </div>
+                                    
+
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span3">
                                             <label for="status">Status<span class="required">*</span></label>
@@ -128,6 +128,17 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
+
+      $("#equipamento").autocomplete({
+            source: "<?php echo base_url(); ?>index.php/os/autoCompleteEquipamento",
+            minLength: 1,
+            select: function( event, ui ) {
+
+                 $("#equipamento_id").val(ui.item.id);
+                
+
+            }
+      });
 
       $("#cliente").autocomplete({
             source: "<?php echo base_url(); ?>index.php/os/autoCompleteCliente",

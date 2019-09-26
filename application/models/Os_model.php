@@ -210,6 +210,23 @@ class Os_model extends CI_Model
         }
     }
 
+
+    public function autoCompleteEquipamento($q)
+    {
+
+        $this->db->select('*');
+        $this->db->limit(5);
+        $this->db->like('equipamento_nome', $q);
+        $query = $this->db->get('tb_equipamento');
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $row_set[] = array('label'=>$row['equipamento_nome'].' - '.$row['equipamento_modelo'],'id'=>$row['equipamento_codigo']);
+            }
+            echo json_encode($row_set);
+        }
+    }
+
+
     public function autoCompleteUsuario($q)
     {
 

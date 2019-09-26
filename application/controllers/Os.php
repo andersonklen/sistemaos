@@ -370,6 +370,16 @@ class Os extends CI_Controller
 
     }
 
+    public function autoCompleteEquipamento()
+    {
+
+        if (isset($_GET['term'])) {
+            $q = strtolower($_GET['term']);
+            $this->os_model->autoCompleteEquipamento($q);
+        }
+
+    }
+
     public function autoCompleteUsuario()
     {
 

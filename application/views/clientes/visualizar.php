@@ -160,21 +160,21 @@
                             <tbody>
 <?php
 foreach ($results as $r) {
-    $dataInicial = date(('d/m/Y'), strtotime($r->dataInicial));
-    $dataFinal = date(('d/m/Y'), strtotime($r->dataFinal));
+    $dataInicial = date(('d/m/Y'), strtotime($r->os_data_inicial));
+    $dataFinal = date(('d/m/Y'), strtotime($r->os_data_final));
     echo '<tr>';
-    echo '<td>' . $r->idOs . '</td>';
+    echo '<td>' . $r->os_codigo . '</td>';
     echo '<td>' . $dataInicial . '</td>';
     echo '<td>' . $dataFinal . '</td>';
-    echo '<td>' . $r->descricaoProduto . '</td>';
-    echo '<td>' . $r->defeito . '</td>';
+    echo '<td>' . $r->os_descricao_produto . '</td>';
+    echo '<td>' . $r->os_defeito . '</td>';
 
     echo '<td>';
     if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')) {
-        echo '<a href="' . base_url() . 'index.php/os/visualizar/' . $r->idOs . '" style="margin-right: 1%" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
+        echo '<a href="' . base_url() . 'index.php/os/visualizar/' . $r->os_codigo . '" style="margin-right: 1%" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
     }
     if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eOs')) {
-        echo '<a href="' . base_url() . 'index.php/os/editar/' . $r->idOs . '" class="btn btn-info tip-top" title="Editar OS"><i class="icon-pencil icon-white"></i></a>';
+        echo '<a href="' . base_url() . 'index.php/os/editar/' . $r->os_codigo . '" class="btn btn-info tip-top" title="Editar OS"><i class="icon-pencil icon-white"></i></a>';
     }
                     
     echo  '</td>';

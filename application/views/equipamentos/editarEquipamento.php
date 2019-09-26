@@ -5,28 +5,22 @@
                                                 <span class="icon">
                                                       <i class="icon-align-justify"></i>
                                                 </span>
-                                                <h5>Editar Marca</h5>
+                                                <h5>Editar Equipamento</h5>
                                           </div>
                                           <div class="widget-content nopadding">
                                                 <?php echo $custom_error; ?>
-                                                <form action="<?php echo current_url(); ?>" id="formServico" method="post" class="form-horizontal" >
-                                                    <?php echo form_hidden('idServicos', $result->idServicos) ?>
+                                                <form action="<?php echo current_url(); ?>" id="formEquipamentos" method="post" class="form-horizontal" >
+                                                    <?php echo form_hidden('vw_hi_equipamento_codigo', $result->equipamento_codigo) ?>
                                                     <div class="control-group">
                                                             <label for="nome" class="control-label">Nome<span class="required">*</span></label>
                                                             <div class="controls">
-                                                                  <input id="nome" type="text" name="nome" value="<?php echo $result->nome ?>"  />
+                                                                  <input id="vw_equipamento_nome" type="text" name="vw_equipamento_nome" value="<?php echo $result->equipamento_nome ?>"  />
                                                             </div>
                                                       </div>
                                                       <div class="control-group">
-                                                            <label for="preco" class="control-label"><span class="required">Preço*</span></label>
+                                                            <label for="modelo" class="control-label"><span class="required">Modelo*</span></label>
                                                             <div class="controls">
-                                                                <input id="preco" class="money" type="text" name="preco" value="<?php echo $result->preco ?>"  />
-                                                            </div>
-                                                      </div>
-                                                      <div class="control-group">
-                                                            <label for="descricao" class="control-label">Descrição</label>
-                                                            <div class="controls">
-                                                                  <input id="descricao" type="text" name="descricao" value="<?php echo $result->descricao ?>"  />
+                                                                <input id="vw_equipamento_modelo" class="money" type="text" name="vw_equipamento_modelo" value="<?php echo $result->equipamento_modelo ?>"  />
                                                             </div>
                                                       </div>
 
@@ -34,7 +28,7 @@
                                                       <div class="span12">
                                                             <div class="span6 offset3">
                                                             <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> Alterar</button>
-                                                            <a href="<?php echo base_url()?>index.php/servicos" id="btnAdicionar" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
+                                                            <a href="<?php echo base_url()?>index.php/equipamentos" id="btnAdicionar" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
                                                             </div>
                                                       </div>
                                                       </div>
