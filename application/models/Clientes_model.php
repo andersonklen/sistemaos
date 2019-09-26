@@ -85,36 +85,25 @@ class Clientes_model extends CI_Model
     }
 
 
+
+
+
     public function autoCompleteCidade($q)
-    // public function autoCompleteCidade($q)
     {
+
         $this->db->select('*');
-        $this->db->from('tb_cidade');
-        $this->db->join('tb_estado', 'tb_cidade.cidade_estado_codigo  = tb_estado.estado_codigo');
         $this->db->limit(5);
         $this->db->like('cidade_nome', $q);
-        $query = $this->db->get();
-
-        
-
-
-      
-     //   $this->db->select('vendas.*,usuarios.nome');
-     //   $this->db->from('vendas');
-     //   $this->db->join('usuarios', 'usuarios.idUsuarios = vendas.usuarios_id');
-     //   $this->db->where('clientes_id', $cliente);
-     //   $this->db->limit(5);
-
-     //   return $this->db->get()->result();
-
-
-
+        $query = $this->db->get('tb_cidade');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                //echo print_r($row);
-                $row_set[] = array('label'=>$row['cidade_nome'].' - '.$row['estado_uf'],'id'=>$row['cidade_codigo']);
-            }    
+                $row_set[] = array('label'=>$row['cidade_nome']. '-' .$row['cidade_codigo'],'id'=>$row['cidade_nome']);
+            }
             echo json_encode($row_set);
         }
     }
+
+
+
+
 }

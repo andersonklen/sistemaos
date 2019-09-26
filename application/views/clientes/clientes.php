@@ -19,9 +19,10 @@ if (!$results) {?>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nome</th>
+                        <th>Nome / Razão</th>
                         <th>Telefone 1</th>
                         <th>Telefone 2</th>
+                        <th>E-Mail</th>                        
                         <th></th>
                     </tr>
                 </thead>
@@ -54,19 +55,30 @@ if (!$results) {?>
     <thead>
         <tr>
             <th>#</th>
-            <th>Nome</th>
+            <th>Nome / Razão</th>
             <th>Telefone 1</th>
             <th>Telefone 2</th>
+            <th>E-Mail</th>              
             <th></th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($results as $r) {
+        <?php           
+            foreach ($results as $r) {
+                //$i=$r->cliente_apelido_fantasia;
+                if($r->cliente_apelido_fantasia<>''){                 
+                    $cliente=$r->cliente_nome_razao.'  ( '.$r->cliente_apelido_fantasia.' )';
+                } else {
+                    $cliente=$r->cliente_nome_razao;                
+                     
+                }
+
             echo '<tr>';
             echo '<td>'.$r->cliente_codigo.'</td>';
-            echo '<td>'.$r->cliente_nome_razao.'</td>';
+            echo '<td>'.$cliente.'</td>';
             echo '<td>'.$r->cliente_tel01.'</td>';
             echo '<td>'.$r->cliente_tel02.'</td>';
+            echo '<td>'.$r->cliente_email.'</td>';
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) {
                 echo '<a href="'.base_url().'index.php/clientes/visualizar/'.$r->cliente_codigo.'" style="margin-right: 1%" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';

@@ -1,52 +1,78 @@
 <?php
-$config = array('clientes' => array(array(
-                                    'field'=>'nomeCliente',
-                                    'label'=>'Nome',
+$config = array('clientes' => array(
+                                array(
+                                    'field'=>'vw_cliente_tipo',
+                                    'label'=>'Tipo de Cliente',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'documento',
+                                    'field'=>'vw_cliente_nome_razao',
+                                    'label'=>'nomeCliente',
+                                    'rules'=>'required|trim'
+                                ),
+                                array(
+                                    'field'=>'vw_cliente_apelido_fantasia',
+                                    'label'=>'Apelido / Nome Fantasia',
+                                    'rules'=>'trim'
+                                ),
+                                array(
+                                    'field'=>'vw_cliente_cpf_cnpj',
                                     'label'=>'CPF/CNPJ',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'telefone',
-                                    'label'=>'Telefone',
+                                    'field'=>'vw_cliente_rg_inscricao',
+                                    'label'=>'RG / Inscrição Estadual',
+                                    'rules'=>'trim'
+                                ),
+                                array(
+                                    'field'=>'vw_cliente_genero',
+                                    'label'=>'Genero',
+                                    'rules'=>'trim'
+                                ),
+                                array(
+                                    'field'=>'vw_cliente_tel01',
+                                    'label'=>'Telefone 01',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'email',
+                                    'field'=>'vw_cliente_tel02',
+                                    'label'=>'Telefone 02',
+                                    'rules'=>'trim'
+                                ),
+                                array(
+                                    'field'=>'vw_cliente_email',
                                     'label'=>'Email',
                                     'rules'=>'required|trim|valid_email'
                                 ),
                                 array(
-                                    'field'=>'rua',
-                                    'label'=>'Rua',
+                                    'field'=>'vw_cliente_cep',
+                                    'label'=>'CEP',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'numero',
-                                    'label'=>'Número',
+                                    'field'=>'vw_cliente_logradouro',
+                                    'label'=>'Logradouro',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'bairro',
+                                    'field'=>'vw_cliente_numero',
+                                    'label'=>'Numero',
+                                    'rules'=>'required|trim'
+                                ),
+                                array(
+                                    'field'=>'vw_cliente_bairro',
                                     'label'=>'Bairro',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'cidade',
+                                    'field'=>'vw_cliente_cidade',
                                     'label'=>'Cidade',
                                     'rules'=>'required|trim'
                                 ),
                                 array(
-                                    'field'=>'estado',
+                                    'field'=>'vw_cliente_estado',
                                     'label'=>'Estado',
-                                    'rules'=>'required|trim'
-                                ),
-                                array(
-                                    'field'=>'cep',
-                                    'label'=>'CEP',
                                     'rules'=>'required|trim'
                                 ))
                 ,

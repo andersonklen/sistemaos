@@ -26,14 +26,15 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 CREATE TABLE IF NOT EXISTS `tb_cliente` (
   `cliente_codigo` INT(11) NOT NULL AUTO_INCREMENT,
   `cliente_nome_razao` VARCHAR(255) NOT NULL,
+  `cliente_apelido_fantasia` VARCHAR(255) NULL,
   `cliente_sexo` VARCHAR(20) NULL,
-  `cliente_tipo` BOOLEAN NOT NULL DEFAULT 1,
+  `cliente_tipo` VARCHAR(20) NULL,
   `cliente_cpf_cnpj` VARCHAR(20) NOT NULL,
-  `cliente_rg_inscricao` VARCHAR(20) NOT NULL,
+  `cliente_rg_inscricao` VARCHAR(20) NULL,
   `cliente_tel01` VARCHAR(20) NOT NULL,
   `cliente_tel02` VARCHAR(20) NULL DEFAULT NULL,
   `cliente_email` VARCHAR(100) NOT NULL,
-  `cliente_data_cadastro` DATE NULL DEFAULT NULL,
+  `cliente_data_cadastro` DATETIME NULL DEFAULT NULL,
   `cliente_data_nascimento` DATE NULL DEFAULT NULL,
   `cliente_logradouro` VARCHAR(70) NULL DEFAULT NULL,
   `cliente_numero` VARCHAR(15) NULL DEFAULT NULL,
@@ -41,6 +42,8 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
   `cliente_cidade` VARCHAR(45) NULL DEFAULT NULL,
   `cliente_estado` VARCHAR(20) NULL DEFAULT NULL,
   `cliente_cep` VARCHAR(20) NULL DEFAULT NULL,
+  `cliente_data_alteracao` DATETIME NULL DEFAULT NULL,
+  `cliente_deletado` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`cliente_codigo`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2

@@ -64,7 +64,7 @@ class Clientes extends CI_Controller
         
         $this->pagination->initialize($config);
         
-        $this->data['results'] = $this->clientes_model->get('tb_cliente', 'cliente_codigo,cliente_nome_razao,cliente_cpf_cnpj,cliente_tel01,cliente_tel02,cliente_email,cliente_logradouro,cliente_numero,cliente_bairro,cliente_cidade,cliente_estado,cliente_cep', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->clientes_model->get('tb_cliente', 'cliente_codigo,cliente_nome_razao,cliente_apelido_fantasia,cliente_cpf_cnpj,cliente_tel01,cliente_tel02,cliente_email,cliente_logradouro,cliente_numero,cliente_bairro,cliente_cidade,cliente_estado,cliente_cep', '', $config['per_page'], $this->uri->segment(3));
         
         $this->data['view'] = 'clientes/clientes';
         $this->load->view('tema/topo', $this->data);
@@ -83,25 +83,41 @@ class Clientes extends CI_Controller
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
 
+
         if ($this->form_validation->run('clientes') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
+
+           // try {
+                $datanascimento = $this->input->post('vw_cliente_data_nasc');
+                $datanascimento = explode('/', $datanascimento);
+                $datanascimento = $datanascimento[2].'-'.$datanascimento[1].'-'.$datanascimento[0];
+            //}
+
             $data = array(
-                'cliente_nome_razao' => set_value('nomeCliente'),
-                'cliente_cpf_cnpj' => set_value('documento'),
-                'cliente_tel01' => set_value('telefone'),
-                'cliente_tel02' => $this->input->post('celular'),
-                'cliente_email' => set_value('email'),
-                'cliente_logradouro' => set_value('rua'),
-                'cliente_numero' => set_value('numero'),
-                'cliente_bairro' => set_value('bairro'),
+                'cliente_tipo' => set_value('vw_cliente_tipo'),
+                'cliente_nome_razao' => set_value('vw_cliente_nome_razao'),
+                'cliente_apelido_fantasia' => set_value('vw_cliente_apelido_fantasia'),
+                'cliente_cpf_cnpj' => set_value('vw_cliente_cpf_cnpj'),
+                'cliente_rg_inscricao' => set_value('vw_cliente_rg_inscricao'),
+                'cliente_data_nascimento' =>  $datanascimento,                
+                'cliente_sexo' => set_value('vw_cliente_genero'),                
+                'cliente_tel01' => set_value('vw_cliente_tel01'),
+                'cliente_tel02' => set_value('vw_cliente_tel02'),
+                'cliente_email' => set_value('vw_cliente_email'),
+                'cliente_cep' => set_value('vw_cliente_cep'),
+                'cliente_logradouro' => set_value('vw_cliente_logradouro'),
+                'cliente_numero' => set_value('vw_cliente_numero'),
+                'cliente_bairro' => set_value('vw_cliente_bairro'),
                 //'cidade' => set_value('cidade'),
-                'cliente_cidade' => $this->input->post('cidade'),//set_value('idCliente'),
+                'cliente_cidade' => $this->input->post('vw_cliente_cidade'),//set_value('idCliente'),
                 // 'usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
 
-                'cliente_estado' => set_value('estado'),
-                'cliente_cep' => set_value('cep'),
-                'cliente_data_cadastro' => date('Y-m-d')
+                'cliente_estado' => set_value('vw_cliente_estado'),
+                
+                'cliente_data_cadastro' => date('Y-m-d H:i:s'),
+                'cliente_data_alteracao' => date('Y-m-d H:i:s'),
+                'cliente_deletado' => 'nao',
             );
 
             if ($this->clientes_model->add('tb_cliente', $data) == true) {
@@ -137,17 +153,17 @@ class Clientes extends CI_Controller
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
             $data = array(
-                'cliente_nome_razao' => $this->input->post('nomeCliente'),
-                'cliente_cpf_cnpj' => $this->input->post('documento'),
-                'cliente_tel01' => $this->input->post('telefone'),
-                'cliente_tel02' => $this->input->post('celular'),
-                'cliente_email' => $this->input->post('email'),
-                'cliente_logradouro' => $this->input->post('rua'),
-                'cliente_numero' => $this->input->post('numero'),
-                'cliente_bairro' => $this->input->post('bairro'),
-                'cliente_cidade' => $this->input->post('cidade'),
-                'cliente_estado' => $this->input->post('estado'),
-                'cliente_cep' => $this->input->post('cep')
+                'cliente_nome_razao' => $this->input->post('vw_cliente_nome_razao'),
+                'cliente_cpf_cnpj' => $this->input->post('vw_cpf_cnpj'),
+                'cliente_tel01' => $this->input->post('vw_tel01'),
+                'cliente_tel02' => $this->input->post('vw_tel02'),
+                'cliente_email' => $this->input->post('vw_email'),
+                'cliente_logradouro' => $this->input->post('vw_logradouro'),
+                'cliente_numero' => $this->input->post('vw_numero'),
+                'cliente_bairro' => $this->input->post('vw_bairro'),
+                'cliente_cidade' => $this->input->post('vw_cidade'),
+                'cliente_estado' => $this->input->post('vw_estado'),
+                'cliente_cep' => $this->input->post('vw_cep')
             );
 
             if ($this->clientes_model->edit('tb_cliente', $data, 'cliente_codigo', $this->input->post('idClientes')) == true) {
@@ -247,8 +263,13 @@ class Clientes extends CI_Controller
             $this->db->delete('tb_lancamento');
 
 
+            $data = array(
+               'cliente_data_alteracao' => date('Y-m-d H:i:s'),
+               'cliente_deletado' => 'sim'
+            );
 
-            $this->clientes_model->delete('tb_cliente', 'cliente_codigo', $id);
+            $this->clientes_model->edit('tb_cliente', $data, 'cliente_codigo', $id);
+            //$this->clientes_model->delete('tb_cliente', 'cliente_codigo', $id);
 
             $this->session->set_flashdata('success', 'Cliente excluido com sucesso!');
             redirect(base_url().'index.php/clientes/gerenciar/');
@@ -265,3 +286,4 @@ class Clientes extends CI_Controller
 
     }  
 }
+
