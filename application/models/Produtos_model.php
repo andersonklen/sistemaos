@@ -75,4 +75,19 @@ class Produtos_model extends CI_Model
     {
         return $this->db->count_all($table);
     }
+
+    public function autoCompleteMarca($q)
+    {
+        $this->db->select('*');
+        $this->db->limit(5);
+        $this->db->like('marca_nome', $q);
+        $query = $this->db->get('tb_marca');
+        if ($query->num_rows() > 0) {
+            foreach ($query->result_array() as $row) {
+                $row_set[] = array('label'=>$row['marca_nome'],'id'=>$row['marca_codigo']);
+            }
+            echo json_encode($row_set);
+        }
+    }
+
 }

@@ -69,7 +69,7 @@
         <li class="<?php if (isset($menuProdutos)) {
             echo 'active';
 
-};?>"><a href="<?php echo base_url()?>index.php/produtos"><i class="icon icon-barcode"></i> <span>Produtos</span></a></li>
+};?>"><a href="<?php echo base_url()?>index.php/produtos"><i class="icon icon-barcode"></i> <span>Produtos p/ Vendas</span></a></li>
     <?php } ?>
 
     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vMarca')) { ?>
@@ -83,14 +83,14 @@
         <li class="<?php if (isset($menuEquipamento)) {
             echo 'active';
 
-};?>"><a href="<?php echo base_url()?>index.php/equipamentos"><i class="icon icon-barcode"></i> <span>Equipamentos Manut.</span></a></li>
+};?>"><a href="<?php echo base_url()?>index.php/equipamentos"><i class="icon icon-barcode"></i> <span>Equipamentos p/ Manutenção</span></a></li>
     <?php } ?>
     
     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vMarca')) { ?>
         <li class="<?php if (isset($menuServicos)) {
             echo 'active';
 
-};?>"><a href="<?php echo base_url()?>index.php/servicos"><i class="icon icon-wrench"></i> <span>Serviços</span></a></li>
+};?>"><a href="<?php echo base_url()?>index.php/servicos"><i class="icon icon-wrench"></i> <span>Cad. de Serviços</span></a></li>
     <?php } ?>
 
     <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')) { ?>
@@ -139,7 +139,7 @@
                 <li><a href="<?php echo base_url()?>index.php/relatorios/clientes">Clientes</a></li>
             <?php } ?>
             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'rProduto')) { ?>
-                <li><a href="<?php echo base_url()?>index.php/relatorios/produtos">Produtos</a></li>
+                <li><a href="<?php echo base_url()?>index.php/relatorios/produtos">Produtos p/ Vendas</a></li>
             <?php } ?>
             <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'rServico')) { ?>
                 <li><a href="<?php echo base_url()?>index.php/relatorios/servicos">Serviços</a></li>

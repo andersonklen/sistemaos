@@ -64,7 +64,7 @@ class Clientes extends CI_Controller
         
         $this->pagination->initialize($config);
         
-        $this->data['results'] = $this->clientes_model->get('tb_cliente', 'cliente_codigo,cliente_nome_razao,cliente_apelido_fantasia,cliente_cpf_cnpj,cliente_tel01,cliente_tel02,cliente_email,cliente_logradouro,cliente_numero,cliente_bairro,cliente_cidade,cliente_estado,cliente_cep', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->clientes_model->get('tb_cliente', 'cliente_codigo,cliente_nome_razao,cliente_apelido_fantasia,cliente_cpf_cnpj,cliente_tel01,cliente_tel02,cliente_email,cliente_logradouro,cliente_numero,cliente_bairro,cliente_cidade,cliente_estado,cliente_cep', "cliente_deletado='nao'", $config['per_page'], $this->uri->segment(3));
         
         $this->data['view'] = 'clientes/clientes';
         $this->load->view('tema/topo', $this->data);
@@ -108,15 +108,11 @@ class Clientes extends CI_Controller
                 'cliente_cep' => set_value('vw_cliente_cep'),
                 'cliente_logradouro' => set_value('vw_cliente_logradouro'),
                 'cliente_numero' => set_value('vw_cliente_numero'),
-                'cliente_bairro' => set_value('vw_cliente_bairro'),
-                //'cidade' => set_value('cidade'),
-                'cliente_cidade' => $this->input->post('vw_cliente_cidade'),//set_value('idCliente'),
-                // 'usuarios_id' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
-
+                'cliente_bairro' => set_value('vw_cliente_bairro'),                
+                'cliente_cidade' => $this->input->post('vw_cliente_cidade'),
                 'cliente_estado' => set_value('vw_cliente_estado'),
-                
                 'cliente_data_cadastro' => date('Y-m-d H:i:s'),
-                'cliente_data_alteracao' => date('Y-m-d H:i:s'),
+                'cliente_data_ultima_alteracao' => date('Y-m-d H:i:s'),
                 'cliente_deletado' => 'nao',
             );
 
@@ -152,18 +148,30 @@ class Clientes extends CI_Controller
         if ($this->form_validation->run('clientes') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
+
+            $datanascimento = $this->input->post('vw_cliente_data_nasc');
+            $datanascimento = explode('/', $datanascimento);
+            $datanascimento = $datanascimento[2].'-'.$datanascimento[1].'-'.$datanascimento[0];
+
             $data = array(
+                'cliente_tipo' => $this->input->post('vw_cliente_tipo'),
                 'cliente_nome_razao' => $this->input->post('vw_cliente_nome_razao'),
-                'cliente_cpf_cnpj' => $this->input->post('vw_cpf_cnpj'),
-                'cliente_tel01' => $this->input->post('vw_tel01'),
-                'cliente_tel02' => $this->input->post('vw_tel02'),
-                'cliente_email' => $this->input->post('vw_email'),
-                'cliente_logradouro' => $this->input->post('vw_logradouro'),
-                'cliente_numero' => $this->input->post('vw_numero'),
-                'cliente_bairro' => $this->input->post('vw_bairro'),
-                'cliente_cidade' => $this->input->post('vw_cidade'),
-                'cliente_estado' => $this->input->post('vw_estado'),
-                'cliente_cep' => $this->input->post('vw_cep')
+                'cliente_apelido_fantasia' => $this->input->post('vw_cliente_apelido_fantasia'),
+                'cliente_cpf_cnpj' => $this->input->post('vw_cliente_cpf_cnpj'),                
+                'cliente_rg_inscricao' => $this->input->post('vw_cliente_rg_inscricao'),
+                'cliente_data_nascimento' =>  $datanascimento,     
+                'cliente_sexo' => $this->input->post('vw_cliente_genero'), 
+                'cliente_tel01' => $this->input->post('vw_cliente_tel01'),
+                'cliente_tel02' => $this->input->post('vw_cliente_tel02'),
+                'cliente_email' => $this->input->post('vw_cliente_email'),
+                'cliente_cep' => $this->input->post('vw_cliente_cep'),
+                'cliente_logradouro' => $this->input->post('vw_cliente_logradouro'),
+                'cliente_numero' => $this->input->post('vw_cliente_numero'),
+                'cliente_bairro' => $this->input->post('vw_cliente_bairro'),
+                'cliente_cidade' => $this->input->post('vw_cliente_cidade'),
+                'cliente_estado' => $this->input->post('vw_cliente_estado'),
+                'cliente_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                
             );
 
             if ($this->clientes_model->edit('tb_cliente', $data, 'cliente_codigo', $this->input->post('idClientes')) == true) {
@@ -230,11 +238,11 @@ class Clientes extends CI_Controller
             foreach ($os as $o) {
                 // Exclui os serviços da OS.
                 $this->db->where('servico_os_codigo', $o->idOs);
-                $this->db->delete('tb_servicos_os');
+                $this->db->delete('tb_servico_os');
 
                 // Exclui os produtos da OS.
                 $this->db->where('produto_os_codigo', $o->idOs);
-                $this->db->delete('tb_produtos_os');
+                $this->db->delete('tb_produto_os');
 
                 // Exclui a OS.
                 $this->db->where('os_codigo', $o->idOs);
@@ -264,7 +272,7 @@ class Clientes extends CI_Controller
 
 
             $data = array(
-               'cliente_data_alteracao' => date('Y-m-d H:i:s'),
+               'cliente_data_ultima_alteracao' => date('Y-m-d H:i:s'),
                'cliente_deletado' => 'sim'
             );
 

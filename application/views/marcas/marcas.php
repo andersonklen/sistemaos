@@ -57,8 +57,8 @@ if (!$results) {?>
     <thead>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
-            <th>Nome</th>
-            <th></th>
+            <th>Marca/Fabricante</th>
+            <th>Web Site</th>
         </tr>
     </thead>
     <tbody>
@@ -66,6 +66,7 @@ if (!$results) {?>
             echo '<tr>';
             echo '<td>'.$r->marca_codigo.'</td>';
             echo '<td>'.$r->marca_nome.'</td>';
+            echo '<td>'.$r->marca_website.'</td>';
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eMarca')) {
                 echo '<a style="margin-right: 1%" href="'.base_url().'index.php/marcas/editar/'.$r->marca_codigo.'" class="btn btn-info tip-top" title="Editar Marca"><i class="icon-pencil icon-white"></i></a>';

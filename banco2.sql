@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `tb_cliente` (
   `cliente_cidade` VARCHAR(45) NULL DEFAULT NULL,
   `cliente_estado` VARCHAR(20) NULL DEFAULT NULL,
   `cliente_cep` VARCHAR(20) NULL DEFAULT NULL,
-  `cliente_data_alteracao` DATETIME NULL DEFAULT NULL,
+  `cliente_data_ultima_alteracao` DATETIME NULL DEFAULT NULL,
   `cliente_deletado` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`cliente_codigo`))
 ENGINE = InnoDB
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `tb_produto` (
   `produto_estoque_minimo` INT(11) NULL DEFAULT NULL,
   `produto_movimenta_saida`	TINYINT(1) NULL DEFAULT NULL,
   `produto_movimenta_entrada`	TINYINT(1) NULL DEFAULT NULL,
-  `produto_situacao` TINYINT(1) NULL DEFAULT NULL,
+  `produto_situacao` VARCHAR(50) NULL DEFAULT NULL,
   -- Chaves estrangeiras
   `produto_marca_codigo` INT(11) NULL,
   -- Logs
@@ -404,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `tb_marca` (
   `marca_codigo` INT NOT NULL AUTO_INCREMENT,
   `marca_nome` VARCHAR(100) NULL,
   `marca_website` VARCHAR(100) NULL,
-  `marca_situacao` TINYINT(1) NULL,
+  `marca_situacao` VARCHAR(50) NULL,
   -- Logs
   `marca_data_cadastro` DATETIME NULL DEFAULT NULL ,
   `marca_data_ultima_alteracao` DATETIME NULL DEFAULT NULL ,

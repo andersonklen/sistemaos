@@ -20,7 +20,7 @@
                                                       <div class="control-group">
                                                             <label for="website" class="control-label"><span class="required">Web Site</span></label>
                                                             <div class="controls">
-                                                                <input id="vw_marca_website" class="money" type="text" name="vw_marca_website" value="<?php echo $result->marca_website ?>"  />
+                                                                <input id="vw_marca_website" type="text" name="vw_marca_website" value="<?php echo $result->marca_website ?>"  />
                                                             </div>
                                                       </div>
                                                                      <div class="form-actions">

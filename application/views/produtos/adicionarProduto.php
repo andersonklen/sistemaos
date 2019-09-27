@@ -29,6 +29,10 @@
 	text-indent: 0;
 }
 </style>
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
@@ -44,7 +48,8 @@
                      <div class="control-group">
                         <label for="marca" class="control-label">Marca<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="marca" type="text" name="marca" value="<?php echo set_value('marca'); ?>"  />
+                            <input id="vw_produto_marca" type="text" name="vw_produto_marca" value=""  />
+                            <input id="vw_produto_marca_id" type="hidden" name="vw_produto_marca_id" value=""  />
                         </div>
                         <label for="descricao" class="control-label">Descrição<span class="required">*</span></label>
                         <div class="controls">
@@ -57,11 +62,11 @@
                         <label class="control-label">Tipo de Movimento</label>
                         <div class="controls">
                             <label for="entrada" class="btn btn-default" style="margin-top: 5px;">Entrada 
-                                <input type="checkbox" id="entrada" name="entrada" class="badgebox" value="1" checked>
+                                <input type="checkbox" id="vw_produto_movimenta_entrada" name="vw_produto_movimenta_entrada" class="badgebox" value="1" checked>
                                 <span class="badge" >&check;</span>
                             </label>
                             <label for="saida" class="btn btn-default" style="margin-top: 5px;">Saída 
-                                <input type="checkbox" id="saida" name="saida" class="badgebox" value="1" checked>
+                                <input type="checkbox" id="vw_produto_movimenta_saida" name="vw_produto_movimenta_saida" class="badgebox" value="1" checked>
                                 <span class="badge" >&check;</span>
                             </label>
                         </div>
@@ -128,6 +133,22 @@
 <script src="<?php echo base_url()?>assets/js/jquery.validate.js"></script>
 <script src="<?php echo base_url();?>assets/js/maskmoney.js"></script>
 <script type="text/javascript">
+
+
+$(document).ready(function(){
+      $("#vw_produto_marca").autocomplete({
+            source: "<?php echo base_url(); ?>index.php/produtos/autoCompleteMarca",
+            minLength: 1,
+            select: function( event, ui ) {
+
+                 $("#vw_produto_marca_id").val(ui.item.id);
+
+
+            }
+      });
+}); 
+
+
     $(document).ready(function(){
         $(".money").maskMoney();
 

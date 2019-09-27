@@ -20,6 +20,7 @@ if (!$results) {?>
                     <tr>
                         <th>#</th>
                         <th>Nome / Razão</th>
+                        <th>CPF / CNPJ</th>
                         <th>Telefone 1</th>
                         <th>Telefone 2</th>
                         <th>E-Mail</th>                        
@@ -56,6 +57,7 @@ if (!$results) {?>
         <tr>
             <th>#</th>
             <th>Nome / Razão</th>
+            <th>CPF / CNPJ</th>
             <th>Telefone 1</th>
             <th>Telefone 2</th>
             <th>E-Mail</th>              
@@ -76,6 +78,7 @@ if (!$results) {?>
             echo '<tr>';
             echo '<td>'.$r->cliente_codigo.'</td>';
             echo '<td>'.$cliente.'</td>';
+            echo '<td>'.$r->cliente_cpf_cnpj.'</td>';
             echo '<td>'.$r->cliente_tel01.'</td>';
             echo '<td>'.$r->cliente_tel02.'</td>';
             echo '<td>'.$r->cliente_email.'</td>';

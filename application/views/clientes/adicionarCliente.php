@@ -64,6 +64,7 @@
                         <label for="vw_genero" class="control-label">Genero<span class="required">*</span></label>
                         <div class="controls">
                             <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                <option value=""></option>
                                 <option value="masculino">Masculino</option>
                                 <option value="feminino">Feminino</option>
                             </select>
@@ -230,6 +231,8 @@ $(document).ready(function(){
            document.getElementById("label_rg_inscricao").innerHTML ="Inscr. Estadual";
            document.getElementById("vw_cliente_data_nasc").disabled  = true;
            document.getElementById("vw_cliente_genero").disabled  = true;
+           document.getElementById("vw_cliente_data_nasc").value ="";
+           document.getElementById("vw_cliente_genero").value ="";
         }
     }
 
@@ -240,6 +243,8 @@ $(document).ready(function(){
                   vw_cliente_tipo:{ required: true},
                   vw_cliente_nome_razao:{ required: true},
                   vw_cliente_cpf_cnpj:{ required: true},
+                  vw_cliente_data_nasc:{ required: true},
+                  vw_cliente_genero:{ required: true},
                   vw_cliente_tel01:{ required: true},
                   vw_cliente_email:{ required: true},                  
                   vw_cliente_logradouro:{ required: true},
@@ -253,6 +258,8 @@ $(document).ready(function(){
                   vw_cliente_tipo :{ required: 'Campo Requerido.'},
                   vw_cliente_nome_razao :{ required: 'Campo Requerido.'},
                   vw_cpf_cnpj:{ required: 'Campo Requerido.'},
+                  vw_cliente_data_nasc:{ required: 'Campo Requerido.'},
+                  vw_cliente_genero:{ required: 'Campo Requerido.'},
                   vw_cliente_tel01:{ required: 'Campo Requerido.'},
                   vw_cliente_email:{ required: 'Campo Requerido.'},
                   vw_cliente_logradouro:{ required: 'Campo Requerido.'},

@@ -85,9 +85,9 @@ class Produtos extends CI_Controller
         if ($this->form_validation->run('produtos') == false) {
             $this->data['custom_error'] = (validation_errors() ? '<div class="form_error">' . validation_errors() . '</div>' : false);
         } else {
-            $produto_preco_compra = $this->input->post('produto_preco_compra');
+            $produto_preco_compra = $this->input->post('vw_produto_preco_compra');
             $produto_preco_compra = str_replace(",", "", $produto_preco_compra);
-            $produto_preco_venda = $this->input->post('produto_preco_venda');
+            $produto_preco_venda = $this->input->post('vw_produto_preco_venda');
             $produto_preco_venda = str_replace(",", "", $produto_preco_venda);
             $data = array(
                 'produto_marca_codigo' => set_value('vw_produto_marca_codigo'),
@@ -98,8 +98,12 @@ class Produtos extends CI_Controller
                 'produto_estoque_atual' => set_value('vw_produto_estoque_atual'),
                 'produto_estoque_minimo' => set_value('vw_produto_estoque_minimo'),
                 'produto_movimenta_saida' => set_value('vw_produto_movimenta_saida'),
-                'produto_movimenta_entrada' => set_value('produto_movimenta_entrada'),
-                'produto_deletado' => 'NAO',
+                'produto_movimenta_entrada' => set_value('vw_produto_movimenta_entrada'),
+                'produto_marca_codigo' => set_value('vw_produto_marca_codigo_id'),
+                'produto_situacao' => 'ativo',
+                'produto_data_cadastro' => date('Y-m-d H:i:s'),            
+                'produto_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'produto_deletado' => 'nao',
             );
 
             if ($this->produtos_model->add('tb_produto', $data) == true) {
@@ -214,7 +218,7 @@ class Produtos extends CI_Controller
         // $this->produtos_model->delete('tb_produto', 'produto_codigo', $id);
         
         $data = array( 
-                    'produto_deletado'      => 'SIM', 
+                    'produto_deletado'      => 'sim', 
                     'produto_data_ultima_alteracao' =>  date('Y-m-d H:i:s'),
                     );
                     $this->db->where('produto_codigo', $id);
@@ -225,4 +229,15 @@ class Produtos extends CI_Controller
         $this->session->set_flashdata('success', 'Produto excluido com sucesso!');
         redirect(base_url().'index.php/produtos/gerenciar/');
     }
+
+
+    public function autoCompleteMarca()
+    {
+        if (isset($_GET['term'])) {
+            $q = strtolower($_GET['term']);
+            $this->produtos_model->autoCompleteMarca($q);
+        }
+
+    } 
+
 }

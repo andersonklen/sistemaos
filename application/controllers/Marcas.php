@@ -72,7 +72,7 @@ class Marcas extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->marcas_model->get('tb_marca', 'marca_codigo,marca_nome,marca_situacao', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->marcas_model->get('tb_marca', 'marca_codigo,marca_nome,marca_situacao,marca_website',  "marca_deletado='nao'", $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'marcas/marcas';
         $this->load->view('tema/topo', $this->data);
@@ -98,6 +98,10 @@ class Marcas extends CI_Controller
             $data = array(
                 'marca_nome' => set_value('vw_marca_nome'),
                 'marca_website' => set_value('vw_marca_website'),
+                'marca_situacao' => 'ativo',
+                'marca_data_cadastro' => date('Y-m-d H:i:s'),
+                'marca_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'marca_deletado' => 'nao',
             );
 
             if ($this->marcas_model->add('tb_marca', $data) == true) {
@@ -126,7 +130,8 @@ class Marcas extends CI_Controller
         } else {
             $data = array(
                 'marca_nome' => $this->input->post('vw_marca_nome'),
-                'marca_website' => $this->input->post('vw_marca_website'),
+                'marca_website' => $this->input->post('vw_marca_website'),                                                            
+                'marca_data_ultima_alteracao' => date('Y-m-d H:i:s'),                
             );
 
             if ($this->marcas_model->edit('tb_marca', $data, 'marca_codigo', $this->input->post('vw_hi_Marcas')) == true) {
@@ -161,10 +166,16 @@ class Marcas extends CI_Controller
             redirect(base_url().'index.php/marcas/gerenciar/');
         }
 
-        $this->db->where('marca_codigo', $id);
-        $this->db->delete('tb_marca');
 
-        $this->marcas_model->delete('tb_marca', 'marca_codigo', $id);
+       $data = array(
+               'marca_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+               'marca_deletado' => 'sim'
+            );
+
+        $this->marcas_model->edit('tb_marca', $data, 'marca_codigo', $id);
+        /// $this->db->where('marca_codigo', $id);
+        // $this->db->delete('tb_marca');
+        // $this->marcas_model->delete('tb_marca', 'marca_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'Serviço excluido com sucesso!');

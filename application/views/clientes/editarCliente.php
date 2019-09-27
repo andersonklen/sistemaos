@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
@@ -12,90 +16,138 @@
                     echo '<div class="alert alert-danger">' . $custom_error . '</div>';
 } ?>
                 <form action="<?php echo current_url(); ?>" id="formCliente" method="post" class="form-horizontal" >
-                    <div class="control-group">
-                        <?php echo form_hidden('idClientes', $result->cliente_codigo) ?>
-                        <label for="nomeCliente" class="control-label">Nome<span class="required">*</span></label>
+                <?php echo form_hidden('idClientes', $result->cliente_codigo) ?>
+
+                     <div class="control-group">
+                        <label  class="control-label">Tipo de Cliente</label>
                         <div class="controls">
-                            <input id="nomeCliente" type="text" name="nomeCliente" value="<?php echo $result->cliente_nome_razao; ?>"  />
+                            <select name="vw_cliente_tipo" id="vw_cliente_tipo" onchange="js_check_tipo_cliente()">
+                                <option <?php if ($result->cliente_tipo == 'fisica')    {  echo 'selected'; } ?>   value="fisica">Pessoa Física</option>
+                                <option <?php if ($result->cliente_tipo == 'juridica')  {  echo 'selected'; } ?>    value="juridica">Pessoa Jurídica</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <div class="control-group">
+                        <label for="nomeCliente" id="label_nome_razao"class="control-label">Nome<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="vw_cliente_nome_razao" type="text" name="vw_cliente_nome_razao" value="<?php echo $result->cliente_nome_razao; ?>"  />
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="documento" class="control-label">CPF/CNPJ<span class="required">*</span></label>
+                        <label for="nomeCliente" id="label_apelido_nomefantasia" class="control-label"><?php if ($result->cliente_tipo == 'juridica') {  echo 'Nome Fantasia'; } else {  echo 'Apelido'; }  ?></label>
                         <div class="controls">
-                            <input id="documento" type="text" name="documento" value="<?php echo $result->cliente_cpf_cnpj; ?>"  />
+                            <input id="vw_cliente_apelido_fantasia" type="text" name="vw_cliente_apelido_fantasia" value="<?php echo $result->cliente_apelido_fantasia; ?>"  />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="documento" id="label_cpf_cnpj" class="control-label"><?php if ($result->cliente_tipo == 'juridica') {  echo 'CNPJ'; } else {  echo 'CPF'; }  ?> <span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="vw_cliente_cpf_cnpj" type="text" name="vw_cliente_cpf_cnpj" value="<?php echo $result->cliente_cpf_cnpj; ?>"  />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="documento" id="label_rg_inscricao" class="control-label"><?php if ($result->cliente_tipo == 'juridica') {  echo 'Inscrição Estadual'; } else {  echo 'RG'; }  ?> </label>
+                        <div class="controls">
+                            <input id="vw_cliente_rg_inscricao" type="text" name="vw_cliente_rg_inscricao" value="<?php echo $result->cliente_rg_inscricao; ?>"  />
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="vw_data_nasc" class="control-label">Data de Nascimento</label>
+                        <div class="controls">
+                            <input id="vw_cliente_data_nasc" type="text" name="vw_cliente_data_nasc"  <?php if ($result->cliente_tipo == 'juridica') {  echo 'disabled=/"true/"'; }?> class="form-control" onkeypress="$(this).mask('00/00/0000')" 
+                             value="<?php 
+                              if ($result->cliente_tipo == 'juridica'){  
+                                echo ''; } 
+                              else {  
+                                echo date('d/m/Y', strtotime($result->cliente_data_nascimento)); 
+                               } ?>" 
+                               placeholder="DD/MM/AAAA"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="vw_genero" class="control-label">Genero<span class="required">*</span></label>
+                        <div class="controls">
+                            <select name="vw_cliente_genero" id="vw_cliente_genero" <?php if ($result->cliente_tipo == 'juridica') {  echo 'disabled=/"true/"'; }?>  >
+                                <option <?php if ($result->cliente_sexo == '')    {  echo 'selected'; } ?>   value=""></option>
+                                <option <?php if ($result->cliente_sexo == 'masculino')    {  echo 'selected'; } ?>   value="masculino">Masculino</option>
+                                <option <?php if ($result->cliente_sexo == 'feminino')     {  echo 'selected'; } ?>   value="feminino">Feminino</option>
+                            </select>
                         </div>
                     </div>
                     <div class="control-group">
                         <label for="telefone" class="control-label">Telefone 1<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="telefone" type="text" name="telefone" value="<?php echo $result->cliente_tel01; ?>"  />
+                            <input id="vw_cliente_tel01" type="text" name="vw_cliente_tel01" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')" value="<?php echo $result->cliente_tel01; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="celular" class="control-label">Telefone 2</label>
                         <div class="controls">
-                            <input id="celular" type="text" name="celular" value="<?php echo $result->cliente_tel02; ?>"  />
+                            <input id="vw_cliente_tel02" type="text" name="vw_cliente_tel02" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')" value="<?php echo $result->cliente_tel02; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group">
                         <label for="email" class="control-label">Email<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="email" type="text" name="email" value="<?php echo $result->cliente_email; ?>"  />
+                            <input id="vw_cliente_email" type="text" name="vw_cliente_email" value="<?php echo $result->cliente_email; ?>"  />
                         </div>
                     </div>
                     
                     <div class="control-group" class="control-label">
                         <label for="cep" class="control-label">CEP<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="cep" type="text" name="cep" value="<?php echo $result->cliente_cep; ?>"  />
+                            <input id="vw_cliente_cep" type="text" name="vw_cliente_cep" class="form-control" onkeypress="$(this).mask('00.000-000')" value="<?php echo $result->cliente_cep; ?>"  value="<?php echo set_value('cep'); ?>"  />
                         </div>
                     </div>
                     
+
+                    
+                    <div class="control-group" class="control-label">
+                        <label for="rua" class="control-label">Logradouro<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="vw_cliente_logradouro" type="text" name="vw_cliente_logradouro" value="<?php echo $result->cliente_logradouro; ?>"  />
+                        </div>
+                    </div>
+
                     <div class="control-group">
                         <label for="numero" class="control-label">Número<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="numero" type="text" name="numero" value="<?php echo $result->cliente_numero; ?>"  />
-                        </div>
-                    </div>
-                    
-                    <div class="control-group" class="control-label">
-                        <label for="rua" class="control-label">Rua<span class="required">*</span></label>
-                        <div class="controls">
-                            <input id="rua" type="text" name="rua" value="<?php echo $result->cliente_logradouro; ?>"  />
+                            <input id="vw_cliente_numero" type="text" name="vw_cliente_numero" value="<?php echo $result->cliente_numero; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group" class="control-label">
                         <label for="bairro" class="control-label">Bairro<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="bairro" type="text" name="bairro" value="<?php echo $result->cliente_bairro; ?>"  />
+                            <input id="vw_cliente_bairro" type="text" name="vw_cliente_bairro" value="<?php echo $result->cliente_bairro; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group" class="control-label">
                         <label for="cidade" class="control-label">Cidade<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="cidade" type="text" name="cidade" value="<?php echo $result->cliente_cidade; ?>"  />
+                            <input id="vw_cliente_cidade" type="text" name="vw_cliente_cidade" value="<?php echo $result->cliente_cidade; ?>"  />
                         </div>
                     </div>
 
                     <div class="control-group" class="control-label">
                         <label for="estado" class="control-label">Estado<span class="required">*</span></label>
                         <div class="controls">
-                            <input id="estado" type="text" name="estado" value="<?php echo $result->cliente_estado; ?>"  />
+                            <input id="vw_cliente_estado" type="text" name="vw_cliente_estado" value="<?php echo $result->cliente_estado; ?>"  />
                         </div>
                     </div>
-
-                    
 
 
 
                     <div class="form-actions">
                         <div class="span12">
                             <div class="span6 offset3">
-                                <button type="submit" class="btn btn-primary"><i class="icon-ok icon-white"></i> Alterar</button>
+                                <button type="submit" class="btn btn-success"><i class="icon-plus icon-white"></i> Alterar</button>
                                 <a href="<?php echo base_url() ?>index.php/clientes" id="" class="btn"><i class="icon-arrow-left"></i> Voltar</a>
                             </div>
                         </div>
@@ -107,34 +159,121 @@
 </div>
 
 
-
-<script src="<?php echo base_url()?>assets/js/jquery.validate.js"></script>
 <script type="text/javascript">
-      $(document).ready(function(){
+  // $(document).ready(function(){
+   //         $("#vw_cliente_nome_razao").autocomplete({
+   //             source: "<?php //echo base_url(); ?>index.php/clientes/autoCompleteCidade",
+   //             minLength: 1,
+   //             select: function( event, ui ) {
+   //                  $("#vw_cliente_cidade_id").val(ui.item.id);
+   //             }
+   //         });
+
+
+
+
+    $("#vw_cliente_cpf_cnpj").keydown(function(){
+        try {
+            $("#vw_cliente_cpf_cnpj").unmask();
+        } catch (e) {
+
+        }
+    
+        var tamanho = $("#vw_cliente_cpf_cnpj").val().length;
+        if(tamanho < 11){
+            $("#vw_cliente_cpf_cnpj").mask("999.999.999-99");
+        } else if(tamanho >= 11){
+            $("#vw_cliente_cpf_cnpj").mask("99.999.999/9999-99");
+        }
+    
+        // ajustando foco
+        var elem = this;
+        setTimeout(function(){
+             // mudo a posição do seletor
+            elem.selectionStart = elem.selectionEnd = 10000;
+        }, 0);
+    
+        // reaplico o valor para mudar o foco
+        var currentValue = $(this).val();
+        $(this).val('');
+        $(this).val(currentValue);
+    });
+
+
+
+
+
+</script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+      $("#vw_cliente_cidade").autocomplete({
+            source: "<?php echo base_url(); ?>index.php/clientes/autoCompleteCidade",
+            minLength: 1,
+            select: function( event, ui ) {
+
+                 $("#vw_cliente_cidade_id").val(ui.item.id);
+
+
+            }
+      });
+});
+
+
+    function js_check_tipo_cliente(){
+        var option = document.getElementById("vw_cliente_tipo").value;
+        if(option == "fisica"){
+            document.getElementById("label_nome_razao").innerHTML ="Nome*";
+            document.getElementById("label_cpf_cnpj").innerHTML ="CPF*";
+            document.getElementById("label_apelido_nomefantasia").innerHTML ="Apelido";
+            document.getElementById("label_rg_inscricao").innerHTML ="RG";
+            document.getElementById("vw_cliente_data_nasc").disabled  = false;
+            document.getElementById("vw_cliente_genero").disabled  = false;
+        }
+        if(option == "juridica"){
+           document.getElementById("label_nome_razao").innerHTML ="Razão Social*";
+           document.getElementById("label_cpf_cnpj").innerHTML ="CNPJ*";
+           document.getElementById("label_apelido_nomefantasia").innerHTML ="Nome Fantasia*";
+           document.getElementById("label_rg_inscricao").innerHTML ="Inscr. Estadual";
+           document.getElementById("vw_cliente_data_nasc").disabled  = true;
+           document.getElementById("vw_cliente_genero").disabled  = true;
+           document.getElementById("vw_cliente_data_nasc").value ="";
+           document.getElementById("vw_cliente_genero").value ="";
+        }
+    }
+
+
+
            $('#formCliente').validate({
             rules :{
-                  nomeCliente:{ required: true},
-                  documento:{ required: true},
-                  telefone:{ required: true},
-                  email:{ required: true},
-                  rua:{ required: true},
-                  numero:{ required: true},
-                  bairro:{ required: true},
-                  cidade:{ required: true},
-                  estado:{ required: true},
-                  cep:{ required: true}
+                  vw_cliente_tipo:{ required: true},
+                  vw_cliente_nome_razao:{ required: true},
+                  vw_cliente_cpf_cnpj:{ required: true},
+                  vw_cliente_data_nasc:{ required: true},
+                  vw_cliente_genero:{ required: true},
+                  vw_cliente_tel01:{ required: true},
+                  vw_cliente_email:{ required: true},                  
+                  vw_cliente_logradouro:{ required: true},
+                  vw_cliente_numero:{ required: true},
+                  vw_cliente_bairro:{ required: true},
+                  vw_cliente_cidade:{ required: true},
+                  vw_cliente_estado:{ required: true},
+                  vw_cliente_cep:{ required: true}
             },
             messages:{
-                  nomeCliente :{ required: 'Campo Requerido.'},
-                  documento :{ required: 'Campo Requerido.'},
-                  telefone:{ required: 'Campo Requerido.'},
-                  email:{ required: 'Campo Requerido.'},
-                  rua:{ required: 'Campo Requerido.'},
-                  numero:{ required: 'Campo Requerido.'},
-                  bairro:{ required: 'Campo Requerido.'},
-                  cidade:{ required: 'Campo Requerido.'},
-                  estado:{ required: 'Campo Requerido.'},
-                  cep:{ required: 'Campo Requerido.'}
+                  vw_cliente_tipo :{ required: 'Campo Requerido.'},
+                  vw_cliente_nome_razao :{ required: 'Campo Requerido.'},
+                  vw_cpf_cnpj:{ required: 'Campo Requerido.'},
+                  vw_cliente_data_nasc:{ required: 'Campo Requerido.'},
+                  vw_cliente_genero:{ required: 'Campo Requerido.'},
+                  vw_cliente_tel01:{ required: 'Campo Requerido.'},
+                  vw_cliente_email:{ required: 'Campo Requerido.'},
+                  vw_cliente_logradouro:{ required: 'Campo Requerido.'},
+                  vw_cliente_numero:{ required: 'Campo Requerido.'},
+                  vw_cliente_bairro:{ required: 'Campo Requerido.'},
+                  vw_cliente_cidade:{ required: 'Campo Requerido.'},
+                  vw_cliente_estado:{ required: 'Campo Requerido.'},
+                  vw_cliente_cep:{ required: 'Campo Requerido.'}
 
             },
 
@@ -147,24 +286,27 @@
                 $(element).parents('.control-group').removeClass('error');
                 $(element).parents('.control-group').addClass('success');
             }
-           });
-      });
-</script>
 
+    
+
+           });
+
+</script>
 <script type="text/javascript" >
 
         $(document).ready(function() {
 
+
             function limpa_formulario_cep() {
                 // Limpa valores do formulário de cep.
-                $("#rua").val("");
-                $("#bairro").val("");
-                $("#cidade").val("");
-                $("#estado").val("");
+                $("#vw_cliente_logradouro").val("");
+                $("#vw_cliente_bairro").val("");
+                $("#vw_cliente_cidade").val("");
+                $("#vw_cliente_estado").val("");
             }
             
             //Quando o campo cep perde o foco.
-            $("#cep").blur(function() {
+            $("#vw_cliente_cep").blur(function() {
 
                 //Nova variável "cep" somente com dígitos.
                 var cep = $(this).val().replace(/\D/g, '');
@@ -179,21 +321,21 @@
                     if(validacep.test(cep)) {
 
                         //Preenche os campos com "..." enquanto consulta webservice.
-                        $("#rua").val("...");
-                        $("#bairro").val("...");
-                        $("#cidade").val("...");
-                        $("#estado").val("...");
+                        $("#vw_cliente_logradouro").val("...");
+                        $("#vw_cliente_bairro").val("...");
+                        $("#vw_cliente_cidade").val("...");
+                        $("#vw_cliente_estado").val("...");
 
                         //Consulta o webservice viacep.com.br/
                         $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
 
                             if (!("erro" in dados)) {
                                 //Atualiza os campos com os valores da consulta.
-                                $("#rua").val(dados.logradouro);
-                                $("#bairro").val(dados.bairro);
-                                $("#cidade").val(dados.localidade);
-                                $("#estado").val(dados.uf);
-                                document.getElementById("numero").focus();
+                                $("#vw_cliente_logradouro").val(dados.logradouro);
+                                $("#vw_cliente_bairro").val(dados.bairro);
+                                $("#vw_cliente_cidade").val(dados.localidade);
+                                $("#vw_cliente_estado").val(dados.uf);
+                                document.getElementById("vw_cliente_numero").focus();
                             } //end if.
                             else {
                                 //CEP pesquisado não foi encontrado.
