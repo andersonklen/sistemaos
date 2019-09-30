@@ -29,6 +29,10 @@
 	text-indent: 0;
 }
 </style>
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/jquery-ui/css/smoothness/jquery-ui-1.9.2.custom.css" />
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-ui/js/jquery-ui-1.9.2.custom.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery.validate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 <div class="row-fluid" style="margin-top:0">
     <div class="span12">
         <div class="widget-box">
@@ -43,9 +47,18 @@
                 <form action="<?php echo current_url(); ?>" id="formProduto" method="post" class="form-horizontal" >
                      <div class="control-group">
                         <?php echo form_hidden('vw_produto_codigo', $result->produto_codigo) ?>
+                        <label for="marca" class="control-label">Marca<span class="required">*</span></label>
+                        <div class="controls">
+                            <input id="vw_produto_marca" type="text" name="vw_produto_marca" value="<?php echo $result->marca_nome; ?>"  />
+                            <input id="vw_produto_marca_id" type="hidden" name="vw_produto_marca_id" value="<?php echo $result->produto_marca_codigo; ?>"  />
+                        </div>
                         <label for="descricao" class="control-label">Descrição<span class="required">*</span></label>
                         <div class="controls">
                             <input id="vw_produto_descricao" type="text" name="vw_produto_descricao" value="<?php echo $result->produto_descricao; ?>"  />
+                        </div>
+                        <label for="partnumber" class="control-label">Part Number</label>
+                        <div class="controls">
+                            <input id="vw_produto_partnumber" type="text" name="vw_produto_partnumber" value="<?php echo $result->produto_partnumber; ?>"  />
                         </div>
                     </div>
 
@@ -125,24 +138,41 @@
 
 <script src="<?php echo base_url()?>assets/js/jquery.validate.js"></script>
 <script src="<?php echo base_url();?>assets/js/maskmoney.js"></script>
+
 <script type="text/javascript">
+
+$(document).ready(function(){
+      $("#vw_produto_marca").autocomplete({
+            source: "<?php echo base_url(); ?>index.php/produtos/autoCompleteMarca",
+            minLength: 1,
+            select: function( event, ui ) {
+
+                 $("#vw_produto_marca_id").val(ui.item.id);
+
+
+            }
+      });
+}); 
+
+
+
     $(document).ready(function(){
         $(".money").maskMoney();
 
         $('#formProduto').validate({
             rules :{
-                  produto_descricao: { required: true},
-                  produto_unid_medida: { required: true},
-                  produto_preco_compra: { required: true},
-                  produto_preco_venda: { required: true},
-                  produto_estoque_atual: { required: true}
+                  vw_produto_descricao: { required: true},
+                  vw_produto_unid_medida: { required: true},
+                  vw_produto_preco_compra: { required: true},
+                  vw_produto_preco_venda: { required: true},
+                  vw_produto_estoque_atual: { required: true}
             },
             messages:{
-                  produto_descricao: { required: 'Campo Requerido.'},
-                  produto_unid_medida: {required: 'Campo Requerido.'},
-                  produto_preco_compra: { required: 'Campo Requerido.'},
-                  produto_preco_venda: { required: 'Campo Requerido.'},
-                  produto_estoque_atual: { required: 'Campo Requerido.'}
+                  vw_produto_descricao: { required: 'Campo Requerido.'},
+                  vw_produto_unid_medida: {required: 'Campo Requerido.'},
+                  vw_produto_preco_compra: { required: 'Campo Requerido.'},
+                  vw_produto_preco_venda: { required: 'Campo Requerido.'},
+                  vw_produto_estoque_atual: { required: 'Campo Requerido.'}
             },
 
             errorClass: "help-inline",

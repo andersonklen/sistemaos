@@ -92,10 +92,21 @@ $config = array('clientes' => array(
                                     'rules'=>'required|trim'
                                 ))
                 ,
-                'produtos' => array(array(
+                'produtos' => array(
+                                array(
+                                    'field'=>'vw_produto_marca',
+                                    'label'=>'',
+                                    'rules'=>'trim'
+                                ),
+                                array(
                                     'field'=>'vw_produto_descricao',
                                     'label'=>'',
                                     'rules'=>'required|trim'
+                                ),
+                                array(
+                                    'field'=>'vw_produto_partnumber',
+                                    'label'=>'',
+                                    'rules'=>'trim'
                                 ),
                                 array(
                                     'field'=>'vw_produto_unid_medida',
@@ -127,11 +138,6 @@ $config = array('clientes' => array(
                                     'field'=>'vw_equipamento_nome',
                                     'label'=>'',
                                     'rules'=>'required|trim'
-                                ),                                
-                                array(
-                                    'field'=>'vw_equipamento_modelo',
-                                    'label'=>'',
-                                    'rules'=>'trim'
                                 ))
                 ,
 

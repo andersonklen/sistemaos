@@ -21,6 +21,7 @@ class Produtos_model extends CI_Model
         $this->db->from($table);
         $this->db->order_by('produto_codigo', 'desc');
         $this->db->limit($perpage, $start);
+        $this->db->join('tb_marca', 'tb_marca.marca_codigo = '.$table.'.produto_marca_codigo');
         if ($where) {
             $this->db->where($where);
         }
@@ -29,12 +30,38 @@ class Produtos_model extends CI_Model
         $result =  !$one  ? $query->result() : $query->row();
         
         return $result;
+
+
+
+
+
+
+        
+        //$this->db->select($fields.', tb_cliente.cliente_nome_razao, tb_cliente.cliente_codigo');
+        //$this->db->from($table);
+        //$this->db->limit($perpage, $start);
+       /// $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = '.$table.'.venda_cliente_codigo');
+       // $this->db->order_by('venda_codigo', 'desc');
+       // if ($where) {
+       //     $this->db->where($where);
+       // }
+      //  
+      //  $query = $this->db->get();
+      //  
+      //  $result =  !$one  ? $query->result() : $query->row();
+      //  return $result;
+
+
+
+
+
     }
 
     function getById($id)
     {
         $this->db->where('produto_codigo', $id);
         $this->db->limit(1);
+        $this->db->join('tb_marca', 'tb_marca.marca_codigo = tb_produto.produto_marca_codigo');
         return $this->db->get('tb_produto')->row();
     }
     
@@ -80,6 +107,7 @@ class Produtos_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->limit(5);
+        $this->db->where('marca_deletado', 'nao');
         $this->db->like('marca_nome', $q);
         $query = $this->db->get('tb_marca');
         if ($query->num_rows() > 0) {

@@ -69,7 +69,7 @@ class Equipamentos extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->equipamentos_model->get('tb_equipamento', 'equipamento_codigo,equipamento_nome,equipamento_modelo,equipamento_observacao', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->equipamentos_model->get('tb_equipamento', 'equipamento_codigo,equipamento_nome,equipamento_partnumber,equipamento_observacao', 'equipamento_deletado=\'NAO\'', $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'equipamentos/equipamento';
         $this->load->view('tema/topo', $this->data);
@@ -98,7 +98,11 @@ class Equipamentos extends CI_Controller
             end;
             $data = array(
                 'equipamento_nome' => set_value('vw_equipamento_nome'),
-                'equipamento_modelo' => set_value('vw_equipamento_modelo'),
+                'equipamento_partnumber' => set_value('vw_equipamento_partnumber'),
+                'equipamento_situacao' => 'ativo',
+                'equipamento_data_cadastro' => date('Y-m-d H:i:s'),            
+                'equipamento_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'equipamento_deletado' => 'nao',                
             );
 
             if ($this->equipamentos_model->add('tb_equipamento', $data) == true) {
@@ -129,7 +133,9 @@ class Equipamentos extends CI_Controller
             $preco = str_replace(",", "", $preco);
             $data = array(
                 'equipamento_nome' => $this->input->post('vw_equipamento_nome'),
-                'equipamento_observacao' => $this->input->post('vw_equipamento_modelo'),
+                'equipamento_partnumber' => $this->input->post('vw_equipamento_partnumber'),
+                'equipamento_data_cadastro' => date('Y-m-d H:i:s'),            
+                'equipamento_data_ultima_alteracao' => date('Y-m-d H:i:s'),
             );
 
             if ($this->equipamentos_model->edit('tb_equipamento', $data, 'equipamento_codigo', $this->input->post('vw_hi_equipamento_codigo')) == true) {
@@ -167,7 +173,14 @@ class Equipamentos extends CI_Controller
         // $this->db->where('marcas_id', $id);
         // $this->db->delete('marcas_os');
 
-        $this->equipamentos_model->delete('tb_equipamento', 'equipamento_codigo', $id);
+         $data = array( 
+                    'equipamento_deletado'      => 'sim', 
+                    'equipamento_data_ultima_alteracao' =>  date('Y-m-d H:i:s'),
+                    );
+                    $this->db->where('equipamento_codigo', $id);
+                    $this->db->update('tb_equipamento', $data); 
+            
+        //$this->equipamentos_model->delete('tb_equipamento', 'equipamento_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'Item excluido com sucesso!');

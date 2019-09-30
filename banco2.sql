@@ -420,23 +420,15 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `tb_equipamento` (
   `equipamento_codigo` INT NOT NULL AUTO_INCREMENT,
   `equipamento_nome` VARCHAR(150) NOT NULL,
-  `equipamento_modelo` VARCHAR(150) NOT NULL,
+  `equipamento_partnumber` VARCHAR(150) NOT NULL,
   `equipamento_observacao` VARCHAR(150) NULL,
   `equipamento_situacao` TINYINT(1) NULL,
-  -- Chaves estrangeiras
-  `equipamento_marca_codigo` INT(11) NULL,
-  -- Logs
+   -- Logs
   `equipamento_data_cadastro` DATETIME NULL DEFAULT NULL ,
   `equipamento_data_ultima_alteracao` DATETIME NULL DEFAULT NULL ,
   `equipamento_usuario_cod_ult_alteracao` INT(11) NULL,
   `equipamento_deletado` VARCHAR(3) NULL DEFAULT NULL,  
-   PRIMARY KEY (`equipamento_codigo`), 
-  INDEX `fk_equipanento_marca_codigo_idx` (`equipamento_marca_codigo` ASC), 
-  CONSTRAINT `fk_equipanento_marca_codigo`
-    FOREIGN KEY (`equipamento_marca_codigo`)
-    REFERENCES `tb_marca` (`marca_codigo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+   PRIMARY KEY (`equipamento_codigo`))  
 ENGINE = InnoDB;
 
 

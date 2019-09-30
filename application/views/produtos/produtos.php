@@ -21,7 +21,8 @@ if (!$results) {?>
     <thead>
         <tr>
             <th>#</th>
-            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Part Number</th>            
             <th>Estoque</th>
             <th>Preço</th>
             <th></th>
@@ -55,7 +56,8 @@ if (!$results) {?>
     <thead>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
-            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Part Number</th>                        
             <th>Estoque</th>
             <th>Preço</th>
             <th></th>
@@ -65,7 +67,8 @@ if (!$results) {?>
         <?php foreach ($results as $r) {
             echo '<tr>';
             echo '<td>'.$r->produto_codigo.'</td>';
-            echo '<td>'.$r->produto_descricao.'</td>';
+            echo '<td>'.$r->marca_nome.' '.$r->produto_descricao.'</td>';
+            echo '<td>'.$r->produto_partnumber.'</td>';            
             echo '<td>'.$r->produto_estoque_atual.'</td>';
             echo '<td>'.number_format($r->produto_preco_venda, 2, ',', '.').'</td>';
             

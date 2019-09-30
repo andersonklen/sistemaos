@@ -54,7 +54,11 @@
                         <label for="descricao" class="control-label">Descrição<span class="required">*</span></label>
                         <div class="controls">
                             <input id="vw_produto_descricao" type="text" name="vw_produto_descricao" value="<?php echo set_value('produto_descricao'); ?>"  />
-                        </div>                        
+                        </div>    
+                        <label for="partnumber" class="control-label">Part Number</label>
+                        <div class="controls">
+                            <input id="vw_produto_partnumber" type="text" name="vw_produto_partnumber" value=""  />
+                        </div>                                            
                     </div>
 
 
@@ -154,6 +158,7 @@ $(document).ready(function(){
 
         $('#formProduto').validate({
             rules :{
+                  vw_produto_marca: { required: true},
                   vw_produto_descricao: { required: true},
                   vw_produto_unid_medida: { required: true},
                   vw_produto_preco_compra: { required: true},

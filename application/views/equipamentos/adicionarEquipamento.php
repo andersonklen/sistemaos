@@ -5,21 +5,21 @@
                 <span class="icon">
                     <i class="icon-align-justify"></i>
                 </span>
-                <h5>Cadastro de Equipamentos</h5>
+                <h5>Cadastro de Equipamentos para Manutenção</h5>
             </div>
             <div class="widget-content nopadding">
                 <?php echo $custom_error; ?>
                 <form action="<?php echo current_url(); ?>" id="formServico" method="post" class="form-horizontal" >
                     <div class="control-group">
-                        <label for="nome" class="control-label">Nome<span class="required">*</span></label>
+                        <label for="nome" class="control-label">Marca e Modelo<span class="required">*</span></label>
                         <div class="controls">
                             <input id="vw_equipamento_nome" type="text" name="vw_equipamento_nome" value="<?php echo set_value('equipamento_nome'); ?>"  />
                         </div>
                     </div>
                     <div class="control-group">
-                        <label for="modelo" class="control-label"><span class="required">Modelo*</span></label>
+                        <label for="modelo" class="control-label"><span class="required">Part Number</span></label>
                         <div class="controls">
-                            <input id="vw_equipamento_modelo" type="text" name="vw_equipamento_modelo" value="<?php echo set_value('equipamento_modelo'); ?>"  />
+                            <input id="vw_equipamento_partnumber" type="text" name="vw_equipamento_partnumber" value="<?php echo set_value('equipamento_modelo'); ?>"  />
                         </div>
                     </div>
          
@@ -44,12 +44,12 @@
           $(".money").maskMoney();
            $('#formServico').validate({
             rules :{
-                  nome:{ required: true},
-                  preco:{ required: true}
+                  vw_equipamento_nome:{ required: true},
+                  //vw_equipamento_partnumber:{ required: true}
             },
             messages:{
-                  nome :{ required: 'Campo Requerido.'},
-                  preco :{ required: 'Campo Requerido.'}
+                  vw_equipamento_nome :{ required: 'Campo Requerido.'},
+                  //vw_equipamento_partnumber :{ required: 'Campo Requerido.'}
             },
 
             errorClass: "help-inline",

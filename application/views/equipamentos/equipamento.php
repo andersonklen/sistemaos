@@ -23,7 +23,7 @@ if (!$results) {?>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
             <th>Equipamento</th>
-            <th>Modelo</th>
+            <th>Part Number</th>
             <th></th>
         </tr>
     </thead>
@@ -58,7 +58,7 @@ if (!$results) {?>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
             <th>Equipamento</th>
-            <th>Modelo</th>
+            <th>Part Number</th>
             <th></th>
         </tr>
     </thead>
@@ -67,7 +67,7 @@ if (!$results) {?>
             echo '<tr>';
             echo '<td>'.$r->equipamento_codigo.'</td>';
             echo '<td>'.$r->equipamento_nome.'</td>';
-            echo '<td>'.$r->equipamento_modelo.'</td>';
+            echo '<td>'.$r->equipamento_partnumber.'</td>';
             echo '<td>';
             if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eEquipamento')) {
                 echo '<a style="margin-right: 1%" href="'.base_url().'index.php/equipamentos/editar/'.$r->equipamento_codigo.'" class="btn btn-info tip-top" title="Editar Equipamento"><i class="icon-pencil icon-white"></i></a>';

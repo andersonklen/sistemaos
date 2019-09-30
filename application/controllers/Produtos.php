@@ -62,7 +62,7 @@ class Produtos extends CI_Controller
         
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->produtos_model->get('tb_produto', 'produto_codigo,produto_descricao,produto_unid_medida,produto_preco_compra,produto_preco_venda,produto_estoque_atual,produto_estoque_minimo,produto_deletado', 'produto_deletado=\'NAO\'', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->produtos_model->get('tb_produto', 'produto_codigo,produto_descricao,produto_partnumber,produto_unid_medida,produto_preco_compra,produto_preco_venda,produto_estoque_atual,produto_estoque_minimo,produto_deletado,marca_nome', 'produto_deletado=\'NAO\'', $config['per_page'], $this->uri->segment(3));
        
        
         $this->data['view'] = 'produtos/produtos';
@@ -90,16 +90,16 @@ class Produtos extends CI_Controller
             $produto_preco_venda = $this->input->post('vw_produto_preco_venda');
             $produto_preco_venda = str_replace(",", "", $produto_preco_venda);
             $data = array(
-                'produto_marca_codigo' => set_value('vw_produto_marca_codigo'),
+                'produto_marca_codigo' => set_value('vw_produto_marca_id'),
                 'produto_descricao' => set_value('vw_produto_descricao'),
+                'produto_partnumber' => set_value('vw_produto_partnumber'),                
                 'produto_unid_medida' => set_value('vw_produto_unid_medida'),
                 'produto_preco_compra' => $produto_preco_compra,
                 'produto_preco_venda' => $produto_preco_venda,
                 'produto_estoque_atual' => set_value('vw_produto_estoque_atual'),
                 'produto_estoque_minimo' => set_value('vw_produto_estoque_minimo'),
                 'produto_movimenta_saida' => set_value('vw_produto_movimenta_saida'),
-                'produto_movimenta_entrada' => set_value('vw_produto_movimenta_entrada'),
-                'produto_marca_codigo' => set_value('vw_produto_marca_codigo_id'),
+                'produto_movimenta_entrada' => set_value('vw_produto_movimenta_entrada'),                
                 'produto_situacao' => 'ativo',
                 'produto_data_cadastro' => date('Y-m-d H:i:s'),            
                 'produto_data_ultima_alteracao' => date('Y-m-d H:i:s'),
@@ -141,15 +141,21 @@ class Produtos extends CI_Controller
             $produto_preco_venda = $this->input->post('vw_produto_preco_venda');
             $produto_preco_venda = str_replace(",", "", $produto_preco_venda);
             $data = array(
+                'produto_marca_codigo' => $this->input->post('vw_produto_marca_id'),
                 'produto_descricao' => $this->input->post('vw_produto_descricao'),
+                'produto_partnumber' => $this->input->post('vw_produto_partnumber'),                
                 'produto_unid_medida' => $this->input->post('vw_produto_unid_medida'),
                 'produto_preco_compra' => $produto_preco_compra,
                 'produto_preco_venda' => $produto_preco_venda,
                 'produto_estoque_atual' => $this->input->post('vw_produto_estoque_atual'),
                 'produto_estoque_minimo' => $this->input->post('vw_produto_estoque_minimo'),
-                'produto_movimenta_saida' => set_value('vw_produto_movimenta_saida'),
-                'produto_movimenta_entrada' => set_value('vw_produto_movimenta_entrada'),
+                'produto_movimenta_saida' => $this->input->post('vw_produto_movimenta_saida'),
+                'produto_movimenta_entrada' => $this->input->post('vw_produto_movimenta_entrada'),
+                'produto_situacao' => 'ativo',      
+                'produto_data_ultima_alteracao' => date('Y-m-d H:i:s')                
             );
+            //print_r($data);
+            //    exit;
 
             if ($this->produtos_model->edit('tb_produto', $data, 'produto_codigo', $this->input->post('vw_produto_codigo')) == true) {
                 $this->session->set_flashdata('success', 'Produto editado com sucesso!');
