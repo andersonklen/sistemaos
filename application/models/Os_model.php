@@ -220,7 +220,7 @@ class Os_model extends CI_Model
         $query = $this->db->get('tb_equipamento');
         if ($query->num_rows() > 0) {
             foreach ($query->result_array() as $row) {
-                $row_set[] = array('label'=>$row['equipamento_nome'].' - '.$row['equipamento_modelo'],'id'=>$row['equipamento_codigo']);
+                $row_set[] = array('label'=>$row['equipamento_nome'].' - '.$row['equipamento_partnumber'],'id'=>$row['equipamento_codigo']);
             }
             echo json_encode($row_set);
         }

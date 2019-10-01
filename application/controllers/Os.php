@@ -230,14 +230,14 @@ class Os extends CI_Controller
             $data = array(
                 'os_data_inicial' => $dataInicial,
                 'os_data_final' => $dataFinal,
-                'os_garantia' => $this->input->post('garantia'),
+                //'os_garantia' => $this->input->post('garantia'),
                 'os_descricao_produto' => $this->input->post('descricaoProduto'),
-                'os_defeito' => $this->input->post('defeito'),
-                'os_status' => $this->input->post('status'),
-                'os_observacoes' => $this->input->post('observacoes'),
-                'os_laudo_tecnico' => $this->input->post('laudoTecnico'),
-                'os_usuario_codigo' => $this->input->post('usuarios_id'),
-                'os_cliente_codigo' => $this->input->post('clientes_id')
+                'os_defeito' => $this->input->post('vw_os_defeito'),
+                'os_status' => $this->input->post('vw_os_status'),
+                'os_observacoes' => $this->input->post('vw_os_observacoes'),
+                'os_laudo_tecnico' => $this->input->post('vw_os_laudo_tecnico'),
+                'os_usuario_codigo' => $this->input->post('vw_os_tecnico_id'),
+                'os_cliente_codigo' => $this->input->post('vw_os_clientes_id')
             );
 
             if ($this->os_model->edit('tb_os', $data, 'os_codigo', $this->input->post('idOs')) == true) {

@@ -269,6 +269,11 @@ CREATE TABLE IF NOT EXISTS `tb_servico` (
   `servico_nome` VARCHAR(45) NOT NULL,
   `servico_descricao` VARCHAR(45) NULL DEFAULT NULL,
   `servico_preco` DECIMAL(10,2) NOT NULL,
+  `servico_situacao` VARCHAR(50) NULL DEFAULT NULL,
+  `servico_data_cadastro` DATETIME NULL DEFAULT NULL ,  
+  `servico_data_ultima_alteracao` DATETIME NULL DEFAULT NULL, 
+  `servico_usuario_cod_ult_alteracao` INT(11) NULL,
+  `servico_deletado` VARCHAR(3) NULL DEFAULT NULL, 
   PRIMARY KEY (`servico_codigo`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 7
@@ -283,6 +288,10 @@ CREATE TABLE IF NOT EXISTS `tb_servico_os` (
   `servico_os_os_codigo` INT(11) NOT NULL,
   `servico_os_servico_codigo` INT(11) NOT NULL,
   `servico_os_subtotal` VARCHAR(15) NULL DEFAULT NULL,
+  `servico_os_data_cadastro` DATETIME NULL DEFAULT NULL ,  
+  `servico_os_data_ultima_alteracao` DATETIME NULL DEFAULT NULL, 
+  `servico_os_usuario_cod_ult_alteracao` INT(11) NULL,
+  `servico_os_deletado` VARCHAR(3) NULL DEFAULT NULL, 
   PRIMARY KEY (`servico_os_codigo`),
   INDEX `fk_servico_os_os1` (`servico_os_os_codigo` ASC),
   INDEX `fk_servico_os_servico1` (`servico_os_servico_codigo` ASC),

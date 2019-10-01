@@ -62,7 +62,7 @@ class Servicos extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->servicos_model->get('tb_servico', 'servico_codigo,servico_nome,servico_descricao,servico_preco', '', $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->servicos_model->get('tb_servico', 'servico_codigo,servico_nome,servico_descricao,servico_preco', 'servico_deletado=\'NAO\'', $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'servicos/servicos';
         $this->load->view('tema/topo', $this->data);
@@ -90,7 +90,11 @@ class Servicos extends CI_Controller
             $data = array(
                 'servico_nome' => set_value('nome'),
                 'servico_descricao' => set_value('descricao'),
-                'servico_preco' => $preco
+                'servico_preco' => $preco,
+                'servico_situacao' => 'ativo',
+                'servico_data_cadastro' => date('Y-m-d H:i:s'),            
+                'servico_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'servico_deletado' => 'nao'
             );
 
             if ($this->servicos_model->add('tb_servico', $data) == true) {
@@ -122,7 +126,8 @@ class Servicos extends CI_Controller
             $data = array(
                 'servico_nome' => $this->input->post('nome'),
                 'servico_descricao' => $this->input->post('descricao'),
-                'servico_preco' => $preco
+                'servico_preco' => $preco,                                
+                'servico_data_ultima_alteracao' => date('Y-m-d H:i:s'),                
             );
 
             if ($this->servicos_model->edit('tb_servico', $data, 'servico_codigo', $this->input->post('idServicos')) == true) {
@@ -156,11 +161,32 @@ class Servicos extends CI_Controller
             redirect(base_url().'index.php/servicos/gerenciar/');
         }
 
-        $this->db->where('servico_os_servico_codigo', $id);
-        $this->db->delete('tb_servico_os');
+        //$this->db->where('servico_os_servico_codigo', $id);
+        //$this->db->delete('tb_servico_os');
 
-        $this->servicos_model->delete('tb_servico', 'servico_codigo', $id);
+
+        $data = array( 
+                    'servico_os_deletado'      => 'sim', 
+                    'servico_os_data_ultima_alteracao' =>  date('Y-m-d H:i:s'),
+                    );
+                    $this->db->where('servico_os_servico_codigo', $id);
+                    $this->db->update('tb_servico_os', $data); 
+
+
+        //$this->servicos_model->delete('tb_servico', 'servico_codigo', $id);
         
+        
+        $data = array( 
+                    'servico_deletado'      => 'sim', 
+                    'servico_data_ultima_alteracao' =>  date('Y-m-d H:i:s'),
+                    );
+                    $this->db->where('servico_codigo', $id);
+                    $this->db->update('tb_servico', $data); 
+        
+        
+       
+
+
 
         $this->session->set_flashdata('success', 'Serviço excluido com sucesso!');
         redirect(base_url().'index.php/servicos/gerenciar/');

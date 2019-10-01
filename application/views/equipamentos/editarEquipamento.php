@@ -20,7 +20,7 @@
                                                       <div class="control-group">
                                                             <label for="modelo" class="control-label"><span class="required">Modelo*</span></label>
                                                             <div class="controls">
-                                                                <input id="vw_equipamento_modelo" class="money" type="text" name="vw_equipamento_modelo" value="<?php echo $result->equipamento_modelo ?>"  />
+                                                                <input id="vw_equipamento_partnumber" type="text" name="vw_equipamento_partnumber" value="<?php echo $result->equipamento_partnumber ?>"  />
                                                             </div>
                                                       </div>
 
@@ -46,11 +46,9 @@
            $('#formServico').validate({
             rules :{
                   nome:{ required: true},
-                  preco:{ required: true}
             },
             messages:{
                   nome :{ required: 'Campo Requerido.'},
-                  preco :{ required: 'Campo Requerido.'}
             },
 
             errorClass: "help-inline",
