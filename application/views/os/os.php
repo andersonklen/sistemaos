@@ -10,7 +10,7 @@
         <?php } ?>
 
         <div class="span3">
-            <input type="text" name="pesquisa"  id="pesquisa"  placeholder="Nome do cliente a pesquisar" class="span12" value="" >
+            <input type="text" name="vw_os_pesquisa"  id="vw_os_pesquisasa"  placeholder="Nome do cliente a pesquisar" class="span12" value="" >
         </div>
         <div class="span2">
             <select name="status" id="status" class="span12">
@@ -90,15 +90,15 @@ if (!$results) {?>
             <th>#</th>
             <th>Equipamento</th>
             <th>Cliente</th>
-            <th>Data Inicial</th>
-            <th>Data Final</th>
+            <th>Atendente</th>
+            <th>Data Entrada</th>            
             <th>Status</th>
             <th></th>
         </tr>
     </thead>  
     <tbody>
         <?php foreach ($results as $r) {
-            $dataInicial = date(('d/m/Y'), strtotime($r->os_data_inicial));
+            $dataentrada = date(('d/m/Y'), strtotime($r->os_data_entrada));
             $dataFinal = date(('d/m/Y'), strtotime($r->os_data_final));
 
             switch ($r->os_status) {
@@ -127,10 +127,10 @@ if (!$results) {?>
 
             echo '<tr>';
             echo '<td>'.$r->os_codigo.'</td>';
-            echo '<td>'.$r->os_descricao_produto.'</td>';
+            echo '<td>'.$r->equipamento_nome.' ('.$r->equipamento_partnumber.')</td>';
             echo '<td>'.$r->cliente_nome_razao.'</td>';
-            echo '<td>'.$dataInicial.'</td>';
-            echo '<td>'.$dataFinal.'</td>';
+            echo '<td>'.$r->usuario_nome.'</td>';
+            echo '<td>'.$dataentrada.'</td>';            
             echo '<td><span class="badge" style="background-color: '.$cor.'; border-color: '.$cor.'">'.$r->os_status.'</span> </td>';
             
             echo '<td>';

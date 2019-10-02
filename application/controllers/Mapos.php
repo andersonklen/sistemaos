@@ -38,11 +38,17 @@ class Mapos extends CI_Controller
 
     public function minhaConta()
     {
+        
+        //$usuario=$this->mapos_model->getById($this->session->userdata('id'));
+    
+        //print_r($this->session->userdata);
+        // exit;
+
         if ((!session_id()) || (!$this->session->userdata('logado'))) {
             redirect('mapos/login');
         }
 
-        $this->data['usuario'] = $this->mapos_model->getById($this->session->userdata('id'));
+        $this->data['tb_usuario'] = $this->mapos_model->getById($this->session->userdata('id'));
         $this->data['view'] = 'mapos/minhaConta';
         $this->load->view('tema/topo', $this->data);
 

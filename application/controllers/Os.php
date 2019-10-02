@@ -19,6 +19,7 @@ class Os extends CI_Controller
         
         $this->load->helper(array('form','codegen_helper'));
         $this->load->model('os_model', '', true);
+        //$this->load->model('mapos_model', '', true);
         $this->data['menuOs'] = 'OS';
          // Debug
         //$this->output->enable_profiler(TRUE);
@@ -36,7 +37,7 @@ class Os extends CI_Controller
         
         $where_array = array();
 
-        $pesquisa = $this->input->get('pesquisa');
+        $pesquisa = $this->input->get('vw_os_pesquisa');
         $status = $this->input->get('status');
         $de = $this->input->get('data');
         $ate = $this->input->get('data2');
@@ -85,7 +86,7 @@ class Os extends CI_Controller
             
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->os_model->getOs('tb_os', 'os_codigo,os_data_inicial,os_data_final,os_garantia,os_descricao_produto,os_defeito,os_status,os_observacoes,os_laudo_tecnico', $where_array, $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->os_model->getOs('tb_os','os_codigo,os_data_entrada,os_data_final,os_garantia,os_descricao_produto,os_defeito,os_status,os_observacoes,os_laudo_tecnico,equipamento_nome,equipamento_partnumber', $where_array, $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'os/os';
         $this->load->view('tema/topo', $this->data);
@@ -102,6 +103,12 @@ class Os extends CI_Controller
             redirect(base_url());
         }
 
+        //$usuario=$this->mapos_model->getById($this->session->userdata('id'));
+        //$usuario= $this->session->userdata('id');
+        /// $usuariologado=$this->session->userdata('permissao');
+        //print_r($usuario);
+       // exit;
+
         $this->load->library('form_validation');
         $this->data['custom_error'] = '';
         
@@ -109,12 +116,28 @@ class Os extends CI_Controller
             $this->data['custom_error'] = (validation_errors() ? true : false);
         } else {
 
+            $acessorios  = $this->input->post('vw_os_acessorios01').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios02').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios03').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios04').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios05').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios06').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios07').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios08').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios09').'|*][*|';
+            $acessorios .= $this->input->post('vw_os_acessorios10').'|*][*|';
+
+
             $dataInicial = $this->input->post('dataInicial');
             $dataFinal = $this->input->post('dataFinal');
 
+            $dataEntrada = explode('/', set_value('vw_os_data_entrada'));
+            $dataEntrada = $dataEntrada[2].'-'.$dataEntrada[1].'-'.$dataEntrada[0];
+
             try {
                 
-                $dataInicial = explode('/', $dataInicial);
+                //$dataInicial = explode('/', $dataInicial);
+                $dataInicial = explode('/', '12/12/2019');
                 $dataInicial = $dataInicial[2].'-'.$dataInicial[1].'-'.$dataInicial[0];
 
                 if ($dataFinal) {
@@ -130,17 +153,26 @@ class Os extends CI_Controller
             }
 
             $data = array(
-                'os_data_inicial' => $dataInicial,
-                'os_cliente_codigo' => $this->input->post('clientes_id'),//set_value('idCliente'),
-                'os_usuario_codigo' => $this->input->post('usuarios_id'),//set_value('idUsuario'),
-                'os_data_final' => $dataFinal,
-                'os_garantia' => set_value('garantia'),
-                'os_descricao_produto' => set_value('descricaoProduto'),
-                'os_defeito' => set_value('defeito'),
-                'os_status' => set_value('status'),
-                'os_observacoes' => set_value('observacoes'),
-                'os_laudo_tecnico' => set_value('laudoTecnico'),
-                'os_faturado' => 0
+                'os_data_entrada' => $dataEntrada,
+                'os_cliente_codigo' => set_value('vw_os_clientes_id'),
+                'os_usuario_codigo' => $this->session->userdata('id'),
+                'os_equipamento_codigo' => set_value('vw_os_equipamento_id'),//set_value('idUsuario'),                
+                'os_numero_de_serie_equipamento' => set_value('vw_os_numero_de_serie'),//set_value('idUsuario'),
+                'os_acessorios' => $acessorios,
+                'os_observacoes' => set_value('vw_os_observacoes'),
+                'os_defeito' => set_value('vw_os_defeito'),
+                'os_status' => 'Orçamento',                                
+                'os_faturado' => 0,
+                'os_data_cadastro' => date('Y-m-d H:i:s'),
+                'os_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'os_deletado' => 'nao',
+
+                'os_data_final' => date('Y-m-d'),                
+               // 'os_descricao_produto' => set_value('descricaoProduto'),
+                
+
+                //'os_laudo_tecnico' => set_value('laudoTecnico'),
+                
             );
 
             if (is_numeric($id = $this->os_model->add('tb_os', $data, true))) {
@@ -330,7 +362,11 @@ class Os extends CI_Controller
         $this->db->where('anexo_os_codigo', $id);
         $this->db->delete('tb_anexo');
 
-        $this->os_model->delete('tb_os', 'os_codigo', $id);
+        //$this->os_model->delete('tb_os', 'os_codigo', $id);
+        $data04 = array(
+                'os_deletado' => 'sim'
+            );
+        $this->os_model->edit('tb_os', $data04 , 'os_codigo', $id);
         
 
         $this->session->set_flashdata('success', 'OS excluída com sucesso!');
