@@ -38,7 +38,7 @@
                                         </div>
                                         <div class="span6">
                                             <label for="atendente">Atendente</label>
-                                            <input id="vw_os_data_atendente" class="span12" type="text" name="vw_os_data_atendente" readonly="true"  value="<?php echo $result->usuario_nome ?>"  />
+                                            <input id="vw_os_data_atendente" class="span12" type="text" name="vw_os_data_atendente" readonly="true"  value="<?php echo $result->atendente ?>"  />
                                         </div>
                                     </div>
 
@@ -60,12 +60,12 @@
                                     <div class="span12" style="padding: 1% ; margin-left: 0">
                                         <div class="span6">
                                             <label for="equipamento">Equipamento<span class="required">*</span></label>
-                                            <input id="vw_os_equipamento" class="span12" type="text" name="vw_os_equipamento" value=""  />
-                                            <input id="vw_os_equipamento_id" class="span12" type="hidden" name="vw_os_equipamento_id" value=""  />
+                                            <input id="vw_os_equipamento" class="span12" type="text" name="vw_os_equipamento" value="<?php echo $result->os_equipamento_codigo ?>"  />
+                                            <input id="vw_os_equipamento_id" class="span12" type="hidden" name="vw_os_equipamento_id" value="<?php echo $result->os_equipamento_codigo ?>"  />
                                         </div>
                                         <div class="span6">
                                             <label for="numero_de_serie">Num. de Série  </label>
-                                            <input id="vw_os_numero_de_serie" class="span12" type="text" name="vw_os_numero_de_serie" value=""  />                                            
+                                            <input id="vw_os_numero_de_serie" class="span12" type="text" name="vw_os_numero_de_serie" value="<?php echo $result->os_numero_de_serie_equipamento ?>"  />                                            
                                         </div>
                                     </div>   
 
@@ -94,12 +94,12 @@
                                                     <label for="acessorios02">Qtde de baterias<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios02" id="vw_os_acessorios02" >
                                                         <option value=""></option>
-                                                        <option value="1">Sem baterias</option>
+                                                        <option value="0">Sem baterias</option>
                                                         <option value="1">1 bateria</option>
                                                         <option value="2">2 baterias</option>
-                                                        <option value="2">3 baterias</option>
-                                                        <option value="2">4 baterias</option>
-                                                        <option value="2">5 baterias</option>                                                        
+                                                        <option value="3">3 baterias</option>
+                                                        <option value="4">4 baterias</option>
+                                                        <option value="5">5 baterias</option>                                                        
                                                     </select>
                                                 </div>
 
@@ -107,8 +107,8 @@
                                                     <label for="acessorios03">Carregador de Tomada<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios03" id="vw_os_acessorios03" >
                                                         <option value=""></option>
-                                                        <option value="sim">Sim</option>
-                                                        <option value="nao">Não</option>
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>
                                                                         
                                                     </select>
                                                 </div>
@@ -119,16 +119,16 @@
                                                     <label for="acessorios04">Manuais <span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios04" id="vw_os_acessorios04" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                         
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                         
                                                     </select>
                                                 </div>
                                                 <div class="span4">
                                                     <label for="acessorios05">Protetor de Gimbal/Camera<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios05" id="vw_os_acessorios05" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                      
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                      
                                                     </select>
                                                 </div>                                                
                                                 
@@ -136,8 +136,8 @@
                                                     <label for="acessorios06">Bolsa de Transporte<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios06" id="vw_os_acessorios06" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                                    
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                                    
                                                     </select>
                                                 </div>
                                             </div>
@@ -218,14 +218,12 @@
 
 
 
-
-                                        <div class="span6">
+                                    <div class="span12" style="padding: 1%; margin-left: 0">
+                                        <div class="span3">
                                             <label for="tecnico">Técnico / Responsável<span class="required">*</span></label>
-                                            <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->usuario_nome ?>"  />
-                                            <input id="vw_os_tecnico_id" class="span12" type="hidden" name="vw_os_tecnico_id" value="<?php echo $result->os_usuario_codigo ?>"  />
+                                            <input id="tecnico" class="span12" type="text" name="tecnico" value="<?php echo $result->tecnico ?>" />
+                                            <input id="vw_os_tecnico_id" class="span12" type="hidden" name="vw_os_tecnico_id" value="<?php echo $result->os_tecnico_codigo ?>"  />
                                         </div>
-
-
                                         <div class="span3">
                                             <label for="vstatus">Status<span class="required">*</span></label>
                                             <select class="span12" name="vw_os_status" id="vw_os_status" value="">
@@ -238,34 +236,26 @@
                                                 <option <?php if ($result->os_status == 'Cancelado') { echo 'selected'; } ?> value="Cancelado">Cancelado</option>
                                             </select>
                                         </div>
-                                        <div class="span3">
+                                        <div class="span2">
                                             <label for="previsao_entrega">Previsão de Entrega<span class="required">*</span></label>
-                                            <input id="vw_os_previsao_entrega" class="span12 datepicker" type="text" name="vw_os_previsao_entrega" value="<?php echo date('d/m/Y', strtotime($result->os_data_inicial)); ?>"  />
+                                            <input id="vw_os_data_prev_entrega" class="span12 datepicker" type="text" name="vw_os_data_prev_entrega" value="<?php echo date('d/m/Y', strtotime($result->os_data_inicial)); ?>"  />
                                         </div>
                                     </div>
+
+
 
                                     <div class="span12" style="padding: 1%; margin-left: 0">
 
                                         <div class="span6">
-                                            <label for="descricaoProduto">Descrição Produto/Serviço</label>
-                                            <textarea class="span12" name="descricaoProduto" id="descricaoProduto" cols="30" rows="5"><?php echo $result->os_descricao_produto?></textarea>
+                                            <label for="descricaoProduto">Laudo técnico</label>
+                                            <textarea class="span12" name="vw_os_laudo_tecnico" id="vw_os_laudo_tecnico" style="width:100%;" rows="5"><?php echo $result->os_laudo_tecnico?></textarea>
                                         </div>
                                         <div class="span6">
-                                            <label for="defeito">Defeito</label>
-                                            <textarea class="span12" name="defeito" id="defeito" cols="30" rows="5"><?php echo $result->os_defeito?></textarea>
+                                            <label for="defeito">Observações técnicas (Uso interno / não é impresso na O.S )</label>
+                                            <textarea class="span12" name="vw_os_observacoes_internas" id="vw_os_observacoes_internas" style="width:100%;" rows="5"><?php echo $result->os_observacoes_internas?></textarea>
                                         </div>
 
-                                    </div>
-                                    <div class="span12" style="padding: 1%; margin-left: 0">
-                                        <div class="span6">
-                                            <label for="observacoes">Observações</label>
-                                            <textarea class="span12" name="observacoes" id="observacoes" cols="30" rows="5"><?php echo $result->os_observacoes ?></textarea>
-                                        </div>
-                                        <div class="span6">
-                                            <label for="laudoTecnico">Laudo Técnico</label>
-                                            <textarea class="span12" name="laudoTecnico" id="laudoTecnico" cols="30" rows="5"><?php echo $result->os_laudo_tecnico ?></textarea>
-                                        </div>
-                                    </div>
+                                    </div>                                    
                                     <div class="span12" style="padding: 1%; margin-left: 0">
                                         <div class="span6 offset3" style="text-align: center">
                                             <?php if ($result->os_faturado == 0) { ?>

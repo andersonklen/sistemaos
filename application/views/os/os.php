@@ -88,75 +88,86 @@ if (!$results) {?>
     <thead>
         <tr style="backgroud-color: #2D335B">
             <th>#</th>
-            <th>Equipamento</th>
             <th>Cliente</th>
+            <th>Equipamento</th>
+            <th>S/N</th>
             <th>Atendente</th>
+            <th>Técnico</th>            
             <th>Data Entrada</th>            
+            <th>Prev. Entrega</th>            
             <th>Status</th>
             <th></th>
         </tr>
     </thead>  
     <tbody>
-        <?php foreach ($results as $r) {
-            $dataentrada = date(('d/m/Y'), strtotime($r->os_data_entrada));
-            $dataFinal = date(('d/m/Y'), strtotime($r->os_data_final));
+      <?php foreach ($results as $r) {
+        $dataentrada = date(('d/m/Y'), strtotime($r->os_data_entrada));
+        $dataFinal = date(('d/m/Y'), strtotime($r->os_data_final));
+        if ($r->os_data_prev_entrega=='0000-00-00' ){
+          $datapreventrega = '<span class="badge" style="background-color: #8B0000; border-color: #8B0000">Sem Previsão</span>';
+        } else {
+          $datapreventrega = date(('d/m/Y'), strtotime($datapreventrega));
+        } 
 
-            switch ($r->os_status) {
-                case 'Aberto':
-                    $cor = '#8A9B0F';
-                    break;
-                case 'Em Andamento':
-                    $cor = '#A7DBD8';
-                    break;
-                case 'Orçamento':
-                    $cor = '#CDB380';
-                    break;
-                case 'Cancelado':
-                    $cor = '#E97F02';
-                    break;
-                case 'Finalizado':
-                    $cor = '#0B486B';
-                    break;
-                case 'Faturado':
-                    $cor = '#B266FF';
-                    break;
-                default:
-                    $cor = '#E0E4CC';
-                    break;
-            }
+        switch ($r->os_status) {
+          case 'Aberto':
+          $cor = '#8A9B0F';
+          break;
+          case 'Em Andamento':
+          $cor = '#A7DBD8';
+          break;
+          case 'Orçamento':
+          $cor = '#CDB380';
+          break;
+          case 'Cancelado':
+          $cor = '#E97F02';
+          break;
+          case 'Finalizado':
+          $cor = '#0B486B';
+          break;
+          case 'Faturado':
+          $cor = '#B266FF';
+          break;
+          default:
+          $cor = '#E0E4CC';
+          break;
+        }
 
-            echo '<tr>';
-            echo '<td>'.$r->os_codigo.'</td>';
-            echo '<td>'.$r->equipamento_nome.' ('.$r->equipamento_partnumber.')</td>';
-            echo '<td>'.$r->cliente_nome_razao.'</td>';
-            echo '<td>'.$r->usuario_nome.'</td>';
-            echo '<td>'.$dataentrada.'</td>';            
-            echo '<td><span class="badge" style="background-color: '.$cor.'; border-color: '.$cor.'">'.$r->os_status.'</span> </td>';
-            
-            echo '<td>';
-            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/visualizar/'.$r->os_codigo.'" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/imprimir/'.$r->os_codigo.'" target="_blank" class="btn btn-inverse tip-top" title="Imprimir"><i class="icon-print"></i></a>';
-            }
-            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eOs')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/editar/'.$r->os_codigo.'" class="btn btn-info tip-top" title="Editar OS"><i class="icon-pencil icon-white"></i></a>';
-            }
-            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dOs')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" os="'.$r->os_codigo.'" class="btn btn-danger tip-top" title="Excluir OS"><i class="icon-remove icon-white"></i></a>  ';
-            }
-                               
-                      
-            echo  '</td>';
-            echo '</tr>';
-}?>
-        <tr>
-            
-        </tr>
+        echo '<tr>';
+        echo '<td>'.$r->os_codigo.'</td>';
+        echo '<td>'.$r->cliente_nome_razao.'</td>';
+        echo '<td>'.$r->equipamento_nome.'</td>';
+        echo '<td>'.$r->os_numero_de_serie_equipamento.'</td>';                        
+        echo '<td>'.$r->os_atendente.'</td>';
+        echo '<td>'.$r->os_tecnico.'</td>';
+        echo '<td>'.$dataentrada.'</td>';  
+        echo '<td>'.$datapreventrega.'</td>';              
+        echo '<td><span class="badge" style="background-color: '.$cor.'; border-color: '.$cor.'">'.$r->os_status.'</span> </td>';
+
+        echo '<td>';
+        if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')) {
+          echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/visualizar/'.$r->os_codigo.'" class="btn tip-top" title="Ver mais detalhes"><i class="icon-eye-open"></i></a>';
+          echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/imprimir/'.$r->os_codigo.'" target="_blank" class="btn btn-inverse tip-top" title="Imprimir"><i class="icon-print"></i></a>';
+        }
+        if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eOs')) {
+          echo '<a style="margin-right: 1%" href="'.base_url().'index.php/os/editar/'.$r->os_codigo.'" class="btn btn-info tip-top" title="Editar OS"><i class="icon-pencil icon-white"></i></a>';
+        }
+        if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dOs')) {
+          echo '<a href="#modal-excluir" role="button" data-toggle="modal" os="'.$r->os_codigo.'" class="btn btn-danger tip-top" title="Excluir OS"><i class="icon-remove icon-white"></i></a>  ';
+        }
+
+
+        echo  '</td>';
+        echo '</tr>';
+      }?>
+      <tr>
+
+      </tr>
     </tbody>
-</table>
+  </table>
 </div>
 </div>
-    
+
 <?php echo $this->pagination->create_links();
 }?>
 

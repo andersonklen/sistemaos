@@ -174,26 +174,31 @@ CREATE TABLE IF NOT EXISTS `tb_os` (
   `os_data_entrada` DATE NULL DEFAULT NULL,
   `os_data_inicial` DATE NULL DEFAULT NULL,
   `os_data_final` DATE NULL DEFAULT NULL,
+  `os_data_prev_entrega` DATE NULL DEFAULT NULL,
   `os_garantia` VARCHAR(45) NULL DEFAULT NULL,
   `os_descricao_produto` TEXT NULL DEFAULT NULL,
   `os_acessorios` TEXT NULL DEFAULT NULL,
   `os_defeito` TEXT NULL DEFAULT NULL,
   `os_status` VARCHAR(45) NULL DEFAULT NULL,
   `os_observacoes` TEXT NULL DEFAULT NULL,
+  `os_observacoes_internas` TEXT NULL DEFAULT NULL,
   `os_laudo_tecnico` TEXT NULL DEFAULT NULL,
   `os_valor_total` VARCHAR(15) NULL DEFAULT NULL,
   `os_data_ultima_alteracao` DATETIME NULL DEFAULT NULL,
   `os_data_cadastro` DATETIME NULL DEFAULT NULL,
   `os_deletado` VARCHAR(20) NOT NULL,
-  `os_numero_de_serie_equipamento` VARCHAR(45) NULL DEFAULT NULL,
   `os_cliente_codigo` INT(11) NOT NULL,
-  `os_usuario_codigo` INT(11) NOT NULL,
+  `os_numero_de_serie_equipamento` VARCHAR(45) NULL DEFAULT NULL,
+  `os_usuario_ult_alteracao` INT(11) NOT NULL,
+  `os_atendente_codigo` INT(11) NOT NULL,
+  `os_tecnico_codigo` INT(11) NULL DEFAULT NULL,
   `os_equipamento_codigo` INT(11) NOT NULL,  
   `os_lancamento` INT(11) NULL DEFAULT NULL,
   `os_faturado` TINYINT(1) NOT NULL,
   PRIMARY KEY (`os_codigo`),
   INDEX `fk_os_cliente1` (`os_cliente_codigo` ASC),
-  INDEX `fk_os_usuario1` (`os_usuario_codigo` ASC),
+  INDEX `fk_os_atendente1` (`os_atendente_codigo` ASC),
+  INDEX `fk_os_tecnico1` (`os_tecnico_codigo` ASC),
   INDEX `fk_os_lancamento1` (`os_lancamento` ASC),
   INDEX `fk_os_equipamento1` (`os_equipamento_codigo` ASC),
   CONSTRAINT `fk_os_cliente1`
@@ -206,8 +211,13 @@ CREATE TABLE IF NOT EXISTS `tb_os` (
     REFERENCES `tb_lancamento` (`lancamento_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_os_usuario1`
-    FOREIGN KEY (`os_usuario_codigo`)
+  CONSTRAINT `fk_os_atendente1`
+    FOREIGN KEY (`os_atendente_codigo`)
+    REFERENCES `tb_usuario` (`usuario_codigo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_os_tecnico1`
+    FOREIGN KEY (`os_tecnico_codigo`)
     REFERENCES `tb_usuario` (`usuario_codigo`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,

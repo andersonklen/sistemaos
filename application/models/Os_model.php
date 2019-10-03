@@ -52,10 +52,11 @@ class Os_model extends CI_Model
             }
         }
 
-        $this->db->select($fields.',tb_cliente.cliente_nome_razao, tb_usuario.usuario_nome,tb_equipamento.equipamento_nome,tb_equipamento.equipamento_partnumber ');
+        $this->db->select($fields.',tb_cliente.cliente_nome_razao, atendente.usuario_nome as os_atendente, tecnico.usuario_nome as os_tecnico,tb_equipamento.equipamento_nome,tb_equipamento.equipamento_partnumber ');
         $this->db->from($table);
         $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
-        $this->db->join('tb_usuario', 'tb_usuario.usuario_codigo = tb_os.os_usuario_codigo', 'left');
+        $this->db->join('tb_usuario as atendente', 'atendente.usuario_codigo = tb_os.os_atendente_codigo', 'left');
+        $this->db->join('tb_usuario as tecnico', 'tecnico.usuario_codigo = tb_os.os_tecnico_codigo', 'left');
         $this->db->join('tb_equipamento', 'tb_equipamento.equipamento_codigo = tb_os.os_equipamento_codigo', 'left');
 
         // condicionais da pesquisa
@@ -94,10 +95,13 @@ class Os_model extends CI_Model
 
     function getById($id)
     {
-        $this->db->select('tb_os.*, tb_cliente.*, tb_usuario.usuario_tel01, tb_usuario.usuario_email as email_responsavel,tb_usuario.usuario_nome');
+        $this->db->select('tb_os.*, tb_cliente.*, atendente.usuario_nome as atendente, tecnico.usuario_nome as tecnico');
         $this->db->from('tb_os');
         $this->db->join('tb_cliente', 'tb_cliente.cliente_codigo = tb_os.os_cliente_codigo');
-        $this->db->join('tb_usuario', 'tb_usuario.usuario_codigo = tb_os.os_usuario_codigo');        
+        // $this->db->join('tb_usuario', 'tb_usuario.usuario_codigo = tb_os.os_atendente_codigo');   
+        $this->db->join('tb_usuario as atendente', 'atendente.usuario_codigo = tb_os.os_atendente_codigo');
+        $this->db->join('tb_usuario as tecnico', 'tecnico.usuario_codigo = tb_os.os_tecnico_codigo');
+        $this->db->join('tb_equipamento', 'tb_equipamento.equipamento_codigo = tb_os.os_equipamento_codigo');
         $this->db->where('tb_os.os_codigo', $id);
         $this->db->limit(1);
         return $this->db->get()->row();

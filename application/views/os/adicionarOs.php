@@ -79,12 +79,12 @@
                                                     <label for="acessorios02">Qtde de baterias<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios02" id="vw_os_acessorios02" >
                                                         <option value=""></option>
-                                                        <option value="1">Sem baterias</option>
+                                                        <option value="0">Sem baterias</option>
                                                         <option value="1">1 bateria</option>
                                                         <option value="2">2 baterias</option>
-                                                        <option value="2">3 baterias</option>
-                                                        <option value="2">4 baterias</option>
-                                                        <option value="2">5 baterias</option>                                                        
+                                                        <option value="3">3 baterias</option>
+                                                        <option value="4">4 baterias</option>
+                                                        <option value="5">5 baterias</option>                                                        
                                                     </select>
                                                 </div>
 
@@ -93,7 +93,7 @@
                                                     <select name="vw_os_acessorios03" id="vw_os_acessorios03" >
                                                         <option value=""></option>
                                                         <option value="sim">Sim</option>
-                                                        <option value="nao">Não</option>
+                                                        <option value="Não">Não</option>
                                                                         
                                                     </select>
                                                 </div>
@@ -104,16 +104,16 @@
                                                     <label for="acessorios04">Manuais <span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios04" id="vw_os_acessorios04" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                         
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                         
                                                     </select>
                                                 </div>
                                                 <div class="span4">
                                                     <label for="acessorios05">Protetor de Gimbal/Camera<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios05" id="vw_os_acessorios05" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                      
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                      
                                                     </select>
                                                 </div>                                                
                                                 
@@ -121,8 +121,8 @@
                                                     <label for="acessorios06">Bolsa de Transporte<span class="required">*</span></label>                                                    
                                                     <select name="vw_os_acessorios06" id="vw_os_acessorios06" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                                    
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                                    
                                                     </select>
                                                 </div>
                                             </div>
