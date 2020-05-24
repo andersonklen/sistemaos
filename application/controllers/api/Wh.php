@@ -116,7 +116,7 @@ class Wh extends REST_Controller {
 
   $data1 = array(
                 'whatsapp_msg_number_origin' => $mobile_number,
-                'whatsapp_msg_message' => $msg,
+                'whatsapp_msg_message_in' => $msg,
                 'whatsapp_msg_type' => $type,
                 'whatsapp_msg_application' => $application,
                 'whatsapp_msg_unique_id' => $uniqueid,
