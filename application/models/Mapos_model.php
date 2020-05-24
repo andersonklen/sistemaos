@@ -33,8 +33,8 @@ class Mapos_model extends CI_Model
     function getById($id)
     {
         $this->db->from('tb_usuario');
-        $this->db->select('usuario.*, tb_permissoes.nome as tb_permissao');
-        $this->db->join('tb_permissoes', 'tb_permissoes.permissoes_codigo = tb_usuario.permissoes_codigo', 'left');
+        $this->db->select('tb_usuario.*, tb_permissoes.permissoes_nome as tb_permissoes');
+        $this->db->join('tb_permissoes', 'tb_permissoes.permissoes_codigo = tb_usuario.usuario_permissoes_codigo', 'left');
         $this->db->where('usuario_codigo', $id);
         $this->db->limit(1);
         return $this->db->get()->row();

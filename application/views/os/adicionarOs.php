@@ -38,9 +38,8 @@
                                                     <input id="vw_os_clientes_id" class="span12" type="hidden" name="vw_os_clientes_id" value=""  />
                                                 </div>
                                                 <div class="span6">
-                                                    <label for="tecnico">Técnico / Responsável<span class="required">*</span></label>
-                                                    <input id="vw_os_tecnico" class="span12" type="text" name="tecnico" value=""  />
-                                                    <input id="vw_os_tecnico_id" class="span12" type="hidden" name="vw_os_tecnico_id" value=""  />
+                                                       <label for="usuario">Data de entrada do equipamento<span class="required">*</span></label>                                    
+                                                       <input id="vw_os_data_entrada" type="text" name="vw_os_data_entrada" class="span12 datepicker"  onkeypress="$(this).mask('00/00/0000')" value="<?php echo set_value('Data de Nascimento'); ?>"  placeholder="DD/MM/AAAA"/>
                                                 </div>
                                             </div>
 
@@ -59,8 +58,8 @@
                                             <div class="span12" style="padding: 1% ; margin-left: 0">                                  
                                                 
                                                 <div class="span4">
-                                                    <label for="vw_genero">Qtde de hélices<span class="required">*</span></label>
-                                                    <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                                    <label for="acessorios01">Qtde de hélices<span class="required">*</span></label>
+                                                    <select name="vw_os_acessorios01" id="vw_os_acessorios01" >
                                                         <option value=""></option>
                                                         <option value="0">Sem hélices</option>
                                                         <option value="1">1 hélice</option>
@@ -77,24 +76,24 @@
                                                 </div>
                                                 
                                                 <div class="span4">
-                                                    <label for="vw_genero">Qtde de baterias<span class="required">*</span></label>                                                    
-                                                    <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                                    <label for="acessorios02">Qtde de baterias<span class="required">*</span></label>                                                    
+                                                    <select name="vw_os_acessorios02" id="vw_os_acessorios02" >
                                                         <option value=""></option>
-                                                        <option value="1">Sem baterias</option>
+                                                        <option value="0">Sem baterias</option>
                                                         <option value="1">1 bateria</option>
                                                         <option value="2">2 baterias</option>
-                                                        <option value="2">3 baterias</option>
-                                                        <option value="2">4 baterias</option>
-                                                        <option value="2">5 baterias</option>                                                        
+                                                        <option value="3">3 baterias</option>
+                                                        <option value="4">4 baterias</option>
+                                                        <option value="5">5 baterias</option>                                                        
                                                     </select>
                                                 </div>
 
                                                 <div class="span4">
-                                                    <label for="vw_genero">Carregador de Tomada<span class="required">*</span></label>                                                    
-                                                    <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                                    <label for="acessorios03">Carregador de Tomada<span class="required">*</span></label>                                                    
+                                                    <select name="vw_os_acessorios03" id="vw_os_acessorios03" >
                                                         <option value=""></option>
                                                         <option value="sim">Sim</option>
-                                                        <option value="nao">Não</option>
+                                                        <option value="Não">Não</option>
                                                                         
                                                     </select>
                                                 </div>
@@ -102,28 +101,28 @@
 
                                             <div class="span12" style="padding: 1% ; margin-left: 0">  
                                                 <div class="span4">
-                                                    <label for="vw_genero">Manuais <span class="required">*</span></label>                                                    
-                                                    <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                                    <label for="acessorios04">Manuais <span class="required">*</span></label>                                                    
+                                                    <select name="vw_os_acessorios04" id="vw_os_acessorios04" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                         
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                         
                                                     </select>
                                                 </div>
                                                 <div class="span4">
-                                                    <label for="vw_genero">Protetor de Gimbal/Camera<span class="required">*</span></label>                                                    
-                                                    <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                                    <label for="acessorios05">Protetor de Gimbal/Camera<span class="required">*</span></label>                                                    
+                                                    <select name="vw_os_acessorios05" id="vw_os_acessorios05" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                      
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                      
                                                     </select>
                                                 </div>                                                
                                                 
                                                 <div class="span4">
-                                                    <label for="vw_genero">Bolsa de Transporte<span class="required">*</span></label>                                                    
-                                                    <select name="vw_cliente_genero" id="vw_cliente_genero" >
+                                                    <label for="acessorios06">Bolsa de Transporte<span class="required">*</span></label>                                                    
+                                                    <select name="vw_os_acessorios06" id="vw_os_acessorios06" >
                                                         <option value=""></option>
-                                                        <option value="1">Sim</option>
-                                                        <option value="2">Não</option>                                                    
+                                                        <option value="Sim">Sim</option>
+                                                        <option value="Não">Não</option>                                                    
                                                     </select>
                                                 </div>
                                             </div>
@@ -131,8 +130,8 @@
                                             
                                             <div class="span12" style="padding: 1% ; margin-left: 0">                                                                                  
                                                 <div class="span4">
-                                                    <label for="vw_genero">1º Cartão de Memoria<span class="required">*</span></label>
-                                                    <select name="vw_os_cartaomemoria01" id="vw_os_cartaomemoria01" >
+                                                    <label for="acessorios07">1º Cartão de Memoria<span class="required">*</span></label>
+                                                    <select name="acessorios07" id="acessorios07" >
                                                         <option value=""></option>
                                                         <option value="nao">Não</option>
                                                         <option value="1">1 GB</option>
@@ -148,8 +147,8 @@
                                                 </div>
                                                 
                                                 <div class="span4">
-                                                    <label for="vw_genero">2º Cartão de Memoria<span class="required">*</span></label>
-                                                    <select name="vw_os_cartaomemoria02" id="vw_os_cartaomemoria02" >
+                                                    <label for="acessorios08">2º Cartão de Memoria<span class="required">*</span></label>
+                                                    <select name="vw_os_acessorios08" id="vw_os_acessorios08" >
                                                         <option value=""></option>
                                                         <option value="nao">Não</option>
                                                         <option value="1">1 GB</option>
@@ -165,8 +164,8 @@
                                                 </div>
 
                                                 <div class="span4">
-                                                    <label for="vw_genero">3º Cartão de Memoria<span class="required">*</span></label>
-                                                    <select name="vw_os_cartaomemoria03" id="vw_os_cartaomemoria03" >
+                                                    <label for="acessorios09">3º Cartão de Memoria<span class="required">*</span></label>
+                                                    <select name="vw_os_acessorios09" id="vw_os_acessorios09" >
                                                         <option value=""></option>
                                                         <option value="nao">Não</option>
                                                         <option value="1">1 GB</option>
@@ -184,8 +183,8 @@
 
                                             <div class="span12" style="padding: 1% ; margin-left: 0"> 
                                                 <div class="span6">                                                    
-                                                    <label for="observacoes">Outros Acessórios</label>
-                                                    <textarea class="span6" style="width:100%;" name="vw_os_observacoes" id="vw_os_observacoes" rows="5"></textarea>
+                                                    <label for="acessorios10">Outros Acessórios</label>
+                                                    <textarea class="span6" style="width:100%;" name="vw_os_acessorios10" id="vw_os_acessorios10" rows="5"></textarea>
                                                 </div>                                                                                               
 
                                                 <div class="span6">                                                    
@@ -196,8 +195,8 @@
                                             
                                             <div class="span12" style="padding: 1% ; margin-left: 0"> 
                                                 <div class="span12">                                                    
-                                                    <label for="observacoes">Problema relatado pelo cliente</label>
-                                                    <textarea class="span12" name="vw_os_observacoes" id="vw_os_observacoes" rows="5" placeholder="Escrever de forma detalhada o problema informado pelo cliente. Exemplo: 'Ao tentar voar com o equipamento desligar.' "></textarea>
+                                                    <label for="defeito">Problema relatado pelo cliente</label>
+                                                    <textarea class="span12" name="vw_os_defeito" id="vw_os_defeito" rows="5" placeholder="Escrever de forma detalhada o problema informado pelo cliente. Exemplo: 'Ao tentar voar com o equipamento desligar.' "></textarea>
                                                 </div>                                                                                               
                                             </div>
 
@@ -305,18 +304,18 @@
         minLength: 1,
         select: function( event, ui ) {
 
-           $("#vw_os_cliente_id").val(ui.item.id);
+           $("#vw_os_clientes_id").val(ui.item.id);
 
 
        }
    });
 
-      $("#vw_os_tecnico").autocomplete({
+      $("#vw_os_usuario").autocomplete({
         source: "<?php echo base_url(); ?>index.php/os/autoCompleteUsuario",
         minLength: 1,
         select: function( event, ui ) {
 
-           $("#vw_os_tecnico_id").val(ui.item.id);
+           $("#vw_os_usuario_id").val(ui.item.id);
 
 
        }

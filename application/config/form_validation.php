@@ -227,7 +227,7 @@ $config = array('clientes' => array(
                 'os' => array(array(
                                     'field'=>'dataInicial',
                                     'label'=>'DataInicial',
-                                    'rules'=>'required|trim'
+                                    'rules'=>'trim'
                                 ),
                                 array(
                                     'field'=>'dataFinal',
@@ -252,7 +252,7 @@ $config = array('clientes' => array(
                                 array(
                                     'field'=>'status',
                                     'label'=>'Status',
-                                    'rules'=>'required|trim'
+                                    'rules'=>'trim'
                                 ),
                                 array(
                                     'field'=>'observacoes',
@@ -260,14 +260,14 @@ $config = array('clientes' => array(
                                     'rules'=>'trim'
                                 ),
                                 array(
-                                    'field'=>'clientes_id',
+                                    'field'=>'vw_os_clientes_id',
                                     'label'=>'clientes',
-                                    'rules'=>'trim|required'
+                                    'rules'=>'trim'
                                 ),
                                 array(
-                                    'field'=>'usuarios_id',
-                                    'label'=>'usuarios_id',
-                                    'rules'=>'trim|required'
+                                    'field'=>'vw_os_usuario_id',
+                                    'label'=>'Técnico',
+                                    'rules'=>'trim'
                                 ),
                                 array(
                                     'field'=>'laudoTecnico',
