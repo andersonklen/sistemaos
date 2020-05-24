@@ -182,6 +182,13 @@
           </ul>
         </li>
     <?php } ?>
+
+      <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vCliente')) { ?>
+        <li class="<?php if (isset($menuClientes)) {
+            echo 'active';
+
+};?>"><a href="<?php echo base_url()?>index.php/whatsapp"><i class="icon icon-group"></i> <span>WhatsApp</span></a></li>
+    <?php } ?>
     
     
   </ul>

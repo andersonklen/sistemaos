@@ -7992,3 +7992,1607 @@ INFO - 2019-10-01 18:11:01 --> File loaded: C:\wamp64\www\erp02\application\view
 INFO - 2019-10-01 18:11:01 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
 INFO - 2019-10-01 18:11:01 --> Final output sent to browser
 DEBUG - 2019-10-01 18:11:01 --> Total execution time: 0.0310
+INFO - 2019-10-01 19:56:30 --> Config Class Initialized
+INFO - 2019-10-01 19:56:30 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:56:30 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:56:30 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:56:30 --> URI Class Initialized
+DEBUG - 2019-10-01 19:56:30 --> No URI present. Default controller set.
+INFO - 2019-10-01 19:56:30 --> Router Class Initialized
+INFO - 2019-10-01 19:56:30 --> Output Class Initialized
+INFO - 2019-10-01 19:56:30 --> Security Class Initialized
+DEBUG - 2019-10-01 19:56:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:56:30 --> Input Class Initialized
+INFO - 2019-10-01 19:56:30 --> Language Class Initialized
+INFO - 2019-10-01 19:56:30 --> Loader Class Initialized
+INFO - 2019-10-01 19:56:30 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:56:30 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:56:30 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:56:30 --> Permission Class Initialized
+INFO - 2019-10-01 19:56:30 --> Controller Class Initialized
+INFO - 2019-10-01 19:56:30 --> Model Class Initialized
+ERROR - 2019-10-01 19:56:31 --> Severity: Notice --> Undefined property: stdClass::$status C:\wamp64\www\erp02\application\views\mapos\painel.php 270
+INFO - 2019-10-01 19:56:31 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/painel.php
+INFO - 2019-10-01 19:56:31 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 19:56:31 --> Final output sent to browser
+DEBUG - 2019-10-01 19:56:31 --> Total execution time: 0.9656
+INFO - 2019-10-01 19:56:33 --> Config Class Initialized
+INFO - 2019-10-01 19:56:33 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:56:33 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:56:33 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:56:33 --> URI Class Initialized
+INFO - 2019-10-01 19:56:33 --> Router Class Initialized
+INFO - 2019-10-01 19:56:33 --> Output Class Initialized
+INFO - 2019-10-01 19:56:33 --> Security Class Initialized
+DEBUG - 2019-10-01 19:56:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:56:33 --> Input Class Initialized
+INFO - 2019-10-01 19:56:33 --> Language Class Initialized
+INFO - 2019-10-01 19:56:33 --> Loader Class Initialized
+INFO - 2019-10-01 19:56:33 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:56:33 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:56:33 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:56:33 --> Permission Class Initialized
+INFO - 2019-10-01 19:56:33 --> Controller Class Initialized
+INFO - 2019-10-01 19:56:33 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 19:56:33 --> Model Class Initialized
+INFO - 2019-10-01 19:56:33 --> Table Class Initialized
+INFO - 2019-10-01 19:56:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 19:56:33 --> Pagination Class Initialized
+ERROR - 2019-10-01 19:56:33 --> Query error: Unknown column 'cliente_apelido_fantasia' in 'field list' - Invalid query: SELECT `cliente_codigo`, `cliente_nome_razao`, `cliente_apelido_fantasia`, `cliente_cpf_cnpj`, `cliente_tel01`, `cliente_tel02`, `cliente_email`, `cliente_logradouro`, `cliente_numero`, `cliente_bairro`, `cliente_cidade`, `cliente_estado`, `cliente_cep`
+FROM `tb_cliente`
+WHERE `cliente_deletado` = 'nao'
+ORDER BY `cliente_codigo` DESC
+ LIMIT 10
+INFO - 2019-10-01 19:56:33 --> Language file loaded: language/english/db_lang.php
+INFO - 2019-10-01 19:57:27 --> Config Class Initialized
+INFO - 2019-10-01 19:57:27 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:57:27 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:57:27 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:57:27 --> URI Class Initialized
+INFO - 2019-10-01 19:57:27 --> Router Class Initialized
+INFO - 2019-10-01 19:57:27 --> Output Class Initialized
+INFO - 2019-10-01 19:57:27 --> Security Class Initialized
+DEBUG - 2019-10-01 19:57:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:57:27 --> Input Class Initialized
+INFO - 2019-10-01 19:57:27 --> Language Class Initialized
+INFO - 2019-10-01 19:57:27 --> Loader Class Initialized
+INFO - 2019-10-01 19:57:27 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:57:27 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:57:27 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:57:27 --> Permission Class Initialized
+INFO - 2019-10-01 19:57:27 --> Controller Class Initialized
+INFO - 2019-10-01 19:57:27 --> Config Class Initialized
+INFO - 2019-10-01 19:57:27 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:57:27 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:57:27 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:57:27 --> URI Class Initialized
+INFO - 2019-10-01 19:57:27 --> Router Class Initialized
+INFO - 2019-10-01 19:57:27 --> Output Class Initialized
+INFO - 2019-10-01 19:57:27 --> Security Class Initialized
+DEBUG - 2019-10-01 19:57:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:57:27 --> Input Class Initialized
+INFO - 2019-10-01 19:57:27 --> Language Class Initialized
+INFO - 2019-10-01 19:57:27 --> Loader Class Initialized
+INFO - 2019-10-01 19:57:27 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:57:27 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:57:28 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:57:28 --> Permission Class Initialized
+INFO - 2019-10-01 19:57:28 --> Controller Class Initialized
+INFO - 2019-10-01 19:57:28 --> Model Class Initialized
+INFO - 2019-10-01 19:57:28 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/login.php
+INFO - 2019-10-01 19:57:28 --> Final output sent to browser
+DEBUG - 2019-10-01 19:57:28 --> Total execution time: 0.2826
+INFO - 2019-10-01 19:57:37 --> Config Class Initialized
+INFO - 2019-10-01 19:57:37 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:57:37 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:57:37 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:57:37 --> URI Class Initialized
+INFO - 2019-10-01 19:57:37 --> Router Class Initialized
+INFO - 2019-10-01 19:57:37 --> Output Class Initialized
+INFO - 2019-10-01 19:57:37 --> Security Class Initialized
+DEBUG - 2019-10-01 19:57:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:57:37 --> Input Class Initialized
+INFO - 2019-10-01 19:57:37 --> Language Class Initialized
+INFO - 2019-10-01 19:57:37 --> Loader Class Initialized
+INFO - 2019-10-01 19:57:37 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:57:37 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:57:37 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:57:37 --> Permission Class Initialized
+INFO - 2019-10-01 19:57:37 --> Controller Class Initialized
+INFO - 2019-10-01 19:57:37 --> Model Class Initialized
+INFO - 2019-10-01 19:57:37 --> Helper loaded: form_helper
+INFO - 2019-10-01 19:57:37 --> Form Validation Class Initialized
+INFO - 2019-10-01 19:57:37 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2019-10-01 19:57:37 --> Model Class Initialized
+INFO - 2019-10-01 19:57:37 --> Config Class Initialized
+INFO - 2019-10-01 19:57:37 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:57:37 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:57:37 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:57:37 --> URI Class Initialized
+INFO - 2019-10-01 19:57:37 --> Router Class Initialized
+INFO - 2019-10-01 19:57:37 --> Output Class Initialized
+INFO - 2019-10-01 19:57:37 --> Security Class Initialized
+DEBUG - 2019-10-01 19:57:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:57:37 --> Input Class Initialized
+INFO - 2019-10-01 19:57:37 --> Language Class Initialized
+INFO - 2019-10-01 19:57:37 --> Loader Class Initialized
+INFO - 2019-10-01 19:57:37 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:57:37 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:57:37 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:57:37 --> Permission Class Initialized
+INFO - 2019-10-01 19:57:37 --> Controller Class Initialized
+INFO - 2019-10-01 19:57:37 --> Model Class Initialized
+INFO - 2019-10-01 19:57:37 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/painel.php
+INFO - 2019-10-01 19:57:37 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 19:57:37 --> Final output sent to browser
+DEBUG - 2019-10-01 19:57:37 --> Total execution time: 0.3104
+INFO - 2019-10-01 19:57:39 --> Config Class Initialized
+INFO - 2019-10-01 19:57:39 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:57:39 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:57:39 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:57:39 --> URI Class Initialized
+INFO - 2019-10-01 19:57:39 --> Router Class Initialized
+INFO - 2019-10-01 19:57:39 --> Output Class Initialized
+INFO - 2019-10-01 19:57:39 --> Security Class Initialized
+DEBUG - 2019-10-01 19:57:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:57:39 --> Input Class Initialized
+INFO - 2019-10-01 19:57:39 --> Language Class Initialized
+INFO - 2019-10-01 19:57:39 --> Loader Class Initialized
+INFO - 2019-10-01 19:57:39 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:57:39 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:57:39 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:57:39 --> Permission Class Initialized
+INFO - 2019-10-01 19:57:40 --> Controller Class Initialized
+INFO - 2019-10-01 19:57:40 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 19:57:40 --> Model Class Initialized
+INFO - 2019-10-01 19:57:40 --> Table Class Initialized
+INFO - 2019-10-01 19:57:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 19:57:40 --> Pagination Class Initialized
+INFO - 2019-10-01 19:57:40 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/clientes.php
+INFO - 2019-10-01 19:57:40 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 19:57:40 --> Final output sent to browser
+DEBUG - 2019-10-01 19:57:40 --> Total execution time: 0.3649
+INFO - 2019-10-01 19:57:42 --> Config Class Initialized
+INFO - 2019-10-01 19:57:42 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:57:42 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:57:42 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:57:42 --> URI Class Initialized
+INFO - 2019-10-01 19:57:42 --> Router Class Initialized
+INFO - 2019-10-01 19:57:42 --> Output Class Initialized
+INFO - 2019-10-01 19:57:42 --> Security Class Initialized
+DEBUG - 2019-10-01 19:57:42 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:57:42 --> Input Class Initialized
+INFO - 2019-10-01 19:57:43 --> Language Class Initialized
+INFO - 2019-10-01 19:57:43 --> Loader Class Initialized
+INFO - 2019-10-01 19:57:43 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:57:43 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:57:43 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:57:43 --> Permission Class Initialized
+INFO - 2019-10-01 19:57:43 --> Controller Class Initialized
+INFO - 2019-10-01 19:57:43 --> Helper loaded: form_helper
+INFO - 2019-10-01 19:57:43 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 19:57:43 --> Model Class Initialized
+INFO - 2019-10-01 19:57:43 --> Table Class Initialized
+INFO - 2019-10-01 19:57:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 19:57:43 --> Pagination Class Initialized
+ERROR - 2019-10-01 19:57:43 --> Query error: Unknown column 'produto_partnumber' in 'field list' - Invalid query: SELECT `produto_codigo`, `produto_descricao`, `produto_partnumber`, `produto_unid_medida`, `produto_preco_compra`, `produto_preco_venda`, `produto_estoque_atual`, `produto_estoque_minimo`, `produto_deletado`, `marca_nome`
+FROM `tb_produto`
+JOIN `tb_marca` ON `tb_marca`.`marca_codigo` = `tb_produto`.`produto_marca_codigo`
+WHERE `produto_deletado` = 'NAO'
+ORDER BY `produto_codigo` DESC
+ LIMIT 10
+INFO - 2019-10-01 19:57:43 --> Language file loaded: language/english/db_lang.php
+INFO - 2019-10-01 19:59:20 --> Config Class Initialized
+INFO - 2019-10-01 19:59:20 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:59:20 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:59:20 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:59:20 --> URI Class Initialized
+INFO - 2019-10-01 19:59:20 --> Router Class Initialized
+INFO - 2019-10-01 19:59:20 --> Output Class Initialized
+INFO - 2019-10-01 19:59:20 --> Security Class Initialized
+DEBUG - 2019-10-01 19:59:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:59:20 --> Input Class Initialized
+INFO - 2019-10-01 19:59:20 --> Language Class Initialized
+INFO - 2019-10-01 19:59:20 --> Loader Class Initialized
+INFO - 2019-10-01 19:59:20 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:59:20 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:59:20 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:59:20 --> Permission Class Initialized
+INFO - 2019-10-01 19:59:20 --> Controller Class Initialized
+INFO - 2019-10-01 19:59:20 --> Config Class Initialized
+INFO - 2019-10-01 19:59:20 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:59:20 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:59:20 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:59:20 --> URI Class Initialized
+INFO - 2019-10-01 19:59:20 --> Router Class Initialized
+INFO - 2019-10-01 19:59:20 --> Output Class Initialized
+INFO - 2019-10-01 19:59:20 --> Security Class Initialized
+DEBUG - 2019-10-01 19:59:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:59:20 --> Input Class Initialized
+INFO - 2019-10-01 19:59:20 --> Language Class Initialized
+INFO - 2019-10-01 19:59:20 --> Loader Class Initialized
+INFO - 2019-10-01 19:59:20 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:59:20 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:59:20 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:59:20 --> Permission Class Initialized
+INFO - 2019-10-01 19:59:20 --> Controller Class Initialized
+INFO - 2019-10-01 19:59:20 --> Model Class Initialized
+INFO - 2019-10-01 19:59:20 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/login.php
+INFO - 2019-10-01 19:59:20 --> Final output sent to browser
+DEBUG - 2019-10-01 19:59:20 --> Total execution time: 0.2796
+INFO - 2019-10-01 19:59:26 --> Config Class Initialized
+INFO - 2019-10-01 19:59:26 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:59:26 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:59:26 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:59:26 --> URI Class Initialized
+INFO - 2019-10-01 19:59:26 --> Router Class Initialized
+INFO - 2019-10-01 19:59:26 --> Output Class Initialized
+INFO - 2019-10-01 19:59:26 --> Security Class Initialized
+DEBUG - 2019-10-01 19:59:26 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:59:26 --> Input Class Initialized
+INFO - 2019-10-01 19:59:26 --> Language Class Initialized
+INFO - 2019-10-01 19:59:26 --> Loader Class Initialized
+INFO - 2019-10-01 19:59:26 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:59:26 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:59:26 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:59:26 --> Permission Class Initialized
+INFO - 2019-10-01 19:59:26 --> Controller Class Initialized
+INFO - 2019-10-01 19:59:26 --> Model Class Initialized
+INFO - 2019-10-01 19:59:26 --> Helper loaded: form_helper
+INFO - 2019-10-01 19:59:26 --> Form Validation Class Initialized
+INFO - 2019-10-01 19:59:26 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2019-10-01 19:59:26 --> Model Class Initialized
+INFO - 2019-10-01 19:59:26 --> Config Class Initialized
+INFO - 2019-10-01 19:59:26 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:59:26 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:59:26 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:59:26 --> URI Class Initialized
+INFO - 2019-10-01 19:59:26 --> Router Class Initialized
+INFO - 2019-10-01 19:59:26 --> Output Class Initialized
+INFO - 2019-10-01 19:59:27 --> Security Class Initialized
+DEBUG - 2019-10-01 19:59:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:59:27 --> Input Class Initialized
+INFO - 2019-10-01 19:59:27 --> Language Class Initialized
+INFO - 2019-10-01 19:59:27 --> Loader Class Initialized
+INFO - 2019-10-01 19:59:27 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:59:27 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:59:27 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:59:27 --> Permission Class Initialized
+INFO - 2019-10-01 19:59:27 --> Controller Class Initialized
+INFO - 2019-10-01 19:59:27 --> Model Class Initialized
+INFO - 2019-10-01 19:59:27 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/painel.php
+INFO - 2019-10-01 19:59:27 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 19:59:27 --> Final output sent to browser
+DEBUG - 2019-10-01 19:59:27 --> Total execution time: 0.3098
+INFO - 2019-10-01 19:59:29 --> Config Class Initialized
+INFO - 2019-10-01 19:59:29 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:59:29 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:59:29 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:59:29 --> URI Class Initialized
+INFO - 2019-10-01 19:59:29 --> Router Class Initialized
+INFO - 2019-10-01 19:59:29 --> Output Class Initialized
+INFO - 2019-10-01 19:59:29 --> Security Class Initialized
+DEBUG - 2019-10-01 19:59:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:59:29 --> Input Class Initialized
+INFO - 2019-10-01 19:59:29 --> Language Class Initialized
+INFO - 2019-10-01 19:59:29 --> Loader Class Initialized
+INFO - 2019-10-01 19:59:29 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:59:29 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:59:29 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:59:29 --> Permission Class Initialized
+INFO - 2019-10-01 19:59:29 --> Controller Class Initialized
+INFO - 2019-10-01 19:59:29 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 19:59:29 --> Model Class Initialized
+INFO - 2019-10-01 19:59:29 --> Table Class Initialized
+INFO - 2019-10-01 19:59:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 19:59:29 --> Pagination Class Initialized
+INFO - 2019-10-01 19:59:29 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/clientes.php
+INFO - 2019-10-01 19:59:29 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 19:59:29 --> Final output sent to browser
+DEBUG - 2019-10-01 19:59:29 --> Total execution time: 0.3511
+INFO - 2019-10-01 19:59:31 --> Config Class Initialized
+INFO - 2019-10-01 19:59:31 --> Hooks Class Initialized
+DEBUG - 2019-10-01 19:59:31 --> UTF-8 Support Enabled
+INFO - 2019-10-01 19:59:31 --> Utf8 Class Initialized
+INFO - 2019-10-01 19:59:31 --> URI Class Initialized
+INFO - 2019-10-01 19:59:31 --> Router Class Initialized
+INFO - 2019-10-01 19:59:31 --> Output Class Initialized
+INFO - 2019-10-01 19:59:31 --> Security Class Initialized
+DEBUG - 2019-10-01 19:59:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 19:59:31 --> Input Class Initialized
+INFO - 2019-10-01 19:59:31 --> Language Class Initialized
+INFO - 2019-10-01 19:59:31 --> Loader Class Initialized
+INFO - 2019-10-01 19:59:31 --> Helper loaded: url_helper
+INFO - 2019-10-01 19:59:31 --> Database Driver Class Initialized
+INFO - 2019-10-01 19:59:31 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 19:59:31 --> Permission Class Initialized
+INFO - 2019-10-01 19:59:31 --> Controller Class Initialized
+INFO - 2019-10-01 19:59:31 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 19:59:31 --> Model Class Initialized
+INFO - 2019-10-01 19:59:32 --> Helper loaded: form_helper
+INFO - 2019-10-01 19:59:32 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 19:59:32 --> Unable to find validation rules
+INFO - 2019-10-01 19:59:32 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/adicionarCliente.php
+INFO - 2019-10-01 19:59:32 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 19:59:32 --> Final output sent to browser
+DEBUG - 2019-10-01 19:59:32 --> Total execution time: 0.3453
+INFO - 2019-10-01 20:00:28 --> Config Class Initialized
+INFO - 2019-10-01 20:00:28 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:00:28 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:00:28 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:00:28 --> URI Class Initialized
+INFO - 2019-10-01 20:00:28 --> Router Class Initialized
+INFO - 2019-10-01 20:00:28 --> Output Class Initialized
+INFO - 2019-10-01 20:00:28 --> Security Class Initialized
+DEBUG - 2019-10-01 20:00:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:00:28 --> Input Class Initialized
+INFO - 2019-10-01 20:00:28 --> Language Class Initialized
+INFO - 2019-10-01 20:00:28 --> Loader Class Initialized
+INFO - 2019-10-01 20:00:28 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:00:28 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:00:28 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:00:28 --> Permission Class Initialized
+INFO - 2019-10-01 20:00:28 --> Controller Class Initialized
+INFO - 2019-10-01 20:00:28 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:00:28 --> Model Class Initialized
+INFO - 2019-10-01 20:00:28 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:00:28 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:00:28 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2019-10-01 20:00:28 --> Config Class Initialized
+INFO - 2019-10-01 20:00:28 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:00:28 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:00:28 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:00:28 --> URI Class Initialized
+INFO - 2019-10-01 20:00:28 --> Router Class Initialized
+INFO - 2019-10-01 20:00:28 --> Output Class Initialized
+INFO - 2019-10-01 20:00:28 --> Security Class Initialized
+DEBUG - 2019-10-01 20:00:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:00:28 --> Input Class Initialized
+INFO - 2019-10-01 20:00:28 --> Language Class Initialized
+INFO - 2019-10-01 20:00:28 --> Loader Class Initialized
+INFO - 2019-10-01 20:00:28 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:00:28 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:00:28 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:00:28 --> Permission Class Initialized
+INFO - 2019-10-01 20:00:28 --> Controller Class Initialized
+INFO - 2019-10-01 20:00:28 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:00:28 --> Model Class Initialized
+INFO - 2019-10-01 20:00:28 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:00:28 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:00:29 --> Unable to find validation rules
+INFO - 2019-10-01 20:00:29 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/adicionarCliente.php
+INFO - 2019-10-01 20:00:29 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:00:29 --> Final output sent to browser
+DEBUG - 2019-10-01 20:00:29 --> Total execution time: 0.3545
+INFO - 2019-10-01 20:00:33 --> Config Class Initialized
+INFO - 2019-10-01 20:00:33 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:00:33 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:00:33 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:00:33 --> URI Class Initialized
+INFO - 2019-10-01 20:00:33 --> Router Class Initialized
+INFO - 2019-10-01 20:00:33 --> Output Class Initialized
+INFO - 2019-10-01 20:00:33 --> Security Class Initialized
+DEBUG - 2019-10-01 20:00:33 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:00:33 --> Input Class Initialized
+INFO - 2019-10-01 20:00:33 --> Language Class Initialized
+INFO - 2019-10-01 20:00:33 --> Loader Class Initialized
+INFO - 2019-10-01 20:00:33 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:00:33 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:00:33 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:00:33 --> Permission Class Initialized
+INFO - 2019-10-01 20:00:33 --> Controller Class Initialized
+INFO - 2019-10-01 20:00:33 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:00:33 --> Model Class Initialized
+INFO - 2019-10-01 20:00:33 --> Table Class Initialized
+INFO - 2019-10-01 20:00:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:00:33 --> Pagination Class Initialized
+INFO - 2019-10-01 20:00:33 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/clientes.php
+INFO - 2019-10-01 20:00:33 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:00:33 --> Final output sent to browser
+DEBUG - 2019-10-01 20:00:33 --> Total execution time: 0.3526
+INFO - 2019-10-01 20:00:36 --> Config Class Initialized
+INFO - 2019-10-01 20:00:36 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:00:36 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:00:36 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:00:36 --> URI Class Initialized
+INFO - 2019-10-01 20:00:36 --> Router Class Initialized
+INFO - 2019-10-01 20:00:36 --> Output Class Initialized
+INFO - 2019-10-01 20:00:36 --> Security Class Initialized
+DEBUG - 2019-10-01 20:00:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:00:37 --> Input Class Initialized
+INFO - 2019-10-01 20:00:37 --> Language Class Initialized
+INFO - 2019-10-01 20:00:37 --> Loader Class Initialized
+INFO - 2019-10-01 20:00:37 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:00:37 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:00:37 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:00:37 --> Permission Class Initialized
+INFO - 2019-10-01 20:00:37 --> Controller Class Initialized
+INFO - 2019-10-01 20:00:37 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:00:37 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:00:37 --> Model Class Initialized
+INFO - 2019-10-01 20:00:37 --> Table Class Initialized
+INFO - 2019-10-01 20:00:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:00:37 --> Pagination Class Initialized
+ERROR - 2019-10-01 20:00:37 --> Query error: Unknown column 'produto_partnumber' in 'field list' - Invalid query: SELECT `produto_codigo`, `produto_descricao`, `produto_partnumber`, `produto_unid_medida`, `produto_preco_compra`, `produto_preco_venda`, `produto_estoque_atual`, `produto_estoque_minimo`, `produto_deletado`, `marca_nome`
+FROM `tb_produto`
+JOIN `tb_marca` ON `tb_marca`.`marca_codigo` = `tb_produto`.`produto_marca_codigo`
+WHERE `produto_deletado` = 'NAO'
+ORDER BY `produto_codigo` DESC
+ LIMIT 10
+INFO - 2019-10-01 20:00:37 --> Language file loaded: language/english/db_lang.php
+INFO - 2019-10-01 20:01:35 --> Config Class Initialized
+INFO - 2019-10-01 20:01:35 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:35 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:35 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:35 --> URI Class Initialized
+INFO - 2019-10-01 20:01:35 --> Router Class Initialized
+INFO - 2019-10-01 20:01:35 --> Output Class Initialized
+INFO - 2019-10-01 20:01:35 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:35 --> Input Class Initialized
+INFO - 2019-10-01 20:01:35 --> Language Class Initialized
+INFO - 2019-10-01 20:01:35 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:35 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:35 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:35 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:35 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:35 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:35 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:35 --> Model Class Initialized
+INFO - 2019-10-01 20:01:35 --> Table Class Initialized
+INFO - 2019-10-01 20:01:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:01:35 --> Pagination Class Initialized
+INFO - 2019-10-01 20:01:35 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/clientes.php
+INFO - 2019-10-01 20:01:35 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:01:35 --> Final output sent to browser
+DEBUG - 2019-10-01 20:01:35 --> Total execution time: 0.3768
+INFO - 2019-10-01 20:01:37 --> Config Class Initialized
+INFO - 2019-10-01 20:01:37 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:37 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:37 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:37 --> URI Class Initialized
+INFO - 2019-10-01 20:01:37 --> Router Class Initialized
+INFO - 2019-10-01 20:01:37 --> Output Class Initialized
+INFO - 2019-10-01 20:01:37 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:37 --> Input Class Initialized
+INFO - 2019-10-01 20:01:37 --> Language Class Initialized
+INFO - 2019-10-01 20:01:37 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:37 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:37 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:37 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:37 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:37 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:37 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:01:37 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:37 --> Model Class Initialized
+INFO - 2019-10-01 20:01:37 --> Table Class Initialized
+INFO - 2019-10-01 20:01:37 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:01:37 --> Pagination Class Initialized
+INFO - 2019-10-01 20:01:37 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/produtos.php
+INFO - 2019-10-01 20:01:37 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:01:37 --> Final output sent to browser
+DEBUG - 2019-10-01 20:01:37 --> Total execution time: 0.3825
+INFO - 2019-10-01 20:01:38 --> Config Class Initialized
+INFO - 2019-10-01 20:01:38 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:38 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:38 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:38 --> URI Class Initialized
+INFO - 2019-10-01 20:01:38 --> Router Class Initialized
+INFO - 2019-10-01 20:01:38 --> Output Class Initialized
+INFO - 2019-10-01 20:01:38 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:38 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:38 --> Input Class Initialized
+INFO - 2019-10-01 20:01:39 --> Language Class Initialized
+INFO - 2019-10-01 20:01:39 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:39 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:39 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:39 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:39 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:39 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:39 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:01:39 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:39 --> Model Class Initialized
+INFO - 2019-10-01 20:01:39 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:01:39 --> Unable to find validation rules
+INFO - 2019-10-01 20:01:39 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/adicionarProduto.php
+INFO - 2019-10-01 20:01:39 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:01:39 --> Final output sent to browser
+DEBUG - 2019-10-01 20:01:39 --> Total execution time: 0.3561
+INFO - 2019-10-01 20:01:41 --> Config Class Initialized
+INFO - 2019-10-01 20:01:41 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:41 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:41 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:41 --> URI Class Initialized
+INFO - 2019-10-01 20:01:41 --> Router Class Initialized
+INFO - 2019-10-01 20:01:41 --> Output Class Initialized
+INFO - 2019-10-01 20:01:41 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:41 --> Input Class Initialized
+INFO - 2019-10-01 20:01:41 --> Language Class Initialized
+INFO - 2019-10-01 20:01:41 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:41 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:41 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:41 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:41 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:41 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:41 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:01:41 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:41 --> Model Class Initialized
+INFO - 2019-10-01 20:01:41 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:01:41 --> Pagination Class Initialized
+INFO - 2019-10-01 20:01:41 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/marcas.php
+INFO - 2019-10-01 20:01:41 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:01:41 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:01:41 --> Profiler Class Initialized
+INFO - 2019-10-01 20:01:41 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:01:41 --> Final output sent to browser
+DEBUG - 2019-10-01 20:01:41 --> Total execution time: 0.3755
+INFO - 2019-10-01 20:01:45 --> Config Class Initialized
+INFO - 2019-10-01 20:01:45 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:45 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:45 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:45 --> URI Class Initialized
+INFO - 2019-10-01 20:01:45 --> Router Class Initialized
+INFO - 2019-10-01 20:01:45 --> Output Class Initialized
+INFO - 2019-10-01 20:01:45 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:45 --> Input Class Initialized
+INFO - 2019-10-01 20:01:45 --> Language Class Initialized
+INFO - 2019-10-01 20:01:45 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:45 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:45 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:45 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:45 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:45 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:45 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:01:45 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:45 --> Model Class Initialized
+INFO - 2019-10-01 20:01:45 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:01:45 --> Unable to find validation rules
+INFO - 2019-10-01 20:01:45 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/adicionarMarcas.php
+INFO - 2019-10-01 20:01:45 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:01:45 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:01:45 --> Profiler Class Initialized
+INFO - 2019-10-01 20:01:45 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:01:45 --> Final output sent to browser
+DEBUG - 2019-10-01 20:01:45 --> Total execution time: 0.3540
+INFO - 2019-10-01 20:01:55 --> Config Class Initialized
+INFO - 2019-10-01 20:01:55 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:55 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:55 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:55 --> URI Class Initialized
+INFO - 2019-10-01 20:01:55 --> Router Class Initialized
+INFO - 2019-10-01 20:01:55 --> Output Class Initialized
+INFO - 2019-10-01 20:01:55 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:55 --> Input Class Initialized
+INFO - 2019-10-01 20:01:55 --> Language Class Initialized
+INFO - 2019-10-01 20:01:55 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:55 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:55 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:55 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:55 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:55 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:55 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:01:55 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:55 --> Model Class Initialized
+INFO - 2019-10-01 20:01:55 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:01:55 --> Language file loaded: language/english/form_validation_lang.php
+ERROR - 2019-10-01 20:01:55 --> Severity: Warning --> Use of undefined constant end - assumed 'end' (this will throw an Error in a future version of PHP) C:\wamp64\www\erp02\application\controllers\Marcas.php 97
+INFO - 2019-10-01 20:01:56 --> Config Class Initialized
+INFO - 2019-10-01 20:01:56 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:01:56 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:01:56 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:01:56 --> URI Class Initialized
+INFO - 2019-10-01 20:01:56 --> Router Class Initialized
+INFO - 2019-10-01 20:01:56 --> Output Class Initialized
+INFO - 2019-10-01 20:01:56 --> Security Class Initialized
+DEBUG - 2019-10-01 20:01:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:01:56 --> Input Class Initialized
+INFO - 2019-10-01 20:01:56 --> Language Class Initialized
+INFO - 2019-10-01 20:01:56 --> Loader Class Initialized
+INFO - 2019-10-01 20:01:56 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:01:56 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:01:56 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:01:56 --> Permission Class Initialized
+INFO - 2019-10-01 20:01:56 --> Controller Class Initialized
+INFO - 2019-10-01 20:01:56 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:01:56 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:01:56 --> Model Class Initialized
+INFO - 2019-10-01 20:01:56 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:01:56 --> Unable to find validation rules
+INFO - 2019-10-01 20:01:56 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/adicionarMarcas.php
+INFO - 2019-10-01 20:01:56 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:01:56 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:01:56 --> Profiler Class Initialized
+INFO - 2019-10-01 20:01:56 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:01:56 --> Final output sent to browser
+DEBUG - 2019-10-01 20:01:56 --> Total execution time: 0.3541
+INFO - 2019-10-01 20:02:03 --> Config Class Initialized
+INFO - 2019-10-01 20:02:03 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:03 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:03 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:03 --> URI Class Initialized
+INFO - 2019-10-01 20:02:03 --> Router Class Initialized
+INFO - 2019-10-01 20:02:03 --> Output Class Initialized
+INFO - 2019-10-01 20:02:03 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:03 --> Input Class Initialized
+INFO - 2019-10-01 20:02:03 --> Language Class Initialized
+INFO - 2019-10-01 20:02:03 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:03 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:03 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:03 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:03 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:03 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:03 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:03 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:03 --> Model Class Initialized
+INFO - 2019-10-01 20:02:03 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:02:03 --> Language file loaded: language/english/form_validation_lang.php
+ERROR - 2019-10-01 20:02:03 --> Severity: Warning --> Use of undefined constant end - assumed 'end' (this will throw an Error in a future version of PHP) C:\wamp64\www\erp02\application\controllers\Marcas.php 97
+INFO - 2019-10-01 20:02:04 --> Config Class Initialized
+INFO - 2019-10-01 20:02:04 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:04 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:04 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:04 --> URI Class Initialized
+INFO - 2019-10-01 20:02:04 --> Router Class Initialized
+INFO - 2019-10-01 20:02:04 --> Output Class Initialized
+INFO - 2019-10-01 20:02:04 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:04 --> Input Class Initialized
+INFO - 2019-10-01 20:02:04 --> Language Class Initialized
+INFO - 2019-10-01 20:02:04 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:04 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:04 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:04 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:04 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:04 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:04 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:04 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:04 --> Model Class Initialized
+INFO - 2019-10-01 20:02:04 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:02:04 --> Unable to find validation rules
+INFO - 2019-10-01 20:02:04 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/adicionarMarcas.php
+INFO - 2019-10-01 20:02:04 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:04 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:02:04 --> Profiler Class Initialized
+INFO - 2019-10-01 20:02:04 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:02:04 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:04 --> Total execution time: 0.3603
+INFO - 2019-10-01 20:02:04 --> Config Class Initialized
+INFO - 2019-10-01 20:02:04 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:04 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:04 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:04 --> URI Class Initialized
+INFO - 2019-10-01 20:02:04 --> Router Class Initialized
+INFO - 2019-10-01 20:02:04 --> Output Class Initialized
+INFO - 2019-10-01 20:02:04 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:04 --> Input Class Initialized
+INFO - 2019-10-01 20:02:04 --> Language Class Initialized
+INFO - 2019-10-01 20:02:04 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:05 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:05 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:05 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:05 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:05 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:05 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:05 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:05 --> Model Class Initialized
+INFO - 2019-10-01 20:02:05 --> Table Class Initialized
+INFO - 2019-10-01 20:02:05 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:02:05 --> Pagination Class Initialized
+INFO - 2019-10-01 20:02:05 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/produtos.php
+INFO - 2019-10-01 20:02:05 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:05 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:05 --> Total execution time: 0.3828
+INFO - 2019-10-01 20:02:06 --> Config Class Initialized
+INFO - 2019-10-01 20:02:06 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:06 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:06 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:06 --> URI Class Initialized
+INFO - 2019-10-01 20:02:06 --> Router Class Initialized
+INFO - 2019-10-01 20:02:06 --> Output Class Initialized
+INFO - 2019-10-01 20:02:06 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:06 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:06 --> Input Class Initialized
+INFO - 2019-10-01 20:02:06 --> Language Class Initialized
+INFO - 2019-10-01 20:02:06 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:06 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:06 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:06 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:06 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:06 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:06 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:06 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:06 --> Model Class Initialized
+INFO - 2019-10-01 20:02:07 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:02:07 --> Unable to find validation rules
+INFO - 2019-10-01 20:02:07 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/adicionarProduto.php
+INFO - 2019-10-01 20:02:07 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:07 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:07 --> Total execution time: 0.3637
+INFO - 2019-10-01 20:02:08 --> Config Class Initialized
+INFO - 2019-10-01 20:02:08 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:08 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:08 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:08 --> URI Class Initialized
+INFO - 2019-10-01 20:02:08 --> Router Class Initialized
+INFO - 2019-10-01 20:02:08 --> Output Class Initialized
+INFO - 2019-10-01 20:02:08 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:08 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:08 --> Input Class Initialized
+INFO - 2019-10-01 20:02:08 --> Language Class Initialized
+INFO - 2019-10-01 20:02:08 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:08 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:08 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:08 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:08 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:08 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:08 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:08 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:08 --> Model Class Initialized
+INFO - 2019-10-01 20:02:08 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:08 --> Total execution time: 0.2954
+INFO - 2019-10-01 20:02:43 --> Config Class Initialized
+INFO - 2019-10-01 20:02:43 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:43 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:43 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:43 --> URI Class Initialized
+INFO - 2019-10-01 20:02:43 --> Router Class Initialized
+INFO - 2019-10-01 20:02:43 --> Output Class Initialized
+INFO - 2019-10-01 20:02:43 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:43 --> Input Class Initialized
+INFO - 2019-10-01 20:02:43 --> Language Class Initialized
+INFO - 2019-10-01 20:02:43 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:43 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:43 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:43 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:43 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:43 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:43 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:43 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:43 --> Model Class Initialized
+INFO - 2019-10-01 20:02:43 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:02:43 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2019-10-01 20:02:43 --> Config Class Initialized
+INFO - 2019-10-01 20:02:43 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:43 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:43 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:43 --> URI Class Initialized
+INFO - 2019-10-01 20:02:43 --> Router Class Initialized
+INFO - 2019-10-01 20:02:43 --> Output Class Initialized
+INFO - 2019-10-01 20:02:43 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:43 --> Input Class Initialized
+INFO - 2019-10-01 20:02:43 --> Language Class Initialized
+INFO - 2019-10-01 20:02:43 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:43 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:43 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:43 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:43 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:43 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:43 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:43 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:43 --> Model Class Initialized
+INFO - 2019-10-01 20:02:44 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:02:44 --> Unable to find validation rules
+INFO - 2019-10-01 20:02:44 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/adicionarProduto.php
+INFO - 2019-10-01 20:02:44 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:44 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:44 --> Total execution time: 0.3551
+INFO - 2019-10-01 20:02:45 --> Config Class Initialized
+INFO - 2019-10-01 20:02:45 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:45 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:45 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:46 --> URI Class Initialized
+INFO - 2019-10-01 20:02:46 --> Router Class Initialized
+INFO - 2019-10-01 20:02:46 --> Output Class Initialized
+INFO - 2019-10-01 20:02:46 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:46 --> Input Class Initialized
+INFO - 2019-10-01 20:02:46 --> Language Class Initialized
+INFO - 2019-10-01 20:02:46 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:46 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:46 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:46 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:46 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:46 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:46 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:46 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:46 --> Model Class Initialized
+INFO - 2019-10-01 20:02:46 --> Table Class Initialized
+INFO - 2019-10-01 20:02:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:02:46 --> Pagination Class Initialized
+INFO - 2019-10-01 20:02:46 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/produtos.php
+INFO - 2019-10-01 20:02:46 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:46 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:46 --> Total execution time: 0.3878
+INFO - 2019-10-01 20:02:50 --> Config Class Initialized
+INFO - 2019-10-01 20:02:50 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:50 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:50 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:50 --> URI Class Initialized
+INFO - 2019-10-01 20:02:50 --> Router Class Initialized
+INFO - 2019-10-01 20:02:50 --> Output Class Initialized
+INFO - 2019-10-01 20:02:50 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:50 --> Input Class Initialized
+INFO - 2019-10-01 20:02:50 --> Language Class Initialized
+INFO - 2019-10-01 20:02:50 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:50 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:50 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:50 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:50 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:50 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:50 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:50 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:50 --> Model Class Initialized
+INFO - 2019-10-01 20:02:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:02:50 --> Pagination Class Initialized
+INFO - 2019-10-01 20:02:50 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/marcas.php
+INFO - 2019-10-01 20:02:50 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:50 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:02:50 --> Profiler Class Initialized
+INFO - 2019-10-01 20:02:50 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:02:50 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:50 --> Total execution time: 0.3641
+INFO - 2019-10-01 20:02:51 --> Config Class Initialized
+INFO - 2019-10-01 20:02:51 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:51 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:51 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:51 --> URI Class Initialized
+INFO - 2019-10-01 20:02:51 --> Router Class Initialized
+INFO - 2019-10-01 20:02:51 --> Output Class Initialized
+INFO - 2019-10-01 20:02:51 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:52 --> Input Class Initialized
+INFO - 2019-10-01 20:02:52 --> Language Class Initialized
+INFO - 2019-10-01 20:02:52 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:52 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:52 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:52 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:52 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:52 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:52 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:52 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:52 --> Model Class Initialized
+INFO - 2019-10-01 20:02:52 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:02:52 --> Pagination Class Initialized
+INFO - 2019-10-01 20:02:52 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/equipamento.php
+INFO - 2019-10-01 20:02:52 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:52 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:52 --> Total execution time: 0.3588
+INFO - 2019-10-01 20:02:53 --> Config Class Initialized
+INFO - 2019-10-01 20:02:53 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:02:53 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:02:53 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:02:53 --> URI Class Initialized
+INFO - 2019-10-01 20:02:53 --> Router Class Initialized
+INFO - 2019-10-01 20:02:53 --> Output Class Initialized
+INFO - 2019-10-01 20:02:53 --> Security Class Initialized
+DEBUG - 2019-10-01 20:02:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:02:53 --> Input Class Initialized
+INFO - 2019-10-01 20:02:53 --> Language Class Initialized
+INFO - 2019-10-01 20:02:53 --> Loader Class Initialized
+INFO - 2019-10-01 20:02:53 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:02:53 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:02:53 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:02:53 --> Permission Class Initialized
+INFO - 2019-10-01 20:02:53 --> Controller Class Initialized
+INFO - 2019-10-01 20:02:53 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:02:53 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:02:53 --> Model Class Initialized
+INFO - 2019-10-01 20:02:53 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:02:53 --> Unable to find validation rules
+INFO - 2019-10-01 20:02:53 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/adicionarEquipamento.php
+INFO - 2019-10-01 20:02:53 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:02:53 --> Final output sent to browser
+DEBUG - 2019-10-01 20:02:53 --> Total execution time: 0.3814
+INFO - 2019-10-01 20:03:10 --> Config Class Initialized
+INFO - 2019-10-01 20:03:10 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:10 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:10 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:10 --> URI Class Initialized
+INFO - 2019-10-01 20:03:10 --> Router Class Initialized
+INFO - 2019-10-01 20:03:10 --> Output Class Initialized
+INFO - 2019-10-01 20:03:10 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:10 --> Input Class Initialized
+INFO - 2019-10-01 20:03:10 --> Language Class Initialized
+INFO - 2019-10-01 20:03:10 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:10 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:10 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:10 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:10 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:10 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:10 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:10 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:10 --> Model Class Initialized
+INFO - 2019-10-01 20:03:10 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:03:10 --> Language file loaded: language/english/form_validation_lang.php
+ERROR - 2019-10-01 20:03:10 --> Severity: Warning --> Use of undefined constant end - assumed 'end' (this will throw an Error in a future version of PHP) C:\wamp64\www\erp02\application\controllers\Equipamentos.php 98
+INFO - 2019-10-01 20:03:10 --> Config Class Initialized
+INFO - 2019-10-01 20:03:10 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:10 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:10 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:10 --> URI Class Initialized
+INFO - 2019-10-01 20:03:10 --> Router Class Initialized
+INFO - 2019-10-01 20:03:10 --> Output Class Initialized
+INFO - 2019-10-01 20:03:10 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:10 --> Input Class Initialized
+INFO - 2019-10-01 20:03:11 --> Language Class Initialized
+INFO - 2019-10-01 20:03:11 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:11 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:11 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:11 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:11 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:11 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:11 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:11 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:11 --> Model Class Initialized
+INFO - 2019-10-01 20:03:11 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:03:11 --> Unable to find validation rules
+INFO - 2019-10-01 20:03:11 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/adicionarEquipamento.php
+INFO - 2019-10-01 20:03:11 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:11 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:11 --> Total execution time: 0.3645
+INFO - 2019-10-01 20:03:28 --> Config Class Initialized
+INFO - 2019-10-01 20:03:28 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:28 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:28 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:28 --> URI Class Initialized
+INFO - 2019-10-01 20:03:28 --> Router Class Initialized
+INFO - 2019-10-01 20:03:28 --> Output Class Initialized
+INFO - 2019-10-01 20:03:28 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:28 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:28 --> Input Class Initialized
+INFO - 2019-10-01 20:03:28 --> Language Class Initialized
+INFO - 2019-10-01 20:03:28 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:28 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:28 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:28 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:28 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:28 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:28 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:28 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:28 --> Model Class Initialized
+INFO - 2019-10-01 20:03:28 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:03:28 --> Language file loaded: language/english/form_validation_lang.php
+ERROR - 2019-10-01 20:03:29 --> Severity: Warning --> Use of undefined constant end - assumed 'end' (this will throw an Error in a future version of PHP) C:\wamp64\www\erp02\application\controllers\Equipamentos.php 98
+INFO - 2019-10-01 20:03:29 --> Config Class Initialized
+INFO - 2019-10-01 20:03:29 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:29 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:29 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:29 --> URI Class Initialized
+INFO - 2019-10-01 20:03:29 --> Router Class Initialized
+INFO - 2019-10-01 20:03:29 --> Output Class Initialized
+INFO - 2019-10-01 20:03:29 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:29 --> Input Class Initialized
+INFO - 2019-10-01 20:03:29 --> Language Class Initialized
+INFO - 2019-10-01 20:03:29 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:29 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:29 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:29 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:29 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:29 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:29 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:29 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:29 --> Model Class Initialized
+INFO - 2019-10-01 20:03:29 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:03:29 --> Unable to find validation rules
+INFO - 2019-10-01 20:03:29 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/adicionarEquipamento.php
+INFO - 2019-10-01 20:03:29 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:29 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:29 --> Total execution time: 0.3639
+INFO - 2019-10-01 20:03:44 --> Config Class Initialized
+INFO - 2019-10-01 20:03:44 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:44 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:44 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:44 --> URI Class Initialized
+INFO - 2019-10-01 20:03:44 --> Router Class Initialized
+INFO - 2019-10-01 20:03:44 --> Output Class Initialized
+INFO - 2019-10-01 20:03:44 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:44 --> Input Class Initialized
+INFO - 2019-10-01 20:03:44 --> Language Class Initialized
+INFO - 2019-10-01 20:03:44 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:44 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:44 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:44 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:44 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:44 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:44 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:44 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:44 --> Model Class Initialized
+INFO - 2019-10-01 20:03:44 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:03:44 --> Language file loaded: language/english/form_validation_lang.php
+ERROR - 2019-10-01 20:03:44 --> Severity: Warning --> Use of undefined constant end - assumed 'end' (this will throw an Error in a future version of PHP) C:\wamp64\www\erp02\application\controllers\Equipamentos.php 98
+INFO - 2019-10-01 20:03:44 --> Config Class Initialized
+INFO - 2019-10-01 20:03:44 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:44 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:44 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:44 --> URI Class Initialized
+INFO - 2019-10-01 20:03:44 --> Router Class Initialized
+INFO - 2019-10-01 20:03:44 --> Output Class Initialized
+INFO - 2019-10-01 20:03:44 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:44 --> Input Class Initialized
+INFO - 2019-10-01 20:03:44 --> Language Class Initialized
+INFO - 2019-10-01 20:03:44 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:45 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:45 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:45 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:45 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:45 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:45 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:45 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:45 --> Model Class Initialized
+INFO - 2019-10-01 20:03:45 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:03:45 --> Unable to find validation rules
+INFO - 2019-10-01 20:03:45 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/adicionarEquipamento.php
+INFO - 2019-10-01 20:03:45 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:45 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:45 --> Total execution time: 0.3722
+INFO - 2019-10-01 20:03:46 --> Config Class Initialized
+INFO - 2019-10-01 20:03:46 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:46 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:46 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:46 --> URI Class Initialized
+INFO - 2019-10-01 20:03:46 --> Router Class Initialized
+INFO - 2019-10-01 20:03:46 --> Output Class Initialized
+INFO - 2019-10-01 20:03:46 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:46 --> Input Class Initialized
+INFO - 2019-10-01 20:03:46 --> Language Class Initialized
+INFO - 2019-10-01 20:03:46 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:46 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:46 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:46 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:46 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:46 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:46 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:46 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:46 --> Model Class Initialized
+INFO - 2019-10-01 20:03:46 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:03:46 --> Pagination Class Initialized
+INFO - 2019-10-01 20:03:46 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/marcas.php
+INFO - 2019-10-01 20:03:46 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:46 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:03:46 --> Profiler Class Initialized
+INFO - 2019-10-01 20:03:46 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:03:46 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:46 --> Total execution time: 0.3645
+INFO - 2019-10-01 20:03:48 --> Config Class Initialized
+INFO - 2019-10-01 20:03:48 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:48 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:48 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:48 --> URI Class Initialized
+INFO - 2019-10-01 20:03:48 --> Router Class Initialized
+INFO - 2019-10-01 20:03:48 --> Output Class Initialized
+INFO - 2019-10-01 20:03:48 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:48 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:49 --> Input Class Initialized
+INFO - 2019-10-01 20:03:49 --> Language Class Initialized
+INFO - 2019-10-01 20:03:49 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:49 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:49 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:49 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:49 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:49 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:49 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:49 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:49 --> Model Class Initialized
+INFO - 2019-10-01 20:03:49 --> Table Class Initialized
+INFO - 2019-10-01 20:03:49 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:03:49 --> Pagination Class Initialized
+INFO - 2019-10-01 20:03:49 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/produtos.php
+INFO - 2019-10-01 20:03:49 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:49 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:49 --> Total execution time: 0.3802
+INFO - 2019-10-01 20:03:50 --> Config Class Initialized
+INFO - 2019-10-01 20:03:50 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:50 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:50 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:50 --> URI Class Initialized
+INFO - 2019-10-01 20:03:50 --> Router Class Initialized
+INFO - 2019-10-01 20:03:50 --> Output Class Initialized
+INFO - 2019-10-01 20:03:50 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:50 --> Input Class Initialized
+INFO - 2019-10-01 20:03:50 --> Language Class Initialized
+INFO - 2019-10-01 20:03:50 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:50 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:50 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:50 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:50 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:50 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:50 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:50 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:50 --> Model Class Initialized
+INFO - 2019-10-01 20:03:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:03:50 --> Pagination Class Initialized
+INFO - 2019-10-01 20:03:50 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/equipamento.php
+INFO - 2019-10-01 20:03:50 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:50 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:51 --> Total execution time: 0.3670
+INFO - 2019-10-01 20:03:53 --> Config Class Initialized
+INFO - 2019-10-01 20:03:53 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:53 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:53 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:53 --> URI Class Initialized
+INFO - 2019-10-01 20:03:53 --> Router Class Initialized
+INFO - 2019-10-01 20:03:53 --> Output Class Initialized
+INFO - 2019-10-01 20:03:53 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:53 --> Input Class Initialized
+INFO - 2019-10-01 20:03:53 --> Language Class Initialized
+INFO - 2019-10-01 20:03:53 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:54 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:54 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:54 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:54 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:54 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:54 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:54 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:54 --> Model Class Initialized
+INFO - 2019-10-01 20:03:54 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:03:54 --> Pagination Class Initialized
+INFO - 2019-10-01 20:03:54 --> File loaded: C:\wamp64\www\erp02\application\views\servicos/servicos.php
+INFO - 2019-10-01 20:03:54 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:54 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:54 --> Total execution time: 0.3760
+INFO - 2019-10-01 20:03:55 --> Config Class Initialized
+INFO - 2019-10-01 20:03:55 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:03:55 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:03:55 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:03:55 --> URI Class Initialized
+INFO - 2019-10-01 20:03:55 --> Router Class Initialized
+INFO - 2019-10-01 20:03:55 --> Output Class Initialized
+INFO - 2019-10-01 20:03:55 --> Security Class Initialized
+DEBUG - 2019-10-01 20:03:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:03:55 --> Input Class Initialized
+INFO - 2019-10-01 20:03:55 --> Language Class Initialized
+INFO - 2019-10-01 20:03:55 --> Loader Class Initialized
+INFO - 2019-10-01 20:03:55 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:03:55 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:03:55 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:03:55 --> Permission Class Initialized
+INFO - 2019-10-01 20:03:55 --> Controller Class Initialized
+INFO - 2019-10-01 20:03:55 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:03:55 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:03:55 --> Model Class Initialized
+INFO - 2019-10-01 20:03:55 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:03:55 --> Unable to find validation rules
+INFO - 2019-10-01 20:03:55 --> File loaded: C:\wamp64\www\erp02\application\views\servicos/adicionarServico.php
+INFO - 2019-10-01 20:03:55 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:03:55 --> Final output sent to browser
+DEBUG - 2019-10-01 20:03:55 --> Total execution time: 0.3860
+INFO - 2019-10-01 20:04:14 --> Config Class Initialized
+INFO - 2019-10-01 20:04:14 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:14 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:14 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:14 --> URI Class Initialized
+INFO - 2019-10-01 20:04:14 --> Router Class Initialized
+INFO - 2019-10-01 20:04:14 --> Output Class Initialized
+INFO - 2019-10-01 20:04:14 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:14 --> Input Class Initialized
+INFO - 2019-10-01 20:04:14 --> Language Class Initialized
+INFO - 2019-10-01 20:04:14 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:14 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:14 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:14 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:14 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:14 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:14 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:14 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:14 --> Model Class Initialized
+INFO - 2019-10-01 20:04:14 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:04:14 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2019-10-01 20:04:14 --> Config Class Initialized
+INFO - 2019-10-01 20:04:14 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:14 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:15 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:15 --> URI Class Initialized
+INFO - 2019-10-01 20:04:15 --> Router Class Initialized
+INFO - 2019-10-01 20:04:15 --> Output Class Initialized
+INFO - 2019-10-01 20:04:15 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:15 --> Input Class Initialized
+INFO - 2019-10-01 20:04:15 --> Language Class Initialized
+INFO - 2019-10-01 20:04:15 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:15 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:15 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:15 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:15 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:15 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:15 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:15 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:15 --> Model Class Initialized
+INFO - 2019-10-01 20:04:15 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:04:15 --> Unable to find validation rules
+INFO - 2019-10-01 20:04:15 --> File loaded: C:\wamp64\www\erp02\application\views\servicos/adicionarServico.php
+INFO - 2019-10-01 20:04:15 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:15 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:15 --> Total execution time: 0.3720
+INFO - 2019-10-01 20:04:26 --> Config Class Initialized
+INFO - 2019-10-01 20:04:27 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:27 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:27 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:27 --> URI Class Initialized
+INFO - 2019-10-01 20:04:27 --> Router Class Initialized
+INFO - 2019-10-01 20:04:27 --> Output Class Initialized
+INFO - 2019-10-01 20:04:27 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:27 --> Input Class Initialized
+INFO - 2019-10-01 20:04:27 --> Language Class Initialized
+INFO - 2019-10-01 20:04:27 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:27 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:27 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:27 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:27 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:27 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:27 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:27 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:27 --> Model Class Initialized
+INFO - 2019-10-01 20:04:27 --> Form Validation Class Initialized
+INFO - 2019-10-01 20:04:27 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2019-10-01 20:04:27 --> Config Class Initialized
+INFO - 2019-10-01 20:04:27 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:27 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:27 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:27 --> URI Class Initialized
+INFO - 2019-10-01 20:04:27 --> Router Class Initialized
+INFO - 2019-10-01 20:04:27 --> Output Class Initialized
+INFO - 2019-10-01 20:04:27 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:27 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:27 --> Input Class Initialized
+INFO - 2019-10-01 20:04:27 --> Language Class Initialized
+INFO - 2019-10-01 20:04:27 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:27 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:27 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:27 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:27 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:27 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:27 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:27 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:27 --> Model Class Initialized
+INFO - 2019-10-01 20:04:27 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:04:27 --> Unable to find validation rules
+INFO - 2019-10-01 20:04:27 --> File loaded: C:\wamp64\www\erp02\application\views\servicos/adicionarServico.php
+INFO - 2019-10-01 20:04:27 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:27 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:27 --> Total execution time: 0.3823
+INFO - 2019-10-01 20:04:29 --> Config Class Initialized
+INFO - 2019-10-01 20:04:29 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:29 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:29 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:29 --> URI Class Initialized
+INFO - 2019-10-01 20:04:29 --> Router Class Initialized
+INFO - 2019-10-01 20:04:29 --> Output Class Initialized
+INFO - 2019-10-01 20:04:29 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:29 --> Input Class Initialized
+INFO - 2019-10-01 20:04:29 --> Language Class Initialized
+INFO - 2019-10-01 20:04:29 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:29 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:29 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:29 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:29 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:29 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:29 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:29 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:29 --> Model Class Initialized
+INFO - 2019-10-01 20:04:29 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:29 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:29 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/equipamento.php
+INFO - 2019-10-01 20:04:29 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:29 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:29 --> Total execution time: 0.3808
+INFO - 2019-10-01 20:04:31 --> Config Class Initialized
+INFO - 2019-10-01 20:04:31 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:31 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:31 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:31 --> URI Class Initialized
+INFO - 2019-10-01 20:04:31 --> Router Class Initialized
+INFO - 2019-10-01 20:04:31 --> Output Class Initialized
+INFO - 2019-10-01 20:04:31 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:31 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:31 --> Input Class Initialized
+INFO - 2019-10-01 20:04:31 --> Language Class Initialized
+INFO - 2019-10-01 20:04:31 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:31 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:31 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:31 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:31 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:31 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:31 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:32 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:32 --> Model Class Initialized
+INFO - 2019-10-01 20:04:32 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:32 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:32 --> File loaded: C:\wamp64\www\erp02\application\views\os/os.php
+INFO - 2019-10-01 20:04:32 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:32 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:32 --> Total execution time: 0.3694
+INFO - 2019-10-01 20:04:32 --> Config Class Initialized
+INFO - 2019-10-01 20:04:32 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:32 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:32 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:32 --> URI Class Initialized
+INFO - 2019-10-01 20:04:32 --> Router Class Initialized
+INFO - 2019-10-01 20:04:32 --> Output Class Initialized
+INFO - 2019-10-01 20:04:32 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:32 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:32 --> Input Class Initialized
+INFO - 2019-10-01 20:04:32 --> Language Class Initialized
+INFO - 2019-10-01 20:04:32 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:33 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:33 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:33 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:33 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:33 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:33 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:33 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:33 --> Model Class Initialized
+INFO - 2019-10-01 20:04:33 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:33 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:33 --> File loaded: C:\wamp64\www\erp02\application\views\servicos/servicos.php
+INFO - 2019-10-01 20:04:33 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:33 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:33 --> Total execution time: 0.3711
+INFO - 2019-10-01 20:04:35 --> Config Class Initialized
+INFO - 2019-10-01 20:04:35 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:35 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:35 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:35 --> URI Class Initialized
+INFO - 2019-10-01 20:04:35 --> Router Class Initialized
+INFO - 2019-10-01 20:04:35 --> Output Class Initialized
+INFO - 2019-10-01 20:04:35 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:35 --> Input Class Initialized
+INFO - 2019-10-01 20:04:35 --> Language Class Initialized
+INFO - 2019-10-01 20:04:35 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:35 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:35 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:35 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:35 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:35 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:35 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:35 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:35 --> Model Class Initialized
+INFO - 2019-10-01 20:04:35 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:35 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:35 --> File loaded: C:\wamp64\www\erp02\application\views\equipamentos/equipamento.php
+INFO - 2019-10-01 20:04:35 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:35 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:35 --> Total execution time: 0.3654
+INFO - 2019-10-01 20:04:36 --> Config Class Initialized
+INFO - 2019-10-01 20:04:36 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:36 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:36 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:36 --> URI Class Initialized
+INFO - 2019-10-01 20:04:36 --> Router Class Initialized
+INFO - 2019-10-01 20:04:36 --> Output Class Initialized
+INFO - 2019-10-01 20:04:36 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:36 --> Input Class Initialized
+INFO - 2019-10-01 20:04:36 --> Language Class Initialized
+INFO - 2019-10-01 20:04:36 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:36 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:36 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:36 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:36 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:36 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:36 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:36 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:36 --> Model Class Initialized
+INFO - 2019-10-01 20:04:36 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:36 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:36 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/marcas.php
+INFO - 2019-10-01 20:04:36 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:36 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2019-10-01 20:04:36 --> Profiler Class Initialized
+INFO - 2019-10-01 20:04:36 --> Helper loaded: text_helper
+INFO - 2019-10-01 20:04:36 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:36 --> Total execution time: 0.3748
+INFO - 2019-10-01 20:04:37 --> Config Class Initialized
+INFO - 2019-10-01 20:04:37 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:37 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:37 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:37 --> URI Class Initialized
+INFO - 2019-10-01 20:04:37 --> Router Class Initialized
+INFO - 2019-10-01 20:04:37 --> Output Class Initialized
+INFO - 2019-10-01 20:04:37 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:37 --> Input Class Initialized
+INFO - 2019-10-01 20:04:38 --> Language Class Initialized
+INFO - 2019-10-01 20:04:38 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:38 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:38 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:38 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:38 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:38 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:38 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:38 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:38 --> Model Class Initialized
+INFO - 2019-10-01 20:04:38 --> Table Class Initialized
+INFO - 2019-10-01 20:04:38 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:38 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:38 --> File loaded: C:\wamp64\www\erp02\application\views\produtos/produtos.php
+INFO - 2019-10-01 20:04:38 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:38 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:38 --> Total execution time: 0.3932
+INFO - 2019-10-01 20:04:38 --> Config Class Initialized
+INFO - 2019-10-01 20:04:38 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:38 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:39 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:39 --> URI Class Initialized
+INFO - 2019-10-01 20:04:39 --> Router Class Initialized
+INFO - 2019-10-01 20:04:39 --> Output Class Initialized
+INFO - 2019-10-01 20:04:39 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:39 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:39 --> Input Class Initialized
+INFO - 2019-10-01 20:04:39 --> Language Class Initialized
+INFO - 2019-10-01 20:04:39 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:39 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:39 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:39 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:39 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:39 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:39 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:39 --> Model Class Initialized
+INFO - 2019-10-01 20:04:39 --> Table Class Initialized
+INFO - 2019-10-01 20:04:39 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:39 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:39 --> File loaded: C:\wamp64\www\erp02\application\views\clientes/clientes.php
+INFO - 2019-10-01 20:04:39 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:39 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:39 --> Total execution time: 0.3762
+INFO - 2019-10-01 20:04:40 --> Config Class Initialized
+INFO - 2019-10-01 20:04:40 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:40 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:40 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:40 --> URI Class Initialized
+DEBUG - 2019-10-01 20:04:40 --> No URI present. Default controller set.
+INFO - 2019-10-01 20:04:40 --> Router Class Initialized
+INFO - 2019-10-01 20:04:40 --> Output Class Initialized
+INFO - 2019-10-01 20:04:40 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:40 --> Input Class Initialized
+INFO - 2019-10-01 20:04:40 --> Language Class Initialized
+INFO - 2019-10-01 20:04:40 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:40 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:40 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:40 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:40 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:40 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:40 --> Model Class Initialized
+INFO - 2019-10-01 20:04:40 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/painel.php
+INFO - 2019-10-01 20:04:40 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:40 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:41 --> Total execution time: 0.3357
+INFO - 2019-10-01 20:04:43 --> Config Class Initialized
+INFO - 2019-10-01 20:04:43 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:43 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:43 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:43 --> URI Class Initialized
+INFO - 2019-10-01 20:04:43 --> Router Class Initialized
+INFO - 2019-10-01 20:04:43 --> Output Class Initialized
+INFO - 2019-10-01 20:04:43 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:43 --> Input Class Initialized
+INFO - 2019-10-01 20:04:43 --> Language Class Initialized
+INFO - 2019-10-01 20:04:43 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:43 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:43 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:43 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:43 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:43 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:43 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:43 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:43 --> Model Class Initialized
+INFO - 2019-10-01 20:04:43 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2019-10-01 20:04:43 --> Pagination Class Initialized
+INFO - 2019-10-01 20:04:43 --> File loaded: C:\wamp64\www\erp02\application\views\os/os.php
+INFO - 2019-10-01 20:04:43 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:43 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:43 --> Total execution time: 0.3792
+INFO - 2019-10-01 20:04:45 --> Config Class Initialized
+INFO - 2019-10-01 20:04:45 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:45 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:45 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:45 --> URI Class Initialized
+INFO - 2019-10-01 20:04:45 --> Router Class Initialized
+INFO - 2019-10-01 20:04:45 --> Output Class Initialized
+INFO - 2019-10-01 20:04:45 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:45 --> Input Class Initialized
+INFO - 2019-10-01 20:04:45 --> Language Class Initialized
+INFO - 2019-10-01 20:04:45 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:45 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:45 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:45 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:45 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:45 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:45 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:45 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:45 --> Model Class Initialized
+INFO - 2019-10-01 20:04:45 --> Form Validation Class Initialized
+DEBUG - 2019-10-01 20:04:45 --> Unable to find validation rules
+INFO - 2019-10-01 20:04:45 --> File loaded: C:\wamp64\www\erp02\application\views\os/adicionarOs.php
+INFO - 2019-10-01 20:04:45 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2019-10-01 20:04:45 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:45 --> Total execution time: 0.3725
+INFO - 2019-10-01 20:04:47 --> Config Class Initialized
+INFO - 2019-10-01 20:04:47 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:47 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:47 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:47 --> URI Class Initialized
+INFO - 2019-10-01 20:04:47 --> Router Class Initialized
+INFO - 2019-10-01 20:04:47 --> Output Class Initialized
+INFO - 2019-10-01 20:04:47 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:47 --> Input Class Initialized
+INFO - 2019-10-01 20:04:47 --> Language Class Initialized
+INFO - 2019-10-01 20:04:47 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:47 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:47 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:47 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:47 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:47 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:47 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:47 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:47 --> Model Class Initialized
+INFO - 2019-10-01 20:04:47 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:47 --> Total execution time: 0.3103
+INFO - 2019-10-01 20:04:49 --> Config Class Initialized
+INFO - 2019-10-01 20:04:49 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:49 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:49 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:49 --> URI Class Initialized
+INFO - 2019-10-01 20:04:49 --> Router Class Initialized
+INFO - 2019-10-01 20:04:49 --> Output Class Initialized
+INFO - 2019-10-01 20:04:49 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:50 --> Input Class Initialized
+INFO - 2019-10-01 20:04:50 --> Language Class Initialized
+INFO - 2019-10-01 20:04:50 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:50 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:50 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:50 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:50 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:50 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:50 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:50 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:50 --> Model Class Initialized
+INFO - 2019-10-01 20:04:50 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:50 --> Total execution time: 0.3125
+INFO - 2019-10-01 20:04:53 --> Config Class Initialized
+INFO - 2019-10-01 20:04:53 --> Hooks Class Initialized
+DEBUG - 2019-10-01 20:04:53 --> UTF-8 Support Enabled
+INFO - 2019-10-01 20:04:53 --> Utf8 Class Initialized
+INFO - 2019-10-01 20:04:53 --> URI Class Initialized
+INFO - 2019-10-01 20:04:53 --> Router Class Initialized
+INFO - 2019-10-01 20:04:54 --> Output Class Initialized
+INFO - 2019-10-01 20:04:54 --> Security Class Initialized
+DEBUG - 2019-10-01 20:04:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2019-10-01 20:04:54 --> Input Class Initialized
+INFO - 2019-10-01 20:04:54 --> Language Class Initialized
+INFO - 2019-10-01 20:04:54 --> Loader Class Initialized
+INFO - 2019-10-01 20:04:54 --> Helper loaded: url_helper
+INFO - 2019-10-01 20:04:54 --> Database Driver Class Initialized
+INFO - 2019-10-01 20:04:54 --> Session: Class initialized using 'database' driver.
+DEBUG - 2019-10-01 20:04:54 --> Permission Class Initialized
+INFO - 2019-10-01 20:04:54 --> Controller Class Initialized
+INFO - 2019-10-01 20:04:54 --> Helper loaded: form_helper
+INFO - 2019-10-01 20:04:54 --> Helper loaded: codegen_helper
+INFO - 2019-10-01 20:04:54 --> Model Class Initialized
+INFO - 2019-10-01 20:04:54 --> Final output sent to browser
+DEBUG - 2019-10-01 20:04:54 --> Total execution time: 0.3003

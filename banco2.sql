@@ -214,6 +214,7 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `tb_produto` (
   `produto_codigo` INT(11) NOT NULL AUTO_INCREMENT,
   `produto_descricao` VARCHAR(80) NOT NULL,
+  `produto_partnumber` VARCHAR(80) NOT NULL,
   `produto_unid_medida` VARCHAR(10) NULL DEFAULT NULL,
   `produto_preco_compra` DECIMAL(10,2) NULL DEFAULT NULL,
   `produto_preco_venda` DECIMAL(10,2) NOT NULL,
