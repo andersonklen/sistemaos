@@ -81,10 +81,27 @@ class Wh extends REST_Controller {
     */
     public function index_post()
     {
-        $input = $this->input->post();
-        $this->db->insert('products',$input);
-     
-        $this->response(['Product created successfully.'], REST_Controller::HTTP_OK);
+  $data1 = array(
+                'marca_nome' => 'ativo',
+                'marca_website' => 'ativo',
+                'marca_situacao' => 'ativo',
+                'marca_data_cadastro' => date('Y-m-d H:i:s'),
+                'marca_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'marca_deletado' => 'nao',
+            );            
+
+            $this->db->insert('tb_marca', $data1);
+        
+        
+        /*Giving Reply should be in JSON*/
+       $data = array('message-out' => ' Hello Picky','delay' => 0);
+
+       echo json_encode($data);
+       
+         
+            $this->response($data, REST_Controller::HTTP_OK);
+
+
     } 
      
     /**
