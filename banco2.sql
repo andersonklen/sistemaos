@@ -549,6 +549,22 @@ CREATE TABLE IF NOT EXISTS `tb_cidade` (
   PRIMARY KEY (`cidade_codigo`) ) 
 ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5565 ;
 
+
+CREATE TABLE IF NOT EXISTS `tb_whatsapp_msg` (
+  `whatsapp_msg_codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `whatsapp_msg_number_origin` varchar(120) DEFAULT NULL,
+  `whatsapp_msg_message_in` varchar(120) DEFAULT NULL,
+  `whatsapp_msg_type` varchar(120) DEFAULT NULL,
+  `whatsapp_msg_application` int(5) DEFAULT NULL,
+  `whatsapp_msg_unique_id` int(10) DEFAULT NULL,
+  `whatsapp_msg_project_id` int(10) DEFAULT NULL,
+     -- Logs
+  `whatsapp_msg_data_hora_entrega` DATETIME NULL DEFAULT NULL ,
+  `whatsapp_msg_deletado` VARCHAR(3) NULL DEFAULT NULL,  
+  PRIMARY KEY (`whatsapp_msg_codigo`) ) 
+ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5565 ;
+
+
 # Relacionamento de tabelas
 ALTER TABLE `tb_estado` ADD CONSTRAINT `fk_estado_pais` FOREIGN KEY ( `estado_pais_codigo` )   REFERENCES `tb_pais` ( `pais_codigo` ) ;
 ALTER TABLE `tb_cidade` ADD CONSTRAINT `fk_cidade_estado` FOREIGN KEY ( `cidade_estado_codigo` ) REFERENCES `tb_estado` ( `estado_codigo` ) ;

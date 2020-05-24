@@ -20,7 +20,7 @@ class Whatsapp_model extends CI_Model
         
         $this->db->select($fields);
         $this->db->from($table);
-        $this->db->order_by('marca_codigo', 'desc');
+        $this->db->order_by('whatsapp_msg_codigo', 'desc');
         $this->db->limit($perpage, $start);
         if ($where) {
             $this->db->where($where);

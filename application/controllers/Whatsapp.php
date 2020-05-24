@@ -48,7 +48,7 @@ class Whatsapp extends CI_Controller
         $this->load->library('pagination');
         
         
-        $config['base_url'] = base_url().'index.php/marcas/gerenciar/';
+        $config['base_url'] = base_url().'index.php/whatsapp/gerenciar/';
         $config['total_rows'] = $this->whatsapp_model->count('tb_marca');
         $config['per_page'] = 10;
         $config['next_link'] = 'Próxima';
@@ -72,7 +72,7 @@ class Whatsapp extends CI_Controller
 
         $this->pagination->initialize($config);
 
-        $this->data['results'] = $this->whatsapp_model->get('tb_marca', 'marca_codigo,marca_nome,marca_situacao,marca_website',  "marca_deletado='nao'", $config['per_page'], $this->uri->segment(3));
+        $this->data['results'] = $this->whatsapp_model->get('tb_whatsapp_msg', 'whatsapp_msg_codigo,whatsapp_msg_number_origin,whatsapp_msg_message_in,',  "whatsapp_msg_deletado='nao'", $config['per_page'], $this->uri->segment(3));
        
         $this->data['view'] = 'whatsapp/whatsapp';
         $this->load->view('tema/topo', $this->data);

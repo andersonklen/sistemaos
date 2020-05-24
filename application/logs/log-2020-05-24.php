@@ -2666,3 +2666,255 @@ INFO - 2020-05-24 14:00:49 --> Profiler Class Initialized
 INFO - 2020-05-24 14:00:49 --> Helper loaded: text_helper
 INFO - 2020-05-24 14:00:49 --> Final output sent to browser
 DEBUG - 2020-05-24 14:00:49 --> Total execution time: 0.5207
+INFO - 2020-05-24 14:47:59 --> Config Class Initialized
+INFO - 2020-05-24 14:47:59 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:47:59 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:47:59 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:47:59 --> URI Class Initialized
+DEBUG - 2020-05-24 14:47:59 --> No URI present. Default controller set.
+INFO - 2020-05-24 14:47:59 --> Router Class Initialized
+INFO - 2020-05-24 14:47:59 --> Output Class Initialized
+INFO - 2020-05-24 14:47:59 --> Security Class Initialized
+DEBUG - 2020-05-24 14:47:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:47:59 --> Input Class Initialized
+INFO - 2020-05-24 14:47:59 --> Language Class Initialized
+INFO - 2020-05-24 14:47:59 --> Loader Class Initialized
+INFO - 2020-05-24 14:47:59 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:47:59 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:47:59 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:47:59 --> Permission Class Initialized
+INFO - 2020-05-24 14:47:59 --> Controller Class Initialized
+INFO - 2020-05-24 14:47:59 --> Model Class Initialized
+INFO - 2020-05-24 14:47:59 --> File loaded: C:\wamp64\www\erp02\application\views\mapos/painel.php
+INFO - 2020-05-24 14:47:59 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:47:59 --> Final output sent to browser
+DEBUG - 2020-05-24 14:47:59 --> Total execution time: 0.2957
+INFO - 2020-05-24 14:48:01 --> Config Class Initialized
+INFO - 2020-05-24 14:48:01 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:48:01 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:48:01 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:48:01 --> URI Class Initialized
+INFO - 2020-05-24 14:48:01 --> Router Class Initialized
+INFO - 2020-05-24 14:48:01 --> Output Class Initialized
+INFO - 2020-05-24 14:48:01 --> Security Class Initialized
+DEBUG - 2020-05-24 14:48:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:48:01 --> Input Class Initialized
+INFO - 2020-05-24 14:48:01 --> Language Class Initialized
+INFO - 2020-05-24 14:48:01 --> Loader Class Initialized
+INFO - 2020-05-24 14:48:01 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:48:01 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:48:01 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:48:01 --> Permission Class Initialized
+INFO - 2020-05-24 14:48:01 --> Controller Class Initialized
+INFO - 2020-05-24 14:48:01 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:48:01 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:48:01 --> Model Class Initialized
+INFO - 2020-05-24 14:48:01 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:48:01 --> Pagination Class Initialized
+ERROR - 2020-05-24 14:48:01 --> Query error: Unknown column 'marca_codigo' in 'order clause' - Invalid query: SELECT `whatsapp_msg_codigo`, `whatsapp_msg_number_origin`, `whatsapp_msg_message-in`
+FROM `tb_whatsapp_msg`
+WHERE `whatsapp_msg_deletado` = 'nao'
+ORDER BY `marca_codigo` DESC
+ LIMIT 10
+INFO - 2020-05-24 14:48:01 --> Language file loaded: language/english/db_lang.php
+INFO - 2020-05-24 14:48:21 --> Config Class Initialized
+INFO - 2020-05-24 14:48:21 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:48:21 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:48:21 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:48:21 --> URI Class Initialized
+INFO - 2020-05-24 14:48:21 --> Router Class Initialized
+INFO - 2020-05-24 14:48:21 --> Output Class Initialized
+INFO - 2020-05-24 14:48:21 --> Security Class Initialized
+DEBUG - 2020-05-24 14:48:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:48:22 --> Input Class Initialized
+INFO - 2020-05-24 14:48:22 --> Language Class Initialized
+INFO - 2020-05-24 14:48:22 --> Loader Class Initialized
+INFO - 2020-05-24 14:48:22 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:48:22 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:48:22 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:48:22 --> Permission Class Initialized
+INFO - 2020-05-24 14:48:22 --> Controller Class Initialized
+INFO - 2020-05-24 14:48:22 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:48:22 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:48:22 --> Model Class Initialized
+INFO - 2020-05-24 14:48:22 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:48:22 --> Pagination Class Initialized
+ERROR - 2020-05-24 14:48:22 --> Query error: Unknown column 'marca_codigo' in 'order clause' - Invalid query: SELECT `whatsapp_msg_codigo`, `whatsapp_msg_number_origin`, `whatsapp_msg_message-in`
+FROM `tb_whatsapp_msg`
+WHERE `whatsapp_msg_deletado` = 'nao'
+ORDER BY `marca_codigo` DESC
+ LIMIT 10
+INFO - 2020-05-24 14:48:22 --> Language file loaded: language/english/db_lang.php
+INFO - 2020-05-24 14:49:19 --> Config Class Initialized
+INFO - 2020-05-24 14:49:19 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:49:19 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:49:19 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:49:19 --> URI Class Initialized
+INFO - 2020-05-24 14:49:19 --> Router Class Initialized
+INFO - 2020-05-24 14:49:19 --> Output Class Initialized
+INFO - 2020-05-24 14:49:19 --> Security Class Initialized
+DEBUG - 2020-05-24 14:49:19 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:49:19 --> Input Class Initialized
+INFO - 2020-05-24 14:49:19 --> Language Class Initialized
+INFO - 2020-05-24 14:49:19 --> Loader Class Initialized
+INFO - 2020-05-24 14:49:19 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:49:19 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:49:19 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:49:19 --> Permission Class Initialized
+INFO - 2020-05-24 14:49:19 --> Controller Class Initialized
+INFO - 2020-05-24 14:49:19 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:49:19 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:49:19 --> Model Class Initialized
+INFO - 2020-05-24 14:49:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:49:19 --> Pagination Class Initialized
+INFO - 2020-05-24 14:49:19 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:49:19 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:49:19 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:49:19 --> Profiler Class Initialized
+INFO - 2020-05-24 14:49:19 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:49:19 --> Final output sent to browser
+DEBUG - 2020-05-24 14:49:19 --> Total execution time: 0.5285
+INFO - 2020-05-24 14:49:50 --> Config Class Initialized
+INFO - 2020-05-24 14:49:50 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:49:50 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:49:50 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:49:50 --> URI Class Initialized
+INFO - 2020-05-24 14:49:50 --> Router Class Initialized
+INFO - 2020-05-24 14:49:50 --> Output Class Initialized
+INFO - 2020-05-24 14:49:50 --> Security Class Initialized
+DEBUG - 2020-05-24 14:49:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:49:50 --> Input Class Initialized
+INFO - 2020-05-24 14:49:50 --> Language Class Initialized
+INFO - 2020-05-24 14:49:50 --> Loader Class Initialized
+INFO - 2020-05-24 14:49:50 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:49:50 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:49:50 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:49:50 --> Permission Class Initialized
+INFO - 2020-05-24 14:49:50 --> Controller Class Initialized
+INFO - 2020-05-24 14:49:50 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:49:50 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:49:50 --> Model Class Initialized
+INFO - 2020-05-24 14:49:50 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:49:50 --> Pagination Class Initialized
+INFO - 2020-05-24 14:49:50 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:49:50 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:49:50 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:49:50 --> Profiler Class Initialized
+INFO - 2020-05-24 14:49:50 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:49:50 --> Final output sent to browser
+DEBUG - 2020-05-24 14:49:50 --> Total execution time: 0.4765
+INFO - 2020-05-24 14:50:07 --> Config Class Initialized
+INFO - 2020-05-24 14:50:07 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:50:07 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:50:07 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:50:07 --> URI Class Initialized
+INFO - 2020-05-24 14:50:07 --> Router Class Initialized
+INFO - 2020-05-24 14:50:07 --> Output Class Initialized
+INFO - 2020-05-24 14:50:07 --> Security Class Initialized
+DEBUG - 2020-05-24 14:50:07 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:50:07 --> Input Class Initialized
+INFO - 2020-05-24 14:50:07 --> Language Class Initialized
+INFO - 2020-05-24 14:50:07 --> Loader Class Initialized
+INFO - 2020-05-24 14:50:07 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:50:07 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:50:08 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:50:08 --> Permission Class Initialized
+INFO - 2020-05-24 14:50:08 --> Controller Class Initialized
+INFO - 2020-05-24 14:50:08 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:50:08 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:50:08 --> Model Class Initialized
+INFO - 2020-05-24 14:50:08 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:50:08 --> Pagination Class Initialized
+ERROR - 2020-05-24 14:50:08 --> Severity: Notice --> Undefined property: stdClass::$whatsapp_msg_message C:\wamp64\www\erp02\application\views\whatsapp\whatsapp.php 69
+ERROR - 2020-05-24 14:50:08 --> Severity: Warning --> Use of undefined constant in - assumed 'in' (this will throw an Error in a future version of PHP) C:\wamp64\www\erp02\application\views\whatsapp\whatsapp.php 69
+ERROR - 2020-05-24 14:50:08 --> Severity: Warning --> A non-numeric value encountered C:\wamp64\www\erp02\application\views\whatsapp\whatsapp.php 69
+ERROR - 2020-05-24 14:50:08 --> Severity: Warning --> A non-numeric value encountered C:\wamp64\www\erp02\application\views\whatsapp\whatsapp.php 69
+INFO - 2020-05-24 14:50:08 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:50:08 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:50:08 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:50:08 --> Profiler Class Initialized
+INFO - 2020-05-24 14:50:08 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:50:08 --> Final output sent to browser
+DEBUG - 2020-05-24 14:50:08 --> Total execution time: 0.7530
+INFO - 2020-05-24 14:53:03 --> Config Class Initialized
+INFO - 2020-05-24 14:53:03 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:53:03 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:53:04 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:53:04 --> URI Class Initialized
+INFO - 2020-05-24 14:53:04 --> Router Class Initialized
+INFO - 2020-05-24 14:53:04 --> Output Class Initialized
+INFO - 2020-05-24 14:53:04 --> Security Class Initialized
+DEBUG - 2020-05-24 14:53:04 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:53:04 --> Input Class Initialized
+INFO - 2020-05-24 14:53:04 --> Language Class Initialized
+INFO - 2020-05-24 14:53:04 --> Loader Class Initialized
+INFO - 2020-05-24 14:53:04 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:53:04 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:53:04 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:53:04 --> Permission Class Initialized
+INFO - 2020-05-24 14:53:04 --> Controller Class Initialized
+INFO - 2020-05-24 14:53:04 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:53:04 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:53:04 --> Model Class Initialized
+INFO - 2020-05-24 14:53:04 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:53:04 --> Pagination Class Initialized
+INFO - 2020-05-24 14:53:04 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:53:04 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:53:04 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:53:04 --> Profiler Class Initialized
+INFO - 2020-05-24 14:53:04 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:53:04 --> Final output sent to browser
+DEBUG - 2020-05-24 14:53:04 --> Total execution time: 0.4527
+INFO - 2020-05-24 14:53:18 --> Config Class Initialized
+INFO - 2020-05-24 14:53:18 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:53:18 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:53:18 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:53:18 --> URI Class Initialized
+INFO - 2020-05-24 14:53:18 --> Router Class Initialized
+INFO - 2020-05-24 14:53:18 --> Output Class Initialized
+INFO - 2020-05-24 14:53:18 --> Security Class Initialized
+DEBUG - 2020-05-24 14:53:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:53:18 --> Input Class Initialized
+INFO - 2020-05-24 14:53:18 --> Language Class Initialized
+INFO - 2020-05-24 14:53:18 --> Loader Class Initialized
+INFO - 2020-05-24 14:53:18 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:53:18 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:53:19 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:53:19 --> Permission Class Initialized
+INFO - 2020-05-24 14:53:19 --> Controller Class Initialized
+INFO - 2020-05-24 14:53:19 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:53:19 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:53:19 --> Model Class Initialized
+INFO - 2020-05-24 14:53:19 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:53:19 --> Pagination Class Initialized
+ERROR - 2020-05-24 14:53:19 --> Severity: Notice --> Undefined property: stdClass::$whatsapp_msg_message C:\wamp64\www\erp02\application\views\whatsapp\whatsapp.php 69
+ERROR - 2020-05-24 14:53:19 --> Severity: error --> Exception: Undefined constant 'in' C:\wamp64\www\erp02\application\views\whatsapp\whatsapp.php 69
+INFO - 2020-05-24 14:54:36 --> Config Class Initialized
+INFO - 2020-05-24 14:54:36 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:54:36 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:54:36 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:54:36 --> URI Class Initialized
+INFO - 2020-05-24 14:54:36 --> Router Class Initialized
+INFO - 2020-05-24 14:54:36 --> Output Class Initialized
+INFO - 2020-05-24 14:54:36 --> Security Class Initialized
+DEBUG - 2020-05-24 14:54:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:54:36 --> Input Class Initialized
+INFO - 2020-05-24 14:54:36 --> Language Class Initialized
+INFO - 2020-05-24 14:54:36 --> Loader Class Initialized
+INFO - 2020-05-24 14:54:36 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:54:36 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:54:36 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:54:36 --> Permission Class Initialized
+INFO - 2020-05-24 14:54:36 --> Controller Class Initialized
+INFO - 2020-05-24 14:54:36 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:54:36 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:54:36 --> Model Class Initialized
+INFO - 2020-05-24 14:54:36 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:54:36 --> Pagination Class Initialized
+INFO - 2020-05-24 14:54:36 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:54:36 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:54:36 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:54:36 --> Profiler Class Initialized
+INFO - 2020-05-24 14:54:37 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:54:37 --> Final output sent to browser
+DEBUG - 2020-05-24 14:54:37 --> Total execution time: 0.4875

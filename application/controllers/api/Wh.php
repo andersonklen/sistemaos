@@ -95,13 +95,15 @@ class Wh extends REST_Controller {
         // $msg = isset($_REQUEST['message-in']) ? $_REQUEST['message-in'] : 0;
 
         /*On which messaging app the message has received 1=Whatsapp Personal | 2 = Whatsapp Business*/
-        $application = isset($_REQUEST['application']) ? $_REQUEST['application'] : 0;
+        $application = $this->post('application');
 
         /*What kind of message is received , text=1, photo=2, video=3, audio=4, location=5, document=6, contact=7*/
-        $type = isset($_REQUEST['type']) ? $_REQUEST['type'] : 0;
+        $type = $this->post('type');
 
         /*Unique id assigned by the picky assist application*/
-        $uniqueid = isset($_REQUEST['unique-id']) ? $_REQUEST['unique-id'] : 0;
+        $uniqueid = $this->post('unique-id');
+
+        $project-id = $this->post('project-id');
 
         //if (!empty($mobile_number)) {
         /*Reply should be in JSON format. The response parameters are : 
@@ -110,18 +112,27 @@ class Wh extends REST_Controller {
         in “delay” variable , delay need to be set in seconds and maximum allowed delay is 3600 seconds 
         i.e delay=10 means message will send after 10 seconds
         */
-
+  `whatsapp_msg_codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `whatsapp_msg_number_origin` varchar(120) DEFAULT NULL,
+  `whatsapp_msg_message-in` varchar(120) DEFAULT NULL,
+  `whatsapp_msg_type` varchar(120) DEFAULT NULL,
+  `whatsapp_msg_application` int(5) DEFAULT NULL,
+  `whatsapp_msg_unique-id` int(10) DEFAULT NULL,
+  `whatsapp_msg_project-id` int(10) DEFAULT NULL,
+  PRIMARY KEY (`whatsapp_msg_codigo`) ) 
 
   $data1 = array(
-                'marca_nome' => $mobile_number,
-                'marca_website' => $msg,
-                'marca_situacao' => 'ativo',
-                'marca_data_cadastro' => date('Y-m-d H:i:s'),
-                'marca_data_ultima_alteracao' => date('Y-m-d H:i:s'),
-                'marca_deletado' => 'nao',
+                'whatsapp_msg_number_origin' => $mobile_number,
+                'whatsapp_msg_message' => $msg,
+                'whatsapp_msg_type' => $type,
+                'whatsapp_msg_application' => $application,
+                'whatsapp_msg_unique-id' => $uniqueid,
+                'whatsapp_msg_project-id' => $project-id,
+                'whatsapp_msg_data_hora_entrega' => date('Y-m-d H:i:s'),
+                'whatsapp_msg_deletado' => 'nao',
             );            
 
-            $this->db->insert('tb_marca', $data1);
+            $this->db->insert('tb_whatsapp_msg', $data1);
         
         
         /*Giving Reply should be in JSON*/

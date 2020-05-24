@@ -64,16 +64,12 @@ if (!$results) {?>
     <tbody>
         <?php foreach ($results as $r) {
             echo '<tr>';
-            echo '<td>'.$r->marca_codigo.'</td>';
-            echo '<td>'.$r->marca_nome.'</td>';
-            echo '<td>'.$r->marca_website.'</td>';
+            echo '<td>'.$r->whatsapp_msg_codigo.'</td>';
+            echo '<td>'.$r->whatsapp_msg_number_origin.'</td>';
+            echo '<td>'.$r->whatsapp_msg_message_in.'</td>';
             echo '<td>';
-            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'eMarca')) {
-                echo '<a style="margin-right: 1%" href="'.base_url().'index.php/marcas/editar/'.$r->marca_codigo.'" class="btn btn-info tip-top" title="Editar Marca"><i class="icon-pencil icon-white"></i></a>';
-            }
-            if ($this->permission->checkPermission($this->session->userdata('permissao'), 'dMarca')) {
-                echo '<a href="#modal-excluir" role="button" data-toggle="modal" servico="'.$r->marca_codigo.'" class="btn btn-danger tip-top" title="Excluir Marca"><i class="icon-remove icon-white"></i></a>  ';
-            }
+            
+            
                       
                       
             echo '</td>';
