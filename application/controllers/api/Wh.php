@@ -103,7 +103,7 @@ class Wh extends REST_Controller {
         /*Unique id assigned by the picky assist application*/
         $uniqueid = $this->post('unique-id');
 
-        $project-id = $this->post('project-id');
+        $project_id = $this->post('project-id');
 
         //if (!empty($mobile_number)) {
         /*Reply should be in JSON format. The response parameters are : 
@@ -112,22 +112,15 @@ class Wh extends REST_Controller {
         in “delay” variable , delay need to be set in seconds and maximum allowed delay is 3600 seconds 
         i.e delay=10 means message will send after 10 seconds
         */
-  `whatsapp_msg_codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `whatsapp_msg_number_origin` varchar(120) DEFAULT NULL,
-  `whatsapp_msg_message-in` varchar(120) DEFAULT NULL,
-  `whatsapp_msg_type` varchar(120) DEFAULT NULL,
-  `whatsapp_msg_application` int(5) DEFAULT NULL,
-  `whatsapp_msg_unique-id` int(10) DEFAULT NULL,
-  `whatsapp_msg_project-id` int(10) DEFAULT NULL,
-  PRIMARY KEY (`whatsapp_msg_codigo`) ) 
+
 
   $data1 = array(
                 'whatsapp_msg_number_origin' => $mobile_number,
                 'whatsapp_msg_message' => $msg,
                 'whatsapp_msg_type' => $type,
                 'whatsapp_msg_application' => $application,
-                'whatsapp_msg_unique-id' => $uniqueid,
-                'whatsapp_msg_project-id' => $project-id,
+                'whatsapp_msg_unique_id' => $uniqueid,
+                'whatsapp_msg_project_id' => $project_id,
                 'whatsapp_msg_data_hora_entrega' => date('Y-m-d H:i:s'),
                 'whatsapp_msg_deletado' => 'nao',
             );            

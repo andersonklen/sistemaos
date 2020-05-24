@@ -2918,3 +2918,37 @@ INFO - 2020-05-24 14:54:36 --> Profiler Class Initialized
 INFO - 2020-05-24 14:54:37 --> Helper loaded: text_helper
 INFO - 2020-05-24 14:54:37 --> Final output sent to browser
 DEBUG - 2020-05-24 14:54:37 --> Total execution time: 0.4875
+INFO - 2020-05-24 14:58:18 --> Config Class Initialized
+INFO - 2020-05-24 14:58:18 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:58:18 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:58:18 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:58:18 --> URI Class Initialized
+INFO - 2020-05-24 14:58:18 --> Router Class Initialized
+INFO - 2020-05-24 14:58:18 --> Output Class Initialized
+INFO - 2020-05-24 14:58:18 --> Security Class Initialized
+DEBUG - 2020-05-24 14:58:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:58:18 --> Input Class Initialized
+INFO - 2020-05-24 14:58:18 --> Language Class Initialized
+ERROR - 2020-05-24 14:58:18 --> Severity: error --> Exception: syntax error, unexpected '=' C:\wamp64\www\erp02\application\controllers\api\Wh.php 106
+INFO - 2020-05-24 14:58:44 --> Config Class Initialized
+INFO - 2020-05-24 14:58:44 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:58:44 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:58:44 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:58:44 --> URI Class Initialized
+INFO - 2020-05-24 14:58:44 --> Router Class Initialized
+INFO - 2020-05-24 14:58:44 --> Output Class Initialized
+INFO - 2020-05-24 14:58:44 --> Security Class Initialized
+DEBUG - 2020-05-24 14:58:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:58:44 --> Input Class Initialized
+INFO - 2020-05-24 14:58:44 --> Language Class Initialized
+INFO - 2020-05-24 14:58:44 --> Loader Class Initialized
+INFO - 2020-05-24 14:58:44 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:58:44 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:58:44 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:58:44 --> Permission Class Initialized
+INFO - 2020-05-24 14:58:44 --> Controller Class Initialized
+DEBUG - 2020-05-24 14:58:44 --> Config file loaded: C:\wamp64\www\erp02\application\config/rest.php
+INFO - 2020-05-24 14:58:44 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2020-05-24 14:58:44 --> Helper loaded: inflector_helper
+INFO - 2020-05-24 14:58:44 --> Final output sent to browser
+DEBUG - 2020-05-24 14:58:44 --> Total execution time: 0.3427
