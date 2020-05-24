@@ -49,6 +49,22 @@ class Wh extends REST_Controller {
         i.e delay=10 means message will send after 10 seconds
         */
 
+
+
+
+
+            $data1 = array(
+                'marca_nome' => 'ativo',
+                'marca_website' => 'ativo',
+                'marca_situacao' => 'ativo',
+                'marca_data_cadastro' => date('Y-m-d H:i:s'),
+                'marca_data_ultima_alteracao' => date('Y-m-d H:i:s'),
+                'marca_deletado' => 'nao',
+            );            
+
+            $this->db->insert('tb_marca', $data1);
+        
+        
         /*Giving Reply should be in JSON*/
        $data = array('message-out' => ' Hello Picky','delay' => 0);
 
