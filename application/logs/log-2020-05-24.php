@@ -2360,3 +2360,309 @@ INFO - 2020-05-24 13:25:32 --> Profiler Class Initialized
 INFO - 2020-05-24 13:25:32 --> Helper loaded: text_helper
 INFO - 2020-05-24 13:25:32 --> Final output sent to browser
 DEBUG - 2020-05-24 13:25:32 --> Total execution time: 0.6829
+INFO - 2020-05-24 13:40:44 --> Config Class Initialized
+INFO - 2020-05-24 13:40:44 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:40:44 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:40:44 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:40:44 --> URI Class Initialized
+INFO - 2020-05-24 13:40:44 --> Router Class Initialized
+INFO - 2020-05-24 13:40:44 --> Output Class Initialized
+INFO - 2020-05-24 13:40:45 --> Security Class Initialized
+DEBUG - 2020-05-24 13:40:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:40:45 --> Input Class Initialized
+INFO - 2020-05-24 13:40:45 --> Language Class Initialized
+INFO - 2020-05-24 13:40:45 --> Loader Class Initialized
+INFO - 2020-05-24 13:40:45 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:40:45 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:40:45 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:40:45 --> Permission Class Initialized
+INFO - 2020-05-24 13:40:45 --> Controller Class Initialized
+INFO - 2020-05-24 13:40:45 --> Helper loaded: form_helper
+INFO - 2020-05-24 13:40:45 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 13:40:45 --> Model Class Initialized
+INFO - 2020-05-24 13:40:45 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 13:40:45 --> Pagination Class Initialized
+INFO - 2020-05-24 13:40:45 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 13:40:45 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 13:40:45 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 13:40:45 --> Profiler Class Initialized
+INFO - 2020-05-24 13:40:45 --> Helper loaded: text_helper
+INFO - 2020-05-24 13:40:45 --> Final output sent to browser
+DEBUG - 2020-05-24 13:40:45 --> Total execution time: 0.8026
+INFO - 2020-05-24 13:40:49 --> Config Class Initialized
+INFO - 2020-05-24 13:40:49 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:40:49 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:40:49 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:40:49 --> URI Class Initialized
+INFO - 2020-05-24 13:40:49 --> Router Class Initialized
+INFO - 2020-05-24 13:40:49 --> Output Class Initialized
+INFO - 2020-05-24 13:40:49 --> Security Class Initialized
+DEBUG - 2020-05-24 13:40:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:40:49 --> Input Class Initialized
+INFO - 2020-05-24 13:40:49 --> Language Class Initialized
+INFO - 2020-05-24 13:40:49 --> Loader Class Initialized
+INFO - 2020-05-24 13:40:49 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:40:49 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:40:50 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:40:50 --> Permission Class Initialized
+INFO - 2020-05-24 13:40:50 --> Controller Class Initialized
+INFO - 2020-05-24 13:40:50 --> Helper loaded: form_helper
+INFO - 2020-05-24 13:40:50 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 13:40:50 --> Model Class Initialized
+INFO - 2020-05-24 13:40:50 --> Form Validation Class Initialized
+DEBUG - 2020-05-24 13:40:50 --> Unable to find validation rules
+INFO - 2020-05-24 13:40:50 --> File loaded: C:\wamp64\www\erp02\application\views\Whatsapp/enviarWhatsapp.php
+INFO - 2020-05-24 13:40:50 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 13:40:50 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 13:40:50 --> Profiler Class Initialized
+INFO - 2020-05-24 13:40:50 --> Helper loaded: text_helper
+INFO - 2020-05-24 13:40:50 --> Final output sent to browser
+DEBUG - 2020-05-24 13:40:50 --> Total execution time: 0.4497
+INFO - 2020-05-24 13:41:01 --> Config Class Initialized
+INFO - 2020-05-24 13:41:01 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:41:01 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:41:01 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:41:01 --> URI Class Initialized
+INFO - 2020-05-24 13:41:01 --> Router Class Initialized
+INFO - 2020-05-24 13:41:01 --> Output Class Initialized
+INFO - 2020-05-24 13:41:01 --> Security Class Initialized
+DEBUG - 2020-05-24 13:41:01 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:41:01 --> Input Class Initialized
+INFO - 2020-05-24 13:41:01 --> Language Class Initialized
+INFO - 2020-05-24 13:41:01 --> Loader Class Initialized
+INFO - 2020-05-24 13:41:01 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:41:01 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:41:01 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:41:01 --> Permission Class Initialized
+INFO - 2020-05-24 13:41:01 --> Controller Class Initialized
+INFO - 2020-05-24 13:41:01 --> Helper loaded: form_helper
+INFO - 2020-05-24 13:41:01 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 13:41:01 --> Model Class Initialized
+INFO - 2020-05-24 13:41:02 --> Form Validation Class Initialized
+INFO - 2020-05-24 13:41:02 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2020-05-24 13:41:02 --> Config Class Initialized
+INFO - 2020-05-24 13:41:02 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:41:02 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:41:02 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:41:02 --> URI Class Initialized
+INFO - 2020-05-24 13:41:03 --> Router Class Initialized
+INFO - 2020-05-24 13:41:03 --> Output Class Initialized
+INFO - 2020-05-24 13:41:03 --> Security Class Initialized
+DEBUG - 2020-05-24 13:41:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:41:03 --> Input Class Initialized
+INFO - 2020-05-24 13:41:03 --> Language Class Initialized
+INFO - 2020-05-24 13:41:03 --> Loader Class Initialized
+INFO - 2020-05-24 13:41:03 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:41:03 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:41:03 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:41:03 --> Permission Class Initialized
+INFO - 2020-05-24 13:41:03 --> Controller Class Initialized
+INFO - 2020-05-24 13:41:03 --> Helper loaded: form_helper
+INFO - 2020-05-24 13:41:03 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 13:41:03 --> Model Class Initialized
+INFO - 2020-05-24 13:41:03 --> Form Validation Class Initialized
+DEBUG - 2020-05-24 13:41:03 --> Unable to find validation rules
+INFO - 2020-05-24 13:41:03 --> File loaded: C:\wamp64\www\erp02\application\views\Whatsapp/enviarWhatsapp.php
+INFO - 2020-05-24 13:41:03 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 13:41:03 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 13:41:03 --> Profiler Class Initialized
+INFO - 2020-05-24 13:41:03 --> Helper loaded: text_helper
+INFO - 2020-05-24 13:41:03 --> Final output sent to browser
+DEBUG - 2020-05-24 13:41:03 --> Total execution time: 0.6075
+INFO - 2020-05-24 13:42:57 --> Config Class Initialized
+INFO - 2020-05-24 13:42:57 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:42:57 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:42:57 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:42:57 --> URI Class Initialized
+INFO - 2020-05-24 13:42:57 --> Router Class Initialized
+INFO - 2020-05-24 13:42:57 --> Output Class Initialized
+INFO - 2020-05-24 13:42:57 --> Security Class Initialized
+DEBUG - 2020-05-24 13:42:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:42:57 --> Input Class Initialized
+INFO - 2020-05-24 13:42:57 --> Language Class Initialized
+INFO - 2020-05-24 13:42:57 --> Loader Class Initialized
+INFO - 2020-05-24 13:42:57 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:42:57 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:42:57 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:42:57 --> Permission Class Initialized
+INFO - 2020-05-24 13:42:57 --> Controller Class Initialized
+INFO - 2020-05-24 13:42:57 --> Helper loaded: form_helper
+INFO - 2020-05-24 13:42:57 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 13:42:57 --> Model Class Initialized
+INFO - 2020-05-24 13:42:57 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 13:42:57 --> Pagination Class Initialized
+INFO - 2020-05-24 13:42:57 --> File loaded: C:\wamp64\www\erp02\application\views\marcas/marcas.php
+INFO - 2020-05-24 13:42:57 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 13:42:57 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 13:42:57 --> Profiler Class Initialized
+INFO - 2020-05-24 13:42:58 --> Helper loaded: text_helper
+INFO - 2020-05-24 13:42:58 --> Final output sent to browser
+DEBUG - 2020-05-24 13:42:58 --> Total execution time: 0.5534
+INFO - 2020-05-24 13:46:46 --> Config Class Initialized
+INFO - 2020-05-24 13:46:46 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:46:46 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:46:46 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:46:46 --> URI Class Initialized
+INFO - 2020-05-24 13:46:46 --> Router Class Initialized
+INFO - 2020-05-24 13:46:46 --> Output Class Initialized
+INFO - 2020-05-24 13:46:46 --> Security Class Initialized
+DEBUG - 2020-05-24 13:46:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:46:46 --> Input Class Initialized
+INFO - 2020-05-24 13:46:46 --> Language Class Initialized
+INFO - 2020-05-24 13:46:46 --> Loader Class Initialized
+INFO - 2020-05-24 13:46:46 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:46:46 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:46:46 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:46:46 --> Permission Class Initialized
+INFO - 2020-05-24 13:46:47 --> Controller Class Initialized
+DEBUG - 2020-05-24 13:46:47 --> Config file loaded: C:\wamp64\www\erp02\application\config/rest.php
+INFO - 2020-05-24 13:46:47 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2020-05-24 13:46:47 --> Helper loaded: inflector_helper
+INFO - 2020-05-24 13:46:47 --> Final output sent to browser
+DEBUG - 2020-05-24 13:46:47 --> Total execution time: 0.4553
+INFO - 2020-05-24 13:47:04 --> Config Class Initialized
+INFO - 2020-05-24 13:47:04 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:47:04 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:47:04 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:47:04 --> URI Class Initialized
+INFO - 2020-05-24 13:47:04 --> Router Class Initialized
+INFO - 2020-05-24 13:47:04 --> Output Class Initialized
+INFO - 2020-05-24 13:47:04 --> Security Class Initialized
+DEBUG - 2020-05-24 13:47:05 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:47:05 --> Input Class Initialized
+INFO - 2020-05-24 13:47:05 --> Language Class Initialized
+INFO - 2020-05-24 13:47:05 --> Loader Class Initialized
+INFO - 2020-05-24 13:47:05 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:47:05 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:47:05 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:47:05 --> Permission Class Initialized
+INFO - 2020-05-24 13:47:05 --> Controller Class Initialized
+DEBUG - 2020-05-24 13:47:05 --> Config file loaded: C:\wamp64\www\erp02\application\config/rest.php
+INFO - 2020-05-24 13:47:05 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2020-05-24 13:47:05 --> Helper loaded: inflector_helper
+INFO - 2020-05-24 13:47:05 --> Final output sent to browser
+DEBUG - 2020-05-24 13:47:05 --> Total execution time: 0.4415
+INFO - 2020-05-24 13:59:54 --> Config Class Initialized
+INFO - 2020-05-24 13:59:54 --> Hooks Class Initialized
+DEBUG - 2020-05-24 13:59:54 --> UTF-8 Support Enabled
+INFO - 2020-05-24 13:59:54 --> Utf8 Class Initialized
+INFO - 2020-05-24 13:59:54 --> URI Class Initialized
+INFO - 2020-05-24 13:59:54 --> Router Class Initialized
+INFO - 2020-05-24 13:59:54 --> Output Class Initialized
+INFO - 2020-05-24 13:59:54 --> Security Class Initialized
+DEBUG - 2020-05-24 13:59:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 13:59:54 --> Input Class Initialized
+INFO - 2020-05-24 13:59:54 --> Language Class Initialized
+INFO - 2020-05-24 13:59:55 --> Loader Class Initialized
+INFO - 2020-05-24 13:59:55 --> Helper loaded: url_helper
+INFO - 2020-05-24 13:59:55 --> Database Driver Class Initialized
+INFO - 2020-05-24 13:59:55 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 13:59:55 --> Permission Class Initialized
+INFO - 2020-05-24 13:59:55 --> Controller Class Initialized
+DEBUG - 2020-05-24 13:59:55 --> Config file loaded: C:\wamp64\www\erp02\application\config/rest.php
+INFO - 2020-05-24 13:59:55 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2020-05-24 13:59:55 --> Helper loaded: inflector_helper
+INFO - 2020-05-24 13:59:55 --> Final output sent to browser
+DEBUG - 2020-05-24 13:59:55 --> Total execution time: 1.2712
+INFO - 2020-05-24 14:00:30 --> Config Class Initialized
+INFO - 2020-05-24 14:00:30 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:00:30 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:00:30 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:00:30 --> URI Class Initialized
+INFO - 2020-05-24 14:00:30 --> Router Class Initialized
+INFO - 2020-05-24 14:00:30 --> Output Class Initialized
+INFO - 2020-05-24 14:00:30 --> Security Class Initialized
+DEBUG - 2020-05-24 14:00:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:00:30 --> Input Class Initialized
+INFO - 2020-05-24 14:00:30 --> Language Class Initialized
+INFO - 2020-05-24 14:00:30 --> Loader Class Initialized
+INFO - 2020-05-24 14:00:30 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:00:30 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:00:30 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:00:30 --> Permission Class Initialized
+INFO - 2020-05-24 14:00:30 --> Controller Class Initialized
+DEBUG - 2020-05-24 14:00:30 --> Config file loaded: C:\wamp64\www\erp02\application\config/rest.php
+INFO - 2020-05-24 14:00:30 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2020-05-24 14:00:30 --> Helper loaded: inflector_helper
+INFO - 2020-05-24 14:00:30 --> Final output sent to browser
+DEBUG - 2020-05-24 14:00:30 --> Total execution time: 0.6044
+INFO - 2020-05-24 14:00:39 --> Config Class Initialized
+INFO - 2020-05-24 14:00:39 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:00:39 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:00:39 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:00:40 --> URI Class Initialized
+INFO - 2020-05-24 14:00:40 --> Router Class Initialized
+INFO - 2020-05-24 14:00:40 --> Output Class Initialized
+INFO - 2020-05-24 14:00:40 --> Security Class Initialized
+DEBUG - 2020-05-24 14:00:40 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:00:40 --> Input Class Initialized
+INFO - 2020-05-24 14:00:40 --> Language Class Initialized
+INFO - 2020-05-24 14:00:40 --> Loader Class Initialized
+INFO - 2020-05-24 14:00:40 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:00:40 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:00:40 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:00:40 --> Permission Class Initialized
+INFO - 2020-05-24 14:00:40 --> Controller Class Initialized
+INFO - 2020-05-24 14:00:40 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:00:40 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:00:40 --> Model Class Initialized
+INFO - 2020-05-24 14:00:40 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:00:40 --> Pagination Class Initialized
+INFO - 2020-05-24 14:00:40 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:00:40 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:00:40 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:00:40 --> Profiler Class Initialized
+INFO - 2020-05-24 14:00:40 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:00:40 --> Final output sent to browser
+DEBUG - 2020-05-24 14:00:40 --> Total execution time: 0.5922
+INFO - 2020-05-24 14:00:45 --> Config Class Initialized
+INFO - 2020-05-24 14:00:45 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:00:45 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:00:45 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:00:45 --> URI Class Initialized
+INFO - 2020-05-24 14:00:45 --> Router Class Initialized
+INFO - 2020-05-24 14:00:45 --> Output Class Initialized
+INFO - 2020-05-24 14:00:46 --> Security Class Initialized
+DEBUG - 2020-05-24 14:00:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:00:46 --> Input Class Initialized
+INFO - 2020-05-24 14:00:46 --> Language Class Initialized
+INFO - 2020-05-24 14:00:46 --> Loader Class Initialized
+INFO - 2020-05-24 14:00:46 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:00:46 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:00:46 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:00:46 --> Permission Class Initialized
+INFO - 2020-05-24 14:00:46 --> Controller Class Initialized
+DEBUG - 2020-05-24 14:00:46 --> Config file loaded: C:\wamp64\www\erp02\application\config/rest.php
+INFO - 2020-05-24 14:00:46 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2020-05-24 14:00:46 --> Helper loaded: inflector_helper
+INFO - 2020-05-24 14:00:46 --> Final output sent to browser
+DEBUG - 2020-05-24 14:00:46 --> Total execution time: 0.8735
+INFO - 2020-05-24 14:00:49 --> Config Class Initialized
+INFO - 2020-05-24 14:00:49 --> Hooks Class Initialized
+DEBUG - 2020-05-24 14:00:49 --> UTF-8 Support Enabled
+INFO - 2020-05-24 14:00:49 --> Utf8 Class Initialized
+INFO - 2020-05-24 14:00:49 --> URI Class Initialized
+INFO - 2020-05-24 14:00:49 --> Router Class Initialized
+INFO - 2020-05-24 14:00:49 --> Output Class Initialized
+INFO - 2020-05-24 14:00:49 --> Security Class Initialized
+DEBUG - 2020-05-24 14:00:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2020-05-24 14:00:49 --> Input Class Initialized
+INFO - 2020-05-24 14:00:49 --> Language Class Initialized
+INFO - 2020-05-24 14:00:49 --> Loader Class Initialized
+INFO - 2020-05-24 14:00:49 --> Helper loaded: url_helper
+INFO - 2020-05-24 14:00:49 --> Database Driver Class Initialized
+INFO - 2020-05-24 14:00:49 --> Session: Class initialized using 'database' driver.
+DEBUG - 2020-05-24 14:00:49 --> Permission Class Initialized
+INFO - 2020-05-24 14:00:49 --> Controller Class Initialized
+INFO - 2020-05-24 14:00:49 --> Helper loaded: form_helper
+INFO - 2020-05-24 14:00:49 --> Helper loaded: codegen_helper
+INFO - 2020-05-24 14:00:49 --> Model Class Initialized
+INFO - 2020-05-24 14:00:49 --> Language file loaded: language/english/pagination_lang.php
+INFO - 2020-05-24 14:00:49 --> Pagination Class Initialized
+INFO - 2020-05-24 14:00:49 --> File loaded: C:\wamp64\www\erp02\application\views\whatsapp/whatsapp.php
+INFO - 2020-05-24 14:00:49 --> File loaded: C:\wamp64\www\erp02\application\views\tema/topo.php
+INFO - 2020-05-24 14:00:49 --> Language file loaded: language/english/profiler_lang.php
+INFO - 2020-05-24 14:00:49 --> Profiler Class Initialized
+INFO - 2020-05-24 14:00:49 --> Helper loaded: text_helper
+INFO - 2020-05-24 14:00:49 --> Final output sent to browser
+DEBUG - 2020-05-24 14:00:49 --> Total execution time: 0.5207

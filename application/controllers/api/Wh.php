@@ -87,10 +87,12 @@ class Wh extends REST_Controller {
      /*Mobile number with country code from the message came, 
         if the sender mobile number is saved in the phone contacts then instead of number the contact name will come here as number. 
         For Whatsapp Group the number will be Group Name @Sender Name / Number */
-        $mobile_number = isset($_REQUEST['number']) ? $_REQUEST['number'] : 0;
+        $mobile_number =$this->post('number');
+        //$mobile_number = isset($_REQUEST['number']) ? $_REQUEST['number'] : 0;
 
+        $msg = $this->post('message-in');
         /*Text message received in the application - only first 1000 characters will be pushed to the server.*/
-        $msg = isset($_REQUEST['message-in']) ? $_REQUEST['message-in'] : 0;
+        // $msg = isset($_REQUEST['message-in']) ? $_REQUEST['message-in'] : 0;
 
         /*On which messaging app the message has received 1=Whatsapp Personal | 2 = Whatsapp Business*/
         $application = isset($_REQUEST['application']) ? $_REQUEST['application'] : 0;
@@ -109,7 +111,7 @@ class Wh extends REST_Controller {
         i.e delay=10 means message will send after 10 seconds
         */
 
-        
+
   $data1 = array(
                 'marca_nome' => $mobile_number,
                 'marca_website' => $msg,
