@@ -20,5 +20,13 @@ $hook['display_override'][] = array(
 	'filepath' => 'hooks'
 );
 
+$hook['post_system'] = array(
+    'class' => 'Myhook', 
+    'function' => 'index', 
+    'filename' => 'Myhook.php', 
+    'filepath' => 'hooks', 
+    'params' => array()
+   );
+
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */

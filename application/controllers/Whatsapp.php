@@ -113,7 +113,7 @@ class Whatsapp extends CI_Controller
         /*Giving Reply should be in JSON*/
         $data = array('message-out' => ' Hello Picky','delay' => 0);
 
-        echo json_encode($data);
+        $result = json_encode($data);
         }
 
     }
